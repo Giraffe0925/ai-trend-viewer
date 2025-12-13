@@ -32,14 +32,18 @@ export async function processArticleWithLLM(article: Article): Promise<Article> 
     You are an expert science communicator.
     Analyze the following article content and provide a Japanese translation and explanation.
     
+    IMPORTANT: The original content may contain HTML tags, links, or code snippets. 
+    You MUST remove ALL HTML tags, URLs, and code-like formatting from your output.
+    Provide clean, readable Japanese text only.
+    
     Title: ${article.title}
     Content: ${article.originalContent}
 
     Output valid JSON with the following keys:
-    - titleJa: Japanese translation of the title
-    - summaryJa: A concise summary of the key points (approx 200 chars)
+    - titleJa: Japanese translation of the title (clean text, no HTML)
+    - summaryJa: A concise summary of the key points (approx 200 chars, clean text)
     - explanationJa: A simple one-sentence explanation for a general audience (use polite "desu/masu" style, approx 50-80 chars)
-    - translationJa: A full Japanese translation of the provided Content/Abstract (keep tone professional but readable)
+    - translationJa: A full Japanese translation of the provided Content/Abstract (clean text, NO HTML tags, NO URLs, NO links - just readable Japanese text)
     - insightJa: A short insight on how this topic might impact everyday life or business (use polite "desu/masu" style, 1-2 sentences, approx 80-120 chars)
     - recommendedBooks: An array of 2-3 related book search keywords in Japanese (e.g. ["人工知能 入門", "機械学習 ビジネス"])
     - tags: An array of 3-5 relevant keywords (in English or Japanese)
