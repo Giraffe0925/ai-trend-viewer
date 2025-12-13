@@ -110,7 +110,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                             {article.recommendedBooks.map((book, index) => (
                                 <a
                                     key={index}
-                                    href={`https://www.amazon.co.jp/s?k=${encodeURIComponent(book)}&tag=your-associate-id-22`}
+                                    href={`https://www.amazon.co.jp/s?k=${encodeURIComponent(book)}&tag=giraffe0925-22`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
