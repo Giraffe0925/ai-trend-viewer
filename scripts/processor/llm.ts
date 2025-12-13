@@ -30,20 +30,20 @@ export async function processArticleWithLLM(article: Article): Promise<Article> 
 
     const prompt = `
     You are an expert science communicator.
-    Analyze the following article content and provide a Japanese translation and explanation.
+    Analyze the following academic paper's abstract and provide a comprehensive Japanese translation and explanation.
     
     IMPORTANT: The original content may contain HTML tags, links, or code snippets. 
     You MUST remove ALL HTML tags, URLs, and code-like formatting from your output.
     Provide clean, readable Japanese text only.
     
     Title: ${article.title}
-    Content: ${article.originalContent}
+    Abstract: ${article.originalContent}
 
     Output valid JSON with the following keys:
     - titleJa: Japanese translation of the title (clean text, no HTML)
-    - summaryJa: A concise summary of the key points (approx 200 chars, clean text)
+    - summaryJa: A comprehensive summary covering the ENTIRE paper's scope - include: (1) research problem/motivation, (2) methodology/approach, (3) key findings/results, (4) conclusions/implications. Write in flowing paragraphs, approx 400-600 chars. Use polite "desu/masu" style.
     - explanationJa: A simple one-sentence explanation for a general audience (use polite "desu/masu" style, approx 50-80 chars)
-    - translationJa: A full Japanese translation of the provided Content/Abstract (clean text, NO HTML tags, NO URLs, NO links - just readable Japanese text)
+    - translationJa: A detailed Japanese translation of the abstract that helps readers understand the full paper without reading the original. Include context and explain technical terms. Approx 500-800 chars, clean text, NO HTML.
     - insightJa: A short insight on how this topic might impact everyday life or business (use polite "desu/masu" style, 1-2 sentences, approx 80-120 chars)
     - recommendedBooks: An array of 2-3 related book search keywords in Japanese (e.g. ["人工知能 入門", "機械学習 ビジネス"])
     - tags: An array of 3-5 relevant keywords (in English or Japanese)
