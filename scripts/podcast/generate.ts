@@ -66,7 +66,7 @@ ${commentary}
             input: { text: podcastScript },
             voice: {
                 languageCode: 'ja-JP',
-                name: 'ja-JP-Neural2-B', // Male neural voice
+                name: 'ja-JP-Neural2-C', // Male neural voice (C is male)
                 ssmlGender: 'MALE',
             },
             audioConfig: {
