@@ -10,14 +10,14 @@
     "category": "AI",
     "originalContent": "We propose a decoupled 3D scene generation framework called SceneMaker in this work. Due to the lack of sufficient open-set de-occlusion and pose estimation priors, existing methods struggle to simultaneously produce high-quality geometry and accurate poses under severe occlusion and open-set settings. To address these issues, we first decouple the de-occlusion model from 3D object generation, and enhance it by leveraging image datasets and collected de-occlusion datasets for much more diverse open-set occlusion patterns. Then, we propose a unified pose estimation model that integrates global and local mechanisms for both self-attention and cross-attention to improve accuracy. Besides, we construct an open-set 3D scene dataset to further extend the generalization of the pose estimation model. Comprehensive experiments demonstrate the superiority of our decoupled framework on both indoor and open-set scenes. Our codes and datasets is released at https://idea-research.github.io/SceneMaker/.",
     "titleJa": "SceneMaker：分離されたデ・オクルージョンと姿勢推定モデルによるオープンセット3Dシーン生成",
-    "summaryJa": "SceneMakerは、デ・オクルージョンと姿勢推定を分離し、高品質な3Dシーンを生成するフレームワークです。オープンセット環境での精度向上が特徴。",
-    "explanationJa": "SceneMakerは、隠れた部分を復元し、物体の姿勢を正確に推定して、様々な3Dシーンを生成する技術です。",
-    "translationJa": "本研究では、SceneMakerと呼ばれる分離された3Dシーン生成フレームワークを提案します。既存の手法は、十分なオープンセットのデ・オクルージョンと姿勢推定の事前知識が不足しているため、深刻なオクルージョンとオープンセットの設定下で、高品質なジオメトリと正確な姿勢を同時に生成するのに苦労しています。これらの問題に対処するために、まずデ・オクルージョンモデルを3Dオブジェクト生成から分離し、画像データセットと収集されたデ・オクルージョンデータセットを活用して、より多様なオープンセットのオクルージョンパターンを強化します。次に、精度を向上させるために、自己注意とクロス注意の両方のためのグローバルおよびローカルメカニズムを統合した、統一された姿勢推定モデルを提案します。さらに、姿勢推定モデルの汎化性能をさらに拡張するために、オープンセットの3Dシーンデータセットを構築します。包括的な実験により、屋内シーンとオープンセットシーンの両方で、提案する分離されたフレームワークの優位性が示されています。",
-    "insightJa": "この技術は、ゲーム開発や仮想現実空間の構築において、よりリアルで没入感のある体験を提供することに貢献する可能性があります。また、ロボットの視覚認識能力向上にも役立ち、日常生活やビジネスにおける自動化を促進すると期待されます。",
+    "summaryJa": "SceneMakerは、3Dシーン生成フレームワーク。デ・オクルージョンと姿勢推定を分離し、高品質な形状と正確な姿勢を生成します。",
+    "explanationJa": "SceneMakerは、遮蔽された状態でも正確な3Dシーンを生成する技術で、よりリアルな仮想空間の構築に役立ちます。",
+    "translationJa": "本研究では、SceneMakerと呼ばれる分離された3Dシーン生成フレームワークを提案します。既存の手法は、十分なオープンセットのデ・オクルージョンと姿勢推定の事前知識が不足しているため、深刻な遮蔽とオープンセットの設定下で、高品質な形状と正確な姿勢を同時に生成することが困難です。これらの課題に対処するために、まず、デ・オクルージョンモデルを3Dオブジェクト生成から分離し、画像データセットと収集されたデ・オクルージョンデータセットを活用して、より多様なオープンセットの遮蔽パターンに対応できるように強化します。次に、精度を向上させるために、グローバルおよびローカルメカニズムを自己注意と交差注意の両方に統合する統一された姿勢推定モデルを提案します。さらに、姿勢推定モデルの汎化性能をさらに拡張するために、オープンセット3Dシーンデータセットを構築します。包括的な実験により、屋内およびオープンセットシーンの両方で、提案する分離フレームワークの優位性が示されています。",
+    "insightJa": "この技術は、ゲームやVR/ARなどの分野で、より自然でリアルな3D環境を実現するために役立ちます。また、ロボット工学において、複雑な環境での物体の認識や操作を向上させる可能性もあります。",
     "recommendedBooks": [
-      "3Dモデリング 入門",
-      "コンピュータビジョン",
-      "機械学習 実践"
+      "3Dグラフィックス 理論",
+      "コンピュータビジョン 実践",
+      "機械学習 応用"
     ],
     "tags": [
       "3D scene generation",
@@ -38,22 +38,22 @@
     "author": "Xiaona Zhou",
     "category": "AI",
     "originalContent": "The success of modern machine learning hinges on access to high-quality training data. In many real-world scenarios, such as acquiring data from public repositories or sharing across institutions, data is naturally organized into discrete datasets that vary in relevance, quality, and utility. Selecting which repositories or institutions to search for useful datasets, and which datasets to incorporate into model training are therefore critical decisions, yet most existing methods select individual samples and treat all data as equally relevant, ignoring differences between datasets and their sources. In this work, we formalize the task of dataset selection: selecting entire datasets from a large, heterogeneous pool to improve downstream performance under resource constraints. We propose Dataset Selection via Hierarchies (DaSH), a dataset selection method that models utility at both dataset and group (e.g., collections, institutions) levels, enabling efficient generalization from limited observations. Across two public benchmarks (Digit-Five and DomainNet), DaSH outperforms state-of-the-art data selection baselines by up to 26.2% in accuracy, while requiring significantly fewer exploration steps. Ablations show DaSH is robust to low-resource settings and lack of relevant datasets, making it suitable for scalable and adaptive dataset selection in practical multi-source learning workflows.",
-    "titleJa": "高品質なデータ共有のための階層的データセット選択",
-    "summaryJa": "機械学習の成功は高品質な学習データへのアクセスにかかっています。DaSHという手法は、データセットとグループレベルで有用性をモデル化し、効率的なデータセット選択を可能にします。",
-    "explanationJa": "この研究は、機械学習において、より良い学習データセットを選ぶための新しい方法を提案しています。",
-    "translationJa": "現代の機械学習の成功は、高品質な学習データへのアクセスにかかっています。多くの現実世界のシナリオ、例えば公共リポジトリからデータを取得したり、機関間でデータを共有したりするような場合、データは本質的に離散的なデータセットとして組織化され、関連性、品質、有用性が異なります。したがって、有用なデータセットを検索するためにどのリポジトリまたは機関を探索するか、そしてどのデータセットをモデルのトレーニングに組み込むかを選択することは、非常に重要な決定です。しかし、既存の方法のほとんどは個々のサンプルを選択し、すべてのデータを等しく関連性があるとみなし、データセットとそのソース間の違いを無視しています。本研究では、データセット選択のタスクを形式化します。すなわち、大規模で異質なプールからデータセット全体を選択し、リソースの制約下でダウンストリームのパフォーマンスを向上させることを目的とします。我々は、データセットとグループ（例えば、コレクション、機関）レベルの両方で有用性をモデル化するデータセット選択法であるDataset Selection via Hierarchies（DaSH）を提案し、限られた観測からの効率的な汎化を可能にします。2つの公開ベンチマーク（Digit-FiveおよびDomainNet）において、DaSHは最先端のデータ選択ベースラインよりも最大26.2％精度が向上し、探索ステップも大幅に少なくなります。アブレーションの結果、DaSHは低リソース環境や関連データセットの不足に対してロバストであり、実用的なマルチソース学習ワークフローにおけるスケーラブルで適応的なデータセット選択に適していることが示されました。",
-    "insightJa": "この研究により、企業はより効率的に質の高い学習データを選び、AIモデルの精度を向上させることができます。また、データ収集にかかるコストを削減し、AI開発のスピードアップにも貢献する可能性があります。",
+    "titleJa": "高品質データ共有のための階層的データセット選択",
+    "summaryJa": "機械学習の成功は高品質な訓練データに依存。DaSHは、データセットとグループのレベルで有用性をモデル化し、効率的なデータセット選択を実現します。",
+    "explanationJa": "DaSHは、様々なデータセットの中から、機械学習の性能を向上させるデータセットを選ぶ手法です。",
+    "translationJa": "現代の機械学習の成功は、高品質な訓練データへのアクセスにかかっています。公共リポジトリからのデータ取得や機関間の共有など、多くの現実世界のシナリオでは、データは関連性、品質、有用性が異なる個別のデータセットに自然に整理されています。そのため、有用なデータセットを検索するためにどのリポジトリまたは機関を選択するか、モデルのトレーニングにどのデータセットを組み込むかを決定することは非常に重要ですが、既存の方法のほとんどは個々のサンプルを選択し、すべてのデータを等しく関連性があるとみなし、データセットとそのソースの違いを無視しています。本研究では、データセット選択のタスクを定式化します。大規模で異質なプールからデータセット全体を選択し、リソースの制約下でダウンストリームのパフォーマンスを向上させます。データセットとグループ（コレクション、機関など）の両方のレベルで有用性をモデル化するデータセット選択手法であるDataset Selection via Hierarchies（DaSH）を提案し、限られた観測からの効率的な一般化を可能にします。2つの公開ベンチマーク（Digit-FiveとDomainNet）において、DaSHは最先端のデータ選択ベースラインを最大26.2％の精度で上回り、探索に必要なステップ数を大幅に削減します。アブレーションの結果、DaSHは低リソース環境や関連データセットの不足に対してロバストであり、実用的なマルチソース学習ワークフローにおけるスケーラブルで適応的なデータセット選択に適していることが示されています。",
+    "insightJa": "この技術は、企業のデータ活用戦略や研究機関におけるデータ共有を効率化し、AIモデルの精度向上に貢献する可能性があります。業務効率化や新たなビジネス機会の創出につながることが期待されます。",
     "recommendedBooks": [
-      "機械学習 実践",
       "データサイエンス 入門",
-      "AI プロジェクトマネジメント"
+      "機械学習 実践",
+      "ビッグデータ 分析"
     ],
     "tags": [
       "machine learning",
       "dataset selection",
-      "data quality",
-      "AI",
-      "データセット選択"
+      "data sharing",
+      "DaSH",
+      "機械学習"
     ],
     "imageUrl": "https://images.pexels.com/photos/8294824/pexels-photo-8294824.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
@@ -67,22 +67,22 @@
     "author": "Yiyang Lu",
     "category": "Science",
     "originalContent": "Normalizing Flows (NFs) have been established as a principled framework for generative modeling. Standard NFs consist of a forward process and a reverse process: the forward process maps data to noise, while the reverse process generates samples by inverting it. Typical NF forward transformations are constrained by explicit invertibility, ensuring that the reverse process can serve as their exact analytic inverse. Recent developments in TARFlow and its variants have revitalized NF methods by combining Transformers and autoregressive flows, but have also exposed causal decoding as a major bottleneck. In this work, we introduce Bidirectional Normalizing Flow ($\\textbf{BiFlow}$), a framework that removes the need for an exact analytic inverse. BiFlow learns a reverse model that approximates the underlying noise-to-data inverse mapping, enabling more flexible loss functions and architectures. Experiments on ImageNet demonstrate that BiFlow, compared to its causal decoding counterpart, improves generation quality while accelerating sampling by up to two orders of magnitude. BiFlow yields state-of-the-art results among NF-based methods and competitive performance among single-evaluation (\"1-NFE\") methods. Following recent encouraging progress on NFs, we hope our work will draw further attention to this classical paradigm.",
-    "titleJa": "双方向Normalizing Flow：データからノイズへ、そして戻る",
-    "summaryJa": "Normalizing Flow(NF)の双方向版BiFlowを提案。厳密な逆変換が不要で、生成品質とサンプリング速度が向上。画像生成で最先端の結果。",
-    "explanationJa": "新しいNormalizing Flow技術BiFlowは、より柔軟なモデル設計を可能にし、効率的なデータ生成を実現します。",
-    "translationJa": "Normalizing Flow（NF）は、生成モデリングのための原則的なフレームワークとして確立されています。標準的なNFは、順方向プロセスと逆方向プロセスで構成されます。順方向プロセスはデータをノイズにマッピングし、逆方向プロセスはそれを反転させてサンプルを生成します。典型的なNFの順方向変換は、厳密な可逆性によって制約されており、逆方向プロセスが正確な解析的逆関数として機能することが保証されます。TARFlowとそのバリアントにおける最近の発展は、Transformerと自己回帰フローを組み合わせることによってNF法を活性化しましたが、因果的デコーディングが主要なボトルネックとなっていることも明らかにしました。本研究では、厳密な解析的逆関数を必要としないフレームワークであるBidirectional Normalizing Flow（BiFlow）を導入します。BiFlowは、基礎となるノイズからデータへの逆マッピングを近似する逆モデルを学習し、より柔軟な損失関数とアーキテクチャを可能にします。ImageNetでの実験では、BiFlowは、因果的デコーディングの対応物と比較して、生成品質を向上させながら、サンプリングを最大で2桁高速化することを示しています。BiFlowは、NFベースの方法の中で最先端の結果をもたらし、単一評価（「1-NFE」）の方法の中で競争力のあるパフォーマンスを示します。NFに関する最近の有望な進展に続き、我々の研究がこの古典的なパラダイムにさらなる注目を集めることを願っています。",
-    "insightJa": "この技術により、高品質な画像生成がより高速かつ効率的に行えるようになり、エンターテインメント業界やデザイン業界におけるコンテンツ制作のスピードアップやコスト削減に貢献する可能性があります。また、医療画像解析など、様々な分野での応用が期待されます。",
+    "titleJa": "双方向正規化フロー：データからノイズへ、そして戻る",
+    "summaryJa": "BiFlowは厳密な逆変換を不要とし、データ生成の質と速度を向上させる新しい正規化フローのフレームワークです。",
+    "explanationJa": "BiFlowは、より柔軟なデータ生成を可能にする新しいアプローチの正規化フローです。",
+    "translationJa": "正規化フロー（NF）は、生成モデリングのための優れたフレームワークとして確立されています。標準的なNFは、順方向プロセスと逆方向プロセスで構成されています。順方向プロセスはデータをノイズにマッピングし、逆方向プロセスはそれを反転してサンプルを生成します。典型的なNF順方向変換は、明示的な可逆性によって制約されており、逆方向プロセスがその正確な解析的逆変換として機能することを保証します。TARFlowとそのバリアントにおける最近の発展は、Transformerと自己回帰フローを組み合わせることによってNFメソッドを活性化させましたが、因果的デコードを主要なボトルネックとして露呈させました。本研究では、厳密な解析的逆変換の必要性を排除するフレームワークである双方向正規化フロー（BiFlow）を提案します。BiFlowは、基盤となるノイズからデータへの逆マッピングを近似する逆モデルを学習し、より柔軟な損失関数とアーキテクチャを可能にします。ImageNetでの実験では、BiFlowは、その因果的デコードの対応物と比較して、生成品質を向上させると同時に、サンプリングを最大で2桁高速化することが示されています。BiFlowは、NFベースの方法の中で最先端の結果をもたらし、シングル評価（「1-NFE」）の方法の中で競争力のあるパフォーマンスを示します。NFに関する最近の有望な進展に続き、私たちの研究がこの古典的なパラダイムにさらなる注目を集めることを願っています。",
+    "insightJa": "BiFlowのような技術の進歩により、より高品質で高速な画像生成が可能になり、エンターテイメントやデザイン分野での応用が期待されます。また、ビジネスにおいては、データ分析や予測モデルの精度向上に貢献する可能性があります。",
     "recommendedBooks": [
-      "深層学習 生成モデル",
-      "画像生成AI",
-      "確率モデル 入門"
+      "深層学習 画像生成",
+      "生成モデル 理論",
+      "機械学習 実践"
     ],
     "tags": [
       "Normalizing Flow",
       "Generative Model",
-      "Bidirectional Normalizing Flow",
+      "BiFlow",
       "Image Generation",
-      "AI"
+      "Machine Learning"
     ],
     "imageUrl": "https://images.pexels.com/photos/11167639/pexels-photo-11167639.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
@@ -97,23 +97,23 @@
     "category": "Science",
     "originalContent": "The success of modern machine learning hinges on access to high-quality training data. In many real-world scenarios, such as acquiring data from public repositories or sharing across institutions, data is naturally organized into discrete datasets that vary in relevance, quality, and utility. Selecting which repositories or institutions to search for useful datasets, and which datasets to incorporate into model training are therefore critical decisions, yet most existing methods select individual samples and treat all data as equally relevant, ignoring differences between datasets and their sources. In this work, we formalize the task of dataset selection: selecting entire datasets from a large, heterogeneous pool to improve downstream performance under resource constraints. We propose Dataset Selection via Hierarchies (DaSH), a dataset selection method that models utility at both dataset and group (e.g., collections, institutions) levels, enabling efficient generalization from limited observations. Across two public benchmarks (Digit-Five and DomainNet), DaSH outperforms state-of-the-art data selection baselines by up to 26.2% in accuracy, while requiring significantly fewer exploration steps. Ablations show DaSH is robust to low-resource settings and lack of relevant datasets, making it suitable for scalable and adaptive dataset selection in practical multi-source learning workflows.",
     "titleJa": "高品質なデータ共有のための階層的データセット選択",
-    "summaryJa": "機械学習の成功は高品質な学習データに依存。データセット選択は重要だが既存手法は個々のサンプルを重視。DaSHはデータセットとグループの階層で有用性をモデル化し高性能。",
-    "explanationJa": "機械学習において、質の高いデータを効率的に選ぶための新しい方法が開発されました。",
-    "translationJa": "現代の機械学習の成功は、高品質な学習データへのアクセスにかかっています。公共リポジトリからデータを取得したり、複数の機関でデータを共有したりするなど、多くの現実世界のシナリオでは、データは本質的に離散的なデータセットとして編成され、関連性、品質、有用性が異なります。したがって、有用なデータセットを検索するためにどのリポジトリまたは機関を選択するか、モデルのトレーニングにどのデータセットを組み込むかを決定することは非常に重要な決定ですが、既存の方法のほとんどは個々のサンプルを選択し、すべてのデータを同等に関連性があるものとして扱い、データセットとそのソース間の違いを無視しています。本研究では、データセット選択のタスクを定式化します。これは、リソースの制約下でダウンストリームのパフォーマンスを向上させるために、大規模で異質なプールからデータセット全体を選択することです。データセットとグループ（コレクション、機関など）の両方のレベルで有用性をモデル化するデータセット選択メソッドであるDataset Selection via Hierarchies（DaSH）を提案し、限られた観測からの効率的な一般化を可能にします。2つの公開ベンチマーク（Digit-FiveおよびDomainNet）において、DaSHは最先端のデータ選択ベースラインを最大26.2％の精度で上回り、必要な探索ステップを大幅に削減します。アブレーションの結果、DaSHは低リソース設定や関連データセットの欠如に対してロバストであり、実用的なマルチソース学習ワークフローにおけるスケーラブルで適応性のあるデータセット選択に適していることが示されています。",
-    "insightJa": "この技術によって、企業はより効率的にデータを活用し、より精度の高い予測や分析が可能になるでしょう。例えば、マーケティング戦略の最適化や、リスク管理の高度化などが期待できます。",
+    "summaryJa": "機械学習の成功は高品質な学習データへのアクセスにかかっています。DaSHは、データセットとグループレベルで有用性をモデル化し、効率的なデータセット選択を実現します。",
+    "explanationJa": "高品質な学習データを選択する新しい方法が提案され、機械学習の性能向上が期待されます。",
+    "translationJa": "現代の機械学習の成功は、高品質な学習データへのアクセスに大きく依存しています。公共のリポジトリからデータを取得したり、機関間でデータを共有したりする多くの現実世界のシナリオでは、データは本質的に、関連性、品質、有用性が異なる個別のデータセットとして編成されています。したがって、有用なデータセットを検索するためにどのリポジトリまたは機関を検索するか、およびモデルのトレーニングにどのデータセットを組み込むかを選択することは重要な決定ですが、既存の方法のほとんどは個々のサンプルを選択し、すべてのデータを等しく関連するものとして扱い、データセットとそのソースの違いを無視しています。本研究では、データセット選択のタスクを定式化します。大規模で異質なプールからデータセット全体を選択し、リソース制約下でダウンストリームのパフォーマンスを向上させることを目的としています。Dataset Selection via Hierarchies (DaSH)を提案します。これは、データセットとグループ（コレクション、機関など）の両方のレベルで有用性をモデル化し、限られた観測からの効率的な汎化を可能にするデータセット選択手法です。2つの公開ベンチマーク（Digit-FiveとDomainNet）において、DaSHは最先端のデータ選択ベースラインを最大26.2％上回る精度を示し、必要な探索ステップは大幅に少なくなっています。アブレーション分析により、DaSHは低リソース設定や関連データセットの不足に対してロバストであることが示されており、実用的なマルチソース学習ワークフローにおけるスケーラブルで適応性のあるデータセット選択に適しています。",
+    "insightJa": "この技術は、企業が持つ膨大なデータの中から、機械学習モデルの学習に最適なデータセットを効率的に選択することを可能にします。これにより、AIモデルの精度向上と開発コストの削減に貢献し、ビジネスにおけるAI活用を促進することが期待されます。",
     "recommendedBooks": [
-      "機械学習 実践",
-      "データサイエンス 入門",
-      "深層学習 理論"
+      "機械学習 データセット",
+      "データサイエンス 実践",
+      "AI データ戦略"
     ],
     "tags": [
-      "機械学習",
-      "データセット選択",
-      "高品質データ",
-      "階層的モデル",
+      "machine learning",
+      "dataset selection",
+      "data sharing",
+      "hierarchical",
       "DaSH"
     ],
-    "imageUrl": "https://images.pexels.com/photos/5745857/pexels-photo-5745857.jpeg?auto=compress&cs=tinysrgb&h=350"
+    "imageUrl": "https://images.pexels.com/photos/8294824/pexels-photo-8294824.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     "id": "http://arxiv.org/abs/2512.10949v1",
@@ -125,22 +125,22 @@
     "author": "Yiwen Tang",
     "category": "AI",
     "originalContent": "Reinforcement learning (RL), earlier proven to be effective in large language and multi-modal models, has been successfully extended to enhance 2D image generation recently. However, applying RL to 3D generation remains largely unexplored due to the higher spatial complexity of 3D objects, which require globally consistent geometry and fine-grained local textures. This makes 3D generation significantly sensitive to reward designs and RL algorithms. To address these challenges, we conduct the first systematic study of RL for text-to-3D autoregressive generation across several dimensions. (1) Reward designs: We evaluate reward dimensions and model choices, showing that alignment with human preference is crucial, and that general multi-modal models provide robust signal for 3D attributes. (2) RL algorithms: We study GRPO variants, highlighting the effectiveness of token-level optimization, and further investigate the scaling of training data and iterations. (3) Text-to-3D Benchmarks: Since existing benchmarks fail to measure implicit reasoning abilities in 3D generation models, we introduce MME-3DR. (4) Advanced RL paradigms: Motivated by the natural hierarchy of 3D generation, we propose Hi-GRPO, which optimizes the global-to-local hierarchical 3D generation through dedicated reward ensembles. Based on these insights, we develop AR3D-R1, the first RL-enhanced text-to-3D model, expert from coarse shape to texture refinement. We hope this study provides insights into RL-driven reasoning for 3D generation. Code is released at https://github.com/Ivan-Tang-3D/3DGen-R1.",
-    "titleJa": "テキストから3D生成における強化学習の準備はできているか？段階的調査",
-    "summaryJa": "3D生成への強化学習の応用は未開拓。報酬設計、アルゴリズム、ベンチマーク、階層的最適化を研究し、RL強化モデルAR3D-R1を開発。",
-    "explanationJa": "テキストから3Dモデルを作る技術に強化学習を応用する研究が進んでいます。より自然な3Dモデル生成が期待されます。",
-    "translationJa": "強化学習（RL）は、大規模言語モデルやマルチモーダルモデルで効果的であることが以前に証明されており、最近では2D画像生成を強化するために拡張されています。しかし、3Dオブジェクトの空間的な複雑さが高く、グローバルに一貫した形状と細かく調整されたローカルテクスチャが必要となるため、RLを3D生成に適用することはほとんど探求されていません。これにより、3D生成は報酬設計とRLアルゴリズムに著しく敏感になります。これらの課題に対処するために、テキストから3Dの自己回帰生成のためのRLの最初の体系的な研究をいくつかの側面から行います。（1）報酬設計：報酬の側面とモデルの選択を評価し、人間の好みとの整合性が重要であり、一般的なマルチモーダルモデルが3D属性に対して堅牢な信号を提供することを示します。（2）RLアルゴリズム：GRPOのバリエーションを研究し、トークンレベルの最適化の有効性を強調し、トレーニングデータとイテレーションのスケーリングをさらに調査します。（3）テキストから3Dベンチマーク：既存のベンチマークは3D生成モデルにおける暗黙的な推論能力を測定できないため、MME-3DRを導入します。（4）高度なRLパラダイム：3D生成の自然な階層構造に動機付けられ、グローバルからローカルへの階層的な3D生成を専用の報酬アンサンブルを通じて最適化するHi-GRPOを提案します。これらの洞察に基づいて、粗い形状からテクスチャの洗練まで、専門的な最初のRL強化テキストから3DモデルであるAR3D-R1を開発します。この研究が、3D生成のためのRL駆動型の推論への洞察を提供することを願っています。",
-    "insightJa": "この研究が進むことで、ゲームやデザイン業界でより手軽に3Dモデルを作成できるようになるかもしれません。個人の趣味レベルでも、高品質な3Dコンテンツ制作が身近になる可能性があります。",
+    "titleJa": "テキストから3D生成における強化学習の準備はできているか？進歩的な調査",
+    "summaryJa": "3D生成に強化学習(RL)を適用する研究。報酬設計、RLアルゴリズム、ベンチマーク、階層的RLパラダイムを調査し、RL強化モデルを開発。",
+    "explanationJa": "テキストから3Dモデルを生成する際に、強化学習がどのように役立つかを研究しています。より高品質な3Dモデルの生成が期待されます。",
+    "translationJa": "強化学習（RL）は、大規模言語モデルやマルチモーダルモデルで有効であることが以前に証明されており、最近では2D画像生成を強化するために拡張されています。しかし、3Dオブジェクトの空間的な複雑さが増し、グローバルに一貫したジオメトリと細部のテクスチャが必要となるため、RLを3D生成に適用することはほとんど探求されていません。これにより、3D生成は報酬設計とRLアルゴリズムに対して非常に敏感になります。これらの課題に対処するために、テキストから3Dへの自己回帰生成におけるRLの体系的な研究をいくつかの側面から行います。（1）報酬設計：報酬の側面とモデルの選択肢を評価し、人間の好みに合わせることが重要であること、および一般的なマルチモーダルモデルが3D属性のロバストなシグナルを提供することを示します。（2）RLアルゴリズム：GRPOのバリアントを研究し、トークンレベルの最適化の有効性を強調し、トレーニングデータと反復のスケーリングをさらに調査します。（3）テキストから3Dへのベンチマーク：既存のベンチマークは3D生成モデルにおける暗黙的な推論能力を測定できないため、MME-3DRを導入します。（4）高度なRLパラダイム：3D生成の自然な階層構造に動機付けられ、グローバルからローカルへの階層的な3D生成を専用の報酬アンサンブルを通じて最適化するHi-GRPOを提案します。これらの洞察に基づいて、粗い形状からテクスチャの改良まで、専門的な最初のRL強化テキストから3DモデルであるAR3D-R1を開発します。この研究が、3D生成におけるRL駆動型推論への洞察を提供することを願っています。",
+    "insightJa": "この研究が進むことで、ゲームやデザイン分野でよりリアルで創造的な3Dモデルを自動生成できるようになるかもしれません。これにより、コンテンツ制作の効率化や新しい表現方法の可能性が広がります。",
     "recommendedBooks": [
       "3Dモデリング 入門",
-      "強化学習 理論と実践",
-      "AI 3D生成"
+      "強化学習 実践",
+      "画像生成AI"
     ],
     "tags": [
       "Reinforcement Learning",
       "Text-to-3D",
       "3D Generation",
-      "Reward Design",
-      "AR3D-R1"
+      "AR3D-R1",
+      "MME-3DR"
     ],
     "imageUrl": "https://images.pexels.com/photos/17483874/pexels-photo-17483874.png?auto=compress&cs=tinysrgb&h=350"
   },
@@ -155,21 +155,21 @@
     "category": "Science",
     "originalContent": "Reinforcement learning (RL), earlier proven to be effective in large language and multi-modal models, has been successfully extended to enhance 2D image generation recently. However, applying RL to 3D generation remains largely unexplored due to the higher spatial complexity of 3D objects, which require globally consistent geometry and fine-grained local textures. This makes 3D generation significantly sensitive to reward designs and RL algorithms. To address these challenges, we conduct the first systematic study of RL for text-to-3D autoregressive generation across several dimensions. (1) Reward designs: We evaluate reward dimensions and model choices, showing that alignment with human preference is crucial, and that general multi-modal models provide robust signal for 3D attributes. (2) RL algorithms: We study GRPO variants, highlighting the effectiveness of token-level optimization, and further investigate the scaling of training data and iterations. (3) Text-to-3D Benchmarks: Since existing benchmarks fail to measure implicit reasoning abilities in 3D generation models, we introduce MME-3DR. (4) Advanced RL paradigms: Motivated by the natural hierarchy of 3D generation, we propose Hi-GRPO, which optimizes the global-to-local hierarchical 3D generation through dedicated reward ensembles. Based on these insights, we develop AR3D-R1, the first RL-enhanced text-to-3D model, expert from coarse shape to texture refinement. We hope this study provides insights into RL-driven reasoning for 3D generation. Code is released at https://github.com/Ivan-Tang-3D/3DGen-R1.",
     "titleJa": "テキストから3D生成における強化学習の準備はできているか？進歩的な調査",
-    "summaryJa": "テキストから3D生成に強化学習を応用する初の体系的研究。報酬設計、アルゴリズム、ベンチマーク、高度なパラダイムを調査し、RL強化モデルAR3D-R1を開発。",
-    "explanationJa": "テキストから3Dモデルを生成する際に、強化学習という技術がどこまで使えるかを研究しているようです。",
-    "translationJa": "強化学習（RL）は、大規模言語モデルやマルチモーダルモデルで効果的であることが以前に証明されており、最近では2D画像生成を強化するために拡張されています。しかし、3Dオブジェクトの空間的な複雑さから、3D生成へのRLの適用はほとんど探求されていません。3Dオブジェクトは、グローバルに一貫した形状と、きめ細かいローカルテクスチャを必要とするためです。これにより、3D生成は報酬設計とRLアルゴリズムに非常に敏感になります。これらの課題に対処するために、テキストから3Dの自己回帰生成に対するRLの最初の体系的な研究をいくつかの側面から行います。（1）報酬設計：報酬の次元とモデルの選択を評価し、人間の好みとの整合性が重要であり、一般的なマルチモーダルモデルが3D属性に対して堅牢なシグナルを提供することを示します。（2）RLアルゴリズム：GRPOのバリエーションを研究し、トークンレベルの最適化の有効性を強調し、トレーニングデータとイテレーションのスケーリングをさらに調査します。（3）テキストから3Dのベンチマーク：既存のベンチマークは、3D生成モデルにおける暗黙的な推論能力を測定できないため、MME-3DRを導入します。（4）高度なRLパラダイム：3D生成の自然な階層構造に動機付けられ、グローバルからローカルへの階層的な3D生成を専用の報酬アンサンブルを通じて最適化するHi-GRPOを提案します。これらの洞察に基づいて、粗い形状からテクスチャの洗練まで、最初のRL強化テキストから3DモデルであるAR3D-R1を開発しました。この研究が、3D生成のためのRL駆動型推論への洞察を提供することを願っています。",
-    "insightJa": "この技術が進歩すると、デザイナーやクリエイターはより簡単にアイデアを3Dモデルとして具現化できるようになります。ビジネスにおいては、製品のプロトタイプ作成やマーケティング資料の作成が効率化される可能性があります。",
+    "summaryJa": "テキストから3D生成への強化学習の適用を体系的に調査。報酬設計、アルゴリズム、ベンチマークを検討し、階層的アプローチを提案。強化学習で3D生成を強化。",
+    "explanationJa": "テキストから3Dモデルを生成する際に、強化学習という技術がどのように役立つかを研究しているそうです。",
+    "translationJa": "強化学習（RL）は、大規模言語モデルやマルチモーダルモデルで効果的であることが以前に証明されており、最近では2D画像生成を強化するためにうまく拡張されています。しかし、3Dオブジェクトの空間的な複雑さのために、RLを3D生成に適用することはほとんど探求されていません。3Dオブジェクトは、グローバルに一貫した形状と、きめ細かいローカルテクスチャを必要とするためです。そのため、3D生成は、報酬設計とRLアルゴリズムに著しく敏感になります。これらの課題に対処するために、テキストから3Dの自己回帰生成に対するRLの最初の体系的な研究を、いくつかの側面から実施します。(1) 報酬設計：報酬の側面とモデルの選択肢を評価し、人間の好みとの整合性が重要であること、および一般的なマルチモーダルモデルが3D属性に対して堅牢なシグナルを提供することを示します。(2) RLアルゴリズム：GRPOのバリエーションを研究し、トークンレベルの最適化の有効性を強調し、トレーニングデータと反復のスケーリングをさらに調査します。(3) テキストから3Dベンチマーク：既存のベンチマークは3D生成モデルにおける暗黙的な推論能力を測定できないため、MME-3DRを導入します。(4) 高度なRLパラダイム：3D生成の自然な階層構造に動機づけられ、専用の報酬アンサンブルを通じてグローバルからローカルへの階層的な3D生成を最適化するHi-GRPOを提案します。これらの洞察に基づいて、粗い形状からテクスチャの洗練まで専門的な、最初のRL強化テキストから3DモデルであるAR3D-R1を開発します。この研究が、3D生成のためのRL駆動の推論への洞察を提供することを願っています。",
+    "insightJa": "この技術が発展すれば、誰でも簡単にテキストから3Dモデルを作成できるようになり、ゲーム開発や建築デザインなど、様々な分野で大きな影響を与える可能性があります。ビジネスにおいては、製品のプロトタイプ作成の迅速化や、顧客に合わせた3Dモデルの提供などが期待されます。",
     "recommendedBooks": [
       "3Dモデリング入門",
       "強化学習 理論と実践",
-      "画像生成AI 最前線"
+      "深層学習 3D"
     ],
     "tags": [
       "Reinforcement Learning",
       "Text-to-3D",
       "3D Generation",
-      "Reward Design",
-      "AR3D-R1"
+      "AR3D-R1",
+      "MME-3DR"
     ],
     "imageUrl": "https://images.pexels.com/photos/17483874/pexels-photo-17483874.png?auto=compress&cs=tinysrgb&h=350"
   },
@@ -183,21 +183,21 @@
     "author": "Wendi Chen",
     "category": "AI",
     "originalContent": "Human-level contact-rich manipulation relies on the distinct roles of two key modalities: vision provides spatially rich but temporally slow global context, while force sensing captures rapid, high-frequency local contact dynamics. Integrating these signals is challenging due to their fundamental frequency and informational disparities. In this work, we propose ImplicitRDP, a unified end-to-end visual-force diffusion policy that integrates visual planning and reactive force control within a single network. We introduce Structural Slow-Fast Learning, a mechanism utilizing causal attention to simultaneously process asynchronous visual and force tokens, allowing the policy to perform closed-loop adjustments at the force frequency while maintaining the temporal coherence of action chunks. Furthermore, to mitigate modality collapse where end-to-end models fail to adjust the weights across different modalities, we propose Virtual-target-based Representation Regularization. This auxiliary objective maps force feedback into the same space as the action, providing a stronger, physics-grounded learning signal than raw force prediction. Extensive experiments on contact-rich tasks demonstrate that ImplicitRDP significantly outperforms both vision-only and hierarchical baselines, achieving superior reactivity and success rates with a streamlined training pipeline. Code and videos will be publicly available at https://implicit-rdp.github.io.",
-    "titleJa": "ImplicitRDP：構造的スロー・ファスト学習を用いたエンドツーエンドの視覚・力覚拡散ポリシー",
-    "summaryJa": "ImplicitRDPは、視覚と力覚を統合した拡散ポリシー。構造的スロー・ファスト学習で非同期な情報を処理し、仮想ターゲット正則化で性能を向上させます。",
-    "explanationJa": "この研究は、ロボットが視覚と力覚を使ってより複雑な作業をこなせるようにする新しい技術を提案しています。",
-    "translationJa": "人間レベルの接触を伴うマニピュレーションは、2つの重要なモダリティの明確な役割に依存しています。視覚は空間的に豊かですが時間的に遅いグローバルなコンテキストを提供し、力覚センシングは迅速で高周波なローカルな接触ダイナミクスを捉えます。これらの信号を統合することは、それらの基本的な周波数と情報的な隔たりのために困難です。本研究では、単一のネットワーク内で視覚的プランニングと反応的な力制御を統合する、統一されたエンドツーエンドの視覚・力覚拡散ポリシーであるImplicitRDPを提案します。私たちは、構造的スロー・ファスト学習を導入します。これは、因果的注意を利用して非同期の視覚および力覚トークンを同時に処理するメカニズムであり、ポリシーがアクションチャンクの時間的コヒーレンスを維持しながら、力覚の周波数で閉ループ調整を実行できるようにします。さらに、エンドツーエンドモデルが異なるモダリティ間で重みを調整できないモダリティの崩壊を軽減するために、仮想ターゲットベースの表現正則化を提案します。この補助的な目的は、力フィードバックをアクションと同じ空間にマッピングし、生の力予測よりも強力で物理的に根拠のある学習信号を提供します。接触を伴うタスクに関する広範な実験は、ImplicitRDPがビジョンのみのベースラインと階層的ベースラインの両方を大幅に上回り、合理化されたトレーニングパイプラインで優れた反応性と成功率を達成することを示しています。コードと動画はhttps://implicit-rdp.github.ioで公開される予定です。",
-    "insightJa": "この技術が発展すれば、ロボットによる精密作業や、人間とロボットが協力して行う作業がより安全かつ効率的になる可能性があります。製造業や介護の現場など、幅広い分野への応用が期待されます。",
+    "titleJa": "ImplicitRDP：構造的遅速学習を用いたエンドツーエンドの視覚-力覚拡散ポリシー",
+    "summaryJa": "ImplicitRDPは、視覚と力覚を統合した拡散ポリシー。構造的遅速学習と表現正則化で、高頻度な力覚制御と行動の一貫性を両立し、接触作業で優れた性能を発揮。",
+    "explanationJa": "この研究は、ロボットが視覚と力覚を同時に利用して、より複雑な作業を上手に行えるようにする技術に関するものです。",
+    "translationJa": "人間レベルの接触を伴うマニピュレーションは、2つの主要なモダリティの明確な役割に依存しています。視覚は空間的に豊かですが時間的に遅いグローバルなコンテキストを提供し、力覚センシングは高速で高頻度のローカルな接触ダイナミクスを捉えます。これらの信号を統合することは、それらの基本的な周波数と情報的な乖離のために困難です。本研究では、単一のネットワーク内で視覚的計画と反応的な力制御を統合する、統一されたエンドツーエンドの視覚-力覚拡散ポリシーであるImplicitRDPを提案します。構造的遅速学習というメカニズムを導入し、因果的注意を利用して非同期の視覚および力覚トークンを同時に処理することで、ポリシーが力の周波数でクローズドループ調整を実行しながら、アクションチャンクの時間的な一貫性を維持できるようにします。さらに、エンドツーエンドモデルが異なるモダリティ間で重みを調整できないモダリティ崩壊を軽減するために、仮想ターゲットベースの表現正則化を提案します。この補助的な目的は、力フィードバックをアクションと同じ空間にマッピングし、生の力予測よりも強力で物理的に根拠のある学習信号を提供します。接触を伴うタスクに関する広範な実験により、ImplicitRDPは視覚のみのベースラインと階層的なベースラインの両方を大幅に上回り、合理化されたトレーニングパイプラインで優れた反応性と成功率を達成することが実証されています。コードとビデオは、https://implicit-rdp.github.io で公開されます。",
+    "insightJa": "この技術により、ロボットはより繊細な作業や、微妙な力加減が必要な作業が得意になるでしょう。製造業や医療現場など、様々な分野での自動化が期待されます。",
     "recommendedBooks": [
       "ロボット工学",
       "強化学習",
-      "コンピュータビジョン"
+      "機械学習 実践"
     ],
     "tags": [
-      "Robotics",
       "Diffusion Policy",
-      "Force Control",
-      "Vision",
+      "Robotics",
+      "Force Sensing",
+      "Visual Control",
       "Machine Learning"
     ],
     "imageUrl": "https://images.pexels.com/photos/35147161/pexels-photo-35147161.jpeg?auto=compress&cs=tinysrgb&h=350"
@@ -212,24 +212,24 @@
     "author": "Wendi Chen",
     "category": "Science",
     "originalContent": "Human-level contact-rich manipulation relies on the distinct roles of two key modalities: vision provides spatially rich but temporally slow global context, while force sensing captures rapid, high-frequency local contact dynamics. Integrating these signals is challenging due to their fundamental frequency and informational disparities. In this work, we propose ImplicitRDP, a unified end-to-end visual-force diffusion policy that integrates visual planning and reactive force control within a single network. We introduce Structural Slow-Fast Learning, a mechanism utilizing causal attention to simultaneously process asynchronous visual and force tokens, allowing the policy to perform closed-loop adjustments at the force frequency while maintaining the temporal coherence of action chunks. Furthermore, to mitigate modality collapse where end-to-end models fail to adjust the weights across different modalities, we propose Virtual-target-based Representation Regularization. This auxiliary objective maps force feedback into the same space as the action, providing a stronger, physics-grounded learning signal than raw force prediction. Extensive experiments on contact-rich tasks demonstrate that ImplicitRDP significantly outperforms both vision-only and hierarchical baselines, achieving superior reactivity and success rates with a streamlined training pipeline. Code and videos will be publicly available at https://implicit-rdp.github.io.",
-    "titleJa": "ImplicitRDP：構造的な遅速学習によるエンドツーエンドの視覚-力覚拡散ポリシー",
-    "summaryJa": "ImplicitRDPは、視覚と力覚を統合した拡散ポリシー。構造的な遅速学習と表現正則化により、接触を伴う操作タスクで優れた性能を発揮。",
-    "explanationJa": "視覚と力覚を同時に処理する新しいAI技術で、ロボットがより器用に作業できるようになります。",
-    "translationJa": "人間レベルの接触を伴う操作は、2つの重要なモダリティの役割に依存しています。視覚は空間的に豊富ですが時間的に遅いグローバルコンテキストを提供し、力覚センシングは高速で高頻度のローカルな接触ダイナミクスを捉えます。これらの信号を統合することは、それらの根本的な周波数と情報量の違いのために困難です。本研究では、視覚計画と反応的な力制御を単一のネットワークに統合する、統一されたエンドツーエンドの視覚-力覚拡散ポリシーであるImplicitRDPを提案します。我々は、因果的な注意を用いて非同期の視覚および力覚トークンを同時に処理し、ポリシーがアクションチャンクの時間的なコヒーレンスを維持しながら、力覚周波数で閉ループ調整を実行できるようにする、構造的な遅速学習というメカニズムを導入します。さらに、エンドツーエンドモデルが異なるモダリティ間で重みを調整できないモダリティ崩壊を緩和するために、仮想ターゲットベースの表現正則化を提案します。この補助的な目的関数は、力覚フィードバックを行動と同じ空間にマッピングし、生の力覚予測よりも強力で、物理的に接地された学習信号を提供します。接触を伴うタスクに関する広範な実験により、ImplicitRDPは、視覚のみのベースラインと階層的なベースラインの両方を大幅に上回り、合理化されたトレーニングパイプラインで優れた反応性と成功率を達成することが示されています。",
-    "insightJa": "この技術は、製造業や医療現場でのロボットの活用を促進し、より複雑で繊細な作業を自動化する可能性を秘めています。また、リハビリテーション支援など、日常生活をサポートするロボットの開発にも貢献すると考えられます。",
+    "titleJa": "ImplicitRDP: 構造的遅延・高速学習を用いたエンドツーエンドの視覚-力覚拡散ポリシー",
+    "summaryJa": "ImplicitRDPは、視覚と力覚を統合した拡散ポリシー。構造的遅延・高速学習と表現正則化により、高精度な接触動作制御を実現します。",
+    "explanationJa": "この研究は、ロボットが視覚と触覚を使って、より器用に作業ができるようになる技術を開発したものです。",
+    "translationJa": "人間レベルの接触を伴う操作は、2つの重要なモダリティの明確な役割に依存しています。視覚は空間的に豊富ですが時間的に遅いグローバルなコンテキストを提供し、力覚センシングは高速で高頻度のローカルな接触ダイナミクスを捉えます。これらの信号を統合することは、その基本的な周波数と情報的な違いにより困難です。本研究では、視覚計画と反応的な力制御を単一のネットワークに統合した、統一されたエンドツーエンドの視覚-力覚拡散ポリシーであるImplicitRDPを提案します。我々は、因果的注意を利用して非同期の視覚および力覚トークンを同時に処理するメカニズムである構造的遅延・高速学習を導入し、これによりポリシーはアクションチャンクの時間的コヒーレンスを維持しながら、力覚周波数で閉ループ調整を実行できます。さらに、エンドツーエンドモデルが異なるモダリティ間で重みを調整できないモダリティ崩壊を軽減するために、仮想ターゲットベースの表現正則化を提案します。この補助的な目的は、力覚フィードバックをアクションと同じ空間にマッピングし、生の力予測よりも強力で物理的に根拠のある学習信号を提供します。接触を伴うタスクに関する広範な実験により、ImplicitRDPは視覚のみのベースラインと階層型ベースラインの両方を大幅に上回り、合理化されたトレーニングパイプラインで優れた反応性と成功率を達成することが示されています。コードとビデオは、https://implicit-rdp.github.io で公開される予定です。",
+    "insightJa": "この技術は、ロボットによる精密な組み立て作業や、介護ロボットが人の体に触れる際の力加減の調整など、様々な分野での応用が期待されます。より安全で効率的なロボットの実現に貢献する可能性があります。",
     "recommendedBooks": [
-      "ロボット工学 基礎",
-      "強化学習 実践",
-      "触覚センサ 応用"
+      "ロボット工学",
+      "触覚センサ",
+      "強化学習"
     ],
     "tags": [
-      "Robotics",
-      "Diffusion Policy",
-      "Force Sensing",
-      "Visual Learning",
-      "ImplicitRDP"
+      "diffusion policy",
+      "visual-force",
+      "robotics",
+      "slow-fast learning",
+      "contact-rich manipulation"
     ],
-    "imageUrl": "https://images.pexels.com/photos/35147161/pexels-photo-35147161.jpeg?auto=compress&cs=tinysrgb&h=350"
+    "imageUrl": "https://images.pexels.com/photos/9668535/pexels-photo-9668535.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     "id": "http://arxiv.org/abs/2512.10943v1",
@@ -241,24 +241,24 @@
     "author": "Sharath Girish",
     "category": "AI",
     "originalContent": "Recent advances in subject-driven video generation with large diffusion models have enabled personalized content synthesis conditioned on user-provided subjects. However, existing methods lack fine-grained temporal control over subject appearance and disappearance, which are essential for applications such as compositional video synthesis, storyboarding, and controllable animation. We propose AlcheMinT, a unified framework that introduces explicit timestamps conditioning for subject-driven video generation. Our approach introduces a novel positional encoding mechanism that unlocks the encoding of temporal intervals, associated in our case with subject identities, while seamlessly integrating with the pretrained video generation model positional embeddings. Additionally, we incorporate subject-descriptive text tokens to strengthen binding between visual identity and video captions, mitigating ambiguity during generation. Through token-wise concatenation, AlcheMinT avoids any additional cross-attention modules and incurs negligible parameter overhead. We establish a benchmark evaluating multiple subject identity preservation, video fidelity, and temporal adherence. Experimental results demonstrate that AlcheMinT achieves visual quality matching state-of-the-art video personalization methods, while, for the first time, enabling precise temporal control over multi-subject generation within videos. Project page is at https://snap-research.github.io/Video-AlcheMinT",
-    "titleJa": "AlcheMinT：マルチ参照一貫性ビデオ生成のための高精度な時間制御",
-    "summaryJa": "AlcheMinTは、被写体の時間的出現を制御可能な動画生成フレームワーク。時間情報を明示的に条件付け、高品質な動画生成と時間制御を実現。",
-    "explanationJa": "AlcheMinTは、動画中の人物や物の現れ方を細かく調整できる新しい技術です。",
-    "translationJa": "大規模拡散モデルを用いた被写体駆動型ビデオ生成の最近の進歩により、ユーザーが提供した被写体に基づいてパーソナライズされたコンテンツ合成が可能になりました。しかし、既存の手法では、被写体の出現と消失に対する高精度な時間的制御が不足しており、これは、構成的なビデオ合成、ストーリーボード、制御可能なアニメーションなどのアプリケーションに不可欠です。我々は、被写体駆動型ビデオ生成のための明示的なタイムスタンプ条件付けを導入する統一フレームワークであるAlcheMinTを提案します。我々のアプローチは、時間的間隔のエンコーディングを可能にする新しい位置エンコーディングメカニズムを導入します。この場合、時間的間隔は被写体のアイデンティティに関連付けられ、事前学習されたビデオ生成モデルの位置埋め込みとシームレスに統合されます。さらに、視覚的なアイデンティティとビデオキャプションの間の結合を強化し、生成中の曖昧さを軽減するために、被写体を説明するテキストトークンを組み込みます。トークンごとの連結を通じて、AlcheMinTは追加のクロスアテンションモジュールを回避し、ごくわずかなパラメータオーバーヘッドしか発生しません。我々は、複数の被写体のアイデンティティの維持、ビデオの忠実度、時間的整合性を評価するベンチマークを確立します。実験結果は、AlcheMinTが最先端のビデオパーソナライゼーション手法に匹敵する視覚的品質を達成すると同時に、ビデオ内でのマルチ被写体生成に対する正確な時間制御を初めて可能にすることを示しています。",
-    "insightJa": "AlcheMinTのような技術は、広告や教育コンテンツの制作をより手軽にし、クリエイターがより自由な発想で映像作品を作れるようにする可能性があります。また、個人的なビデオメッセージの作成など、ビジネス以外の場面でも活用が期待されます。",
+    "titleJa": "AlcheMinT：マルチ参照整合性ビデオ生成のための高精度な時間制御",
+    "summaryJa": "AlcheMinTは、時間情報を明示的に条件付けし、被写体の出現・消失を高精度に制御するビデオ生成フレームワークです。",
+    "explanationJa": "AlcheMinTは、ビデオ内の被写体の出現タイミングを細かく制御できる新しい技術です。",
+    "translationJa": "大規模拡散モデルを用いた被写体駆動型ビデオ生成の最近の進歩により、ユーザーが提供した被写体に基づいてパーソナライズされたコンテンツ合成が可能になりました。しかし、既存の方法では、被写体の外観と消失を時間的に細かく制御することができず、これは、構成的なビデオ合成、ストーリーボード、制御可能なアニメーションなどのアプリケーションにとって不可欠です。我々は、被写体駆動型ビデオ生成のための明示的なタイムスタンプ条件付けを導入する統一フレームワークであるAlcheMinTを提案します。我々のアプローチは、時間間隔のエンコーディングを可能にする新しい位置エンコーディングメカニズムを導入します。この時間間隔は、このケースでは被写体のアイデンティティに関連付けられており、事前学習済みのビデオ生成モデルの位置埋め込みとシームレスに統合されます。さらに、視覚的なアイデンティティとビデオキャプションの間の結びつきを強化するために、被写体を記述するテキストトークンを組み込み、生成中のあいまいさを軽減します。トークン単位の連結により、AlcheMinTは追加のクロスアテンションモジュールを必要とせず、無視できる程度のパラメータオーバーヘッドしか発生しません。我々は、複数の被写体のアイデンティティの保持、ビデオの忠実度、および時間的な遵守を評価するベンチマークを確立します。実験結果は、AlcheMinTが最先端のビデオパーソナライゼーション手法に匹敵する視覚的品質を達成すると同時に、ビデオ内でのマルチ被写体生成に対する正確な時間的制御を初めて可能にすることを示しています。",
+    "insightJa": "この技術により、広告や教育コンテンツなど、ビデオ制作における表現の自由度と効率が向上することが期待されます。また、個人の趣味や創造性を活かした新しいコンテンツの可能性も広がります。",
     "recommendedBooks": [
-      "動画生成AI",
-      "拡散モデル入門",
-      "コンピュータビジョン 最先端"
+      "画像生成AI",
+      "動画編集 基礎",
+      "コンテンツ制作 入門"
     ],
     "tags": [
-      "video generation",
-      "diffusion models",
-      "temporal control",
+      "Video Generation",
+      "Diffusion Model",
+      "Temporal Control",
       "AI",
-      "AlcheMinT"
+      "動画生成"
     ],
-    "imageUrl": "https://images.pexels.com/photos/4904473/pexels-photo-4904473.jpeg?auto=compress&cs=tinysrgb&h=350"
+    "imageUrl": "https://images.pexels.com/photos/4904563/pexels-photo-4904563.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     "id": "http://arxiv.org/abs/2512.10938v1",
@@ -270,24 +270,24 @@
     "author": "Mingzhi Chen",
     "category": "Science",
     "originalContent": "Although normalization layers have long been viewed as indispensable components of deep learning architectures, the recent introduction of Dynamic Tanh (DyT) has demonstrated that alternatives are possible. The point-wise function DyT constrains extreme values for stable convergence and reaches normalization-level performance; this work seeks further for function designs that can surpass it. We first study how the intrinsic properties of point-wise functions influence training and performance. Building on these findings, we conduct a large-scale search for a more effective function design. Through this exploration, we introduce $\\mathrm{Derf}(x) = \\mathrm{erf}(αx + s)$, where $\\mathrm{erf}(x)$ is the rescaled Gaussian cumulative distribution function, and identify it as the most performant design. Derf outperforms LayerNorm, RMSNorm, and DyT across a wide range of domains, including vision (image recognition and generation), speech representation, and DNA sequence modeling. Our findings suggest that the performance gains of Derf largely stem from its improved generalization rather than stronger fitting capacity. Its simplicity and stronger performance make Derf a practical choice for normalization-free Transformer architectures.",
-    "titleJa": "より強力な正規化不要トランスフォーマー",
-    "summaryJa": "正規化層に代わる新しい活性化関数Derf（ダーフ）が開発されました。これはDynamic Tanh (DyT)や既存のLayerNormなどを上回り、画像認識、音声、DNAシーケンスモデリングなど幅広い分野で高い汎化性能を示し、正規化不要なトランスフォーマー設計を可能にします。",
-    "explanationJa": "トランスフォーマーモデルの安定化に不可欠とされてきた正規化層を使わずに、高い性能を達成できる新しいシンプルな数式（Derf）が提案されました。",
-    "translationJa": "正規化層は長きにわたり、深層学習アーキテクチャに不可欠な要素と見なされてきましたが、最近導入されたDynamic Tanh（DyT）は、代替案が可能であることを示しました。点ごとの関数であるDyTは、安定した収束のために極端な値を制約し、正規化と同レベルの性能に達します。本研究は、さらにそれを超えることができる関数設計を追求するものです。\n\nまず、点ごとの関数の固有の特性が、学習と性能にどのように影響するかを調査しました。これらの知見に基づき、より効果的な関数設計を大規模に探索しました。この探求を通じて、「Derf（x）= erf（αx + s）」という形式を導入し、ここで「erf（x）」はリスケーリングされたガウス累積分布関数ですが、これをDerfとして導入し、最も高い性能を持つ設計として特定しました。\n\nDerfは、ビジョン（画像認識と生成）、音声表現、DNAシーケンスモデリングなど、幅広いドメインでLayerNorm、RMSNorm、およびDyTを上回る性能を発揮します。我々の知見は、Derfの性能向上が、より強力な適合能力ではなく、主に改善された汎化能力に起因することを示唆しています。そのシンプルさと強力な性能により、Derfは正規化不要のトランスフォーマーアーキテクチャにとって実用的な選択肢となります。",
-    "insightJa": "正規化層を不要にすることで、AIモデルの訓練速度の向上や、計算資源の節約につながります。特にモバイルやエッジデバイス上で動作する、より高速で小型高性能なトランスフォーマーモデルの開発を加速させることが期待されます。",
+    "titleJa": "より強力な正規化不要のトランスフォーマー",
+    "summaryJa": "正規化層に代わる新しい点単位関数Derfが導入され、DyTやLayerNormなどの既存手法を凌駕する性能を示しました。Derfは高い汎化能力により、画像認識、音声処理、DNAモデリングなど幅広いAI分野で実用的な選択肢となります。",
+    "explanationJa": "AIの学習を安定させるために従来不可欠とされた「正規化」の仕組みを使わずに、より高性能を発揮する新しい計算方法（Derf）が開発されました。",
+    "translationJa": "正規化層は、これまで深層学習アーキテクチャに不可欠な要素と見なされてきましたが、最近導入されたDynamic Tanh (DyT) によって、代替手段が可能であることが示されました。点単位関数であるDyTは、安定した収束のために極端な値を抑制し、正規化と同等の性能を達成します。本研究では、さらにそれを超える関数設計を追求しました。\nまず、点単位関数が持つ固有の特性が、訓練と性能にどのように影響するかを調査しました。この知見に基づき、より効果的な関数設計を求めて大規模な探索を実施しました。この探索を通じて、我々はDerfを導入しました。これは、erf(x)（再スケールされたガウス累積分布関数）に基づいた関数で、最も高性能な設計として特定されました。Derfは、画像認識や生成を含むビジョン、音声表現、DNA配列モデリングといった幅広い領域において、LayerNorm、RMSNorm、およびDyTを凌駕する性能を発揮します。我々の発見は、Derfの性能向上が、より強力な適合能力ではなく、主にその汎化能力の改善に起因することを示唆しています。そのシンプルさと高い性能により、Derfは正規化不要のトランスフォーマー・アーキテクチャにとって実用的な選択肢となります。",
+    "insightJa": "正規化が不要になることで、AIモデルの設計が単純化され、計算効率が向上する可能性があります。これにより、特にエッジデバイスやリアルタイム処理が必要な分野でのAIの応答速度や省電力化が進むと期待されます。",
     "recommendedBooks": [
-      "トランスフォーマーモデル",
-      "深層学習 基礎",
-      "ニューラルネットワーク 活性化関数"
+      "トランスフォーマー モデル 入門",
+      "深層学習 基礎 理論",
+      "ニューラルネットワーク 数理"
     ],
     "tags": [
+      "Deep Learning",
       "Transformer",
       "Normalization-Free",
-      "Deep Learning",
-      "Derf",
-      "Activation Function"
+      "AI Architecture",
+      "Machine Learning"
     ],
-    "imageUrl": "https://images.pexels.com/photos/247851/pexels-photo-247851.jpeg?auto=compress&cs=tinysrgb&h=350"
+    "imageUrl": "https://images.pexels.com/photos/30869076/pexels-photo-30869076.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     "id": "http://arxiv.org/abs/2512.10937v1",
@@ -300,23 +300,23 @@
     "category": "Science",
     "originalContent": "We establish a precise correspondence between decision-making agents in partially observable Markov decision processes (POMDPs) and one-input process functions, the classical limit of higher-order quantum operations. In this identification an agent's policy and memory update combine into a process function w that interacts with a POMDP environment via the link product. This suggests a dual interpretation: in the physics view, the process function acts as the environment into which local operations (agent interventions) are inserted, whereas in the AI view it encodes the agent and the inserted functions represent environments. We extend this perspective to multi-agent systems by identifying observation-independent decentralized POMDPs as natural domains for multi-input process functions.",
     "titleJa": "意思決定エージェントと高階因果過程について",
-    "summaryJa": "部分観測マルコフ決定過程（POMDP）における意思決定エージェントと高階量子演算の古典的限界との間の対応関係を確立します。",
-    "explanationJa": "この研究は、AIエージェントの意思決定プロセスを、物理学における高階因果過程として捉える新しい視点を提供するものです。",
-    "translationJa": "部分観測マルコフ決定過程（POMDP）における意思決定エージェントと、高階量子演算の古典的限界である単一入力プロセス関数との間に、正確な対応関係を確立します。この同一視において、エージェントのポリシーとメモリ更新は、リンク積を介してPOMDP環境と相互作用するプロセス関数wに統合されます。これは二重の解釈を示唆します。物理学の視点では、プロセス関数はローカル操作（エージェントの介入）が挿入される環境として機能し、AIの視点では、エージェントをエンコードし、挿入された関数は環境を表します。この視点を多入力プロセス関数の自然なドメインとして、観測に依存しない分散型POMDPを特定することにより、マルチエージェントシステムに拡張します。",
-    "insightJa": "この研究成果は、AIの意思決定メカニズムの理解を深め、より高度なAIシステムの設計に役立つ可能性があります。また、ビジネスにおいては、より複雑な状況に対応できる意思決定支援システムの開発につながるかもしれません。",
+    "summaryJa": "部分観測マルコフ決定過程(POMDP)における意思決定エージェントと高階量子演算の古典的極限であるプロセス関数との対応関係を確立。エージェントのポリシーとメモリ更新が組み合わさりプロセス関数となる。",
+    "explanationJa": "意思決定エージェントと物理学におけるプロセス関数は深く関係しており、人工知能と物理学を結びつける研究です。",
+    "translationJa": "部分観測マルコフ決定過程(POMDP)における意思決定エージェントと、高階量子演算の古典的極限である単一入力プロセス関数との間に、厳密な対応関係を確立します。この同一視において、エージェントのポリシーとメモリ更新は、リンク積を介してPOMDP環境と相互作用するプロセス関数wに組み合わされます。これは二重の解釈を示唆します。物理学の視点では、プロセス関数は局所的な操作（エージェントの介入）が挿入される環境として機能し、AIの視点では、それはエージェントをエンコードし、挿入された関数は環境を表します。この視点を、観測に依存しない分散型POMDPを多入力プロセス関数の自然な領域として識別することにより、マルチエージェントシステムに拡張します。",
+    "insightJa": "この研究は、AIエージェントの設計を物理学の視点から捉える可能性を示唆しています。より高度なAIの開発や、複雑なシステムにおける意思決定の最適化に貢献するかもしれません。",
     "recommendedBooks": [
       "強化学習",
       "マルコフ決定過程",
-      "人工知能 意思決定"
+      "量子情報科学"
     ],
     "tags": [
       "POMDP",
-      "Decision-Making",
-      "AI",
-      "Causal Processes",
-      "Multi-Agent Systems"
+      "Decision-Making Agent",
+      "Process Function",
+      "Reinforcement Learning",
+      "Causal Inference"
     ],
-    "imageUrl": "https://images.pexels.com/photos/7433862/pexels-photo-7433862.jpeg?auto=compress&cs=tinysrgb&h=350"
+    "imageUrl": "https://images.pexels.com/photos/8293674/pexels-photo-8293674.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     "id": "http://arxiv.org/abs/2512.10929v1",
@@ -329,23 +329,23 @@
     "category": "Science",
     "originalContent": "We develop a framework for learning from noisy quantum experiments, focusing on fault-tolerant devices accessing uncharacterized systems through noisy couplings. Our starting point is the complexity class $\\textsf{NBQP}$ (\"noisy BQP\"), modeling noisy fault-tolerant quantum computers that cannot, in general, error-correct the oracle systems they query. Using this class, we show that for natural oracle problems, noise can eliminate exponential quantum learning advantages of ideal noiseless learners while preserving a superpolynomial gap between NISQ and fault-tolerant devices. Beyond oracle separations, we study concrete noisy learning tasks. For purity testing, the exponential two-copy advantage collapses under a single application of local depolarizing noise. Nevertheless, we identify a setting motivated by AdS/CFT in which noise-resilient structure restores a quantum learning advantage in a noisy regime. We then analyze noisy Pauli shadow tomography, deriving lower bounds that characterize how instance size, quantum memory, and noise control sample complexity, and design algorithms with parametrically similar scalings. Together, our results show that the Bell-basis and SWAP-test primitives underlying most exponential quantum learning advantages are fundamentally fragile to noise unless the experimental system has latent noise-robust structure. Thus, realizing meaningful quantum advantages in future experiments will require understanding how noise-robust physical properties interface with available algorithmic techniques.",
     "titleJa": "ノイズのある量子学習理論",
-    "summaryJa": "ノイズのある量子実験からの学習フレームワークを開発。ノイズが量子学習の優位性を損なう一方、特定の状況下ではノイズ耐性構造が優位性を回復。ノイズ耐性の重要性を示唆。",
-    "explanationJa": "本研究は、量子コンピュータにおけるノイズが学習に与える影響を分析し、その克服方法を探るものです。",
-    "translationJa": "本稿では、ノイズのある量子実験から学習するためのフレームワークを開発します。その際、耐故障性のあるデバイスが、ノイズのある結合を通じて特性が明確でないシステムにアクセスすることに焦点を当てます。我々の出発点は、複雑性クラス $\\textsf{NBQP}$ （「ノイズのあるBQP」）であり、これは、クエリするオラクルシステムを一般的にエラー訂正できない、ノイズのある耐故障性量子コンピュータをモデル化したものです。このクラスを用いて、自然なオラクル問題に対して、ノイズが理想的なノイズレス学習者の指数関数的な量子学習の利点を排除する一方で、NISQデバイスと耐故障性デバイスの間に超多項式的なギャップを維持できることを示します。オラクルの分離を超えて、具体的なノイズのある学習タスクを研究します。純度テストでは、指数関数的な2コピーの利点は、局所的なデポラライジングノイズの単一の適用下で崩壊します。それにもかかわらず、AdS/CFTに動機付けられた設定を特定し、その設定では、ノイズに強い構造がノイズのある領域で量子学習の利点を回復させます。次に、ノイズのあるPauliシャドウトモグラフィーを分析し、インスタンスサイズ、量子メモリ、およびノイズがサンプル複雑性にどのように影響するかを特徴づける下限を導出し、パラメータ的に類似したスケーリングを持つアルゴリズムを設計します。これらの結果を総合すると、ほとんどの指数関数的な量子学習の利点の基礎となるベル基底とSWAPテストのプリミティブは、実験システムに潜在的なノイズに強い構造がない限り、ノイズに対して根本的に脆弱であることがわかります。したがって、将来の実験で意味のある量子的な利点を実現するには、ノイズに強い物理的特性が利用可能なアルゴリズム技術とどのように連携するかを理解する必要があります。",
-    "insightJa": "量子コンピュータのノイズ問題は、実用化への大きな課題です。本研究は、ノイズに強い設計の重要性を示しており、今後の量子コンピュータ開発や関連ビジネスに影響を与える可能性があります。",
+    "summaryJa": "ノイズのある量子実験からの学習枠組みを開発。ノイズは量子学習の優位性を失わせる可能性があるが、特定の構造下では優位性が回復することも。ノイズに強い構造が重要。",
+    "explanationJa": "量子コンピュータの学習において、ノイズが性能に与える影響を研究し、ノイズに強い構造が重要になるというお話です。",
+    "translationJa": "本稿では、ノイズのある量子実験からの学習のための枠組みを開発します。焦点は、ノイズのある結合を通して特性評価されていないシステムにアクセスする、フォールトトレラントなデバイスです。我々の出発点は、$\textsf{NBQP}$（「ノイズのあるBQP」）という複雑性クラスであり、これは、一般に、クエリするオラクルシステムの誤りを訂正できない、ノイズのあるフォールトトレラントな量子コンピュータをモデル化します。このクラスを用いて、自然なオラクル問題に対して、ノイズが理想的なノイズレス学習者の指数関数的な量子学習の利点を排除する一方で、NISQとフォールトトレラントなデバイス間の超多項式的なギャップを保持できることを示します。オラクル分離を超えて、具体的なノイズのある学習タスクを研究します。純度テストでは、指数関数的な2コピーの利点は、局所的な非偏光ノイズの1回の適用で崩壊します。それにもかかわらず、AdS/CFTに動機付けられた設定で、ノイズに強い構造がノイズのある体制で量子学習の利点を回復させることを特定します。次に、ノイズのあるPauliシャドウトモグラフィーを分析し、インスタンスサイズ、量子メモリ、およびノイズがサンプル複雑性にどのように影響するかを特徴付ける下限を導き出し、パラメータ的に同様のスケーリングを持つアルゴリズムを設計します。まとめると、我々の結果は、ほとんどの指数関数的な量子学習の利点の基礎となるBell基底とSWAPテストのプリミティブが、実験システムに潜在的なノイズに強い構造がない限り、ノイズに対して根本的に脆弱であることを示しています。したがって、将来の実験で意味のある量子的な利点を実現するには、ノイズに強い物理的特性が利用可能なアルゴリズム技術とどのようにインターフェースするかを理解する必要があります。",
+    "insightJa": "量子コンピュータの発展には、ノイズ対策が不可欠であることがわかります。ノイズに強いアルゴリズムやハードウェアの開発が進むことで、より実用的な量子コンピュータが実現し、創薬や金融などの分野に大きな影響を与える可能性があります。",
     "recommendedBooks": [
       "量子コンピュータ入門",
       "量子機械学習",
       "ノイズ耐性 量子計算"
     ],
     "tags": [
-      "Quantum Computing",
-      "Machine Learning",
-      "Noise",
-      "Fault Tolerance",
-      "Quantum Advantage"
+      "quantum computing",
+      "noisy quantum",
+      "quantum learning",
+      "fault tolerance",
+      "NISQ"
     ],
-    "imageUrl": "https://images.pexels.com/photos/30901567/pexels-photo-30901567.jpeg?auto=compress&cs=tinysrgb&h=350"
+    "imageUrl": "https://images.pexels.com/photos/25626435/pexels-photo-25626435.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     "id": "http://arxiv.org/abs/2512.10926v1",
@@ -358,21 +358,21 @@
     "category": "Science",
     "originalContent": "Temporal-difference (TD) methods learn state and action values efficiently by bootstrapping from their own future value predictions, but such a self-bootstrapping mechanism is prone to bootstrapping bias, where the errors in the value targets accumulate across steps and result in biased value estimates. Recent work has proposed to use chunked critics, which estimate the value of short action sequences (\"chunks\") rather than individual actions, speeding up value backup. However, extracting policies from chunked critics is challenging: policies must output the entire action chunk open-loop, which can be sub-optimal for environments that require policy reactivity and also challenging to model especially when the chunk length grows. Our key insight is to decouple the chunk length of the critic from that of the policy, allowing the policy to operate over shorter action chunks. We propose a novel algorithm that achieves this by optimizing the policy against a distilled critic for partial action chunks, constructed by optimistically backing up from the original chunked critic to approximate the maximum value achievable when a partial action chunk is extended to a complete one. This design retains the benefits of multi-step value propagation while sidestepping both the open-loop sub-optimality and the difficulty of learning action chunking policies for long action chunks. We evaluate our method on challenging, long-horizon offline goal-conditioned tasks and show that it reliably outperforms prior methods. Code: github.com/ColinQiyangLi/dqc.",
     "titleJa": "分離型Qチャンキング",
-    "summaryJa": "TD法は効率的な学習を行うがバイアスが生じやすい。本研究では、行動系列（チャンク）の価値を推定する新しい手法を提案し、より短いチャンクでの方策最適化を可能にする。",
-    "explanationJa": "この研究は、より効率的なAI学習のために、行動のまとまりを分けて考える新しい方法を提案しています。",
-    "translationJa": "時間差分（TD）法は、自身の将来の価値予測からブートストラップすることにより、状態と行動の価値を効率的に学習しますが、このような自己ブートストラップメカニズムはブートストラップバイアスを受けやすく、価値ターゲットの誤差がステップを越えて蓄積し、偏った価値推定につながります。最近の研究では、個々のアクションではなく、短いアクションシーケンス（「チャンク」）の価値を推定するチャンク化された批評家を使用することが提案されており、価値のバックアップが高速化されています。ただし、チャンク化された批評家からポリシーを抽出するのは困難です。ポリシーは、完全なアクションチャンクをオープンループで出力する必要があり、これはポリシーの反応性を必要とする環境では最適ではない可能性があり、特にチャンク長が長くなるにつれてモデル化が困難になります。私たちの重要な洞察は、批評家のチャンク長をポリシーのチャンク長から分離し、ポリシーがより短いアクションチャンクで動作できるようにすることです。部分的なアクションチャンクに対して、元のチャンク化された批評家から楽観的にバックアップすることにより、完全なものに拡張された場合に達成可能な最大値を近似することによって構築された、蒸留された批評家に対してポリシーを最適化することにより、これを実現する新しいアルゴリズムを提案します。この設計により、複数ステップの価値伝播の利点を保持しながら、オープンループの準最適性と、長いアクションチャンクの行動チャンク化ポリシーを学習する難しさの両方を回避できます。私たちは、困難で長期的なオフラインの目標条件付きタスクで私たちの方法を評価し、それが以前の方法よりも確実に優れていることを示します。",
-    "insightJa": "この技術が進歩することで、より複雑なタスクを効率的に学習できるようになり、ロボットやAIアシスタントが、より人間らしい判断や行動をできるようになる可能性があります。例えば、自動運転車の運転精度向上などに貢献するかもしれません。",
+    "summaryJa": "TD法は効率的だがバイアスが生じやすい。チャンク化されたcriticを使うことで価値のバックアップを高速化する。短い行動チャンクに対するポリシーを学習し、性能を向上させる。",
+    "explanationJa": "この研究は、より短い行動チャンクで動作するポリシーを学習することで、強化学習の性能を向上させる手法を提案しています。",
+    "translationJa": "時間差学習（TD）法は、自身の将来の価値予測からブートストラップすることで、状態と行動の価値を効率的に学習しますが、そのような自己ブートストラップ機構はブートストラップバイアスを受けやすく、価値ターゲットのエラーがステップを越えて蓄積し、偏った価値推定につながります。最近の研究では、個々の行動ではなく、短い行動シーケンス（「チャンク」）の価値を推定するチャンク化されたcriticを使用することが提案されており、価値のバックアップが高速化されます。しかし、チャンク化されたcriticからポリシーを抽出するのは困難です。ポリシーは行動チャンク全体をオープンループで出力する必要があり、これはポリシーの反応性を必要とする環境では最適ではなく、特にチャンクの長さが長くなる場合はモデル化が困難です。私たちの重要な洞察は、criticのチャンク長をポリシーのチャンク長から分離することであり、ポリシーがより短い行動チャンクで動作できるようにすることです。この目標を達成するために、元のチャンク化されたcriticから楽観的にバックアップすることによって構築された、部分的な行動チャンクに対する蒸留されたcriticに対してポリシーを最適化することにより、これを実現する新しいアルゴリズムを提案します。この設計により、複数ステップの価値伝播の利点を維持しながら、オープンループの亜最適性と、長い行動チャンクに対する行動チャンク化ポリシーの学習の難しさの両方を回避できます。私たちは、困難で長期的なオフラインの目標条件付きタスクで私たちの方法を評価し、それが以前の方法よりも確実に優れた性能を発揮することを示しています。",
+    "insightJa": "この研究は、ロボット制御や自動運転など、複雑な意思決定が必要な分野での応用が期待されます。より効率的な強化学習アルゴリズムの開発は、これらの分野の進歩を加速させる可能性があります。",
     "recommendedBooks": [
       "強化学習",
-      "深層学習",
-      "AI戦略"
+      "機械学習 アルゴリズム",
+      "ロボティクス"
     ],
     "tags": [
       "Reinforcement Learning",
-      "TD Learning",
-      "Bootstrapping Bias",
+      "Q-Learning",
+      "Temporal Difference Learning",
       "Chunking",
-      "Offline RL"
+      "Offline Learning"
     ],
     "imageUrl": "https://images.pexels.com/photos/8923698/pexels-photo-8923698.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
@@ -386,22 +386,22 @@
     "author": "Feras Al Taha",
     "category": "Science",
     "originalContent": "In this paper, we consider a class of finite-horizon, linear-quadratic stochastic control problems, where the probability distribution governing the noise process is unknown but assumed to belong to an ambiguity set consisting of all distributions whose mean and covariance lie within norm balls centered at given nominal values. To address the distributional ambiguity, we explore the design of causal affine control policies to minimize the worst-case expected regret over all distributions in the given ambiguity set. The resulting minimax optimal control problem is shown to admit an equivalent reformulation as a tractable convex program that corresponds to a regularized version of the nominal linear-quadratic stochastic control problem. While this convex program can be recast as a semidefinite program, semidefinite programs are typically solved using primal-dual interior point methods that scale poorly with the problem size in practice. To address this limitation, we propose a scalable dual projected subgradient method to compute optimal controllers to an arbitrary accuracy. Numerical experiments are presented to benchmark the proposed method against state-of-the-art data-driven and distributionally robust control design approaches.",
-    "titleJa": "モーメントに基づくあいまい集合における分布ロバストな後悔最小化制御",
-    "summaryJa": "本論文では、ノイズの確率分布が不明な、有限時間、線形二次確率制御問題を扱い、最悪ケースの期待後悔を最小化する制御政策を設計します。",
-    "explanationJa": "確率分布が不明な状況でも、最適な制御を行うための手法を研究しています。",
-    "translationJa": "本論文では、有限時間、線形二次確率制御問題の一種を考察します。ここでは、ノイズ過程を支配する確率分布は不明ですが、その平均と共分散が、与えられた基準値を中心とするノルム球内にあるすべての分布からなるあいまい集合に属すると仮定します。分布のあいまいさに対処するため、与えられたあいまい集合内のすべての分布に対する最悪ケースの期待後悔を最小化する因果的なアフィン制御政策の設計を探求します。その結果得られるミニマックス最適制御問題は、名目上の線形二次確率制御問題の正則化バージョンに対応する、扱いやすい凸計画問題として同等に再定式化できることが示されています。この凸計画問題は半正定値計画問題として再構築できますが、半正定値計画問題は通常、主双対内点法を使用して解かれ、実際には問題サイズに応じてスケーリングが悪くなります。この制限に対処するために、任意の精度で最適なコントローラーを計算するためのスケーラブルな双対射影サブ勾配法を提案します。提案された方法を最先端のデータ駆動型および分布ロバスト制御設計アプローチと比較するために、数値実験が提示されています。",
-    "insightJa": "この研究は、不確実な状況下でもロバストな制御システムを設計する上で重要です。例えば、自動運転車の制御や金融市場でのリスク管理など、幅広い分野での応用が期待されます。",
+    "titleJa": "モーメントに基づく曖昧集合下での分布ロバスト最適後悔制御",
+    "summaryJa": "本論文では、ノイズ分布が不明だが、平均と共分散が既知の範囲内にあると仮定し、最悪の場合の期待後悔を最小化する制御政策を設計する。",
+    "explanationJa": "ノイズのある状況でも、より安定した制御方法を研究することで、システムを安全に動かすことを目指します。",
+    "translationJa": "本論文では、有限期間の線形二次確率制御問題を考察します。この問題では、ノイズ過程を支配する確率分布は不明ですが、その平均と共分散が、与えられた基準値を中心とするノルム球内にあるすべての分布からなる曖昧集合に属すると仮定されます。分布の曖昧性に対処するため、与えられた曖昧集合内のすべての分布に対する最悪の場合の期待後悔を最小化する、因果的なアフィン制御政策の設計を探求します。結果として得られるミニマックス最適制御問題は、名目上の線形二次確率制御問題の正則化されたバージョンに対応する、扱いやすい凸計画問題として等価に再定式化できることが示されます。この凸計画は半正定値計画として再構成できますが、半正定値計画は通常、主双対内点法を用いて解かれ、実際には問題の規模に応じてスケーリングが悪くなります。この限界に対処するため、任意の精度で最適なコントローラーを計算するための、スケーラブルな双対射影サブ勾配法を提案します。提案された方法を、最先端のデータ駆動型および分布ロバスト制御設計アプローチと比較するために、数値実験を行います。",
+    "insightJa": "この研究は、不確実性の高い環境下での自動運転やロボット制御など、現実世界のさまざまなシステムにおいて、より安全で信頼性の高い制御を実現する可能性を秘めています。ビジネスにおいては、リスク管理の精度向上に役立つかもしれません。",
     "recommendedBooks": [
-      "確率制御",
-      "ロバスト最適化",
-      "機械学習 制御"
+      "制御工学",
+      "確率的最適化",
+      "ロバスト制御"
     ],
     "tags": [
       "Robust Control",
       "Stochastic Control",
       "Optimization",
-      "機械学習",
-      "制御理論"
+      "Distributionally Robust Optimization",
+      "Uncertainty"
     ],
     "imageUrl": "https://images.pexels.com/photos/35167527/pexels-photo-35167527.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
@@ -415,24 +415,82 @@
     "author": "Qitian Lu",
     "category": "Science",
     "originalContent": "Physics-informed polynomial chaos expansions (PC$^2$) provide an efficient physically constrained surrogate modeling framework by embedding governing equations and other physical constraints into the standard data-driven polynomial chaos expansions (PCE) and solving via the Karush-Kuhn-Tucker (KKT) conditions. This approach improves the physical interpretability of surrogate models while achieving high computational efficiency and accuracy. However, the performance and efficiency of PC$^2$ can still be degraded with high-dimensional parameter spaces, limited data availability, or unrepresentative training data. To address this problem, this study explores two complementary enhancements to the PC$^2$ framework. First, a numerically efficient constrained optimization solver, straightforward updating of Lagrange multipliers (SULM), is adopted as an alternative to the conventional KKT solver. The SULM method significantly reduces computational cost when solving physically constrained problems with high-dimensionality and derivative boundary conditions that require a large number of virtual points. Second, a D-optimal sampling strategy is utilized to select informative virtual points to improve the stability and achieve the balance of accuracy and efficiency of the PC$^2$. The proposed methods are integrated into the PC$^2$ framework and evaluated through numerical examples of representative physical systems governed by ordinary or partial differential equations. The results demonstrate that the enhanced PC$^2$ has better comprehensive capability than standard PC$^2$, and is well-suited for high-dimensional uncertainty quantification tasks.",
-    "titleJa": "制約付き最適化ソルバーとD最適サンプリングを強化した物理情報多項式カオス展開",
-    "summaryJa": "物理法則を組み込んだ多項式カオス展開(PC$^2$)を改良。高次元問題に対し、効率的なソルバーとD最適サンプリングを導入し、精度と安定性を向上。",
-    "explanationJa": "物理法則を考慮した数理モデルの精度を高める研究で、複雑な現象の予測に役立つ技術です。",
-    "translationJa": "物理情報多項式カオス展開（PC$^2$）は、支配方程式やその他の物理的制約を標準的なデータ駆動型多項式カオス展開（PCE）に組み込み、Karush-Kuhn-Tucker（KKT）条件を介して解くことで、効率的な物理的に制約されたサロゲートモデリングフレームワークを提供します。このアプローチは、高い計算効率と精度を達成しながら、サロゲートモデルの物理的な解釈可能性を向上させます。しかし、PC$^2$の性能と効率は、高次元パラメータ空間、限られたデータ可用性、または代表的でないトレーニングデータによって低下する可能性があります。この問題に対処するために、本研究では、PC$^2$フレームワークに対する2つの相補的な拡張を検討します。第一に、数値的に効率的な制約付き最適化ソルバーである、ラグランジュ乗数の単純な更新（SULM）が、従来のKKTソルバーの代替として採用されます。SULM法は、多数の仮想点を必要とする高次元性および微分境界条件を持つ物理的に制約された問題を解く際に、計算コストを大幅に削減します。第二に、D最適サンプリング戦略を利用して、有益な仮想点を選択し、PC$^2$の安定性を向上させ、精度と効率のバランスを実現します。提案された方法はPC$^2$フレームワークに統合され、常微分方程式または偏微分方程式によって支配される代表的な物理システムの数値例を通して評価されます。結果は、強化されたPC$^2$が標準的なPC$^2$よりも優れた包括的な能力を持ち、高次元の不確実性定量化タスクに適していることを示しています。",
-    "insightJa": "この研究は、シミュレーションの高速化や高精度化に貢献し、製品設計やリスク評価など、様々な分野での意思決定を支援することが期待されます。より安全で効率的な社会の実現に繋がる可能性を秘めています。",
+    "titleJa": "制約付き最適化ソルバーとD最適サンプリングを強化した物理情報付き多項式カオス展開",
+    "summaryJa": "物理制約を組み込んだ多項式カオス展開(PC$^2$)を改良。効率的なソルバーとD最適サンプリングで、高次元問題への対応力と精度を向上。",
+    "explanationJa": "物理法則を考慮した数理モデルを改良し、より複雑な現象を高精度に予測できるようになりました。",
+    "translationJa": "物理情報付き多項式カオス展開（PC$^2$）は、支配方程式やその他の物理的制約を標準的なデータ駆動型多項式カオス展開（PCE）に組み込み、カルーシュ・クーン・タッカー（KKT）条件を通じて解くことにより、効率的な物理制約付きサロゲートモデリングフレームワークを提供します。このアプローチは、高い計算効率と精度を実現しながら、サロゲートモデルの物理的な解釈可能性を向上させます。ただし、PC$^2$の性能と効率は、高次元のパラメータ空間、限られたデータ可用性、または代表的でないトレーニングデータによって低下する可能性があります。この問題に対処するため、本研究ではPC$^2$フレームワークに対する2つの相補的な改善策を探ります。第一に、数値的に効率的な制約付き最適化ソルバーである単純ラグランジュ乗数更新法（SULM）が、従来のKKTソルバーの代替として採用されます。SULM法は、多数の仮想点を必要とする高次元および微分境界条件を持つ物理制約問題を解く際の計算コストを大幅に削減します。第二に、D最適サンプリング戦略を利用して、有益な仮想点を選択し、PC$^2$の安定性を向上させ、精度と効率のバランスを実現します。提案された方法はPC$^2$フレームワークに統合され、常微分方程式または偏微分方程式によって支配される代表的な物理システムの数値例を通じて評価されます。結果は、強化されたPC$^2$が標準的なPC$^2$よりも優れた包括的な能力を持ち、高次元の不確実性定量化タスクに適していることを示しています。",
+    "insightJa": "この技術は、複雑な物理現象のシミュレーションを効率化し、製品設計や資源探査など、様々な分野での意思決定を支援することが期待されます。より安全で効率的な社会の実現に貢献する可能性があります。",
     "recommendedBooks": [
       "数値解析",
       "最適化アルゴリズム",
-      "不確実性解析"
+      "不確実性定量化"
     ],
     "tags": [
       "Polynomial Chaos Expansion",
-      "Uncertainty Quantification",
       "Optimization",
+      "Uncertainty Quantification",
       "Surrogate Modeling",
       "Physics-informed Machine Learning"
     ],
-    "imageUrl": "https://images.pexels.com/photos/4874504/pexels-photo-4874504.jpeg?auto=compress&cs=tinysrgb&h=350"
+    "imageUrl": "https://images.pexels.com/photos/6942675/pexels-photo-6942675.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10775v1",
+    "title": "Deflating the Spacetime-Matter Dichotomy",
+    "source": "arxiv",
+    "url": "http://arxiv.org/abs/2512.10775v1",
+    "summary": "In this paper we analyse scalar-tensor theories-specific instances of which include mainstream inflation and dark energy models-in light of the spacetime-matter dichotomy. We argue that it is difficult to categorise the scalar fields as either a pure aspect of the spacetime structure or a pure form of matter, by focusing on the Jordan vs Einstein frames of these theories. We present and evaluate various interpretational options available, concluding that the spacetime-matter dichotomy becomes untenable in this context. At the same time, the ontological and conceptual category of spacetime can be decoupled from that of gravity, with the latter remaining viable in the context of scalar-tensor theories.",
+    "publishedAt": "2025-12-11T16:11:47Z",
+    "author": "Antonio Ferreiro",
+    "category": "Science",
+    "originalContent": "In this paper we analyse scalar-tensor theories-specific instances of which include mainstream inflation and dark energy models-in light of the spacetime-matter dichotomy. We argue that it is difficult to categorise the scalar fields as either a pure aspect of the spacetime structure or a pure form of matter, by focusing on the Jordan vs Einstein frames of these theories. We present and evaluate various interpretational options available, concluding that the spacetime-matter dichotomy becomes untenable in this context. At the same time, the ontological and conceptual category of spacetime can be decoupled from that of gravity, with the latter remaining viable in the context of scalar-tensor theories.",
+    "titleJa": "時空と物質の二分法の解体",
+    "summaryJa": "スカラー・テンソル理論において、時空と物質の区別が曖昧になることを議論。重力概念は維持されるものの、従来の二分法は困難になる。",
+    "explanationJa": "この論文では、宇宙の時空と物質の区別が難しいことを示し、重力の考え方は重要であることを説明しています。",
+    "translationJa": "本稿では、スカラー・テンソル理論、具体的には主流のインフレーションおよびダークエネルギーモデルを、時空と物質の二分法の観点から分析します。これらの理論のジョーダン・フレームとアインシュタイン・フレームに焦点を当てることにより、スカラー場を純粋な時空構造の側面、または純粋な物質の一形態として分類することが困難であることを主張します。利用可能なさまざまな解釈の選択肢を提示および評価し、この文脈では時空と物質の二分法が維持できないという結論に至ります。同時に、時空の存在論的および概念的カテゴリーは、重力のそれから分離することができ、後者はスカラー・テンソル理論の文脈において依然として存続可能です。",
+    "insightJa": "この研究は、宇宙の基本的な構成要素に対する私たちの理解を深めるものであり、将来の宇宙探査やエネルギー開発に新たな視点をもたらす可能性があります。また、科学技術の進歩は、社会のあらゆる側面に影響を与えることを改めて認識させてくれます。",
+    "recommendedBooks": [
+      "一般相対性理論 入門",
+      "宇宙論",
+      "量子重力理論"
+    ],
+    "tags": [
+      "Scalar-tensor theory",
+      "Spacetime",
+      "Dark energy",
+      "Inflation",
+      "Gravity"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/35146393/pexels-photo-35146393.png?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.09950v1",
+    "title": "The meaning of \"Big Bang\"",
+    "source": "arxiv",
+    "url": "http://arxiv.org/abs/2512.09950v1",
+    "summary": "What does ``Big Bang'' actually mean? What was the origin of these two words? It has often been said that the expression ``Big Bang'' began as an insult. Even if this were true, it would be just an irrelevant part of the whole issue. There are many more aspects hidden under this name, and which are seldom explained. They will be discussed in this work. In order to frame the analysis, help will be sought from the highly authoritative voices of two exceptional writers: William Shakespeare and Umberto Eco. Both Shakespeare and Eco have explored the tension existing between words and the realities they name. With the conclusion that names are, in general, just labels, simple stickers put to identify things. And this includes those given to great theorems or spectacular discoveries. Not even ``Pythagoras' theorem'' was discovered by Pythagoras, as is now well-known. Stigler's law of eponymy is recalled to further substantiate those statements. These points will be at the heart of the investigation carried out here, concerning the very important concept of ``Big Bang''. Everybody thinks to know what ``the Big Bang'' is, but only very few do know it, in fact. When Fred Hoyle first pronounced these two words together, on a BBC radio program, listeners were actually left with the false image that Hoyle was trying to destroy. That is, the tremendous explosion of Lemaître's primeval atom (or cosmic egg), which scattered all its enormous matter and energy content throughout the rest of the Universe. This image is absolutely wrong! As will be concluded, today the label ``Big Bang'' is used in several different contexts: (a) the Big Bang Singularity; (b) as the equivalent of cosmic inflation; (c) speaking of the Big Bang cosmological model; (d) to name a very popular TV program; and more.",
+    "publishedAt": "2025-12-09T10:46:11Z",
+    "author": "Emilio Elizalde",
+    "category": "Science",
+    "originalContent": "What does ``Big Bang'' actually mean? What was the origin of these two words? It has often been said that the expression ``Big Bang'' began as an insult. Even if this were true, it would be just an irrelevant part of the whole issue. There are many more aspects hidden under this name, and which are seldom explained. They will be discussed in this work. In order to frame the analysis, help will be sought from the highly authoritative voices of two exceptional writers: William Shakespeare and Umberto Eco. Both Shakespeare and Eco have explored the tension existing between words and the realities they name. With the conclusion that names are, in general, just labels, simple stickers put to identify things. And this includes those given to great theorems or spectacular discoveries. Not even ``Pythagoras' theorem'' was discovered by Pythagoras, as is now well-known. Stigler's law of eponymy is recalled to further substantiate those statements. These points will be at the heart of the investigation carried out here, concerning the very important concept of ``Big Bang''. Everybody thinks to know what ``the Big Bang'' is, but only very few do know it, in fact. When Fred Hoyle first pronounced these two words together, on a BBC radio program, listeners were actually left with the false image that Hoyle was trying to destroy. That is, the tremendous explosion of Lemaître's primeval atom (or cosmic egg), which scattered all its enormous matter and energy content throughout the rest of the Universe. This image is absolutely wrong! As will be concluded, today the label ``Big Bang'' is used in several different contexts: (a) the Big Bang Singularity; (b) as the equivalent of cosmic inflation; (c) speaking of the Big Bang cosmological model; (d) to name a very popular TV program; and more.",
+    "titleJa": "「ビッグバン」の意味",
+    "summaryJa": "「ビッグバン」という言葉の起源や意味を、シェイクスピアやエーコといった学者の言葉を引用しながら分析。様々な文脈で使用される「ビッグバン」の概念を解説。",
+    "explanationJa": "「ビッグバン」という言葉は様々な意味で使われており、その理解を深めることが重要です。",
+    "translationJa": "「ビッグバン」とは実際には何を意味するのでしょうか？この二つの言葉の起源は何だったのでしょうか？「ビッグバン」という表現は、侮辱として始まったとよく言われます。たとえそれが事実だとしても、それは問題全体のごく一部にすぎません。この名前の下には、ほとんど説明されることのない多くの側面が隠されています。それらについて本稿で議論します。分析の枠組みを定めるために、ウィリアム・シェイクスピアとウンベルト・エーコという二人の傑出した作家の、非常に権威ある声から助けを求めます。シェイクスピアとエーコはどちらも、言葉とそれが名付ける現実の間に存在する緊張を探求してきました。その結論として、名前は一般的に単なるラベル、物事を識別するために貼られた単純なステッカーに過ぎません。そして、これには偉大な定理や目覚ましい発見に与えられた名前も含まれます。現在ではよく知られているように、「ピタゴラスの定理」でさえピタゴラスによって発見されたものではありません。スティグラーの命名法則は、これらの記述をさらに裏付けるために想起されます。これらの点は、非常に重要な概念である「ビッグバン」に関する本稿で行われる調査の中心となります。誰もが「ビッグバン」が何であるかを知っていると思っていますが、実際にそれを知っている人はごくわずかです。フレッド・ホイルがBBCラジオ番組で初めてこの二つの言葉を一緒に発音したとき、聴衆は実際にはホイルが破壊しようとしているという誤ったイメージを抱きました。つまり、ルメールの原始原子（または宇宙の卵）の途方もない爆発であり、それはその莫大な物質とエネルギーの内容物を宇宙全体にまき散らしました。このイメージは完全に間違っています！結論として、「ビッグバン」というラベルは今日、いくつかの異なる文脈で使用されています。（a）ビッグバン特異点、（b）宇宙インフレーションと同義、（c）ビッグバン宇宙モデルについて語るとき、（d）非常に人気のあるテレビ番組の名前、など。",
+    "insightJa": "宇宙論の研究は、直接的には日々の生活に関係ないように見えますが、私たちが宇宙の中でどのような存在なのか、という根源的な問いに答えるための手がかりとなります。また、科学的な思考力や問題解決能力は、ビジネスにおいても重要な要素です。",
+    "recommendedBooks": [
+      "宇宙論 入門",
+      "ビッグバン 理論",
+      "宇宙 物理学"
+    ],
+    "tags": [
+      "Big Bang",
+      "Cosmology",
+      "Fred Hoyle",
+      "宇宙論",
+      "ビッグバン"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/17505899/pexels-photo-17505899.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     "id": "http://arxiv.org/abs/cond-mat/0401304v1",
@@ -445,21 +503,21 @@
     "category": "Science",
     "originalContent": "The magnetic grid molecule Mn(II)-[3 x 3] has been studied by high-field torque magnetometry at 3He temperatures. At fields above 5 T, the torque vs. field curves exhibit an unprecedented oscillatory behavior. A model is proposed which describes these magneto oscillations well.",
     "titleJa": "超分子Mn(II)-[3 x 3]格子における量子磁気振動",
-    "summaryJa": "Mn(II)-[3 x 3]磁性格子分子を高磁場トルク磁力測定で研究。5T以上の磁場で、前例のない振動挙動が観測された。この磁気振動を説明するモデルが提案された。",
-    "explanationJa": "Mn(II)を含む分子格子において、強い磁場下で特異な振動現象が観測されたという研究です。",
-    "translationJa": "Mn(II)-[3 x 3]磁性格子分子を、3He温度において高磁場トルク磁力測定により研究しました。5 T以上の磁場において、トルク対磁場曲線は、前例のない振動挙動を示しました。これらの磁気振動をうまく記述するモデルが提案されています。",
-    "insightJa": "この研究は、新しい磁性材料の開発につながる可能性があります。高性能な電子デバイスや医療機器など、幅広い分野への応用が期待されます。",
+    "summaryJa": "Mn(II)-[3 x 3]磁性格子分子を強磁場トルク磁力計で3He温度下で研究。5T以上の磁場で、前例のない振動挙動を確認。モデルを提案し、この磁気振動を説明。",
+    "explanationJa": "超分子の磁性格子において、特定の条件下で磁場に対する振動現象が観測されたそうです。",
+    "translationJa": "Mn(II)-[3 x 3]磁性格子分子は、3He温度において強磁場トルク磁力測定法を用いて研究されました。5 Tを超える磁場において、トルク対磁場曲線は、これまでにない振動挙動を示しました。これらの磁気振動をうまく説明するモデルが提案されています。",
+    "insightJa": "この研究は、将来的に新しい磁性材料の開発や、量子コンピューティングの分野に応用される可能性があります。より高性能な磁気センサーや情報処理デバイスの実現につながるかもしれません。",
     "recommendedBooks": [
-      "量子力学",
+      "量子力学 入門",
       "磁性材料",
       "超分子化学"
     ],
     "tags": [
-      "Quantum Oscillations",
-      "Magnetometry",
-      "Supramolecular Chemistry",
-      "Manganese",
-      "Magnetic Grid"
+      "quantum oscillations",
+      "magnetometry",
+      "supramolecular",
+      "magnetic grid",
+      "量子磁気振動"
     ],
     "imageUrl": "https://images.pexels.com/photos/25626435/pexels-photo-25626435.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
@@ -474,22 +532,22 @@
     "category": "Science",
     "originalContent": "Thin films grown by pulsed-laser deposition from targets of Sn0.95Fe0.05O2 are transparent ferromagnets with Curie temperature and spontaneous magnetization of 610 K and 2.2 Am2kg-1, respectively. The 57Fe Mossbauer spectra show the iron is all high-spin Fe3+ but the films are magnetically inhomogeneous on an atomic scale, with only 23 % of the iron ordering magnetically. The net ferromagnetic moment per ordered iron ion, 1.8 Bohr magnetons, is greater than for any simple iron oxide. Ferromagnetic coupling of ferric ions via an electron trapped in a bridging oxygen vacancy (F center) is proposed to explain the high Curie temperature",
     "titleJa": "FeドープSnO2薄膜における強磁性",
-    "summaryJa": "パルスレーザー堆積法で作製したSn0.95Fe0.05O2薄膜は、室温以上のキュリー温度と自発磁化を持つ透明な強磁性体です。",
-    "explanationJa": "鉄を添加した酸化スズの薄膜が、高い温度でも磁石の性質を示すことがわかりました。",
-    "translationJa": "Sn0.95Fe0.05O2ターゲットからパルスレーザー堆積法によって成長させた薄膜は、キュリー温度610 K、自発磁化2.2 Am2kg-1の透明な強磁性体です。57Feメスバウア分光法の結果から、鉄はすべて高スピンFe3+であることが示されましたが、薄膜は原子スケールで磁気的に不均一であり、鉄のうちわずか23%のみが磁気的に秩序化されています。秩序化した鉄イオンあたりの正味の強磁性モーメントは1.8ボーア磁子であり、これは単純な酸化鉄よりも大きいです。架橋酸素空孔（F中心）にトラップされた電子を介した鉄イオンの強磁性結合が、高いキュリー温度を説明するために提案されています。",
-    "insightJa": "この研究は、高温でも使用可能な透明な磁性材料の開発につながる可能性があります。これにより、新しい電子デバイスやセンサーなどの応用が期待されます。",
+    "summaryJa": "パルスレーザー堆積法で作製されたFeドープSnO2薄膜は、室温以上の高いキュリー温度を持つ透明な強磁性体です。",
+    "explanationJa": "鉄を混ぜた酸化スズの薄い膜が、高い温度でも磁石の性質を示すことがわかりました。",
+    "translationJa": "Sn0.95Fe0.05O2のターゲットからパルスレーザー堆積法によって成長させた薄膜は、キュリー温度が610 K、自発磁化が2.2 Am2kg-1の透明な強磁性体です。57Feメスバウアー分光法の結果から、鉄はすべて高スピンFe3+であることが示されましたが、薄膜は原子スケールで磁気的に不均一であり、鉄のわずか23%のみが磁気的に秩序化されています。秩序化した鉄イオンあたりの正味強磁性モーメントは1.8ボーア磁子であり、これは単純な酸化鉄よりも大きいです。架橋酸素空孔（F中心）に捕捉された電子を介した3価鉄イオンの強磁性結合が、高いキュリー温度を説明するものとして提案されています。",
+    "insightJa": "この研究は、高温環境で使用できる新しい磁性材料の開発につながる可能性があります。例えば、高温で作動するモーターやセンサーの性能向上に役立つかもしれません。",
     "recommendedBooks": [
-      "強磁性体",
-      "薄膜 作成",
-      "メスバウアー分光法"
+      "強磁性体 物性",
+      "薄膜 作製",
+      "酸化物 半導体"
     ],
     "tags": [
       "Ferromagnetism",
-      "Thin film",
+      "Thin films",
       "SnO2",
-      "Iron doping",
-      "Mossbauer spectroscopy"
+      "Fe doping",
+      "強磁性"
     ],
-    "imageUrl": "https://images.pexels.com/photos/6144421/pexels-photo-6144421.jpeg?auto=compress&cs=tinysrgb&h=350"
+    "imageUrl": "https://images.pexels.com/photos/3394168/pexels-photo-3394168.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]

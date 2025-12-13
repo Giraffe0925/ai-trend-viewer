@@ -23,9 +23,15 @@ async function main() {
     const arxivQuantPh = await fetchArxivPapers('quant-ph', 2); // Quantum Physics
     const arxivCondMat = await fetchArxivPapers('cond-mat', 2); // Condensed Matter
 
+    // ArXiv - Philosophy & History of Science
+    const arxivPhilPh = await fetchArxivPapers('physics.hist-ph', 2); // History and Philosophy of Physics
+
     // ArXiv - Other interesting fields
     const arxivStat = await fetchArxivPapers('stat.ML', 2);     // Statistics - Machine Learning
     const arxivMath = await fetchArxivPapers('math.OC', 1);     // Mathematics - Optimization
+
+    // Philosophy papers from PhilPapers (free philosophy journal)
+    const philPapers = await fetchRSS('https://philpapers.org/recent.rss', 'Philosophy');
 
     // Combine only academic papers
     let articles: Article[] = [
@@ -34,8 +40,10 @@ async function main() {
         ...arxivCL.articles,
         ...arxivQuantPh.articles,
         ...arxivCondMat.articles,
+        ...arxivPhilPh.articles,
         ...arxivStat.articles,
-        ...arxivMath.articles
+        ...arxivMath.articles,
+        ...philPapers.articles
     ];
 
     console.log(`Fetched ${articles.length} articles.`);
