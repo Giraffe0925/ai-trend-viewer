@@ -4,6 +4,7 @@ import path from 'path';
 import { fetchArxivPapers } from './fetchers/arxiv';
 import { fetchRSS } from './fetchers/rss';
 import { processArticleWithLLM } from './processor/llm';
+import { fetchPexelsImage } from './utils/pexels';
 import { Article } from './types';
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'posts.json');
@@ -54,14 +55,19 @@ async function main() {
         console.log(`Processing: ${article.title}`);
         let processed = await processArticleWithLLM(article);
 
-        // Generate image URL using Picsum (reliable, no API key needed)
-        // Use article ID hash to generate consistent seed for the same article
-        const idHash = processed.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-        processed.imageUrl = `https://picsum.photos/seed/${idHash}/400/300`;
+        // Fetch image from Pexels based on article tags
+        const pexelsImage = await fetchPexelsImage(processed);
+        if (pexelsImage) {
+            processed.imageUrl = pexelsImage;
+        } else {
+            // Fallback to Picsum if Pexels fails
+            const idHash = processed.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+            processed.imageUrl = `https://picsum.photos/seed/${idHash}/400/300`;
+        }
 
         processedArticles.push(processed);
-        // Add delay to avoid rate limits if needed
-        await new Promise(r => setTimeout(r, 1000));
+        // Add delay to avoid rate limits
+        await new Promise(r => setTimeout(r, 1500));
     }
 
     // 3. Save
