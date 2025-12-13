@@ -13,48 +13,62 @@ async function main() {
     console.log('Starting content update...');
 
     // ============================================
-    // 🤖 AI - AGI, AI安全性, 機械学習
+    // 🤖 AI - AGI, AI安全性, 機械学習 (論文)
     // ============================================
-    const arxivAI = await fetchArxivPapers('cs.AI', 4);        // Artificial Intelligence
-    const arxivML = await fetchArxivPapers('cs.LG', 3);        // Machine Learning
-    const arxivCL = await fetchArxivPapers('cs.CL', 2);        // Computation and Language (NLP/LLM)
+    const arxivAI = await fetchArxivPapers('cs.AI', 3);
+    const arxivML = await fetchArxivPapers('cs.LG', 2);
+    const arxivCL = await fetchArxivPapers('cs.CL', 2);
 
     // ============================================
-    // 🧠 意識・知性・認知科学
+    // 🤖 AI - ブログ・マガジン
     // ============================================
-    const arxivNeuro = await fetchArxivPapers('q-bio.NC', 3);  // Neurons and Cognition
-    const arxivCogSci = await fetchArxivPapers('cs.HC', 2);    // Human-Computer Interaction (認知的側面)
+    const lessWrong = await fetchRSS('https://www.lesswrong.com/feed.xml?view=curated', 'AI');
+    const astralCodex = await fetchRSS('https://www.astralcodexten.com/feed', 'AI');
+    const openAIBlog = await fetchRSS('https://openai.com/blog/rss/', 'AI');
+    const anthropicBlog = await fetchRSS('https://www.anthropic.com/rss.xml', 'AI');
 
     // ============================================
-    // 🧬 脳神経科学・心理学
+    // 🧠 認知科学・哲学 - ブログ・マガジン
     // ============================================
-    const arxivQuantBio = await fetchArxivPapers('q-bio.QM', 2); // Quantitative Biology Methods
+    const aeonMagazine = await fetchRSS('https://aeon.co/feed.rss', '哲学');
+    const nautilusMag = await fetchRSS('https://nautil.us/feed/', '認知科学');
 
     // ============================================
-    // 💭 哲学 - 心身問題、認識論、言語哲学
+    // 🧠 認知科学 (論文)
     // ============================================
-    const arxivPhilPh = await fetchArxivPapers('physics.hist-ph', 2); // History and Philosophy of Physics
-    const philPapers = await fetchRSS('https://philpapers.org/recent.rss', 'Philosophy');
+    const arxivNeuro = await fetchArxivPapers('q-bio.NC', 2);
+    const arxivCogSci = await fetchArxivPapers('cs.HC', 2);
 
     // ============================================
-    // 🌍 社会 - 行動経済学、地政学×AI
+    // 💭 哲学 (論文)
     // ============================================
-    const arxivEcon = await fetchArxivPapers('econ.GN', 2);    // Economics - General
-    const arxivSocial = await fetchArxivPapers('cs.CY', 2);    // Computers and Society (AI倫理・社会影響)
+    const arxivPhilPh = await fetchArxivPapers('physics.hist-ph', 2);
+
+    // ============================================
+    // 🌍 社会・経済 (論文)
+    // ============================================
+    const arxivEcon = await fetchArxivPapers('econ.GN', 2);
+    const arxivSocial = await fetchArxivPapers('cs.CY', 2);
 
     // Combine all sources
     let articles: Article[] = [
-        // AI Core
+        // AI Papers
         ...arxivAI.articles,
         ...arxivML.articles,
         ...arxivCL.articles,
-        // Consciousness & Cognition
+        // AI Blogs
+        ...lessWrong.articles,
+        ...astralCodex.articles,
+        ...openAIBlog.articles,
+        ...anthropicBlog.articles,
+        // Cognition & Philosophy Magazines
+        ...aeonMagazine.articles,
+        ...nautilusMag.articles,
+        // Cognition Papers
         ...arxivNeuro.articles,
         ...arxivCogSci.articles,
-        ...arxivQuantBio.articles,
-        // Philosophy
+        // Philosophy Papers
         ...arxivPhilPh.articles,
-        ...philPapers.articles,
         // Society & Economics
         ...arxivEcon.articles,
         ...arxivSocial.articles,
