@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Header from '@/components/Header';
 
@@ -19,13 +18,14 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        {/* Google AdSense */}
-        <Script
+        {/* Google AdSense - Direct script tag for verification */}
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3433420842549448"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
+        {/* AdSense verification meta tag */}
+        <meta name="google-adsense-account" content="ca-pub-3433420842549448" />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen relative overflow-hidden bg-[url('/noise.png')]">
