@@ -11,19 +11,29 @@ const DATA_FILE = path.join(process.cwd(), 'data', 'posts.json');
 async function main() {
     console.log('Starting content update...');
 
-    // 1. Fetch
+    // 1. Fetch from various sources
     const arxivAI = await fetchArxivPapers('cs.AI', 3);
-    const arxivPhysics = await fetchArxivPapers('physics', 2); // General physics or specific
-    // Stanford Encyclopedia of Philosophy (SEP) doesn't have a simple RSS for "new" that is easily parseable always, 
-    // but let's try a known philosophy feed or specialized science blog.
-    // Scientific American Mind? 
-    // For demo, let's use a tech/science RSS.
+    const arxivPhysics = await fetchArxivPapers('physics', 2);
+
+    // Science feeds
     const scienceDaily = await fetchRSS('https://www.sciencedaily.com/rss/mind_brain.xml', 'Science');
+
+    // AI Tech Company & Startup News
+    const openAIBlog = await fetchRSS('https://openai.com/blog/rss/', 'AI');
+    const anthropicNews = await fetchRSS('https://www.anthropic.com/rss.xml', 'AI');
+    const techCrunchAI = await fetchRSS('https://techcrunch.com/category/artificial-intelligence/feed/', 'AI');
+    const theVergeAI = await fetchRSS('https://www.theverge.com/rss/ai-artificial-intelligence/index.xml', 'AI');
+    const venturebeat = await fetchRSS('https://venturebeat.com/category/ai/feed/', 'AI');
 
     let articles: Article[] = [
         ...arxivAI.articles,
         ...arxivPhysics.articles,
-        ...scienceDaily.articles
+        ...scienceDaily.articles,
+        ...openAIBlog.articles,
+        ...anthropicNews.articles,
+        ...techCrunchAI.articles,
+        ...theVergeAI.articles,
+        ...venturebeat.articles
     ];
 
     console.log(`Fetched ${articles.length} articles.`);
