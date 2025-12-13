@@ -117,7 +117,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
                 </div>
                 <h3 style={titleStyle}>{article.titleJa || article.title}</h3>
                 <div style={footerStyle}>
-                    <span style={sourceStyle}>{article.source}</span>
+                    <span style={sourceStyle}>
+                        出典：{article.author || article.source}
+                    </span>
                     <span style={{ fontSize: '12px', color: '#8BA89A' }}>詳細 →</span>
                 </div>
             </div>
