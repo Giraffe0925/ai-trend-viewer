@@ -22,10 +22,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
 
     const imageUrl = article.imageUrl || categoryImage;
 
+    // Mobile-responsive card - vertical layout on small screens
     const cardStyle: React.CSSProperties = {
         display: 'flex',
-        flexDirection: 'row',
-        height: '100px',
+        flexDirection: 'column', // Vertical on mobile by default
+        minHeight: '200px',
         backgroundColor: 'white',
         borderRadius: '12px',
         overflow: 'hidden',
@@ -36,8 +37,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
     };
 
     const imageContainerStyle: React.CSSProperties = {
-        width: '100px',
-        height: '100%',
+        width: '100%',
+        height: '120px',
         flexShrink: 0,
         overflow: 'hidden',
     };
@@ -61,13 +62,15 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: '4px',
+        marginBottom: '8px',
+        flexWrap: 'wrap',
+        gap: '4px',
     };
 
     const categoryStyle: React.CSSProperties = {
-        padding: '2px 8px',
+        padding: '4px 10px',
         borderRadius: '9999px',
-        fontSize: '10px',
+        fontSize: '11px',
         fontWeight: 'bold',
         backgroundColor: article.category === 'AI' ? '#EFF6FF' :
             article.category === 'Science' ? '#F0FDF4' : '#FFF7ED',
@@ -81,14 +84,16 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
     };
 
     const titleStyle: React.CSSProperties = {
-        fontSize: '14px',
+        fontSize: '15px',
         fontWeight: 'bold',
         color: '#1F2937',
-        lineHeight: '1.4',
+        lineHeight: '1.5',
+        marginBottom: '8px',
+        // Allow multiple lines to display
         overflow: 'hidden',
         textOverflow: 'ellipsis',
         display: '-webkit-box',
-        WebkitLineClamp: 2,
+        WebkitLineClamp: 3, // Show up to 3 lines
         WebkitBoxOrient: 'vertical',
     };
 
@@ -96,6 +101,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginTop: 'auto',
     };
 
     const sourceStyle: React.CSSProperties = {
@@ -103,6 +109,10 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
         color: '#9CA3AF',
         textTransform: 'uppercase',
         letterSpacing: '0.05em',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        maxWidth: '60%',
     };
 
     return (
@@ -111,18 +121,20 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
                 <img src={imageUrl} alt={article.titleJa || article.title} style={imageStyle} />
             </div>
             <div style={contentStyle}>
-                <div style={headerStyle}>
-                    <span style={categoryStyle}>{article.category || 'General'}</span>
-                    <span style={dateStyle}>
-                        {format(new Date(article.publishedAt), 'yyyy.MM.dd', { locale: ja })}
-                    </span>
+                <div>
+                    <div style={headerStyle}>
+                        <span style={categoryStyle}>{article.category || 'General'}</span>
+                        <span style={dateStyle}>
+                            {format(new Date(article.publishedAt), 'yyyy.MM.dd', { locale: ja })}
+                        </span>
+                    </div>
+                    <h3 style={titleStyle}>{article.titleJa || article.title}</h3>
                 </div>
-                <h3 style={titleStyle}>{article.titleJa || article.title}</h3>
                 <div style={footerStyle}>
                     <span style={sourceStyle}>
                         出典：{article.author || article.source}
                     </span>
-                    <span style={{ fontSize: '12px', color: '#8BA89A' }}>詳細 →</span>
+                    <span style={{ fontSize: '12px', color: '#8BA89A', flexShrink: 0 }}>詳細 →</span>
                 </div>
             </div>
         </Link>
