@@ -12,51 +12,64 @@ const DATA_FILE = path.join(process.cwd(), 'data', 'posts.json');
 async function main() {
     console.log('Starting content update...');
 
-    // 1. Fetch ONLY from academic paper sources (free, open access)
-
-    // ArXiv - Computer Science / AI
-    const arxivAI = await fetchArxivPapers('cs.AI', 5);        // Artificial Intelligence
+    // ============================================
+    // 🤖 AI - AGI, AI安全性, 機械学習
+    // ============================================
+    const arxivAI = await fetchArxivPapers('cs.AI', 4);        // Artificial Intelligence
     const arxivML = await fetchArxivPapers('cs.LG', 3);        // Machine Learning
-    const arxivCL = await fetchArxivPapers('cs.CL', 2);        // Computation and Language (NLP)
+    const arxivCL = await fetchArxivPapers('cs.CL', 2);        // Computation and Language (NLP/LLM)
 
-    // ArXiv - Physics / Science
-    const arxivQuantPh = await fetchArxivPapers('quant-ph', 2); // Quantum Physics
-    const arxivCondMat = await fetchArxivPapers('cond-mat', 2); // Condensed Matter
+    // ============================================
+    // 🧠 意識・知性・認知科学
+    // ============================================
+    const arxivNeuro = await fetchArxivPapers('q-bio.NC', 3);  // Neurons and Cognition
+    const arxivCogSci = await fetchArxivPapers('cs.HC', 2);    // Human-Computer Interaction (認知的側面)
 
-    // ArXiv - Philosophy & History of Science
+    // ============================================
+    // 🧬 脳神経科学・心理学
+    // ============================================
+    const arxivQuantBio = await fetchArxivPapers('q-bio.QM', 2); // Quantitative Biology Methods
+
+    // ============================================
+    // 💭 哲学 - 心身問題、認識論、言語哲学
+    // ============================================
     const arxivPhilPh = await fetchArxivPapers('physics.hist-ph', 2); // History and Philosophy of Physics
-
-    // ArXiv - Other interesting fields
-    const arxivStat = await fetchArxivPapers('stat.ML', 2);     // Statistics - Machine Learning
-    const arxivMath = await fetchArxivPapers('math.OC', 1);     // Mathematics - Optimization
-
-    // Philosophy papers from PhilPapers (free philosophy journal)
     const philPapers = await fetchRSS('https://philpapers.org/recent.rss', 'Philosophy');
 
-    // Combine only academic papers
+    // ============================================
+    // 🌍 社会 - 行動経済学、地政学×AI
+    // ============================================
+    const arxivEcon = await fetchArxivPapers('econ.GN', 2);    // Economics - General
+    const arxivSocial = await fetchArxivPapers('cs.CY', 2);    // Computers and Society (AI倫理・社会影響)
+
+    // Combine all sources
     let articles: Article[] = [
+        // AI Core
         ...arxivAI.articles,
         ...arxivML.articles,
         ...arxivCL.articles,
-        ...arxivQuantPh.articles,
-        ...arxivCondMat.articles,
+        // Consciousness & Cognition
+        ...arxivNeuro.articles,
+        ...arxivCogSci.articles,
+        ...arxivQuantBio.articles,
+        // Philosophy
         ...arxivPhilPh.articles,
-        ...arxivStat.articles,
-        ...arxivMath.articles,
-        ...philPapers.articles
+        ...philPapers.articles,
+        // Society & Economics
+        ...arxivEcon.articles,
+        ...arxivSocial.articles,
     ];
 
     console.log(`Fetched ${articles.length} articles.`);
 
-    // 2. Process (only process new ones or all? For demo, all. In prod, check IDs)
-    // Check against existing IDs to avoid re-processing
+    // 2. Process (only process new ones)
     let existingArticles: Article[] = [];
     if (fs.existsSync(DATA_FILE)) {
         existingArticles = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
     }
     const existingIds = new Set(existingArticles.map(a => a.id));
-
     const newArticles = articles.filter(a => !existingIds.has(a.id));
+
     console.log(`${newArticles.length} new articles to process.`);
 
     const processedArticles: Article[] = [];
@@ -84,6 +97,7 @@ async function main() {
         .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
         .slice(0, 50); // Keep last 50
 
+    fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
     fs.writeFileSync(DATA_FILE, JSON.stringify(allArticles, null, 2));
     console.log('Content update complete.');
 }
