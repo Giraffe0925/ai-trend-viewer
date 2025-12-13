@@ -113,7 +113,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                 </div>
             </section>
 
-            {/* Commentary Section - Author's opinion */}
+            {/* Commentary Section - Author's opinion (Main content) */}
             {article.translationJa && (
                 <section style={{
                     marginBottom: '48px',
@@ -122,21 +122,27 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                         fontSize: '14px',
                         fontWeight: 'bold',
                         color: '#6366f1',
-                        marginBottom: '24px',
+                        marginBottom: '32px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
                     }}>
                         💭 私見
                     </h2>
-                    <article className="prose prose-lg max-w-none">
-                        <div style={{
-                            fontSize: '17px',
-                            lineHeight: 2,
-                            color: '#374151',
-                            whiteSpace: 'pre-line',
-                        }}>
-                            {article.translationJa}
-                        </div>
+                    <article style={{
+                        fontFamily: '"Noto Serif JP", "YuMincho", "Hiragino Mincho Pro", serif',
+                    }}>
+                        {article.translationJa.split('\n').filter(p => p.trim()).map((paragraph, index) => (
+                            <p key={index} style={{
+                                fontSize: '17px',
+                                lineHeight: 2.2,
+                                color: '#1f2937',
+                                textIndent: '1em',
+                                marginBottom: '1.5em',
+                                textAlign: 'justify',
+                            }}>
+                                {paragraph}
+                            </p>
+                        ))}
                     </article>
                 </section>
             )}
