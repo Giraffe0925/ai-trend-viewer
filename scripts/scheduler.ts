@@ -109,6 +109,15 @@ async function main() {
             processed.visualImages = visualImages;
         }
 
+        // Generate podcast audio
+        if (process.env.GOOGLE_CLOUD_TTS_API_KEY) {
+            const { generatePodcastAudio } = await import('./podcast/generate');
+            const audioUrl = await generatePodcastAudio(processed);
+            if (audioUrl) {
+                processed.audioUrl = audioUrl;
+            }
+        }
+
         processedArticles.push(processed);
 
         // Post to Twitter

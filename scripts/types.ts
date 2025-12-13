@@ -20,6 +20,7 @@ export interface Article {
   tags?: string[];
   visualSuggestions?: string[];
   visualImages?: string[];
+  audioUrl?: string;
 }
 
 export interface FetcherResult {

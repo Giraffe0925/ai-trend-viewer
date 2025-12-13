@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import Link from 'next/link';
+import ArticleAudio from '@/components/ArticleAudio';
 
 interface PageProps {
     params: Promise<{ id: string }>;
@@ -84,6 +85,12 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                     </p>
                 )}
             </header>
+
+            {/* Audio Player */}
+            <ArticleAudio
+                audioUrl={article.audioUrl}
+                title={article.titleJa || article.title}
+            />
 
             {/* Overview Section - What the source says */}
             <section style={{
