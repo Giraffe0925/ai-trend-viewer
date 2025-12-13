@@ -54,11 +54,10 @@ async function main() {
         console.log(`Processing: ${article.title}`);
         let processed = await processArticleWithLLM(article);
 
-        // Generate image URL based on tags
-        const keywords = processed.tags?.slice(0, 2) || [processed.category || 'technology'];
-        const keywordString = keywords.join(',');
-        const idHash = processed.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % 1000;
-        processed.imageUrl = `https://source.unsplash.com/400x300/?${encodeURIComponent(keywordString)}&sig=${idHash}`;
+        // Generate image URL using Picsum (reliable, no API key needed)
+        // Use article ID hash to generate consistent seed for the same article
+        const idHash = processed.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+        processed.imageUrl = `https://picsum.photos/seed/${idHash}/400/300`;
 
         processedArticles.push(processed);
         // Add delay to avoid rate limits if needed
