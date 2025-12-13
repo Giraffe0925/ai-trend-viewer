@@ -29,27 +29,29 @@ export async function processArticleWithLLM(article: Article): Promise<Article> 
     ];
 
     const prompt = `
-    You are an expert science communicator.
-    Analyze the following academic paper's abstract and provide a comprehensive Japanese translation and explanation.
+    あなたは哲学的な視点を持つ知識人です。
+    以下の学術論文の要約を読み、日本語で論評を書いてください。
     
-    IMPORTANT: The original content may contain HTML tags, links, or code snippets. 
-    You MUST remove ALL HTML tags, URLs, and code-like formatting from your output.
-    Provide clean, readable Japanese text only.
+    【スタイルの指示】
+    - ウィトゲンシュタインが語るような、静かで思慮深いトーンで
+    - 問いを投げかけつつ、仮説や仮定に基づいた考察も述べる
+    - 堅苦しいセクション分けはせず、自然に流れるエッセイのように
+    - 研究の背景、アプローチ、発見について触れつつ、それらへの論評を織り交ぜる
+    - 断定しすぎず、「〜かもしれない」「〜ではないだろうか」といった表現を使う
+    - 言葉の意味、概念の前提、問いの立て方そのものを吟味する
+    - 最後に、この知見が私たちの世界観にどう影響するかを考察する
     
     Title: ${article.title}
     Abstract: ${article.originalContent}
 
-    Output valid JSON with the following keys:
-    - titleJa: Japanese translation of the title (clean text, no HTML)
-    - summaryJa: A comprehensive summary covering the ENTIRE paper's scope - include: (1) research problem/motivation, (2) methodology/approach, (3) key findings/results, (4) conclusions/implications. Write in flowing paragraphs, approx 400-600 chars. Use polite "desu/masu" style.
-    - explanationJa: A simple one-sentence explanation for a general audience (use polite "desu/masu" style, approx 50-80 chars)
-    - translationJa: A detailed Japanese translation of the abstract that helps readers understand the full paper without reading the original. Include context and explain technical terms. Approx 500-800 chars, clean text, NO HTML.
-    - insightJa: A short insight on how this topic might impact everyday life or business (use polite "desu/masu" style, 1-2 sentences, approx 80-120 chars)
-    - visualSuggestions: An array of 2-3 diagram/illustration ideas that would help readers understand the content. Each should be a short Japanese description (e.g. ["AIモデルの学習プロセスを示すフローチャート", "データの処理パイプラインを示す図解"])
-    - recommendedBooks: An array of 2-3 related book search keywords in Japanese (e.g. ["人工知能 入門", "機械学習 ビジネス"])
-    - tags: An array of 3-5 relevant keywords (in English or Japanese)
+    【出力形式】
+    有効なJSONを出力してください。以下のキーを含めること：
+    - titleJa: 日本語タイトル（HTMLなし、簡潔に）
+    - commentary: 上記スタイルで書かれた論評エッセイ（800-1200文字程度、段落で区切る。HTMLは使わない）
+    - oneLiner: 一般読者向けの一言解説（50-80文字）
+    - tags: 関連キーワード3-5個（英語または日本語の配列）
 
-    Do not include Markdown formatting like \`\`\`json. Just the raw JSON string.
+    \`\`\`json のようなMarkdown記法は含めず、純粋なJSONのみを出力すること。
   `;
 
     let lastError;
@@ -68,12 +70,8 @@ export async function processArticleWithLLM(article: Article): Promise<Article> 
             return {
                 ...article,
                 titleJa: processed.titleJa || article.title,
-                summaryJa: processed.summaryJa || article.summary,
-                explanationJa: processed.explanationJa || '解説を生成できませんでした。',
-                translationJa: processed.translationJa || '',
-                insightJa: processed.insightJa || '',
-                visualSuggestions: processed.visualSuggestions || [],
-                recommendedBooks: processed.recommendedBooks || [],
+                summaryJa: processed.commentary || article.summary,
+                explanationJa: processed.oneLiner || '解説を生成できませんでした。',
                 tags: processed.tags || [],
             };
         } catch (error: any) {
