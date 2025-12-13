@@ -174,6 +174,35 @@
     "imageUrl": "https://images.pexels.com/photos/8347500/pexels-photo-8347500.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
+    "id": "http://arxiv.org/abs/2512.10953v1",
+    "title": "Bidirectional Normalizing Flow: From Data to Noise and Back",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10953v1",
+    "summary": "Normalizing Flows (NFs) have been established as a principled framework for generative modeling. Standard NFs consist of a forward process and a reverse process: the forward process maps data to noise, while the reverse process generates samples by inverting it. Typical NF forward transformations are constrained by explicit invertibility, ensuring that the reverse process can serve as their exact analytic inverse. Recent developments in TARFlow and its variants have revitalized NF methods by combining Transformers and autoregressive flows, but have also exposed causal decoding as a major bottleneck. In this work, we introduce Bidirectional Normalizing Flow ($\\textbf{BiFlow}$), a framework that removes the need for an exact analytic inverse. BiFlow learns a reverse model that approximates the underlying noise-to-data inverse mapping, enabling more flexible loss functions and architectures. Experiments on ImageNet demonstrate that BiFlow, compared to its causal decoding counterpart, improves generation quality while accelerating sampling by up to two orders of magnitude. BiFlow yields state-of-the-art results among NF-based methods and competitive performance among single-evaluation (\"1-NFE\") methods. Following recent encouraging progress on NFs, we hope our work will draw further attention to this classical paradigm.",
+    "publishedAt": "2025-12-11T18:59:55Z",
+    "author": "Yiyang Lu",
+    "category": "AI",
+    "originalContent": "Normalizing Flows (NFs) have been established as a principled framework for generative modeling. Standard NFs consist of a forward process and a reverse process: the forward process maps data to noise, while the reverse process generates samples by inverting it. Typical NF forward transformations are constrained by explicit invertibility, ensuring that the reverse process can serve as their exact analytic inverse. Recent developments in TARFlow and its variants have revitalized NF methods by combining Transformers and autoregressive flows, but have also exposed causal decoding as a major bottleneck. In this work, we introduce Bidirectional Normalizing Flow ($\\textbf{BiFlow}$), a framework that removes the need for an exact analytic inverse. BiFlow learns a reverse model that approximates the underlying noise-to-data inverse mapping, enabling more flexible loss functions and architectures. Experiments on ImageNet demonstrate that BiFlow, compared to its causal decoding counterpart, improves generation quality while accelerating sampling by up to two orders of magnitude. BiFlow yields state-of-the-art results among NF-based methods and competitive performance among single-evaluation (\"1-NFE\") methods. Following recent encouraging progress on NFs, we hope our work will draw further attention to this classical paradigm.",
+    "titleJa": "双方向正規化フロー：データからノイズへ、そして逆戻り",
+    "summaryJa": "正規化フロー（NF）は生成モデルの重要な基盤技術ですが、従来の設計では、順方向のプロセスが厳密に可逆的である必要があり、アーキテクチャの柔軟性が制限され、特にサンプリング速度が課題でした。最近のTransformerを用いた手法（TARFlowなど）では、「因果的デコーディング」が重大なボトルネックとなっていました。本研究では、この厳密な解析的逆関数の制約を取り払った「双方向正規化フロー（BiFlow）」を提案します。BiFlowは、ノイズからデータへの逆マッピングを近似的に学習する逆方向モデルを採用することで、より柔軟な損失関数やニューラルネットワーク構造の利用を可能にしました。ImageNetを用いた実験の結果、BiFlowは従来の因果的デコーディング手法と比較して、生成品質を向上させると同時に、サンプリング速度を最大で二桁（約100倍）高速化できることが証明されました。この成果は、NFベースの手法として最先端の性能を示しており、古典的な正規化フローのパラダイムを再活性化させる重要な進展であると結論付けられます。",
+    "explanationJa": "生成AIの基盤技術である正規化フローを双方向で学習させることで、画像生成の速度と質を大幅に向上させ、生成モデルの性能を飛躍的に高めました。",
+    "translationJa": "正規化フロー（Normalizing Flows, NFs）は、生成モデルのための確立された理論的な枠組みです。標準的なNFは、データをノイズにマッピングする順方向プロセスと、それを反転させてサンプルを生成する逆方向プロセスで構成されています。従来のNFの順方向変換は、逆方向プロセスが厳密な解析的逆関数として機能できるように、明示的な可逆性によって制約を受けていました。\n最近、TARFlowとその変種におけるTransformerと自己回帰型フローの組み合わせはNF手法を活性化させましたが、その際に「因果的デコーディング」という主要なボトルネックを露呈させました。\n本研究では、厳密な解析的逆関数の必要性を取り除く「双方向正規化フロー（BiFlow）」というフレームワークを導入します。BiFlowは、基盤となるノイズからデータへの逆マッピングを近似する逆方向モデルを学習します。これにより、より柔軟な損失関数とアーキテクチャの利用が可能となります。\nImageNetを用いた実験では、BiFlowは従来の因果的デコーディングの対応手法と比較して、生成品質を向上させながら、サンプリングを最大で二桁高速化できることを実証しました。BiFlowは、NFベースの手法の中で最先端の結果をもたらし、単一評価（1-NFE）の手法の中でも競争力のある性能を発揮します。本研究は、最近のNFにおける目覚ましい進展に続き、この古典的なパラダイム（NF）へのさらなる注目を集めることを期待します。",
+    "insightJa": "本技術により、高解像度の画像や動画を極めて高速かつ高精度に生成することが可能となります。これにより、リアルタイムのクリエイティブ制作、メタバース内での動的なコンテンツ生成、あるいは産業用途での高効率なシミュレーションなど、幅広いビジネス分野で革新的な応用が期待されます。",
+    "recommendedBooks": [
+      "正規化フロー",
+      "生成モデル 深層学習",
+      "Transformer 機械学習"
+    ],
+    "tags": [
+      "Normalizing Flows",
+      "Generative Modeling",
+      "Deep Learning",
+      "ImageNet",
+      "BiFlow"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/10570765/pexels-photo-10570765.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
     "id": "http://arxiv.org/abs/2512.10952v1",
     "title": "Hierarchical Dataset Selection for High-Quality Data Sharing",
     "source": "arxiv",
@@ -290,6 +319,151 @@
     "imageUrl": "https://images.pexels.com/photos/247851/pexels-photo-247851.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
+    "id": "http://arxiv.org/abs/2512.10918v1",
+    "title": "CompanionCast: A Multi-Agent Conversational AI Framework with Spatial Audio for Social Co-Viewing Experiences",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10918v1",
+    "summary": "Social presence is central to the enjoyment of watching content together, yet modern media consumption is increasingly solitary. We investigate whether multi-agent conversational AI systems can recreate the dynamics of shared viewing experiences across diverse content types. We present CompanionCast, a general framework for orchestrating multiple role-specialized AI agents that respond to video content using multimodal inputs, speech synthesis, and spatial audio. Distinctly, CompanionCast integrates an LLM-as-a-Judge module that iteratively scores and refines conversations across five dimensions (relevance, authenticity, engagement, diversity, personality consistency). We validate this framework through sports viewing, a domain with rich dynamics and strong social traditions, where a pilot study with soccer fans suggests that multi-agent interaction improves perceived social presence compared to solo viewing. We contribute: (1) a generalizable framework for orchestrating multi-agent conversations around multimodal video content, (2) a novel evaluator-agent pipeline for conversation quality control, and (3) exploratory evidence of increased social presence in AI-mediated co-viewing. We discuss challenges and future directions for applying this approach to diverse viewing contexts including entertainment, education, and collaborative watching experiences.",
+    "publishedAt": "2025-12-11T18:44:44Z",
+    "author": "Yiyang Wang",
+    "category": "認知科学",
+    "originalContent": "Social presence is central to the enjoyment of watching content together, yet modern media consumption is increasingly solitary. We investigate whether multi-agent conversational AI systems can recreate the dynamics of shared viewing experiences across diverse content types. We present CompanionCast, a general framework for orchestrating multiple role-specialized AI agents that respond to video content using multimodal inputs, speech synthesis, and spatial audio. Distinctly, CompanionCast integrates an LLM-as-a-Judge module that iteratively scores and refines conversations across five dimensions (relevance, authenticity, engagement, diversity, personality consistency). We validate this framework through sports viewing, a domain with rich dynamics and strong social traditions, where a pilot study with soccer fans suggests that multi-agent interaction improves perceived social presence compared to solo viewing. We contribute: (1) a generalizable framework for orchestrating multi-agent conversations around multimodal video content, (2) a novel evaluator-agent pipeline for conversation quality control, and (3) exploratory evidence of increased social presence in AI-mediated co-viewing. We discuss challenges and future directions for applying this approach to diverse viewing contexts including entertainment, education, and collaborative watching experiences.",
+    "titleJa": "CompanionCast：ソーシャルな共同視聴体験のための空間オーディオを備えたマルチエージェント会話型AIフレームワーク",
+    "summaryJa": "現代のメディア視聴は孤独になりがちですが、共同視聴の楽しさには社会的臨場感が重要です。本研究では、マルチエージェント会話型AIシステムが、多様なコンテンツタイプにおいて共有視聴体験のダイナミクスを再現できるか検証します。CompanionCastは、マルチモーダル入力、音声合成、空間オーディオを用いてビデオコンテンツに反応する、役割特化型AIエージェントを調整するための汎用フレームワークです。会話の質を評価・改善するため、LLMを評価器として使用します。サッカー観戦のパイロット研究では、マルチエージェントインタラクションが単独視聴よりも社会的臨場感を向上させることが示唆されました。本研究は、マルチエージェント会話フレームワーク、会話品質管理のための新しい評価パイプライン、そしてAIを介した共同視聴における社会的臨場感の向上に関する知見を提供します。",
+    "explanationJa": "本研究は、AIを使って、まるで誰かと一緒に見ているかのような臨場感あふれる視聴体験を作ることを目指しています。",
+    "translationJa": "現代のメディア消費は個人で行われることが多くなっていますが、コンテンツを共に視聴する楽しみには、社会的臨場感が不可欠です。本研究では、マルチエージェント型の会話AIシステムが、多様なコンテンツにおいて、共有された視聴体験のダイナミクスを再現できるかどうかを調査します。我々は、マルチモーダル入力、音声合成、そして空間オーディオを用いて、ビデオコンテンツに反応する複数の役割特化型AIエージェントを連携させるための汎用的なフレームワークであるCompanionCastを提案します。特に、CompanionCastは、会話の質を反復的に評価し改善するために、LLM（大規模言語モデル）を評価器として統合しています。サッカーファンを対象としたパイロット研究を通して、スポーツ観戦という豊かなダイナミクスと強い社会的伝統を持つ分野において、マルチエージェントとのインタラクションが、単独で視聴するよりも、社会的臨場感を向上させることが示唆されました。本研究の貢献は、（１）マルチモーダルビデオコンテンツに関するマルチエージェント会話を連携させるための汎用的なフレームワーク、（２）会話の品質管理のための新しい評価エージェントパイプライン、（３）AIを介した共同視聴における社会的臨場感の向上に関する探索的な証拠、です。エンターテインメント、教育、共同視聴体験など、多様な視聴環境への応用における課題と今後の方向性について議論します。",
+    "insightJa": "この技術が進歩すれば、遠隔地にいる家族や友人と、まるで一緒にいるかのような臨場感でスポーツ観戦や映画鑑賞を楽しめるようになるかもしれません。ビジネスでは、リモートワークでのチームの一体感向上に貢献する可能性もあります。",
+    "recommendedBooks": [
+      "マルチエージェントシステム",
+      "自然言語処理 共視聴",
+      "ソーシャルAI"
+    ],
+    "tags": [
+      "Multi-Agent AI",
+      "Social Presence",
+      "Spatial Audio",
+      "Co-viewing",
+      "Conversational AI"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/8439094/pexels-photo-8439094.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10853v1",
+    "title": "Multidimensional Sorting: Comparative Statics",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10853v1",
+    "summary": "In sorting literature, comparative statics for multidimensional assignment models with general output functions and input distributions is an important open question. We provide a complete theory of comparative statics for technological change in general multidimensional assignment models. Our main result is that any technological change is uniquely decomposed into two distinct components. The first component (gradient) gives a characterization of changes in marginal earnings through a Poisson equation. The second component (divergence-free) gives a characterization of labor reallocation. For U.S. data, we quantify equilibrium responses in sorting and earnings with respect to cognitive skill-biased technological change.",
+    "publishedAt": "2025-12-11T17:45:47Z",
+    "author": "Job Boerma",
+    "category": "経済学",
+    "originalContent": "In sorting literature, comparative statics for multidimensional assignment models with general output functions and input distributions is an important open question. We provide a complete theory of comparative statics for technological change in general multidimensional assignment models. Our main result is that any technological change is uniquely decomposed into two distinct components. The first component (gradient) gives a characterization of changes in marginal earnings through a Poisson equation. The second component (divergence-free) gives a characterization of labor reallocation. For U.S. data, we quantify equilibrium responses in sorting and earnings with respect to cognitive skill-biased technological change.",
+    "titleJa": "多次元ソーティング：比較静学",
+    "summaryJa": "本研究は、多次元の割り当てモデルにおける比較静学という重要な課題に取り組みます。特に、一般的なアウトプット関数とインプット分布を持つモデルにおける技術変化の影響を分析します。主要な成果として、技術変化を二つの明確な要素に分解できることを示しました。一つは、ポアソン方程式を通じて限界収入の変化を特徴づける勾配成分であり、もう一つは労働再配分を特徴づける発散ゼロ成分です。米国のデータを用いて、認知スキル偏向型技術変化に対するソーティングと収入の均衡反応を定量化しています。この研究は、労働市場における技術変化の影響を理解する上で重要な貢献となります。",
+    "explanationJa": "この研究は、技術変化が労働市場における人々の配置や収入にどのように影響するかを分析しています。",
+    "translationJa": "ソーティングに関する研究において、一般的なアウトプット関数とインプット分布を持つ多次元割り当てモデルにおける比較静学は、重要な未解決問題です。本論文では、一般的な多次元割り当てモデルにおける技術変化に対する比較静学の完全な理論を提供します。私たちの主な結果は、あらゆる技術変化が一意に二つの異なる構成要素に分解できるということです。一つ目の構成要素（勾配）は、ポアソン方程式を通じて限界収入の変化の特徴づけを与えます。二つ目の構成要素（発散ゼロ）は、労働再配分の特徴づけを与えます。米国のデータを用いて、認知スキル偏向型技術変化に関するソーティングと収入の均衡反応を定量化します。",
+    "insightJa": "この研究は、技術革新によって求められるスキルが変化し、人々のキャリア形成や教育戦略に影響を与える可能性を示唆しています。企業は、変化に適応できる人材育成が重要になるでしょう。",
+    "recommendedBooks": [
+      "労働経済学",
+      "スキル偏向型技術進歩",
+      "計量経済学"
+    ],
+    "tags": [
+      "Sorting",
+      "Comparative Statics",
+      "Technological Change",
+      "Labor Economics",
+      "Assignment Models"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/6661076/pexels-photo-6661076.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10844v1",
+    "title": "Modeling, Segmenting and Statistics of Transient Spindles via Two-Dimensional Ornstein-Uhlenbeck Dynamics",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10844v1",
+    "summary": "We develop here a stochastic framework for modeling and segmenting transient spindle-like oscillatory bursts in electroencephalogram (EEG) signals. At the modeling level, individual spindles are represented as path realizations of a two-dimensional Ornstein{Uhlenbeck (OU) process with a stable focus, providing a low-dimensional stochastic dynamical system whose trajectories reproduce key morphological features of spindles, including their characteristic rise{decay amplitude envelopes. On the signal processing side, we propose a segmentation procedure based on Empirical Mode Decomposition (EMD) combined with the detection of a central extremum, which isolates single spindle events and yields a collection of oscillatory atoms. This construction enables a systematic statistical analysis of spindle features: we derive empirical laws for the distributions of amplitudes, inter-spindle intervals, and rise/decay durations, and show that these exhibit exponential tails consistent with the underlying OU dynamics. We further extend the model to a pair of weakly coupled OU processes with distinct natural frequencies, generating a stochastic mixture of slow, fast, and mixed spindles in random temporal order. The resulting framework provides a data-driven framework for the analysis of transient oscillations in EEG and, more generally, in nonstationary time series.",
+    "publishedAt": "2025-12-11T17:31:41Z",
+    "author": "C. Sun",
+    "category": "認知科学",
+    "originalContent": "We develop here a stochastic framework for modeling and segmenting transient spindle-like oscillatory bursts in electroencephalogram (EEG) signals. At the modeling level, individual spindles are represented as path realizations of a two-dimensional Ornstein{Uhlenbeck (OU) process with a stable focus, providing a low-dimensional stochastic dynamical system whose trajectories reproduce key morphological features of spindles, including their characteristic rise{decay amplitude envelopes. On the signal processing side, we propose a segmentation procedure based on Empirical Mode Decomposition (EMD) combined with the detection of a central extremum, which isolates single spindle events and yields a collection of oscillatory atoms. This construction enables a systematic statistical analysis of spindle features: we derive empirical laws for the distributions of amplitudes, inter-spindle intervals, and rise/decay durations, and show that these exhibit exponential tails consistent with the underlying OU dynamics. We further extend the model to a pair of weakly coupled OU processes with distinct natural frequencies, generating a stochastic mixture of slow, fast, and mixed spindles in random temporal order. The resulting framework provides a data-driven framework for the analysis of transient oscillations in EEG and, more generally, in nonstationary time series.",
+    "titleJa": "二次元オルンシュタイン-ウーレンベック過程による過渡的紡錘波のモデリング、セグメンテーション、および統計解析",
+    "summaryJa": "本研究では、脳波（EEG）信号における一過性の紡錘波状振動バーストをモデリングおよびセグメンテーションするための確率論的フレームワークを開発します。個々の紡錘波を安定焦点を持つ二次元オルンシュタイン-ウーレンベック（OU）過程のパスとして表現し、紡錘波の振幅包絡線など、特徴的な形態を再現します。経験的モード分解（EMD）に基づくセグメンテーション手法を提案し、個々の紡錘波イベントを分離します。振幅、紡錘波間隔、立ち上がり/減衰時間の分布に関する経験則を導き出し、OU過程と一致する指数関数的な裾野を示すことを示します。さらに、モデルを弱結合したOU過程のペアに拡張し、様々な紡錘波を生成します。本フレームワークは、EEGにおける過渡的な振動をデータ駆動型で解析できます。",
+    "explanationJa": "この研究は、脳波の紡錘波という特徴的な波形を解析するための新しい方法を提案しています。",
+    "translationJa": "本論文では、脳波（EEG）信号に見られる過渡的な紡錘波状の振動バーストをモデル化し、セグメンテーションするための確率論的枠組みを構築します。モデリング段階では、個々の紡錘波を、安定な焦点を持つ二次元オルンシュタイン-ウーレンベック（OU）過程の軌跡として表現します。これにより、紡錘波の特徴的な立ち上がり・減衰振幅包絡線を含む主要な形態学的特徴を再現する、低次元の確率論的力学系が提供されます。信号処理の側面では、経験的モード分解（EMD）と中心極値の検出を組み合わせたセグメンテーション手順を提案し、単一の紡錘波イベントを分離し、振動アトムのコレクションを生成します。この構成により、紡錘波の特徴の体系的な統計分析が可能になります。振幅、紡錘波間隔、および立ち上がり/減衰期間の分布に関する経験則を導き出し、これらが基礎となるOUダイナミクスと一致する指数関数的な裾を示すことを示します。さらに、モデルを異なる固有振動数を持つ弱結合したOU過程のペアに拡張し、低速、高速、および混合紡錘波の確率的混合をランダムな時間順序で生成します。結果として得られるフレームワークは、EEGおよびより一般的には非定常時系列における過渡的な振動の分析のためのデータ駆動型フレームワークを提供します。",
+    "insightJa": "脳波解析の精度向上は、睡眠障害の診断や脳機能の研究に役立つ可能性があります。ひいては、睡眠の質の向上や、より効果的な学習方法の開発につながるかもしれません。",
+    "recommendedBooks": [
+      "脳波解析 入門",
+      "時系列解析 応用",
+      "確率過程 モデル"
+    ],
+    "tags": [
+      "EEG",
+      "Spindle",
+      "Ornstein-Uhlenbeck process",
+      "Empirical Mode Decomposition",
+      "Time series analysis"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/745761/pexels-photo-745761.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10834v1",
+    "title": "Allometric scaling of brain activity explained by avalanche criticality",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10834v1",
+    "summary": "Allometric scaling laws, such as Kleiber's law for metabolic rate, highlight how efficiency emerges with size across living systems. The brain, with its characteristic sublinear scaling of activity, has long posed a puzzle: why do larger brains operate with disproportionately lower firing rates? Here we show that this economy of scale is a universal outcome of avalanche dynamics. We derive analytical scaling laws directly from avalanche statistics, establishing that any system governed by critical avalanches must exhibit sublinear activity-size relations. This theoretical prediction is then verified in integrate-and-fire neuronal networks at criticality and in classical self-organized criticality models, demonstrating that the effect is not model-specific but generic. The predicted exponents align with experimental observations across mammal species, bridging dynamical criticality with the allometry of brain metabolism. Our results reveal avalanche criticality as a fundamental mechanism underlying Kleiber-like scaling in the brain.",
+    "publishedAt": "2025-12-11T17:26:17Z",
+    "author": "Tiago S. A. N. Simões",
+    "category": "認知科学",
+    "originalContent": "Allometric scaling laws, such as Kleiber's law for metabolic rate, highlight how efficiency emerges with size across living systems. The brain, with its characteristic sublinear scaling of activity, has long posed a puzzle: why do larger brains operate with disproportionately lower firing rates? Here we show that this economy of scale is a universal outcome of avalanche dynamics. We derive analytical scaling laws directly from avalanche statistics, establishing that any system governed by critical avalanches must exhibit sublinear activity-size relations. This theoretical prediction is then verified in integrate-and-fire neuronal networks at criticality and in classical self-organized criticality models, demonstrating that the effect is not model-specific but generic. The predicted exponents align with experimental observations across mammal species, bridging dynamical criticality with the allometry of brain metabolism. Our results reveal avalanche criticality as a fundamental mechanism underlying Kleiber-like scaling in the brain.",
+    "titleJa": "脳活動のアロメトリーのスケーリングは雪崩臨界性によって説明される",
+    "summaryJa": "生物システムにおける代謝率に関するクレイバーの法則などのアロメトリーのスケーリング則は、サイズが大きくなるにつれて効率がどのように向上するかを示しています。脳は、活動の亜線形スケーリングという特徴を持ち、なぜ大きな脳ほど発火率が低いのかという謎を抱えていました。本研究では、このスケールメリットが雪崩ダイナミクスの普遍的な結果であることを示しました。雪崩統計から解析的なスケーリング則を導き出し、臨界雪崩に支配されたシステムは、活動とサイズの関係が亜線形になることを確立しました。この理論的な予測は、臨界状態の積分発火ニューラルネットワークと古典的な自己組織化臨界モデルで検証され、この効果がモデル固有ではなく一般的であることを示しました。予測された指数は哺乳類の実験的観察と一致し、動的な臨界性と脳代謝のアロメトリーを結びつけました。この結果は、雪崩臨界性が脳におけるクレイバーに似たスケーリングの基本的なメカニズムであることを明らかにしています。",
+    "explanationJa": "脳の大きさと活動の関係が、雪崩のような現象で説明できることを示した研究です。",
+    "translationJa": "代謝率に関するクレイバーの法則のように、アロメトリーのスケーリング則は、生物システム全体でサイズが大きくなるにつれて効率がどのように現れるかを強調しています。脳は特徴的な亜線形のスケーリングを持つため、大きな脳ほど活動（発火率）が低い理由が謎でした。本研究では、このスケールメリットが「雪崩ダイナミクス」の普遍的な結果であることを示します。雪崩統計から解析的なスケーリング則を導出し、臨界雪崩に支配されたシステムは、亜線形の活動-サイズ関係を示すことを確立しました。この予測は、臨界状態の積分発火ニューラルネットワークおよび古典的な自己組織化臨界モデルで検証され、この効果がモデルに依存せず一般的であることを示しました。予測された指数は哺乳類全体の実験的観察と一致し、動的な臨界性と脳代謝のアロメトリーを結びつけます。我々の結果は、雪崩臨界性が脳内のクレイバー則のようなスケーリングの根本的なメカニズムであることを明らかにしました。",
+    "insightJa": "脳の効率的な働き方の解明は、人工知能の設計や、より省エネルギーなコンピューティングシステムの開発に役立つ可能性があります。",
+    "recommendedBooks": [
+      "脳科学",
+      "複雑系",
+      "自己組織化"
+    ],
+    "tags": [
+      "Allometry",
+      "Brain Activity",
+      "Avalanche Criticality",
+      "Kleiber's Law",
+      "Neuroscience"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/3852577/pexels-photo-3852577.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10821v1",
+    "title": "Agile Deliberation: Concept Deliberation for Subjective Visual Classification",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10821v1",
+    "summary": "From content moderation to content curation, applications requiring vision classifiers for visual concepts are rapidly expanding. Existing human-in-the-loop approaches typically assume users begin with a clear, stable concept understanding to be able to provide high-quality supervision. In reality, users often start with a vague idea and must iteratively refine it through \"concept deliberation\", a practice we uncovered through structured interviews with content moderation experts. We operationalize the common strategies in deliberation used by real content moderators into a human-in-the-loop framework called \"Agile Deliberation\" that explicitly supports evolving and subjective concepts. The system supports users in defining the concept for themselves by exposing them to borderline cases. The system does this with two deliberation stages: (1) concept scoping, which decomposes the initial concept into a structured hierarchy of sub-concepts, and (2) concept iteration, which surfaces semantically borderline examples for user reflection and feedback to iteratively align an image classifier with the user's evolving intent. Since concept deliberation is inherently subjective and interactive, we painstakingly evaluate the framework through 18 user sessions, each 1.5h long, rather than standard benchmarking datasets. We find that Agile Deliberation achieves 7.5% higher F1 scores than automated decomposition baselines and more than 3% higher than manual deliberation, while participants reported clearer conceptual understanding and lower cognitive effort.",
+    "publishedAt": "2025-12-11T17:13:09Z",
+    "author": "Leijie Wang",
+    "category": "認知科学",
+    "originalContent": "From content moderation to content curation, applications requiring vision classifiers for visual concepts are rapidly expanding. Existing human-in-the-loop approaches typically assume users begin with a clear, stable concept understanding to be able to provide high-quality supervision. In reality, users often start with a vague idea and must iteratively refine it through \"concept deliberation\", a practice we uncovered through structured interviews with content moderation experts. We operationalize the common strategies in deliberation used by real content moderators into a human-in-the-loop framework called \"Agile Deliberation\" that explicitly supports evolving and subjective concepts. The system supports users in defining the concept for themselves by exposing them to borderline cases. The system does this with two deliberation stages: (1) concept scoping, which decomposes the initial concept into a structured hierarchy of sub-concepts, and (2) concept iteration, which surfaces semantically borderline examples for user reflection and feedback to iteratively align an image classifier with the user's evolving intent. Since concept deliberation is inherently subjective and interactive, we painstakingly evaluate the framework through 18 user sessions, each 1.5h long, rather than standard benchmarking datasets. We find that Agile Deliberation achieves 7.5% higher F1 scores than automated decomposition baselines and more than 3% higher than manual deliberation, while participants reported clearer conceptual understanding and lower cognitive effort.",
+    "titleJa": "アジャイルな熟慮：主観的な視覚分類のための概念熟慮",
+    "summaryJa": "コンテンツモデレーションなど、視覚概念の分類器を必要とするアプリケーションは急速に拡大しています。本研究では、ユーザが高品質な教師データを提供できるのは、明確で安定した概念理解を持っていることが前提となっている点に着目しました。実際には、ユーザは曖昧なアイデアから出発し、「概念熟慮」を通じて反復的に洗練していく必要があります。そこで、コンテンツモデレーターへのインタビューに基づき、概念熟慮の戦略を「アジャイルな熟慮」というフレームワークとして実装しました。このシステムは、ユーザが自分自身で概念を定義できるように、境界事例を提示します。実験の結果、アジャイルな熟慮は、自動分解ベースラインよりも高いF1スコアを達成し、手動による熟慮よりも優れていることが示されました。参加者は、より明確な概念理解と低い認知負荷を報告しました。",
+    "explanationJa": "主観的な視覚概念を分類する際、ユーザーが概念を反復的に洗練するのを支援するシステムの研究です。",
+    "translationJa": "視覚的な概念を分類するためのビジョン分類器を必要とするアプリケーションは、コンテンツモデレーションからコンテンツキュレーションまで急速に拡大しています。既存のヒューマンインザループのアプローチでは、通常、ユーザーは高品質な教師データを提供するために、明確で安定した概念理解を持っていると仮定されています。しかし実際には、ユーザーはしばしば漠然としたアイデアから始まり、「概念熟慮」と呼ばれるプロセスを通じて、それを反復的に洗練していく必要があります。本研究では、コンテンツモデレーションの専門家との構造化されたインタビューを通じて、この概念熟慮の実践を明らかにしました。実際のコンテンツモデレーターが使用する一般的な熟慮戦略を、「アジャイルな熟慮」と呼ばれるヒューマンインザループフレームワークに落とし込み、進化し続ける主観的な概念を明示的にサポートします。このシステムは、境界事例を提示することで、ユーザーが自分自身で概念を定義するのを支援します。具体的には、(1)概念スコーピング：初期概念をサブ概念の構造化された階層に分解する、(2)概念イテレーション：セマンティックな境界事例を提示し、ユーザーの熟考とフィードバックに基づき、画像分類器をユーザーの進化する意図に合わせる、という2つの熟慮段階で構成されています。概念熟慮は本質的に主観的でインタラクティブであるため、標準的なベンチマークデータセットではなく、それぞれ1.5時間の18回のユーザーセッションを通じて、このフレームワークを綿密に評価しました。その結果、「アジャイルな熟慮」は、自動分解ベースラインよりも7.5%高いF1スコアを達成し、手動による熟慮よりも3%以上高いスコアを達成し、参加者はより明確な概念理解とより低い認知負荷を報告しました。",
+    "insightJa": "この技術は、AIが人間の主観的な判断を必要とするコンテンツの分類や管理を支援する上で役立ちます。企業のコンテンツモデレーション業務の効率化に貢献する可能性があります。",
+    "recommendedBooks": [
+      "コンテンツモデレーション",
+      "ヒューマンインザループ",
+      "主観的データ分析"
+    ],
+    "tags": [
+      "Agile Deliberation",
+      "Concept Deliberation",
+      "Human-in-the-Loop",
+      "Content Moderation",
+      "Visual Classification"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/8901360/pexels-photo-8901360.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
     "id": "http://arxiv.org/abs/2512.10775v1",
     "title": "Deflating the Spacetime-Matter Dichotomy",
     "source": "arxiv",
@@ -317,6 +491,93 @@
       "gravity"
     ],
     "imageUrl": "https://images.pexels.com/photos/35146393/pexels-photo-35146393.png?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10758v1",
+    "title": "Designing AI-Resilient Assessments Using Interconnected Problems: A Theoretically Grounded and Empirically Validated Framework",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10758v1",
+    "summary": "The rapid adoption of generative AI has undermined traditional modular assessments in computing education, creating a disconnect between academic evaluation and industry practice. This paper presents a theoretically grounded framework for designing AI-resilient assessments, supported by formal analysis and multi-year empirical validation.\n  We make three contributions. First, we establish two theoretical results: (1) assessments composed of interconnected problems, where outputs feed into subsequent stages, are more AI-resilient than modular assessments because current language models struggle with sustained multi-step reasoning and context; and (2) semi-structured problems with deterministic success criteria provide more reliable measures of student competency than fully open-ended projects, which allow AI systems to default to familiar solution patterns. These results challenge common policy and institutional guidance that promotes open-ended assessments as the primary safeguard for academic integrity.\n  Second, we validate these results using data from four university data science courses (N = 138). While students achieve near-perfect scores on AI-assisted modular homework, performance drops by roughly 30 percentage points on proctored exams, indicating substantial AI score inflation. Interconnected projects remain strongly correlated with modular assessments, suggesting they measure the same underlying skills while resisting AI misuse. Proctored exams show weaker alignment, implying they may assess test-taking ability rather than intended learning outcomes.\n  Third, we translate these findings into a practical assessment design framework. The proposed approach enables educators to create assessments that promote integrative thinking, reflect real-world AI-augmented workflows, and naturally resist trivial delegation to generative AI, thereby helping restore academic integrity.",
+    "publishedAt": "2025-12-11T15:53:19Z",
+    "author": "Kaihua Ding",
+    "category": "社会",
+    "originalContent": "The rapid adoption of generative AI has undermined traditional modular assessments in computing education, creating a disconnect between academic evaluation and industry practice. This paper presents a theoretically grounded framework for designing AI-resilient assessments, supported by formal analysis and multi-year empirical validation.\n  We make three contributions. First, we establish two theoretical results: (1) assessments composed of interconnected problems, where outputs feed into subsequent stages, are more AI-resilient than modular assessments because current language models struggle with sustained multi-step reasoning and context; and (2) semi-structured problems with deterministic success criteria provide more reliable measures of student competency than fully open-ended projects, which allow AI systems to default to familiar solution patterns. These results challenge common policy and institutional guidance that promotes open-ended assessments as the primary safeguard for academic integrity.\n  Second, we validate these results using data from four university data science courses (N = 138). While students achieve near-perfect scores on AI-assisted modular homework, performance drops by roughly 30 percentage points on proctored exams, indicating substantial AI score inflation. Interconnected projects remain strongly correlated with modular assessments, suggesting they measure the same underlying skills while resisting AI misuse. Proctored exams show weaker alignment, implying they may assess test-taking ability rather than intended learning outcomes.\n  Third, we translate these findings into a practical assessment design framework. The proposed approach enables educators to create assessments that promote integrative thinking, reflect real-world AI-augmented workflows, and naturally resist trivial delegation to generative AI, thereby helping restore academic integrity.",
+    "titleJa": "相互接続された問題を用いたAI耐性評価の設計：理論的根拠と実証的検証に基づくフレームワーク",
+    "summaryJa": "生成AIの急速な普及は、コンピューター教育における従来のモジュール型評価を弱体化させ、学術的な評価と産業界の実践との間に乖離を生み出しています。本研究では、AI耐性のある評価を設計するための理論的根拠に基づいたフレームワークを提案し、形式的な分析と複数年にわたる実証的な検証によって支持されています。主な貢献は、相互接続された問題から構成される評価が、現在の言語モデルが持続的な多段階推論と文脈理解に苦労するため、モジュール型評価よりもAI耐性が高いこと、および決定的な成功基準を持つ半構造化された問題が、AIシステムが慣れ親しんだ解決策に頼ってしまう完全にオープンエンドなプロジェクトよりも、学生の能力をより信頼性の高い尺度を提供することです。これらの結果は、学術的誠実性のための主要な保護手段としてオープンエンドな評価を推進する一般的な政策や制度的ガイダンスに異議を唱えます。大学のデータサイエンスコースのデータを用いた検証では、学生はAI支援によるモジュール型宿題でほぼ満点を達成する一方、監視下での試験では成績が約30%低下し、AIによるスコアのかさ上げが示唆されました。相互接続されたプロジェクトはモジュール型評価と強く相関しており、AIの悪用を防ぎながら同じ基礎的なスキルを測定していることを示唆しています。この研究結果を、統合的思考を促進し、現実世界のAI拡張ワークフローを反映し、生成AIへの安易な委任に自然に抵抗する評価を設計するための実用的なフレームワークに変換しています。",
+    "explanationJa": "AIの影響を受けにくい評価方法を設計するための、理論と実践に基づいた研究です。",
+    "translationJa": "生成AIの急速な普及により、従来のモジュール型評価がコンピューター教育の分野でその有効性を失いつつあります。これは、学術的な評価と産業界での実践との間にずれを生じさせています。本論文では、AIの悪影響を受けにくい評価を設計するための、理論的根拠に裏付けられたフレームワークを提示します。このフレームワークは、形式的な分析と複数年にわたる実証的な検証によって支持されています。具体的には、(1) 複数の段階が互いに関連し、前の段階の出力が次の段階の入力となるような、相互接続された問題で構成された評価は、現在の言語モデルが複雑な推論や文脈の理解を苦手とするため、モジュール型評価よりもAIに対して強い耐性を持つこと、(2)明確な成功基準が定められた半構造化された問題は、AIが既存のパターンに頼りがちな完全な自由形式の課題よりも、学生の能力をより正確に評価できることを示しました。これは、自由形式の評価を推奨する従来の教育方針への挑戦となります。実際に、4つの大学のデータサイエンスコース（N=138）のデータを用いて検証した結果、AI支援を受けたモジュール型課題では学生の成績がほぼ満点である一方、試験監督下での試験では約30%も成績が低下し、AIによる成績の水増しが確認されました。相互接続されたプロジェクトはモジュール型評価と高い相関を示しており、同じスキルを測りつつAIによる不正を防ぐことができると考えられます。これらの知見を基に、教育者が統合的な思考を促し、現実のAIを利用した業務フローを反映し、安易なAIへの依存を防ぐ評価を設計するための実践的なフレームワークを提案します。",
+    "insightJa": "AI時代の教育評価は、知識の暗記だけでなく、AIを活用しながら問題を解決する能力を測る必要性が高まっています。この研究は、そのための具体的な指針を提供します。",
+    "recommendedBooks": [
+      "AI教育",
+      "教育評価",
+      "生成AI活用"
+    ],
+    "tags": [
+      "AI-resilient assessment",
+      "Generative AI",
+      "Educational assessment",
+      "Interconnected problems",
+      "Academic integrity"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/16629368/pexels-photo-16629368.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10749v1",
+    "title": "Echoes of Automation: How Bots Shaped Political Discourse in Brazil",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10749v1",
+    "summary": "In an era where social media platforms are central to political communication, the activity of bots raises pressing concerns about amplification, manipulation, and misinformation. Drawing on more than 315 million tweets posted from August 2018 to June 2022, we examine behavioural patterns, sentiment dynamics, and the thematic focus of bot- versus human-generated content spanning the 2018 Brazilian presidential election and the lead-up to the 2022 contest. Our analysis shows that bots relied disproportionately on retweets and replies, with reply activity spiking after the 2018 election, suggesting tactics of conversational infiltration and amplification. Sentiment analysis indicates that bots maintained a narrower emotional tone, in contrast to humans, whose sentiment fluctuated more strongly with political events. Topic modelling further reveals bots' repetitive, Bolsonaro-centric messaging, while human users engaged with a broader range of candidates, civic concerns, and personal reflections. These findings underscore bots' role as amplifiers of narrow agendas and their potential to distort online political discourse.",
+    "publishedAt": "2025-12-11T15:40:10Z",
+    "author": "Merve Ipek Bal",
+    "category": "社会",
+    "originalContent": "In an era where social media platforms are central to political communication, the activity of bots raises pressing concerns about amplification, manipulation, and misinformation. Drawing on more than 315 million tweets posted from August 2018 to June 2022, we examine behavioural patterns, sentiment dynamics, and the thematic focus of bot- versus human-generated content spanning the 2018 Brazilian presidential election and the lead-up to the 2022 contest. Our analysis shows that bots relied disproportionately on retweets and replies, with reply activity spiking after the 2018 election, suggesting tactics of conversational infiltration and amplification. Sentiment analysis indicates that bots maintained a narrower emotional tone, in contrast to humans, whose sentiment fluctuated more strongly with political events. Topic modelling further reveals bots' repetitive, Bolsonaro-centric messaging, while human users engaged with a broader range of candidates, civic concerns, and personal reflections. These findings underscore bots' role as amplifiers of narrow agendas and their potential to distort online political discourse.",
+    "titleJa": "自動化の残響：ボットはいかにブラジルの政治談話を形成したか",
+    "summaryJa": "本研究は、ソーシャルメディアが政治コミュニケーションの中心となる時代において、ボットの活動が増幅、操作、そして誤情報に関する重大な懸念を引き起こしているという問題意識から出発します。2018年8月から2022年6月までの3億1500万件以上のツイートを分析し、2018年のブラジル大統領選挙と2022年の選挙に向けた期間におけるボットと人間が生成したコンテンツの行動パターン、感情の動向、そしてテーマの焦点を検証しました。分析の結果、ボットはリツイートとリプライに不均衡に依存しており、特に2018年の選挙後にリプライ活動が急増していることが示されました。これは、会話への浸透と増幅の戦術を示唆しています。感情分析では、ボットは人間とは対照的に、より狭い感情的なトーンを維持していることが示されました。一方、人間の感情は政治的な出来事によって大きく変動します。トピックモデリングでは、ボットは反復的でボルソナロ氏中心のメッセージを発信し、人間のユーザーはより幅広い候補者、市民の関心事、そして個人的な考察に関与していることが明らかになりました。これらの発見は、ボットが狭い議題の増幅器としての役割を果たし、オンラインの政治談話を歪曲する可能性を強調しています。",
+    "explanationJa": "この研究は、ブラジルの政治において、ボットがソーシャルメディアの議論にどのような影響を与えたかを分析したものです。",
+    "translationJa": "本論文では、ソーシャルメディアが政治コミュニケーションの中心となっている現代において、ボットの活動がもたらす増幅、操作、誤情報拡散の問題に焦点を当てています。2018年8月から2022年6月までに投稿された3億1500万件以上のツイートを基に、2018年のブラジル大統領選挙と2022年の大統領選に向けた期間におけるボットと人間によるコンテンツの行動パターン、感情分析、そしてテーマ分析を行いました。分析の結果、ボットはリツイートとリプライを偏って使用しており、特に2018年の選挙後にはリプライの活動が急増していることが明らかになりました。これはボットが会話に潜り込み、情報を拡散させる戦術を用いていることを示唆しています。感情分析では、ボットは人間と比較して感情の変動が少なく、一定の感情を維持していることがわかりました。一方、人間の感情は政治的な出来事によって大きく変動します。トピックモデリングの結果からは、ボットがボルソナロ氏を中心とした反復的なメッセージを拡散しているのに対し、人間のユーザーはより多様な候補者や社会問題、個人的な意見を表明していることが示されました。これらの結果は、ボットが特定の政治的議題を増幅させ、オンラインの政治談話を歪める可能性があることを強調しています。",
+    "insightJa": "ソーシャルメディアでの情報操作は、選挙結果だけでなく、企業の評判や製品の売上にも影響を与える可能性があります。情報の信頼性を確認するスキルがますます重要になっています。",
+    "recommendedBooks": [
+      "ソーシャルメディア 政治",
+      "情報操作 手法",
+      "ボット 影響"
+    ],
+    "tags": [
+      "bots",
+      "political discourse",
+      "social media",
+      "Brazil",
+      "misinformation"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/8847193/pexels-photo-8847193.jpeg?auto=compress&cs=tinysrgb&h=350"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10672v1",
+    "title": "Capability Accumulation and Conditional Convergence: Towards a Dynamic Theory of Economic Complexity",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.10672v1",
+    "summary": "We develop a dynamic model of economic complexity that endogenously generates a transition between unconditional and conditional convergence. In this model, convergence turns conditional as the capability intensity of activities rises. We solve the model analytically, deriving closed-form solutions for the boundary separating unconditional from conditional convergence and show that this model also explains the path-dependent diversification process known as the principle of relatedness. This model provides an explanation for transitions between conditional and unconditional convergence and path-dependent diversification.",
+    "publishedAt": "2025-12-11T14:17:53Z",
+    "author": "Cesar A. Hidalgo",
+    "category": "経済学",
+    "originalContent": "We develop a dynamic model of economic complexity that endogenously generates a transition between unconditional and conditional convergence. In this model, convergence turns conditional as the capability intensity of activities rises. We solve the model analytically, deriving closed-form solutions for the boundary separating unconditional from conditional convergence and show that this model also explains the path-dependent diversification process known as the principle of relatedness. This model provides an explanation for transitions between conditional and unconditional convergence and path-dependent diversification.",
+    "titleJa": "能力蓄積と条件付き収束：経済複雑性の動的理論に向けて",
+    "summaryJa": "本研究は、経済複雑性の動的なモデルを開発し、無条件収束と条件付き収束の間の移行を内生的に生成します。活動の能力集約度が上昇するにつれて、収束は条件付きに変わります。モデルを解析的に解き、無条件収束と条件付き収束を分離する境界の閉じた形式の解を導出します。このモデルは、関連性の原則として知られる経路依存的な多様化プロセスも説明します。このモデルは、条件付き収束と無条件収束の間の移行と経路依存的な多様化の説明を提供します。",
+    "explanationJa": "経済の複雑さを理解するために、収束の条件が変化する動的なモデルを研究しています。",
+    "translationJa": "本研究では、経済複雑性の動的モデルを構築し、無条件収束から条件付き収束への移行がモデル内で自然に発生する仕組みを解明します。このモデルでは、経済活動に必要な能力（ケイパビリティ）の強度が上がるにつれて、経済成長の収束条件が無条件から条件付きへと変化します。モデルを解析的に解くことで、無条件収束と条件付き収束の境界線を明確に示す解を導き出しました。さらに、このモデルは「関連性の原則」として知られる、過去の発展経路に依存した多様化プロセスも説明できることを示します。本研究は、経済成長の収束条件が変化するメカニズムと、経済活動の多様化が過去の経緯に左右される理由を説明するものです。",
+    "insightJa": "経済の複雑性を理解することは、企業の戦略や政策立案に役立ちます。特定の産業に集中投資するリスクを理解し、多様な産業への展開を検討する上で参考になるでしょう。",
+    "recommendedBooks": [
+      "経済成長理論",
+      "複雑系経済学",
+      "イノベーション システム"
+    ],
+    "tags": [
+      "Economic Complexity",
+      "Conditional Convergence",
+      "Capability Accumulation",
+      "Path Dependence",
+      "経済複雑性"
+    ],
+    "imageUrl": "https://images.pexels.com/photos/8438982/pexels-photo-8438982.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     "id": "https://www.astralcodexten.com/p/hidden-open-thread-4115",
