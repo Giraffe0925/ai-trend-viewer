@@ -15,6 +15,7 @@ export interface Article {
   translationJa?: string;
   insightJa?: string;
   recommendedBooks?: string[];
+  imageUrl?: string;
   category?: 'AI' | 'Science' | 'Philosophy';
   tags?: string[];
 }

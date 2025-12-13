@@ -52,7 +52,14 @@ async function main() {
     const processedArticles: Article[] = [];
     for (const article of newArticles) {
         console.log(`Processing: ${article.title}`);
-        const processed = await processArticleWithLLM(article);
+        let processed = await processArticleWithLLM(article);
+
+        // Generate image URL based on tags
+        const keywords = processed.tags?.slice(0, 2) || [processed.category || 'technology'];
+        const keywordString = keywords.join(',');
+        const idHash = processed.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % 1000;
+        processed.imageUrl = `https://source.unsplash.com/400x300/?${encodeURIComponent(keywordString)}&sig=${idHash}`;
+
         processedArticles.push(processed);
         // Add delay to avoid rate limits if needed
         await new Promise(r => setTimeout(r, 1000));

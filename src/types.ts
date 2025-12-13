@@ -13,7 +13,8 @@ export interface Article {
     explanationJa?: string;
     translationJa?: string;
     insightJa?: string;
-    recommendedBooks?: string[]; // Array of book search keywords for Amazon
+    recommendedBooks?: string[];
+    imageUrl?: string;
     category?: 'AI' | 'Science' | 'Philosophy';
     tags?: string[];
 }

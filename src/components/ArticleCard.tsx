@@ -12,13 +12,15 @@ interface ArticleCardProps {
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
-    // Map category to a single fixed image
-    let categoryImage = '/images/philosophy-abstract.png'; // Default for Philosophy/Other
+    // Use article-specific image if available, fallback to category image
+    let categoryImage = '/images/philosophy-abstract.png';
     if (article.category === 'AI') {
         categoryImage = '/images/ai-abstract.png';
     } else if (article.category === 'Science') {
         categoryImage = '/images/science-abstract.png';
     }
+
+    const imageUrl = article.imageUrl || categoryImage;
 
     const cardStyle: React.CSSProperties = {
         display: 'flex',
@@ -106,7 +108,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, encodedId }) => {
     return (
         <Link href={`/articles/${encodedId}`} style={cardStyle}>
             <div style={imageContainerStyle}>
-                <img src={categoryImage} alt={article.category || 'Category'} style={imageStyle} />
+                <img src={imageUrl} alt={article.titleJa || article.title} style={imageStyle} />
             </div>
             <div style={contentStyle}>
                 <div style={headerStyle}>
