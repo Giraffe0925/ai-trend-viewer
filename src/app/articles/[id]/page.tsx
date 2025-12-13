@@ -32,6 +32,27 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                 ← ホームに戻る
             </Link>
 
+            {/* Hero Image */}
+            {article.imageUrl && (
+                <div style={{
+                    width: '100%',
+                    height: '300px',
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    marginBottom: '24px',
+                }}>
+                    <img
+                        src={article.imageUrl}
+                        alt={article.titleJa || article.title}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                        }}
+                    />
+                </div>
+            )}
+
             {/* Header Section */}
             <header className="mb-12">
                 <div className="flex items-center gap-3 mb-4">
@@ -94,6 +115,29 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                         <p className="text-gray-700 leading-8 text-lg">
                             {article.insightJa}
                         </p>
+                    </section>
+                )}
+
+                {/* Visual Suggestions */}
+                {article.visualSuggestions && article.visualSuggestions.length > 0 && (
+                    <section className="bg-sky-50/50 p-8 rounded-2xl border border-sky-100">
+                        <h3 className="flex items-center gap-2 text-lg font-bold text-sky-700 mb-4">
+                            <span>🎨</span> この記事を理解するためのビジュアルアイデア
+                        </h3>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                            {article.visualSuggestions.map((suggestion, index) => (
+                                <li key={index} style={{
+                                    display: 'flex',
+                                    alignItems: 'flex-start',
+                                    gap: '12px',
+                                    padding: '12px 0',
+                                    borderBottom: index < article.visualSuggestions!.length - 1 ? '1px solid #e0f2fe' : 'none',
+                                }}>
+                                    <span style={{ fontSize: '20px' }}>📊</span>
+                                    <span style={{ color: '#374151', lineHeight: 1.6 }}>{suggestion}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </section>
                 )}
 

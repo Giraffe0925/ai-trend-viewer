@@ -17,4 +17,5 @@ export interface Article {
     imageUrl?: string;
     category?: 'AI' | 'Science' | 'Philosophy' | '認知科学' | '哲学' | '経済学' | '社会';
     tags?: string[];
+    visualSuggestions?: string[];
 }

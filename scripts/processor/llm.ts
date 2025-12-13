@@ -45,6 +45,7 @@ export async function processArticleWithLLM(article: Article): Promise<Article> 
     - explanationJa: A simple one-sentence explanation for a general audience (use polite "desu/masu" style, approx 50-80 chars)
     - translationJa: A detailed Japanese translation of the abstract that helps readers understand the full paper without reading the original. Include context and explain technical terms. Approx 500-800 chars, clean text, NO HTML.
     - insightJa: A short insight on how this topic might impact everyday life or business (use polite "desu/masu" style, 1-2 sentences, approx 80-120 chars)
+    - visualSuggestions: An array of 2-3 diagram/illustration ideas that would help readers understand the content. Each should be a short Japanese description (e.g. ["AIモデルの学習プロセスを示すフローチャート", "データの処理パイプラインを示す図解"])
     - recommendedBooks: An array of 2-3 related book search keywords in Japanese (e.g. ["人工知能 入門", "機械学習 ビジネス"])
     - tags: An array of 3-5 relevant keywords (in English or Japanese)
 
@@ -71,6 +72,7 @@ export async function processArticleWithLLM(article: Article): Promise<Article> 
                 explanationJa: processed.explanationJa || '解説を生成できませんでした。',
                 translationJa: processed.translationJa || '',
                 insightJa: processed.insightJa || '',
+                visualSuggestions: processed.visualSuggestions || [],
                 recommendedBooks: processed.recommendedBooks || [],
                 tags: processed.tags || [],
             };
