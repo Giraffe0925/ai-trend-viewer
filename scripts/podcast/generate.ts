@@ -3,7 +3,6 @@ import { Article } from '../types';
 import fs from 'fs';
 import path from 'path';
 
-const GOOGLE_TTS_API_KEY = process.env.GOOGLE_CLOUD_TTS_API_KEY || '';
 const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
 
 interface TTSRequest {
@@ -24,7 +23,15 @@ interface TTSRequest {
  * Generate podcast audio from article content using Google Cloud TTS
  */
 export async function generatePodcastAudio(article: Article): Promise<string | null> {
-    if (!GOOGLE_TTS_API_KEY) {
+    const apiKey = process.env.GOOGLE_CLOUD_TTS_API_KEY || '';
+
+    console.log('TTS API Key check:', {
+        exists: !!apiKey,
+        length: apiKey.length,
+        start: apiKey.substring(0, 5)
+    });
+
+    if (!apiKey) {
         console.warn('GOOGLE_CLOUD_TTS_API_KEY not found, skipping podcast generation');
         return null;
     }
@@ -70,7 +77,7 @@ ${commentary}
         };
 
         const response = await fetch(
-            `https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_TTS_API_KEY}`,
+            `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
             {
                 method: 'POST',
                 headers: {
