@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'AI & Science Trends',
-  description: 'Automated trend tracker for AI, Science, and Philosophy',
+  title: '日々知読',
+  description: '科学・哲学・テクノロジー。世界の最先端研究を、分かりやすく日本語でお届けします。',
 };
 
 export default function RootLayout({
@@ -16,7 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="ja">
+      <head>
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3433420842549448"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className={inter.className}>
         <div className="min-h-screen relative overflow-hidden bg-[url('/noise.png')]">
           <Header />
