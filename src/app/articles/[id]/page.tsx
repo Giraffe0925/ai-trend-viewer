@@ -118,26 +118,61 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                     </section>
                 )}
 
-                {/* Visual Suggestions */}
+                {/* Visual Diagrams */}
                 {article.visualSuggestions && article.visualSuggestions.length > 0 && (
                     <section className="bg-sky-50/50 p-8 rounded-2xl border border-sky-100">
-                        <h3 className="flex items-center gap-2 text-lg font-bold text-sky-700 mb-4">
-                            <span>🎨</span> この記事を理解するためのビジュアルアイデア
+                        <h3 className="flex items-center gap-2 text-lg font-bold text-sky-700 mb-6">
+                            <span>🎨</span> イメージで理解する
                         </h3>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                             {article.visualSuggestions.map((suggestion, index) => (
-                                <li key={index} style={{
-                                    display: 'flex',
-                                    alignItems: 'flex-start',
-                                    gap: '12px',
-                                    padding: '12px 0',
-                                    borderBottom: index < article.visualSuggestions!.length - 1 ? '1px solid #e0f2fe' : 'none',
+                                <div key={index} style={{
+                                    backgroundColor: '#ffffff',
+                                    borderRadius: '12px',
+                                    overflow: 'hidden',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                                 }}>
-                                    <span style={{ fontSize: '20px' }}>📊</span>
-                                    <span style={{ color: '#374151', lineHeight: 1.6 }}>{suggestion}</span>
-                                </li>
+                                    {/* Image */}
+                                    {article.visualImages && article.visualImages[index] ? (
+                                        <img
+                                            src={article.visualImages[index]}
+                                            alt={suggestion}
+                                            style={{
+                                                width: '100%',
+                                                height: '200px',
+                                                objectFit: 'cover',
+                                            }}
+                                        />
+                                    ) : (
+                                        <div style={{
+                                            width: '100%',
+                                            height: '200px',
+                                            backgroundColor: '#e0f2fe',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            fontSize: '48px',
+                                        }}>
+                                            📊
+                                        </div>
+                                    )}
+                                    {/* Caption */}
+                                    <div style={{
+                                        padding: '16px',
+                                        borderTop: '1px solid #e0f2fe',
+                                    }}>
+                                        <p style={{
+                                            color: '#374151',
+                                            fontSize: '14px',
+                                            lineHeight: 1.6,
+                                            margin: 0,
+                                        }}>
+                                            {suggestion}
+                                        </p>
+                                    </div>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </section>
                 )}
 

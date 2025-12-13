@@ -102,6 +102,13 @@ async function main() {
             processed.imageUrl = `https://picsum.photos/seed/${idHash}/400/300`;
         }
 
+        // Fetch images for visual suggestions
+        if (processed.visualSuggestions && processed.visualSuggestions.length > 0) {
+            const { fetchDiagramImages } = await import('./utils/pexels');
+            const visualImages = await fetchDiagramImages(processed.visualSuggestions);
+            processed.visualImages = visualImages;
+        }
+
         processedArticles.push(processed);
 
         // Post to Twitter
