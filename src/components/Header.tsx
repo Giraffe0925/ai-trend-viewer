@@ -61,8 +61,8 @@ const Header = () => {
     const titleStyle: React.CSSProperties = {
         fontSize: '16px',
         fontWeight: 'bold',
-        color: '#8BA89A',
-        letterSpacing: '-0.02em',
+        color: '#4A5568',
+        letterSpacing: '0.05em',
     };
 
     const searchToggleStyle: React.CSSProperties = {
@@ -112,7 +112,7 @@ const Header = () => {
                 <div style={topRowStyle}>
                     <Link href="/" style={logoContainerStyle}>
                         <img src="/images/logo.png" alt="Logo" style={logoImageStyle} />
-                        <span style={titleStyle}>AI & Sci Trend</span>
+                        <span style={titleStyle}>日々知読</span>
                     </Link>
                     <button
                         type="button"

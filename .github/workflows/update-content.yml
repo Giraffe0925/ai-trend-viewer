@@ -1,0 +1,40 @@
+name: Update Content
+
+on:
+  schedule:
+    # Run 3 times a day (JST: 8:00, 12:00, 20:00 = UTC: 23:00, 03:00, 11:00)
+    - cron: '0 23 * * *'  # 8:00 AM JST
+    - cron: '0 3 * * *'   # 12:00 PM JST
+    - cron: '0 11 * * *'  # 8:00 PM JST
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run content update
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: npm run update-content
+        
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/posts.json
+          git diff --staged --quiet || git commit -m "Auto-update content [$(date +'%Y-%m-%d %H:%M')]"
+          git push

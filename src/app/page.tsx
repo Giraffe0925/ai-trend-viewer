@@ -48,13 +48,12 @@ export default async function Home({ searchParams }: HomeProps) {
       {/* Hero Section */}
       <section className="text-center space-y-6 py-16">
         <h2 className="text-4xl font-bold tracking-tight text-gray-700">
-          未来のヒントを、<br />
-          <span className="text-primary">優しく</span> お届けします。
+          日々、知を読む。
         </h2>
         <p className="text-gray-500 max-w-lg mx-auto leading-loose">
-          AI、科学、哲学。<br />
-          ちょっと難しい最先端のトレンドを、<br />
-          AIが分かりやすく翻訳・要約して毎朝お届け。
+          科学・哲学・テクノロジー。<br />
+          世界の最先端研究を、<br />
+          分かりやすく日本語でお届けします。
         </p>
       </section>
 
