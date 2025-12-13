@@ -5,7 +5,6 @@ import { fetchArxivPapers } from './fetchers/arxiv';
 import { fetchRSS } from './fetchers/rss';
 import { processArticleWithLLM } from './processor/llm';
 import { fetchPexelsImage } from './utils/pexels';
-import { postToTwitter } from './utils/twitter';
 import { Article } from './types';
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'posts.json');
@@ -119,15 +118,6 @@ async function main() {
         }
 
         processedArticles.push(processed);
-
-        // Post to Twitter (optional - don't fail if Twitter is not configured)
-        try {
-            const encodedId = Buffer.from(processed.id).toString('base64url');
-            const articleUrl = `https://ai-trend-viewer.vercel.app/articles/${encodedId}`;
-            await postToTwitter(processed.titleJa || processed.title, processed.category || 'General', articleUrl);
-        } catch (twitterError: any) {
-            console.warn(`Twitter posting failed (non-critical): ${twitterError.message}`);
-        }
 
         // Add delay to avoid rate limits
         await new Promise(r => setTimeout(r, 2000));
