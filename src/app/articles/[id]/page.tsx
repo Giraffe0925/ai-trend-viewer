@@ -103,10 +103,10 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                         <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '18px', fontWeight: 'bold', color: '#D97706', marginBottom: '16px' }}>
                             <span>📚</span> 関連書籍
                         </h3>
-                        <p style={{ fontSize: '12px', color: '#9CA3AF', marginBottom: '12px' }}>
-                            このトピックをさらに深く学びたい方へ
+                        <p style={{ fontSize: '12px', color: '#9CA3AF', marginBottom: '16px' }}>
+                            このトピックをさらに深く学びたい方へ（Amazonで検索）
                         </p>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
                             {article.recommendedBooks.map((book, index) => (
                                 <a
                                     key={index}
@@ -114,24 +114,42 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
-                                        display: 'inline-flex',
+                                        display: 'flex',
                                         alignItems: 'center',
-                                        gap: '6px',
-                                        padding: '8px 16px',
-                                        backgroundColor: '#FF9900',
-                                        color: 'white',
-                                        borderRadius: '9999px',
-                                        fontSize: '14px',
-                                        fontWeight: 500,
+                                        gap: '12px',
+                                        padding: '16px',
+                                        backgroundColor: 'white',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
                                         textDecoration: 'none',
-                                        transition: 'background-color 0.2s',
+                                        transition: 'transform 0.2s, box-shadow 0.2s',
                                     }}
                                 >
-                                    🔍 {book}
+                                    <div style={{
+                                        width: '60px',
+                                        height: '80px',
+                                        backgroundColor: '#FF9900',
+                                        borderRadius: '4px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '28px',
+                                        flexShrink: 0,
+                                    }}>
+                                        📖
+                                    </div>
+                                    <div style={{ overflow: 'hidden' }}>
+                                        <p style={{ fontSize: '14px', fontWeight: 600, color: '#1F2937', marginBottom: '4px' }}>
+                                            {book}
+                                        </p>
+                                        <p style={{ fontSize: '11px', color: '#FF9900', fontWeight: 500 }}>
+                                            Amazonで検索 →
+                                        </p>
+                                    </div>
                                 </a>
                             ))}
                         </div>
-                        <p style={{ fontSize: '10px', color: '#9CA3AF', marginTop: '12px' }}>
+                        <p style={{ fontSize: '10px', color: '#9CA3AF', marginTop: '16px' }}>
                             ※ Amazonアソシエイトプログラムのリンクです
                         </p>
                     </section>
