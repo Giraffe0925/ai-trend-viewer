@@ -12,29 +12,30 @@ const DATA_FILE = path.join(process.cwd(), 'data', 'posts.json');
 async function main() {
     console.log('Starting content update...');
 
-    // 1. Fetch from various sources
-    const arxivAI = await fetchArxivPapers('cs.AI', 3);
-    const arxivPhysics = await fetchArxivPapers('physics', 2);
+    // 1. Fetch ONLY from academic paper sources (free, open access)
 
-    // Science feeds
-    const scienceDaily = await fetchRSS('https://www.sciencedaily.com/rss/mind_brain.xml', 'Science');
+    // ArXiv - Computer Science / AI
+    const arxivAI = await fetchArxivPapers('cs.AI', 5);        // Artificial Intelligence
+    const arxivML = await fetchArxivPapers('cs.LG', 3);        // Machine Learning
+    const arxivCL = await fetchArxivPapers('cs.CL', 2);        // Computation and Language (NLP)
 
-    // AI Tech Company & Startup News
-    const openAIBlog = await fetchRSS('https://openai.com/blog/rss/', 'AI');
-    const anthropicNews = await fetchRSS('https://www.anthropic.com/rss.xml', 'AI');
-    const techCrunchAI = await fetchRSS('https://techcrunch.com/category/artificial-intelligence/feed/', 'AI');
-    const theVergeAI = await fetchRSS('https://www.theverge.com/rss/ai-artificial-intelligence/index.xml', 'AI');
-    const venturebeat = await fetchRSS('https://venturebeat.com/category/ai/feed/', 'AI');
+    // ArXiv - Physics / Science
+    const arxivQuantPh = await fetchArxivPapers('quant-ph', 2); // Quantum Physics
+    const arxivCondMat = await fetchArxivPapers('cond-mat', 2); // Condensed Matter
 
+    // ArXiv - Other interesting fields
+    const arxivStat = await fetchArxivPapers('stat.ML', 2);     // Statistics - Machine Learning
+    const arxivMath = await fetchArxivPapers('math.OC', 1);     // Mathematics - Optimization
+
+    // Combine only academic papers
     let articles: Article[] = [
         ...arxivAI.articles,
-        ...arxivPhysics.articles,
-        ...scienceDaily.articles,
-        ...openAIBlog.articles,
-        ...anthropicNews.articles,
-        ...techCrunchAI.articles,
-        ...theVergeAI.articles,
-        ...venturebeat.articles
+        ...arxivML.articles,
+        ...arxivCL.articles,
+        ...arxivQuantPh.articles,
+        ...arxivCondMat.articles,
+        ...arxivStat.articles,
+        ...arxivMath.articles
     ];
 
     console.log(`Fetched ${articles.length} articles.`);
