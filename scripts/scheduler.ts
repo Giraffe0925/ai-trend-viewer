@@ -120,10 +120,14 @@ async function main() {
 
         processedArticles.push(processed);
 
-        // Post to Twitter
-        const encodedId = Buffer.from(processed.id).toString('base64url');
-        const articleUrl = `https://ai-trend-viewer.vercel.app/articles/${encodedId}`;
-        await postToTwitter(processed.titleJa || processed.title, processed.category || 'General', articleUrl);
+        // Post to Twitter (optional - don't fail if Twitter is not configured)
+        try {
+            const encodedId = Buffer.from(processed.id).toString('base64url');
+            const articleUrl = `https://ai-trend-viewer.vercel.app/articles/${encodedId}`;
+            await postToTwitter(processed.titleJa || processed.title, processed.category || 'General', articleUrl);
+        } catch (twitterError: any) {
+            console.warn(`Twitter posting failed (non-critical): ${twitterError.message}`);
+        }
 
         // Add delay to avoid rate limits
         await new Promise(r => setTimeout(r, 2000));
