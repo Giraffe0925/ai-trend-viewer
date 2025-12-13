@@ -4,9 +4,11 @@ import { Article, FetcherResult } from '../types';
 
 const parser = new Parser();
 
+type CategoryType = 'AI' | 'Science' | 'Philosophy' | '認知科学' | '哲学' | '経済学' | '社会';
+
 export async function fetchRSS(
     url: string,
-    category: 'AI' | 'Science' | 'Philosophy'
+    category: CategoryType
 ): Promise<FetcherResult> {
     try {
         const feed = await parser.parseURL(url);

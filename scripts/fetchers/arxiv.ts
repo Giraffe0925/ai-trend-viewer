@@ -4,7 +4,9 @@ import { Article, FetcherResult } from '../types';
 const ARXIV_API_URL = 'http://export.arxiv.org/api/query';
 
 // Category mapping for detailed classification
-function getCategoryName(arxivCategory: string): string {
+type CategoryType = 'AI' | 'Science' | 'Philosophy' | '認知科学' | '哲学' | '経済学' | '社会';
+
+function getCategoryName(arxivCategory: string): CategoryType {
     // AI categories
     if (arxivCategory.startsWith('cs.AI') ||
         arxivCategory.startsWith('cs.LG') ||

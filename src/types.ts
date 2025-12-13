@@ -15,6 +15,6 @@ export interface Article {
     insightJa?: string;
     recommendedBooks?: string[];
     imageUrl?: string;
-    category?: 'AI' | 'Science' | 'Philosophy';
+    category?: 'AI' | 'Science' | 'Philosophy' | '認知科学' | '哲学' | '経済学' | '社会';
     tags?: string[];
 }
