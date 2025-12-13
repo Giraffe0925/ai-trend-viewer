@@ -33,11 +33,15 @@ export async function fetchArxivPapers(
             const authorMatch = entry.match(/<author>\s*<name>([\s\S]*?)<\/name>/);
 
             if (titleMatch && idMatch) {
+                // Convert arXiv URL from /abs/ to /pdf/ for direct PDF access
+                const absUrl = idMatch[1].trim();
+                const pdfUrl = absUrl.replace('/abs/', '/pdf/');
+
                 articles.push({
-                    id: idMatch[1].trim(),
+                    id: absUrl,
                     title: titleMatch[1].trim().replace(/\n/g, ' '),
                     source: 'arxiv' as const,
-                    url: idMatch[1].trim(),
+                    url: pdfUrl, // Link to PDF version
                     summary: summaryMatch ? summaryMatch[1].trim() : '',
                     publishedAt: publishedMatch ? publishedMatch[1].trim() : new Date().toISOString(),
                     author: authorMatch ? authorMatch[1].trim() : undefined,
