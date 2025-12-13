@@ -3,6 +3,9 @@ import { Article } from '@/types';
 import ArticleCard from '@/components/ArticleCard';
 import fs from 'fs';
 import path from 'path';
+import Link from 'next/link';
+
+const ARTICLES_PER_PAGE = 20;
 
 async function getArticles(): Promise<Article[]> {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
@@ -18,12 +21,13 @@ async function getArticles(): Promise<Article[]> {
 }
 
 interface HomeProps {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; page?: string }>;
 }
 
 export default async function Home({ searchParams }: HomeProps) {
   const params = await searchParams;
   const query = params.q?.toLowerCase() || '';
+  const currentPage = parseInt(params.page || '1', 10);
 
   const articles = await getArticles();
 
@@ -43,6 +47,20 @@ export default async function Home({ searchParams }: HomeProps) {
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 
+  // Pagination
+  const totalArticles = sortedArticles.length;
+  const totalPages = Math.ceil(totalArticles / ARTICLES_PER_PAGE);
+  const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const paginatedArticles = sortedArticles.slice(startIndex, startIndex + ARTICLES_PER_PAGE);
+
+  // Build pagination URL
+  const buildPageUrl = (page: number) => {
+    const params = new URLSearchParams();
+    if (query) params.set('q', query);
+    params.set('page', page.toString());
+    return `/?${params.toString()}`;
+  };
+
   return (
     <div className="space-y-12">
       {/* Hero Section */}
@@ -60,20 +78,69 @@ export default async function Home({ searchParams }: HomeProps) {
       {/* Search Results Info */}
       {query && (
         <div style={{ textAlign: 'center', color: '#6B7280', fontSize: '14px' }}>
-          「{params.q}」の検索結果: {sortedArticles.length}件
+          「{params.q}」の検索結果: {totalArticles}件
         </div>
       )}
 
       {/* Grid */}
-      {sortedArticles.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
-          {sortedArticles.map((article) => {
-            const encodedId = Buffer.from(article.id).toString('base64url');
-            return (
-              <ArticleCard key={article.id} article={article} encodedId={encodedId} />
-            );
-          })}
-        </div>
+      {paginatedArticles.length > 0 ? (
+        <>
+          <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
+            {paginatedArticles.map((article) => {
+              const encodedId = Buffer.from(article.id).toString('base64url');
+              return (
+                <ArticleCard key={article.id} article={article} encodedId={encodedId} />
+              );
+            })}
+          </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '20px 0',
+            }}>
+              {currentPage > 1 && (
+                <Link
+                  href={buildPageUrl(currentPage - 1)}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: '#f3f4f6',
+                    borderRadius: '8px',
+                    color: '#374151',
+                    textDecoration: 'none',
+                    fontSize: '14px',
+                  }}
+                >
+                  ← 前へ
+                </Link>
+              )}
+
+              <span style={{ color: '#6b7280', fontSize: '14px' }}>
+                {currentPage} / {totalPages} ページ
+              </span>
+
+              {currentPage < totalPages && (
+                <Link
+                  href={buildPageUrl(currentPage + 1)}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: '#3b82f6',
+                    borderRadius: '8px',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    fontSize: '14px',
+                  }}
+                >
+                  次へ →
+                </Link>
+              )}
+            </div>
+          )}
+        </>
       ) : (
         <div className="text-center py-20 bg-white/5 rounded-2xl glass-card">
           <p className="text-gray-400 mb-4">
