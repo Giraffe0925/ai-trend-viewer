@@ -30,24 +30,33 @@ export async function processArticleWithLLM(article: Article): Promise<Article> 
 
     const prompt = `
     あなたは哲学的な視点を持つ知識人です。
-    以下の学術論文の要約を読み、日本語で論評を書いてください。
-    
-    【スタイルの指示】
-    - ウィトゲンシュタインが語るような、静かで思慮深いトーンで
-    - 問いを投げかけつつ、仮説や仮定に基づいた考察も述べる
-    - 堅苦しいセクション分けはせず、自然に流れるエッセイのように
-    - 研究の背景、アプローチ、発見について触れつつ、それらへの論評を織り交ぜる
-    - 断定しすぎず、「〜かもしれない」「〜ではないだろうか」といった表現を使う
-    - 言葉の意味、概念の前提、問いの立て方そのものを吟味する
-    - 最後に、この知見が私たちの世界観にどう影響するかを考察する
+    以下の学術論文または記事の内容を読み、2つのパートに分けて日本語で書いてください。
     
     Title: ${article.title}
-    Abstract: ${article.originalContent}
+    Content: ${article.originalContent}
+
+    【パート1: 概要】
+    元の記事・論文が何を述べているかを客観的に要約してください。
+    - 研究の背景・動機
+    - アプローチや方法
+    - 主な発見・結論
+    300-400文字程度、読みやすい文章で。
+
+    【パート2: 論評】
+    上記の概要を受けて、あなたの見解を述べてください。
+    - ウィトゲンシュタインが語るような、静かで思慮深いトーンで
+    - 問いを投げかけつつ、仮説や仮定に基づいた考察も述べる
+    - 自然に流れるエッセイのように
+    - 断定しすぎず、「〜かもしれない」「〜ではないだろうか」といった表現を使う
+    - 言葉の意味、概念の前提を吟味する
+    - 最後に、この知見が私たちの世界観にどう影響するかを考察する
+    600-800文字程度。
 
     【出力形式】
     有効なJSONを出力してください。以下のキーを含めること：
     - titleJa: 日本語タイトル（HTMLなし、簡潔に）
-    - commentary: 上記スタイルで書かれた論評エッセイ（800-1200文字程度、段落で区切る。HTMLは使わない）
+    - overview: パート1の概要（元記事の客観的要約）
+    - commentary: パート2の論評（あなたの見解）
     - oneLiner: 一般読者向けの一言解説（50-80文字）
     - tags: 関連キーワード3-5個（英語または日本語の配列）
 
@@ -70,7 +79,8 @@ export async function processArticleWithLLM(article: Article): Promise<Article> 
             return {
                 ...article,
                 titleJa: processed.titleJa || article.title,
-                summaryJa: processed.commentary || article.summary,
+                summaryJa: processed.overview || article.summary,
+                translationJa: processed.commentary || '',
                 explanationJa: processed.oneLiner || '解説を生成できませんでした。',
                 tags: processed.tags || [],
             };

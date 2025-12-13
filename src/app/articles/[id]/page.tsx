@@ -85,21 +85,64 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                 )}
             </header>
 
-            {/* Essay Content */}
-            <article className="prose prose-lg max-w-none">
+            {/* Overview Section - What the source says */}
+            <section style={{
+                backgroundColor: '#f8fafc',
+                borderRadius: '16px',
+                padding: '24px',
+                marginBottom: '32px',
+                borderLeft: '4px solid #94a3b8',
+            }}>
+                <h2 style={{
+                    fontSize: '14px',
+                    fontWeight: 'bold',
+                    color: '#64748b',
+                    marginBottom: '16px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                }}>
+                    📄 元記事の概要
+                </h2>
                 <div style={{
-                    fontSize: '17px',
-                    lineHeight: 2,
-                    color: '#374151',
+                    fontSize: '16px',
+                    lineHeight: 1.9,
+                    color: '#475569',
                     whiteSpace: 'pre-line',
                 }}>
                     {article.summaryJa || article.summary}
                 </div>
-            </article>
+            </section>
+
+            {/* Commentary Section - Author's opinion */}
+            {article.translationJa && (
+                <section style={{
+                    marginBottom: '48px',
+                }}>
+                    <h2 style={{
+                        fontSize: '14px',
+                        fontWeight: 'bold',
+                        color: '#6366f1',
+                        marginBottom: '24px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                    }}>
+                        💭 私見
+                    </h2>
+                    <article className="prose prose-lg max-w-none">
+                        <div style={{
+                            fontSize: '17px',
+                            lineHeight: 2,
+                            color: '#374151',
+                            whiteSpace: 'pre-line',
+                        }}>
+                            {article.translationJa}
+                        </div>
+                    </article>
+                </section>
+            )}
 
             {/* Original Link */}
             <div style={{
-                marginTop: '48px',
                 paddingTop: '24px',
                 borderTop: '1px solid #e5e7eb',
             }}>
