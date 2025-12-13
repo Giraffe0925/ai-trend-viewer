@@ -1,0 +1,226 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2512.10957v1",
+    "title": "SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model",
+    "source": "arxiv",
+    "url": "http://arxiv.org/abs/2512.10957v1",
+    "summary": "We propose a decoupled 3D scene generation framework called SceneMaker in this work. Due to the lack of sufficient open-set de-occlusion and pose estimation priors, existing methods struggle to simultaneously produce high-quality geometry and accurate poses under severe occlusion and open-set settings. To address these issues, we first decouple the de-occlusion model from 3D object generation, and enhance it by leveraging image datasets and collected de-occlusion datasets for much more diverse open-set occlusion patterns. Then, we propose a unified pose estimation model that integrates global and local mechanisms for both self-attention and cross-attention to improve accuracy. Besides, we construct an open-set 3D scene dataset to further extend the generalization of the pose estimation model. Comprehensive experiments demonstrate the superiority of our decoupled framework on both indoor and open-set scenes. Our codes and datasets is released at https://idea-research.github.io/SceneMaker/.",
+    "publishedAt": "2025-12-11T18:59:56Z",
+    "author": "Yukai Shi",
+    "category": "AI",
+    "originalContent": "We propose a decoupled 3D scene generation framework called SceneMaker in this work. Due to the lack of sufficient open-set de-occlusion and pose estimation priors, existing methods struggle to simultaneously produce high-quality geometry and accurate poses under severe occlusion and open-set settings. To address these issues, we first decouple the de-occlusion model from 3D object generation, and enhance it by leveraging image datasets and collected de-occlusion datasets for much more diverse open-set occlusion patterns. Then, we propose a unified pose estimation model that integrates global and local mechanisms for both self-attention and cross-attention to improve accuracy. Besides, we construct an open-set 3D scene dataset to further extend the generalization of the pose estimation model. Comprehensive experiments demonstrate the superiority of our decoupled framework on both indoor and open-set scenes. Our codes and datasets is released at https://idea-research.github.io/SceneMaker/.",
+    "titleJa": "SceneMaker：分離型デ・オクルージョンと姿勢推定モデルによるオープンセット3Dシーン生成",
+    "summaryJa": "本研究ではSceneMakerという分離型3Dシーン生成フレームワークを提案。既存手法の課題を克服するため、デ・オクルージョンモデルを分離し、姿勢推定モデルを統合。オープンセット環境での性能を向上。",
+    "explanationJa": "SceneMakerは、隠れた部分を予測し、物体の正確な位置を特定することで、様々な3Dシーンを生成する技術です。",
+    "translationJa": "本研究では、SceneMakerと呼ばれる分離型3Dシーン生成フレームワークを提案します。既存の手法では、十分なオープンセットのデ・オクルージョンと姿勢推定の事前知識が不足しているため、深刻なオクルージョンやオープンセット環境下で高品質な形状と正確な姿勢を同時に生成することが困難です。これらの課題に対処するため、まず、デ・オクルージョンモデルを3Dオブジェクト生成から分離し、画像データセットと収集されたデ・オクルージョンデータセットを活用して、より多様なオープンセットのオクルージョンパターンに対応できるように強化します。次に、自己注意と交差注意の両方に対してグローバルメカニズムとローカルメカニズムを統合した、統一された姿勢推定モデルを提案し、精度を向上させます。さらに、姿勢推定モデルの汎化性能を拡張するために、オープンセット3Dシーンデータセットを構築します。広範な実験により、屋内シーンとオープンセットシーンの両方において、提案する分離型フレームワークの優位性が示されています。コードとデータセットは、https://idea-research.github.io/SceneMaker/ で公開されています。",
+    "insightJa": "この技術は、ゲームや映画制作における3D環境の自動生成、ロボット工学における環境認識の向上、そして商品の配置シミュレーションなどに役立つ可能性があります。よりリアルなバーチャル体験や効率的な業務支援に繋がることが期待されます。",
+    "recommendedBooks": [
+      "3Dグラフィックス 理論",
+      "コンピュータビジョン 実践",
+      "機械学習 3Dデータ"
+    ],
+    "tags": [
+      "3D Scene Generation",
+      "De-occlusion",
+      "Pose Estimation",
+      "Open-set Learning",
+      "SceneMaker"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10952v1",
+    "title": "Hierarchical Dataset Selection for High-Quality Data Sharing",
+    "source": "arxiv",
+    "url": "http://arxiv.org/abs/2512.10952v1",
+    "summary": "The success of modern machine learning hinges on access to high-quality training data. In many real-world scenarios, such as acquiring data from public repositories or sharing across institutions, data is naturally organized into discrete datasets that vary in relevance, quality, and utility. Selecting which repositories or institutions to search for useful datasets, and which datasets to incorporate into model training are therefore critical decisions, yet most existing methods select individual samples and treat all data as equally relevant, ignoring differences between datasets and their sources. In this work, we formalize the task of dataset selection: selecting entire datasets from a large, heterogeneous pool to improve downstream performance under resource constraints. We propose Dataset Selection via Hierarchies (DaSH), a dataset selection method that models utility at both dataset and group (e.g., collections, institutions) levels, enabling efficient generalization from limited observations. Across two public benchmarks (Digit-Five and DomainNet), DaSH outperforms state-of-the-art data selection baselines by up to 26.2% in accuracy, while requiring significantly fewer exploration steps. Ablations show DaSH is robust to low-resource settings and lack of relevant datasets, making it suitable for scalable and adaptive dataset selection in practical multi-source learning workflows.",
+    "publishedAt": "2025-12-11T18:59:55Z",
+    "author": "Xiaona Zhou",
+    "category": "AI",
+    "originalContent": "The success of modern machine learning hinges on access to high-quality training data. In many real-world scenarios, such as acquiring data from public repositories or sharing across institutions, data is naturally organized into discrete datasets that vary in relevance, quality, and utility. Selecting which repositories or institutions to search for useful datasets, and which datasets to incorporate into model training are therefore critical decisions, yet most existing methods select individual samples and treat all data as equally relevant, ignoring differences between datasets and their sources. In this work, we formalize the task of dataset selection: selecting entire datasets from a large, heterogeneous pool to improve downstream performance under resource constraints. We propose Dataset Selection via Hierarchies (DaSH), a dataset selection method that models utility at both dataset and group (e.g., collections, institutions) levels, enabling efficient generalization from limited observations. Across two public benchmarks (Digit-Five and DomainNet), DaSH outperforms state-of-the-art data selection baselines by up to 26.2% in accuracy, while requiring significantly fewer exploration steps. Ablations show DaSH is robust to low-resource settings and lack of relevant datasets, making it suitable for scalable and adaptive dataset selection in practical multi-source learning workflows.",
+    "titleJa": "高品質なデータ共有のための階層型データセット選択",
+    "summaryJa": "機械学習の成功は高品質な学習データに依存。DaSHは、データセットとグループレベルで有用性をモデル化し、リソース制約下でデータセットを選択、性能を向上させます。",
+    "explanationJa": "DaSHは、効率的にデータセットを選び、機械学習の精度を向上させる技術です。",
+    "translationJa": "現代の機械学習の成功は、高品質な学習データへのアクセスにかかっています。多くの現実世界のシナリオ、例えば、公共リポジトリからのデータ取得や、機関間のデータ共有においては、データは自然に離散的なデータセットとして構成され、関連性、品質、有用性が異なります。したがって、有用なデータセットを探すためにどのリポジトリまたは機関を検索するか、およびモデルの学習にどのデータセットを組み込むかを選択することは、非常に重要な決定ですが、既存のほとんどの方法は個々のサンプルを選択し、すべてのデータを同じように関連性があるとみなし、データセットとそのソース間の違いを無視しています。本研究では、データセット選択のタスクを形式化します。これは、リソースの制約下で、下流のパフォーマンスを向上させるために、大規模で異質なプールからデータセット全体を選択するものです。我々は、Dataset Selection via Hierarchies (DaSH)という、データセットとグループ（例えば、コレクション、機関）レベルの両方で有用性をモデル化するデータセット選択手法を提案します。これにより、限られた観測からの効率的な一般化が可能になります。2つの公開ベンチマーク（Digit-FiveとDomainNet）において、DaSHは、最先端のデータ選択ベースラインを最大26.2％上回る精度を達成しており、同時に必要な探索ステップも大幅に削減しています。アブレーション実験により、DaSHは低リソース環境や関連データセットの不足に対して堅牢であり、実用的なマルチソース学習ワークフローにおけるスケーラブルで適応的なデータセット選択に適していることが示されています。",
+    "insightJa": "この技術により、企業はより効率的に機械学習モデルを開発できるようになり、顧客サービスの向上や、より正確な市場予測が可能になることが期待されます。また、研究機関間でのデータ共有が促進され、医療や環境問題など、様々な分野での進歩に貢献する可能性があります。",
+    "recommendedBooks": [
+      "データサイエンス 入門",
+      "機械学習 実践",
+      "データ共有 ガイドライン"
+    ],
+    "tags": [
+      "machine learning",
+      "dataset selection",
+      "data quality",
+      "DaSH",
+      "階層型データセット選択"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.10949v1",
+    "title": "Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation",
+    "source": "arxiv",
+    "url": "http://arxiv.org/abs/2512.10949v1",
+    "summary": "Reinforcement learning (RL), earlier proven to be effective in large language and multi-modal models, has been successfully extended to enhance 2D image generation recently. However, applying RL to 3D generation remains largely unexplored due to the higher spatial complexity of 3D objects, which require globally consistent geometry and fine-grained local textures. This makes 3D generation significantly sensitive to reward designs and RL algorithms. To address these challenges, we conduct the first systematic study of RL for text-to-3D autoregressive generation across several dimensions. (1) Reward designs: We evaluate reward dimensions and model choices, showing that alignment with human preference is crucial, and that general multi-modal models provide robust signal for 3D attributes. (2) RL algorithms: We study GRPO variants, highlighting the effectiveness of token-level optimization, and further investigate the scaling of training data and iterations. (3) Text-to-3D Benchmarks: Since existing benchmarks fail to measure implicit reasoning abilities in 3D generation models, we introduce MME-3DR. (4) Advanced RL paradigms: Motivated by the natural hierarchy of 3D generation, we propose Hi-GRPO, which optimizes the global-to-local hierarchical 3D generation through dedicated reward ensembles. Based on these insights, we develop AR3D-R1, the first RL-enhanced text-to-3D model, expert from coarse shape to texture refinement. We hope this study provides insights into RL-driven reasoning for 3D generation. Code is released at https://github.com/Ivan-Tang-3D/3DGen-R1.",
+    "publishedAt": "2025-12-11T18:59:52Z",
+    "author": "Yiwen Tang",
+    "category": "AI",
+    "originalContent": "Reinforcement learning (RL), earlier proven to be effective in large language and multi-modal models, has been successfully extended to enhance 2D image generation recently. However, applying RL to 3D generation remains largely unexplored due to the higher spatial complexity of 3D objects, which require globally consistent geometry and fine-grained local textures. This makes 3D generation significantly sensitive to reward designs and RL algorithms. To address these challenges, we conduct the first systematic study of RL for text-to-3D autoregressive generation across several dimensions. (1) Reward designs: We evaluate reward dimensions and model choices, showing that alignment with human preference is crucial, and that general multi-modal models provide robust signal for 3D attributes. (2) RL algorithms: We study GRPO variants, highlighting the effectiveness of token-level optimization, and further investigate the scaling of training data and iterations. (3) Text-to-3D Benchmarks: Since existing benchmarks fail to measure implicit reasoning abilities in 3D generation models, we introduce MME-3DR. (4) Advanced RL paradigms: Motivated by the natural hierarchy of 3D generation, we propose Hi-GRPO, which optimizes the global-to-local hierarchical 3D generation through dedicated reward ensembles. Based on these insights, we develop AR3D-R1, the first RL-enhanced text-to-3D model, expert from coarse shape to texture refinement. We hope this study provides insights into RL-driven reasoning for 3D generation. Code is released at https://github.com/Ivan-Tang-3D/3DGen-R1.",
+    "titleJa": "テキストからの3D生成における強化学習の準備はできているか？段階的な調査",
+    "summaryJa": "本研究では、テキストから3Dモデルを生成する際に強化学習(RL)を適用する初の体系的調査を実施。報酬設計、RLアルゴリズム、ベンチマーク、階層的RLパラダイムを検討し、RL強化モデルAR3D-R1を開発。",
+    "explanationJa": "テキストから3Dモデルを生成する技術に、強化学習という新しい方法を試す研究が行われ、より良い3Dモデルが作れるようになるかもしれません。",
+    "translationJa": "強化学習（RL）は、大規模言語モデルやマルチモーダルモデルでその有効性が以前に証明されており、最近では2D画像生成を強化するためにも成功裏に拡張されています。しかし、3Dオブジェクトのより高い空間的複雑さのため、3D生成にRLを適用することは、ほとんど未開拓のままです。3Dオブジェクトは、グローバルに一貫した形状と、きめ細かいローカルテクスチャを必要とします。このため、3D生成は報酬設計とRLアルゴリズムに著しく影響を受けやすくなっています。これらの課題に対処するため、我々はテキストから3Dの自己回帰生成に対するRLの最初の体系的な研究をいくつかの側面から実施します。(1)報酬設計：報酬の次元とモデルの選択を評価し、人間の好みとの整合性が重要であること、および一般的なマルチモーダルモデルが3D属性に対してロバストな信号を提供することを示します。(2)RLアルゴリズム：GRPOのバリアントを研究し、トークンレベルの最適化の有効性を強調し、さらにトレーニングデータと反復回数のスケーリングを調査します。(3)テキストから3Dのベンチマーク：既存のベンチマークは3D生成モデルにおける暗黙的な推論能力を測定できないため、MME-3DRを導入します。(4)高度なRLパラダイム：3D生成の自然な階層構造に動機づけられ、グローバルからローカルへの階層的な3D生成を専用の報酬アンサンブルを通じて最適化するHi-GRPOを提案します。これらの洞察に基づいて、粗い形状からテクスチャの改良まで専門とする、最初のRL強化テキストから3DモデルであるAR3D-R1を開発しました。この研究が、3D生成のためのRL駆動型推論への洞察を提供することを願っています。コードは https://github.com/Ivan-Tang-3D/3DGen-R1 で公開されています。",
+    "insightJa": "テキストから3Dモデルを生成する技術が進化することで、エンターテイメント業界や製品デザインなど、様々な分野でより手軽に3Dモデルを作成できるようになる可能性があります。例えば、ゲーム開発者はプログラミングだけで高品質な3Dモデルを生成し、より迅速な開発が可能になるかもしれません。",
+    "recommendedBooks": [
+      "3Dモデリング 入門",
+      "強化学習 理論と実践",
+      "AI デザイン"
+    ],
+    "tags": [
+      "Reinforcement Learning",
+      "Text-to-3D",
+      "3D Generation",
+      "Reward Design",
+      "AR3D-R1"
+    ]
+  },
+  {
+    "id": "https://www.sciencedaily.com/releases/2025/12/251211100615.htm",
+    "title": "Stressed rats keep returning to cannabis and scientists know why",
+    "source": "rss",
+    "url": "https://www.sciencedaily.com/releases/2025/12/251211100615.htm",
+    "summary": "Rats with naturally high stress levels were far more likely to self-administer cannabis when given access. Behavioral testing showed that baseline stress hormones were the strongest predictor of cannabis-seeking behavior. Lower cognitive flexibility and low endocannabinoid levels also contributed to increased use. The results hint at possible early indicators of vulnerability to drug misuse.",
+    "publishedAt": "Thu, 11 Dec 2025 12:15:09 EST",
+    "author": "",
+    "category": "Science",
+    "originalContent": "Rats with naturally high stress levels were far more likely to self-administer cannabis when given access. Behavioral testing showed that baseline stress hormones were the strongest predictor of cannabis-seeking behavior. Lower cognitive flexibility and low endocannabinoid levels also contributed to increased use. The results hint at possible early indicators of vulnerability to drug misuse.",
+    "titleJa": "ストレスを感じやすいラットはカンナビスに戻り続ける：科学者がその理由を解明",
+    "summaryJa": "生まれつきストレスレベルが高いラットは、カンナビスを自発的に摂取しやすいことが判明。行動実験から、ストレスホルモン、低い認知柔軟性、低いエンドカンナビノイドレベルが使用増加に関連。",
+    "explanationJa": "ストレスを感じやすいラットがカンナビスを求める理由が解明され、薬物依存の初期兆候発見につながるかもしれません。",
+    "translationJa": "生まれつきストレスレベルが高いラットは、カンナビスへのアクセスを与えられた場合、自発的に摂取する可能性がはるかに高いことがわかりました。行動実験の結果、ベースラインのストレスホルモンがカンナビスを求める行動の最も強い予測因子であることが示されました。認知柔軟性の低下と低いエンドカンナビノイドレベルも、使用の増加に寄与しました。これらの結果は、薬物乱用に対する脆弱性の可能性のある早期指標を示唆しています。",
+    "insightJa": "この研究は、ストレス管理の重要性を示唆しています。ストレスを軽減する方法を学ぶことは、薬物依存のリスクを減らすだけでなく、仕事や人間関係など、日常生活の質を向上させることにもつながるでしょう。",
+    "recommendedBooks": [
+      "ストレスマネジメント",
+      "薬物依存",
+      "脳科学 ストレス"
+    ],
+    "tags": [
+      "cannabis",
+      "stress",
+      "rats",
+      "drug addiction",
+      "エンドカンナビノイド"
+    ]
+  },
+  {
+    "id": "https://www.sciencedaily.com/releases/2025/12/251210223635.htm",
+    "title": "New research reveals how everyday cues secretly shape your habits",
+    "source": "rss",
+    "url": "https://www.sciencedaily.com/releases/2025/12/251210223635.htm",
+    "summary": "Researchers uncovered how shifting levels of a brain protein called KCC2 can reshape the way cues become linked with rewards, sometimes making habits form more quickly or more powerfully than expected. When this protein drops, dopamine neurons fire more intensely, strengthening new associations in ways that resemble how addictive behaviors take hold. Rat studies showed that even brief, synchronized bursts of neural activity can amplify reward learning, offering insight into why everyday triggers, like a morning routine, can provoke strong cravings.",
+    "publishedAt": "Wed, 10 Dec 2025 22:41:05 EST",
+    "author": "",
+    "category": "Science",
+    "originalContent": "Researchers uncovered how shifting levels of a brain protein called KCC2 can reshape the way cues become linked with rewards, sometimes making habits form more quickly or more powerfully than expected. When this protein drops, dopamine neurons fire more intensely, strengthening new associations in ways that resemble how addictive behaviors take hold. Rat studies showed that even brief, synchronized bursts of neural activity can amplify reward learning, offering insight into why everyday triggers, like a morning routine, can provoke strong cravings.",
+    "titleJa": "日常の合図がどのように潜在的に習慣を形成するのかを解明する新たな研究",
+    "summaryJa": "脳タンパク質KCC2の変動が、報酬と合図の結びつきを変化させ、習慣形成を促進。ドーパミン神経が活発化し、中毒行動に類似したメカニズムで学習が強化。",
+    "explanationJa": "日常の何気ない合図が、脳内の特定のタンパク質の変化を通して、私たちの習慣を強く形成している可能性があるのです。",
+    "translationJa": "研究者らは、KCC2と呼ばれる脳タンパク質のレベルの変化が、合図が報酬と結びつく方法を再構築し、時には予想以上に迅速かつ強力に習慣を形成させることを発見しました。このタンパク質が低下すると、ドーパミンニューロンの発火がより強くなり、中毒行動が定着する様子と似た方法で、新しい関連付けが強化されます。ラットを使った研究では、短時間の同期したニューラル活動のバーストでさえ、報酬学習を増幅させることが示されており、朝のルーチンワークのような日常的なきっかけが、なぜ強い欲求を引き起こすのかについての洞察が得られました。",
+    "insightJa": "この研究から、習慣形成を意識的にコントロールするためには、KCC2に影響を与える要素、例えば睡眠や食事、運動などを見直すことが重要かもしれません。また、マーケティング戦略において、消費者の特定の行動と快楽を結びつけるような合図を効果的に活用できる可能性があります。",
+    "recommendedBooks": [
+      "習慣形成",
+      "脳科学",
+      "行動経済学"
+    ],
+    "tags": [
+      "habit formation",
+      "KCC2",
+      "dopamine",
+      "reward learning",
+      "neuroscience"
+    ]
+  },
+  {
+    "id": "https://www.sciencedaily.com/releases/2025/12/251210092019.htm",
+    "title": "Blood tests reveal obesity rapidly accelerates Alzheimer’s progression",
+    "source": "rss",
+    "url": "https://www.sciencedaily.com/releases/2025/12/251210092019.htm",
+    "summary": "Obesity accelerates the rise of Alzheimer’s-related blood biomarkers far more rapidly than previously recognized. Long-term imaging and plasma data show that obese individuals experience much faster increases in proteins linked to neurodegeneration and amyloid buildup. Surprisingly, blood tests detected these changes earlier than PET scans. The results point to obesity as a major, modifiable contributor to Alzheimer’s progression.",
+    "publishedAt": "Wed, 10 Dec 2025 12:23:51 EST",
+    "author": "",
+    "category": "Science",
+    "originalContent": "Obesity accelerates the rise of Alzheimer’s-related blood biomarkers far more rapidly than previously recognized. Long-term imaging and plasma data show that obese individuals experience much faster increases in proteins linked to neurodegeneration and amyloid buildup. Surprisingly, blood tests detected these changes earlier than PET scans. The results point to obesity as a major, modifiable contributor to Alzheimer’s progression.",
+    "titleJa": "血液検査で肥満がアルツハイマー病の進行を加速することが判明",
+    "summaryJa": "肥満は、従来考えられていたよりもはるかに急速にアルツハイマー病関連の血中バイオマーカーの上昇を加速させます。画像データと血漿データの分析から、肥満者は神経変性とアミロイド蓄積に関連するタンパク質の増加が速いことが示されました。",
+    "explanationJa": "血液検査によって、肥満がアルツハイマー病の進行を早める可能性が高いことがわかりました。",
+    "translationJa": "肥満は、従来認識されていたよりもはるかに急速に、アルツハイマー病関連の血中バイオマーカーの上昇を加速させます。長期的な画像データと血漿データの分析により、肥満の人は神経変性とアミロイド蓄積に関連するタンパク質の増加が非常に速いことが示されました。驚くべきことに、血液検査はPETスキャンよりも早くこれらの変化を検出しました。この結果は、肥満がアルツハイマー病の進行における主要な、かつ修正可能な要因であることを示唆しています。",
+    "insightJa": "この研究結果は、健康的な体重を維持することが、アルツハイマー病のリスク低減に重要であることを示しています。日々の食生活や運動習慣を見直すことで、将来の健康リスクを軽減できる可能性があります。",
+    "recommendedBooks": [
+      "アルツハイマー病 予防",
+      "肥満 健康リスク",
+      "脳の健康 食事"
+    ],
+    "tags": [
+      "Alzheimer's",
+      "Obesity",
+      "Biomarker",
+      "Neurodegeneration",
+      "血液検査"
+    ]
+  },
+  {
+    "id": "https://www.sciencedaily.com/releases/2025/12/251209234247.htm",
+    "title": "Rising temperatures are slowing early childhood development",
+    "source": "rss",
+    "url": "https://www.sciencedaily.com/releases/2025/12/251209234247.htm",
+    "summary": "Researchers discovered that unusually high temperatures can hinder early childhood development. Children living in hotter conditions were less likely to reach key learning milestones, especially in reading and basic math skills. Those facing economic hardship or limited resources were hit the hardest. The study underscores how climate change may shape children’s learning long before they reach school age.",
+    "publishedAt": "Wed, 10 Dec 2025 00:59:03 EST",
+    "author": "",
+    "category": "Science",
+    "originalContent": "Researchers discovered that unusually high temperatures can hinder early childhood development. Children living in hotter conditions were less likely to reach key learning milestones, especially in reading and basic math skills. Those facing economic hardship or limited resources were hit the hardest. The study underscores how climate change may shape children’s learning long before they reach school age.",
+    "titleJa": "気温上昇が幼児の発達を遅らせる",
+    "summaryJa": "研究により、異常な高温が幼児の発達を阻害する可能性が示されました。特に読み書きや算数の基礎能力の発達に影響が出やすく、経済的に困難な状況にある子供ほど影響を受けやすいことがわかりました。",
+    "explanationJa": "気温の上昇は、子供たちが学校に通う前から学習に影響を与える可能性があることがわかりました。",
+    "translationJa": "研究者らは、異常に高い気温が幼児の発達を妨げる可能性があることを発見しました。高温の環境で暮らす子供たちは、特に読み書きや基礎的な算数のスキルにおいて、重要な学習の節目に到達しにくい傾向がありました。経済的な困難や限られた資源に直面している子供たちは、最も大きな打撃を受けました。この研究は、気候変動が子供たちが就学年齢に達するずっと前から、その学習をどのように形作る可能性があるかを強調しています。",
+    "insightJa": "この研究は、地球温暖化が子どもたちの教育機会に不平等を生み出す可能性を示唆しています。企業は、地域社会への貢献として、気候変動対策と教育支援の両面から、この問題に取り組む必要性が高まるでしょう。",
+    "recommendedBooks": [
+      "幼児教育 環境",
+      "気候変動 子ども",
+      "発達心理学 入門"
+    ],
+    "tags": [
+      "child development",
+      "climate change",
+      "early childhood education",
+      "temperature",
+      "幼児教育"
+    ]
+  },
+  {
+    "id": "https://www.sciencedaily.com/releases/2025/12/251209234139.htm",
+    "title": "Scientists reveal a tiny brain chip that streams thoughts in real time",
+    "source": "rss",
+    "url": "https://www.sciencedaily.com/releases/2025/12/251209234139.htm",
+    "summary": "BISC is an ultra-thin neural implant that creates a high-bandwidth wireless link between the brain and computers. Its tiny single-chip design packs tens of thousands of electrodes and supports advanced AI models for decoding movement, perception, and intent. Initial clinical work shows it can be inserted through a small opening in the skull and remain stable while capturing detailed neural activity. The technology could reshape treatments for epilepsy, paralysis, and blindness.",
+    "publishedAt": "Tue, 09 Dec 2025 23:54:39 EST",
+    "author": "",
+    "category": "Science",
+    "originalContent": "BISC is an ultra-thin neural implant that creates a high-bandwidth wireless link between the brain and computers. Its tiny single-chip design packs tens of thousands of electrodes and supports advanced AI models for decoding movement, perception, and intent. Initial clinical work shows it can be inserted through a small opening in the skull and remain stable while capturing detailed neural activity. The technology could reshape treatments for epilepsy, paralysis, and blindness.",
+    "titleJa": "科学者らが思考をリアルタイムで伝送する超小型脳チップを発表",
+    "summaryJa": "BISCは脳とコンピュータを繋ぐ超薄型インプラント。数万の電極を搭載し、AIモデルで運動、知覚、意図を解読。てんかん、麻痺、失明治療を変革する可能性。",
+    "explanationJa": "BISCという脳チップを使うと、思考をリアルタイムでコンピュータに伝えることができるようになるそうです。",
+    "translationJa": "BISCは、脳とコンピュータ間に高帯域幅の無線リンクを構築する超薄型神経インプラントです。その小型シングルチップ設計は、数万もの電極を搭載し、運動、知覚、および意図を解読するための高度なAIモデルをサポートします。初期の臨床研究では、頭蓋骨の小さな開口部から挿入でき、詳細な神経活動を捉えながら安定性を維持できることが示されています。この技術は、てんかん、麻痺、および失明の治療を大きく変える可能性があります。",
+    "insightJa": "この技術が進歩すれば、脳波による機器操作や、コミュニケーションが困難な方の意思伝達を支援できるかもしれません。医療分野だけでなく、エンターテインメントや教育分野にも大きな影響を与える可能性があります。",
+    "recommendedBooks": [
+      "脳科学 入門",
+      "ニューロテクノロジー",
+      "ブレイン・マシン・インターフェース"
+    ],
+    "tags": [
+      "Brain-computer interface",
+      "Neural implant",
+      "AI",
+      "脳科学",
+      "BMI"
+    ]
+  }
+]

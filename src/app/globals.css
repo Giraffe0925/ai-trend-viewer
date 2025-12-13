@@ -1,0 +1,72 @@
+:root {
+  --background: #fdfbf7;
+  /* Creamy off-white */
+  --foreground: #4a4a4a;
+  /* Soft charcoal */
+  --primary: #8da399;
+  /* Muted sage green */
+  --primary-light: #e6ebe9;
+  --secondary: #e09f87;
+  /* Soft terracotta */
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  --font-sans: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  /* Force light theme or provide a soft dark alternative? User asked for "simple & soft", usually implies light/pastel. 
+     Let's stick to the soft light theme even in dark mode for now to ensure the requested vibe, 
+     or provide a very soft dark gray. Let's force the requested look for consistency first. */
+  :root {
+    --background: #fdfbf7;
+    --foreground: #4a4a4a;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.8;
+  /* More breathing room */
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.soft-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soft-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.container {
+  max-width: 1000px;
+  /* Slightly narrower for readability */
+  margin: 0 auto;
+  padding: 2rem;
+}

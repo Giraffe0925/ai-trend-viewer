@@ -1,0 +1,26 @@
+
+export interface Article {
+  id: string;
+  title: string;
+  source: 'arxiv' | 'rss' | 'x' | 'other';
+  url: string;
+  summary: string;
+  publishedAt: string;
+  author?: string;
+  originalContent?: string; // For LLM processing
+  // Processed fields
+  titleJa?: string;
+  summaryJa?: string;
+  explanationJa?: string;
+  translationJa?: string;
+  insightJa?: string;
+  recommendedBooks?: string[];
+  category?: 'AI' | 'Science' | 'Philosophy';
+  tags?: string[];
+}
+
+export interface FetcherResult {
+  success: boolean;
+  articles: Article[];
+  error?: string;
+}
