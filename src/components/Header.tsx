@@ -1,7 +1,22 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
+    const [searchQuery, setSearchQuery] = useState('');
+    const router = useRouter();
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            router.push(`/?q=${encodeURIComponent(searchQuery.trim())}`);
+        } else {
+            router.push('/');
+        }
+    };
+
     const headerStyle: React.CSSProperties = {
         position: 'sticky',
         top: 0,
@@ -43,17 +58,32 @@ const Header = () => {
         letterSpacing: '-0.02em',
     };
 
-    const navStyle: React.CSSProperties = {
+    const searchFormStyle: React.CSSProperties = {
         display: 'flex',
-        gap: '24px',
-        fontSize: '14px',
-        fontWeight: 500,
+        alignItems: 'center',
+        gap: '8px',
     };
 
-    const navLinkStyle: React.CSSProperties = {
-        color: '#6B7280',
-        textDecoration: 'none',
-        transition: 'color 0.2s',
+    const searchInputStyle: React.CSSProperties = {
+        padding: '8px 16px',
+        border: '1px solid #E5E7EB',
+        borderRadius: '9999px',
+        fontSize: '14px',
+        width: '200px',
+        outline: 'none',
+        transition: 'border-color 0.2s',
+    };
+
+    const searchButtonStyle: React.CSSProperties = {
+        padding: '8px 16px',
+        backgroundColor: '#8BA89A',
+        color: 'white',
+        border: 'none',
+        borderRadius: '9999px',
+        fontSize: '14px',
+        fontWeight: 500,
+        cursor: 'pointer',
+        transition: 'background-color 0.2s',
     };
 
     return (
@@ -63,11 +93,18 @@ const Header = () => {
                     <img src="/images/logo.png" alt="Logo" style={logoImageStyle} />
                     <span style={titleStyle}>AI & Sci Trend</span>
                 </Link>
-                <nav style={navStyle}>
-                    <Link href="/?cat=AI" style={navLinkStyle}>AI</Link>
-                    <Link href="/?cat=Science" style={navLinkStyle}>Science</Link>
-                    <Link href="/?cat=Philosophy" style={navLinkStyle}>Philosophy</Link>
-                </nav>
+                <form onSubmit={handleSearch} style={searchFormStyle}>
+                    <input
+                        type="text"
+                        placeholder="論文を検索..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        style={searchInputStyle}
+                    />
+                    <button type="submit" style={searchButtonStyle}>
+                        検索
+                    </button>
+                </form>
             </div>
         </header>
     );

@@ -17,9 +17,29 @@ async function getArticles(): Promise<Article[]> {
   return [];
 }
 
-export default async function Home() {
+interface HomeProps {
+  searchParams: Promise<{ q?: string }>;
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const params = await searchParams;
+  const query = params.q?.toLowerCase() || '';
+
   const articles = await getArticles();
-  const sortedArticles = articles.sort((a, b) =>
+
+  // Filter articles based on search query
+  let filteredArticles = articles;
+  if (query) {
+    filteredArticles = articles.filter(article =>
+      article.title?.toLowerCase().includes(query) ||
+      article.titleJa?.toLowerCase().includes(query) ||
+      article.summaryJa?.toLowerCase().includes(query) ||
+      article.tags?.some(tag => tag.toLowerCase().includes(query)) ||
+      article.category?.toLowerCase().includes(query)
+    );
+  }
+
+  const sortedArticles = filteredArticles.sort((a, b) =>
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 
@@ -38,6 +58,13 @@ export default async function Home() {
         </p>
       </section>
 
+      {/* Search Results Info */}
+      {query && (
+        <div style={{ textAlign: 'center', color: '#6B7280', fontSize: '14px' }}>
+          「{params.q}」の検索結果: {sortedArticles.length}件
+        </div>
+      )}
+
       {/* Grid */}
       {sortedArticles.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
@@ -50,11 +77,15 @@ export default async function Home() {
         </div>
       ) : (
         <div className="text-center py-20 bg-white/5 rounded-2xl glass-card">
-          <p className="text-gray-400 mb-4">記事が見つかりませんでした。</p>
-          <p className="text-sm text-gray-500">
-            データ収集スクリプトを実行してください: <br />
-            <code>npm run update-content</code>
+          <p className="text-gray-400 mb-4">
+            {query ? `「${params.q}」に一致する記事が見つかりませんでした。` : '記事が見つかりませんでした。'}
           </p>
+          {!query && (
+            <p className="text-sm text-gray-500">
+              データ収集スクリプトを実行してください: <br />
+              <code>npm run update-content</code>
+            </p>
+          )}
         </div>
       )}
     </div>
