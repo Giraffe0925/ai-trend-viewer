@@ -16,8 +16,8 @@ const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
 const VOICES = {
     // Sakura Suzuki - young Japanese female, ideal for podcasts
     host: 'RBnMinrYKeccY3vaUxlZ',
-    // George - calm, professional male voice, good for Japanese
-    guest: 'JBFqnCBsd6RMkjVDRZzb',
+    // Tatsuki (Takumi) - calm professional male Japanese voice
+    guest: 'b34JylakFZPlGS0BnwyY',
 };
 
 // Voice settings optimized for natural Japanese intonation
@@ -27,7 +27,7 @@ const VOICE_SETTINGS = {
         similarity_boost: 0.80,
         style: 0.50,
         use_speaker_boost: true,
-        speed: 2.5,
+        speed: 2.7,
         volume: 1.6, // Increased volume
     },
     guest: {
@@ -35,7 +35,7 @@ const VOICE_SETTINGS = {
         similarity_boost: 0.75,
         style: 0.40,
         use_speaker_boost: true,
-        speed: 2.5,
+        speed: 2.7,
         volume: 1.0, // normal volume
     },
 };
