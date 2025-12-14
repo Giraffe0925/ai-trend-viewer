@@ -24,8 +24,14 @@ async function main() {
     // ============================================
     const lessWrong = await fetchRSS('https://www.lesswrong.com/feed.xml?view=curated', 'AI');
     const astralCodex = await fetchRSS('https://www.astralcodexten.com/feed', 'AI');
-    const openAIBlog = await fetchRSS('https://openai.com/blog/rss/', 'AI');
-    const anthropicBlog = await fetchRSS('https://www.anthropic.com/rss.xml', 'AI');
+    const googleAIBlog = await fetchRSS('https://research.google/blog/rss', 'AI');
+    const wiredAI = await fetchRSS('https://www.wired.com/feed/tag/ai/latest/rss', 'AI');
+    const mitTechReview = await fetchRSS('https://www.technologyreview.com/feed', 'AI');
+
+    // ============================================
+    // 🔬 科学・技術 - マガジン
+    // ============================================
+    const quantaMag = await fetchRSS('https://api.quantamagazine.org/feed/', '認知科学');
 
     // ============================================
     // 🧠 認知科学・哲学 - ブログ・マガジン
@@ -50,17 +56,25 @@ async function main() {
     const arxivEcon = await fetchArxivPapers('econ.GN', 2);
     const arxivSocial = await fetchArxivPapers('cs.CY', 2);
 
+    // ============================================
+    // 💰 経済・社会 - ブログ
+    // ============================================
+    const marginalRevolution = await fetchRSS('http://feeds.feedburner.com/marginalrevolution/feed', '経済学');
+
     // Combine all sources
     let articles: Article[] = [
         // AI Papers
         ...arxivAI.articles,
         ...arxivML.articles,
         ...arxivCL.articles,
-        // AI Blogs
+        // AI Blogs & Tech News
         ...lessWrong.articles,
         ...astralCodex.articles,
-        ...openAIBlog.articles,
-        ...anthropicBlog.articles,
+        ...googleAIBlog.articles,
+        ...wiredAI.articles,
+        ...mitTechReview.articles,
+        // Science & Tech Magazines
+        ...quantaMag.articles,
         // Cognition & Philosophy Magazines
         ...aeonMagazine.articles,
         ...nautilusMag.articles,
@@ -72,6 +86,7 @@ async function main() {
         // Society & Economics
         ...arxivEcon.articles,
         ...arxivSocial.articles,
+        ...marginalRevolution.articles,
     ];
 
     console.log(`Fetched ${articles.length} articles.`);
