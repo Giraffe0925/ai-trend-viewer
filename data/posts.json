@@ -4,7 +4,7 @@
     "title": "ポッドキャスト自動化のテスト投稿",
     "summary": "これはGitHub Actionsによるポッドキャスト自動生成機能のテストです。記事をプッシュするだけで、AIが台本を書き、音声を吹き込み、配信まで行います。",
     "content": "自動化テスト用のダミー記事です。",
-    "publishedAt": "2025-12-14T19:40:00Z",
+    "publishedAt": "2025-12-14T20:00:00Z",
     "category": "Technology",
     "translationJa": "これはテスト記事です。このテキストをもとにAIが会話を生成します。",
     "summaryJa": "GitHub Actionsによる自動生成テスト。",
