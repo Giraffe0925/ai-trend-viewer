@@ -6,6 +6,7 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Article } from '../types';
+import { mixWithBGM } from '../utils/audio-mixer';
 import fs from 'fs';
 import path from 'path';
 
@@ -267,6 +268,14 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
 
     const fileSizeMB = (combinedAudio.length / 1024 / 1024).toFixed(2);
     console.log(`Podcast saved: ${filename} (${fileSizeMB} MB)`);
+
+    // Step 5: Mix with BGM (if BGM file exists)
+    console.log('Step 5: Adding background music...');
+    try {
+        await mixWithBGM(filepath);
+    } catch (error) {
+        console.warn('BGM mixing skipped:', error);
+    }
 
     return `/audio/${filename}`;
 }
