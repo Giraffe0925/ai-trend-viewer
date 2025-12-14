@@ -120,6 +120,9 @@ JSONのみを出力してください。
     try {
         const result = await model.generateContent(prompt);
         const text = result.response.text();
+        console.log('--- Gemini Raw Response Start ---');
+        console.log(text);
+        console.log('--- Gemini Raw Response End ---');
 
         const jsonMatch = text.match(/\[[\s\S]*\]/);
         if (!jsonMatch) {
@@ -128,6 +131,7 @@ JSONのみを出力してください。
         }
 
         const conversation = JSON.parse(jsonMatch[0]) as ConversationTurn[];
+        console.log(`Parsed ${conversation.length} conversation turns.`);
         return conversation;
     } catch (error) {
         console.error('Failed to generate conversation script:', error);
