@@ -221,7 +221,7 @@ export async function changeSpeed(audioBuffer: Buffer, speed: number): Promise<B
                     reject(e);
                 }
             })
-            .on('error', (err) => {
+            .on('error', (err: Error) => {
                 // cleanup
                 if (fs.existsSync(inputPath)) fs.unlinkSync(inputPath);
                 if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath);
