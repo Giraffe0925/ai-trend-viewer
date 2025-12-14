@@ -1,7 +1,7 @@
 /**
- * ElevenLabs Multi-Speaker Podcast Generator (Improved)
+ * ElevenLabs Multi-Speaker Podcast Generator (v3)
  * 
- * 10-15 minute podcasts with high-quality Japanese voices
+ * 10-15 minute podcasts with balanced audio and improved prompts
  */
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -19,13 +19,29 @@ const VOICES = {
     guest: 'b34JylakFZPlGS0BnwyY',
 };
 
+// Voice settings for balanced audio
+const VOICE_SETTINGS = {
+    host: {
+        stability: 0.6,
+        similarity_boost: 0.8,
+        style: 0.3,
+        use_speaker_boost: true,
+    },
+    guest: {
+        stability: 0.65,
+        similarity_boost: 0.85,
+        style: 0.25,
+        use_speaker_boost: true,
+    },
+};
+
 interface ConversationTurn {
     speaker: 'ホスト' | 'ゲスト';
     text: string;
 }
 
 /**
- * Generate a long conversation script (10-15 min) from article content
+ * Generate a 50-turn conversation script
  */
 async function generateConversationScript(article: Article): Promise<ConversationTurn[]> {
     const apiKey = process.env.GEMINI_API_KEY || '';
@@ -42,7 +58,12 @@ async function generateConversationScript(article: Article): Promise<Conversatio
     const commentary = article.translationJa || '';
 
     const prompt = `
-あなたは知的なラジオ番組「日々知読」の脚本家です。以下の記事内容をもとに、ホスト（若い女性）とゲスト（専門家の男性）が深く議論する10-15分のポッドキャスト台本を作成してください。
+あなたはポッドキャスト「ひびちどく」の脚本家です。以下の記事内容をもとに、ホスト（若い女性）とゲスト（男性）が議論する10-15分のポッドキャスト台本を作成してください。
+
+【重要なルール】
+- 番組名は「ひびちどく」とひらがなで読んでください（「日々知読」ではなく）
+- ゲストは専門家や大学教授などを名乗らないでください。自己紹介は不要です
+- 2人は対等に議論する形式です
 
 ## 記事タイトル
 ${title}
@@ -53,43 +74,43 @@ ${overview}
 ## 詳細解説
 ${commentary}
 
-## 番組構成（必ずこの流れで）
+## 番組構成（50ターンで）
 
-### オープニング（約1分）
-- ホストが番組名と今回のテーマを紹介
-- ゲストを紹介
+### オープニング（約3ターン）
+- ホスト:「皆さん、こんにちは。ひびちどくの時間です。今日は〇〇についてお話しします」
+- 自己紹介は不要。すぐに本題へ
 
-### 本編パート1：概要説明（約3分）
+### 本編パート1：概要（約12ターン）
 - この研究/ニュースの背景
 - 何が起きたのか、何が発見されたのか
 
-### 本編パート2：深掘り（約4分）
+### 本編パート2：深掘り（約15ターン）
 - なぜこれが重要なのか
 - 技術的/学術的な詳細
-- 具体例や比喩を交えた説明
+- 具体例や比喩を交えた分かりやすい説明
 
-### 本編パート3：考察（約4分）
+### 本編パート3：考察（約15ターン）
 - 社会への影響
 - 今後の展望
 - 批判的な視点や別の見方
+- リスナーへの問いかけ
 
-### エンディング（約1分）
+### エンディング（約5ターン）
 - まとめ
-- リスナーへのメッセージ
-- 次回予告（省略可）
+- ホスト:「詳しい内容は、ひびちどくのWebページに掲載されています。概要欄にリンクを貼っておきますので、ぜひチェックしてみてください」
+- ホスト:「チャンネル登録もよろしくお願いします。それでは、また次回お会いしましょう」
 
 ## 台本の指示
-- 合計30-40ターンの会話
+- 合計50ターンの会話
 - 各発言は2-4文、80-150文字程度
 - ホストは親しみやすく、質問と相槌が上手
-- ゲストは専門知識を分かりやすく解説
+- ゲストは知識を分かりやすく解説（ただし肩書きを名乗らない）
 - 「なるほど」「それは興味深いですね」など自然な相槌
 - 専門用語は説明を加える
-- リスナーに語りかける表現も入れる
 
 ## 出力形式（JSON配列のみ）
 [
-  {"speaker": "ホスト", "text": "皆さん、こんにちは。「日々知読」の時間です。..."},
+  {"speaker": "ホスト", "text": "皆さん、こんにちは。ひびちどくの時間です。..."},
   {"speaker": "ゲスト", "text": "..."},
   ...
 ]
@@ -120,9 +141,12 @@ JSONのみを出力してください。
  */
 async function generateSpeakerAudio(
     text: string,
-    voiceId: string,
+    speaker: 'ホスト' | 'ゲスト',
     apiKey: string
 ): Promise<Buffer | null> {
+    const voiceId = speaker === 'ホスト' ? VOICES.host : VOICES.guest;
+    const settings = speaker === 'ホスト' ? VOICE_SETTINGS.host : VOICE_SETTINGS.guest;
+
     try {
         const response = await fetch(
             `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
@@ -136,12 +160,7 @@ async function generateSpeakerAudio(
                 body: JSON.stringify({
                     text: text,
                     model_id: 'eleven_multilingual_v2',
-                    voice_settings: {
-                        stability: 0.6,
-                        similarity_boost: 0.8,
-                        style: 0.3,
-                        use_speaker_boost: true,
-                    },
+                    voice_settings: settings,
                 }),
             }
         );
@@ -185,7 +204,7 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
     }
 
     // Step 1: Generate conversation script
-    console.log('Step 1: Generating conversation script...');
+    console.log('Step 1: Generating 50-turn conversation script...');
     const conversation = await generateConversationScript(article);
 
     if (conversation.length === 0) {
@@ -197,7 +216,7 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
 
     // Calculate estimated length
     const totalChars = conversation.reduce((sum, t) => sum + t.text.length, 0);
-    console.log(`Total characters: ${totalChars} (est. ${Math.round(totalChars / 200)} minutes)`);
+    console.log(`Total characters: ${totalChars} (est. ${Math.round(totalChars / 150)} minutes)`);
 
     // Step 2: Generate audio for each turn
     console.log('Step 2: Generating audio for each turn...');
@@ -205,11 +224,10 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
 
     for (let i = 0; i < conversation.length; i++) {
         const turn = conversation[i];
-        const voiceId = turn.speaker === 'ホスト' ? VOICES.host : VOICES.guest;
 
         console.log(`  [${i + 1}/${conversation.length}] ${turn.speaker}: ${turn.text.slice(0, 30)}...`);
 
-        const audioBuffer = await generateSpeakerAudio(turn.text, voiceId, elevenLabsKey);
+        const audioBuffer = await generateSpeakerAudio(turn.text, turn.speaker, elevenLabsKey);
 
         if (audioBuffer) {
             audioBuffers.push(audioBuffer);
@@ -217,8 +235,8 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
             console.warn(`  Failed to generate audio for turn ${i + 1}`);
         }
 
-        // Rate limiting - 200ms between requests
-        await new Promise(r => setTimeout(r, 200));
+        // Rate limiting - 150ms between requests
+        await new Promise(r => setTimeout(r, 150));
     }
 
     if (audioBuffers.length === 0) {
