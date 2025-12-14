@@ -28,7 +28,7 @@ const VOICE_SETTINGS = {
         style: 0.50,
         use_speaker_boost: true,
         speed: 2.7,
-        volume: 1.6, // Increased volume
+        volume: 1.1, // Adjusted volume
     },
     guest: {
         stability: 0.50,
@@ -36,7 +36,7 @@ const VOICE_SETTINGS = {
         style: 0.40,
         use_speaker_boost: true,
         speed: 2.7,
-        volume: 1.0, // normal volume
+        volume: 1.1, // Adjusted volume
     },
 };
 
