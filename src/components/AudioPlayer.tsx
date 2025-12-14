@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface AudioPlayerProps {
     audioUrl: string;
@@ -8,13 +8,31 @@ interface AudioPlayerProps {
 }
 
 const PLAYBACK_SPEEDS = [1, 1.25, 1.5, 1.75, 2, 2.5];
+const BGM_URL = '/audio/bgm-lofi.mp3'; // BGMファイルをpublic/audio/に配置
 
 export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [duration, setDuration] = useState(0);
-    const [playbackSpeed, setPlaybackSpeed] = useState(1);
+    const [playbackSpeed, setPlaybackSpeed] = useState(1.5);
+    const [bgmEnabled, setBgmEnabled] = useState(false);
+    const [bgmVolume, setBgmVolume] = useState(0.1); // BGM音量 10%
     const audioRef = useRef<HTMLAudioElement>(null);
+    const bgmRef = useRef<HTMLAudioElement>(null);
+
+    // BGM制御
+    useEffect(() => {
+        if (bgmRef.current) {
+            bgmRef.current.volume = bgmVolume;
+            bgmRef.current.loop = true;
+
+            if (bgmEnabled && isPlaying) {
+                bgmRef.current.play().catch(() => { });
+            } else {
+                bgmRef.current.pause();
+            }
+        }
+    }, [bgmEnabled, isPlaying, bgmVolume]);
 
     const togglePlay = () => {
         if (audioRef.current) {
@@ -36,6 +54,7 @@ export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
     const handleLoadedMetadata = () => {
         if (audioRef.current) {
             setDuration(audioRef.current.duration);
+            audioRef.current.playbackRate = playbackSpeed;
         }
     };
 
@@ -51,6 +70,13 @@ export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
         setPlaybackSpeed(speed);
         if (audioRef.current) {
             audioRef.current.playbackRate = speed;
+        }
+    };
+
+    const handleEnded = () => {
+        setIsPlaying(false);
+        if (bgmRef.current) {
+            bgmRef.current.pause();
         }
     };
 
@@ -72,7 +98,13 @@ export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
                 src={audioUrl}
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
-                onEnded={() => setIsPlaying(false)}
+                onEnded={handleEnded}
+            />
+            <audio
+                ref={bgmRef}
+                src={BGM_URL}
+                loop
+                preload="none"
             />
 
             <div style={{
@@ -171,6 +203,32 @@ export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
                             </option>
                         ))}
                     </select>
+                </div>
+
+                {/* BGM Toggle */}
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '4px',
+                }}>
+                    <span style={{ fontSize: '10px', color: '#6b7280' }}>BGM</span>
+                    <button
+                        onClick={() => setBgmEnabled(!bgmEnabled)}
+                        style={{
+                            backgroundColor: bgmEnabled ? '#6366f1' : '#374151',
+                            color: '#e5e7eb',
+                            border: '1px solid #4b5563',
+                            borderRadius: '8px',
+                            padding: '6px 10px',
+                            fontSize: '12px',
+                            cursor: 'pointer',
+                            outline: 'none',
+                            transition: 'background-color 0.2s',
+                        }}
+                    >
+                        {bgmEnabled ? '♪ ON' : '♪ OFF'}
+                    </button>
                 </div>
             </div>
         </div>
