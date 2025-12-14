@@ -173,3 +173,60 @@ export async function adjustVolume(audioBuffer: Buffer, volume: number): Promise
             .run();
     });
 }
+
+/**
+ * Change audio speed using ffmpeg
+ * Note: ffmpeg 'atempo' filter is limited to 0.5-2.0. For higher speeds, we need to chain them.
+ */
+export async function changeSpeed(audioBuffer: Buffer, speed: number): Promise<Buffer> {
+    if (speed === 1.0) return audioBuffer;
+
+    const tempDir = path.join(process.cwd(), 'temp');
+    if (!fs.existsSync(tempDir)) {
+        fs.mkdirSync(tempDir, { recursive: true });
+    }
+
+    // Use random suffix to avoid collision
+    const suffix = Math.random().toString(36).substring(7);
+    const inputPath = path.join(tempDir, `input_speed_${Date.now()}_${suffix}.mp3`);
+    const outputPath = path.join(tempDir, `output_speed_${Date.now()}_${suffix}.mp3`);
+
+    fs.writeFileSync(inputPath, audioBuffer);
+
+    // Calculate filters
+    // e.g. 2.7 -> atempo=2.0,atempo=1.35
+    const filters: string[] = [];
+    let currentSpeed = speed;
+
+    while (currentSpeed > 2.0) {
+        filters.push('atempo=2.0');
+        currentSpeed /= 2.0;
+    }
+    // Avoid precision issues
+    if (Math.abs(currentSpeed - 1.0) > 0.01) {
+        filters.push(`atempo=${currentSpeed}`);
+    }
+
+    return new Promise((resolve, reject) => {
+        ffmpeg(inputPath)
+            .audioFilters(filters.join(','))
+            .output(outputPath)
+            .on('end', () => {
+                try {
+                    const outputBuffer = fs.readFileSync(outputPath);
+                    fs.unlinkSync(inputPath);
+                    fs.unlinkSync(outputPath);
+                    resolve(outputBuffer);
+                } catch (e) {
+                    reject(e);
+                }
+            })
+            .on('error', (err) => {
+                // cleanup
+                if (fs.existsSync(inputPath)) fs.unlinkSync(inputPath);
+                if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath);
+                reject(err);
+            })
+            .run();
+    });
+}

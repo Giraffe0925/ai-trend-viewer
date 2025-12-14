@@ -6,7 +6,7 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Article } from '../../src/types';
-import { mixWithBGM, adjustVolume } from '../utils/audio-mixer';
+import { mixWithBGM, adjustVolume, changeSpeed } from '../utils/audio-mixer';
 import fs from 'fs';
 import path from 'path';
 
@@ -36,7 +36,7 @@ const VOICE_SETTINGS = {
         style: 0.40,
         use_speaker_boost: true,
         speed: 2.7,
-        volume: 1.1, // Adjusted volume
+        volume: 1.5, // Increased volume to 1.5
     },
 };
 
@@ -249,6 +249,17 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
                     console.warn(`  Volume adjustment failed, using original`);
                 }
             }
+
+            // Apply speed adjustment if needed (using ffmpeg because API might ignore it)
+            if (settings.speed !== 1.0) {
+                try {
+                    // console.log(`  Adjusting speed to ${settings.speed}x...`);
+                    audioBuffer = await changeSpeed(audioBuffer, settings.speed);
+                } catch (e) {
+                    console.warn(`  Speed adjustment failed, using original:`, e);
+                }
+            }
+
             audioBuffers.push(audioBuffer);
         } else {
             console.warn(`  Failed to generate audio for turn ${i + 1}`);
