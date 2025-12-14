@@ -9,7 +9,8 @@
     "translationJa": "これはテスト記事です。このテキストをもとにAIが会話を生成します。",
     "summaryJa": "GitHub Actionsによる自動生成テスト。",
     "titleJa": "ポッドキャスト自動化機能のテスト",
-    "source": "Local Test"
+    "source": "Local Test",
+    "audioUrl": "/audio/podcast_cG9kY2FzdC1hdXRvbWF0aW9uLXRlc3QtMDE.mp3"
   },
   {
     "id": "68f0e840f64cc204081cda48",
