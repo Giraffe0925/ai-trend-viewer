@@ -25,7 +25,7 @@ const BGM_FILE = path.join(process.cwd(), 'public', 'audio', 'bgm.mp3');
 export async function mixWithBGM(
     podcastPath: string,
     outputPath?: string,
-    bgmVolume: number = 0.08
+    bgmVolume: number = 0.2
 ): Promise<string> {
     // Check if BGM file exists
     if (!fs.existsSync(BGM_FILE)) {
