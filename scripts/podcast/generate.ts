@@ -281,7 +281,9 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
     const combinedAudio = concatenateAudioBuffers(audioBuffers);
 
     // Step 4: Save as MP3 file
-    const filename = `podcast_${Buffer.from(article.id).toString('base64url')}.mp3`;
+    // Add timestamp to avoid caching issues
+    const timestamp = Date.now();
+    const filename = `podcast_${Buffer.from(article.id).toString('base64url')}_${timestamp}.mp3`;
     const filepath = path.join(AUDIO_DIR, filename);
 
     fs.writeFileSync(filepath, combinedAudio);
