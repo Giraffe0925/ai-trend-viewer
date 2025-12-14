@@ -35,8 +35,8 @@ const VOICE_SETTINGS = {
         similarity_boost: 0.75,
         style: 0.40,
         use_speaker_boost: true,
-        speed: 1.5,
-        volume: 4.0, // Drastically increased volume to 4.0
+        speed: 1.3, // Reduced speed by 0.2 (1.5 -> 1.3)
+        volume: 4.3, // Increased volume by 0.3 (4.0 -> 4.3)
     },
 };
 
