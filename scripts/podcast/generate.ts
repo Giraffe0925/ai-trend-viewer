@@ -1,38 +1,99 @@
+/**
+ * Gemini Multi-Speaker Podcast Generator
+ * 
+ * This script generates discussion-style podcast audio from articles using:
+ * 1. Gemini LLM to generate a conversation script
+ * 2. Gemini TTS Multi-Speaker to convert to audio
+ */
 
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Article } from '../types';
 import fs from 'fs';
 import path from 'path';
 
 const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
 
-interface TTSRequest {
-    input: { text: string };
-    voice: {
-        languageCode: string;
-        name: string;
-        ssmlGender: string;
-    };
-    audioConfig: {
-        audioEncoding: string;
-        speakingRate: number;
-        pitch: number;
-    };
+interface ConversationTurn {
+    speaker: 'ホスト' | 'ゲスト';
+    text: string;
 }
 
 /**
- * Generate podcast audio from article content using Google Cloud TTS
+ * Generate a conversation script from article content using Gemini LLM
  */
-export async function generatePodcastAudio(article: Article): Promise<string | null> {
-    const apiKey = process.env.GOOGLE_CLOUD_TTS_API_KEY || '';
-
-    console.log('TTS API Key check:', {
-        exists: !!apiKey,
-        length: apiKey.length,
-        start: apiKey.substring(0, 5)
-    });
-
+async function generateConversationScript(article: Article): Promise<ConversationTurn[]> {
+    const apiKey = process.env.GEMINI_API_KEY || '';
     if (!apiKey) {
-        console.warn('GOOGLE_CLOUD_TTS_API_KEY not found, skipping podcast generation');
+        console.warn('GEMINI_API_KEY not found');
+        return [];
+    }
+
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+
+    const title = article.titleJa || article.title;
+    const overview = article.summaryJa || '';
+    const commentary = article.translationJa || '';
+
+    const prompt = `
+あなたはラジオ番組の脚本家です。以下の記事内容をもとに、2人のパーソナリティ（ホストとゲスト）が議論する形式の台本を作成してください。
+
+## 記事タイトル
+${title}
+
+## 記事概要
+${overview}
+
+## 論評
+${commentary}
+
+## 指示
+- ホストとゲストが交互に話す自然な会話形式で
+- 合計6-8ターンの短いやりとり（全体で60-90秒程度の長さ）
+- ホストは聞き手として質問や相槌を入れる
+- ゲストは專門家として解説する
+- 最後は「ご視聴ありがとうございました」で締める
+- JSON形式で出力
+
+## 出力形式
+[
+  {"speaker": "ホスト", "text": "..."},
+  {"speaker": "ゲスト", "text": "..."},
+  ...
+]
+
+JSONのみを出力し、他の説明は不要です。
+`;
+
+    try {
+        const result = await model.generateContent(prompt);
+        const text = result.response.text();
+
+        // Extract JSON from response
+        const jsonMatch = text.match(/\[[\s\S]*\]/);
+        if (!jsonMatch) {
+            console.error('Failed to extract JSON from response');
+            return [];
+        }
+
+        const conversation = JSON.parse(jsonMatch[0]) as ConversationTurn[];
+        return conversation;
+    } catch (error) {
+        console.error('Failed to generate conversation script:', error);
+        return [];
+    }
+}
+
+/**
+ * Generate multi-speaker audio using Gemini TTS
+ */
+async function generateMultiSpeakerAudio(
+    conversation: ConversationTurn[],
+    articleId: string
+): Promise<string | null> {
+    const apiKey = process.env.GEMINI_API_KEY || '';
+    if (!apiKey) {
+        console.warn('GEMINI_API_KEY not found');
         return null;
     }
 
@@ -41,101 +102,107 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
         fs.mkdirSync(AUDIO_DIR, { recursive: true });
     }
 
-    // Create the script for the podcast
-    const title = article.titleJa || article.title;
-    const overview = article.summaryJa || '';
-    const commentary = article.translationJa || '';
+    // Build the conversation text with speaker labels
+    const conversationText = conversation
+        .map(turn => `${turn.speaker}: ${turn.text}`)
+        .join('\n\n');
 
-    const podcastScript = `
-${title}。
-
-まず、この研究の概要をお伝えします。
-
-${overview}
-
-続いて、私の見解を述べます。
-
-${commentary}
-
-ご視聴ありがとうございました。
-    `.trim();
+    console.log('Generating audio for conversation...');
+    console.log('Script preview:', conversationText.substring(0, 200) + '...');
 
     try {
-        // Google Cloud TTS API request
-        const request: TTSRequest = {
-            input: { text: podcastScript },
-            voice: {
-                languageCode: 'ja-JP',
-                name: 'ja-JP-Neural2-C', // Male neural voice (C is male)
-                ssmlGender: 'MALE',
-            },
-            audioConfig: {
-                audioEncoding: 'MP3',
-                speakingRate: 0.95, // Slightly slower for clarity
-                pitch: -1.0, // Slightly lower pitch for gravitas
-            },
-        };
-
+        // Use Gemini API for TTS (using the REST API directly)
         const response = await fetch(
-            `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-tts:generateContent?key=${apiKey}`,
             {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(request),
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: conversationText
+                        }]
+                    }],
+                    generationConfig: {
+                        responseModalities: ['AUDIO'],
+                        speechConfig: {
+                            multiSpeakerVoiceConfig: {
+                                speakerVoiceConfigs: [
+                                    {
+                                        speaker: 'ホスト',
+                                        voiceConfig: {
+                                            prebuiltVoiceConfig: {
+                                                voiceName: 'Kore'  // Female Japanese voice
+                                            }
+                                        }
+                                    },
+                                    {
+                                        speaker: 'ゲスト',
+                                        voiceConfig: {
+                                            prebuiltVoiceConfig: {
+                                                voiceName: 'Sadaltager'  // Male Japanese voice
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }),
             }
         );
 
         if (!response.ok) {
             const error = await response.text();
-            console.error('TTS API error:', error);
+            console.error('Gemini TTS API error:', error);
             return null;
         }
 
         const data = await response.json();
-        const audioContent = data.audioContent;
 
-        if (!audioContent) {
-            console.error('No audio content received');
+        // Extract audio data from response
+        const audioData = data?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+
+        if (!audioData) {
+            console.error('No audio data in response');
+            console.log('Response:', JSON.stringify(data, null, 2).substring(0, 500));
             return null;
         }
 
         // Save as MP3 file
-        const filename = `podcast_${Buffer.from(article.id).toString('base64url')}.mp3`;
+        const filename = `podcast_${Buffer.from(articleId).toString('base64url')}.mp3`;
         const filepath = path.join(AUDIO_DIR, filename);
 
-        fs.writeFileSync(filepath, Buffer.from(audioContent, 'base64'));
+        fs.writeFileSync(filepath, Buffer.from(audioData, 'base64'));
         console.log(`Podcast generated: ${filename}`);
 
         return `/audio/${filename}`;
     } catch (error) {
-        console.error('Failed to generate podcast:', error);
+        console.error('Failed to generate audio:', error);
         return null;
     }
 }
 
 /**
- * Generate podcast for multiple articles
+ * Main function to generate podcast from article
  */
-export async function generatePodcastsForArticles(articles: Article[]): Promise<void> {
-    console.log(`Generating podcasts for ${articles.length} articles...`);
+export async function generatePodcastAudio(article: Article): Promise<string | null> {
+    console.log('Generating discussion-style podcast for:', article.titleJa || article.title);
 
-    for (const article of articles) {
-        // Skip if audio already exists
-        const filename = `podcast_${Buffer.from(article.id).toString('base64url')}.mp3`;
-        const filepath = path.join(AUDIO_DIR, filename);
+    // Step 1: Generate conversation script
+    const conversation = await generateConversationScript(article);
 
-        if (fs.existsSync(filepath)) {
-            console.log(`Podcast already exists: ${filename}`);
-            continue;
-        }
-
-        await generatePodcastAudio(article);
-
-        // Rate limiting
-        await new Promise(r => setTimeout(r, 1000));
+    if (conversation.length === 0) {
+        console.warn('Failed to generate conversation script');
+        return null;
     }
 
-    console.log('Podcast generation complete.');
+    console.log(`Generated ${conversation.length} turns of conversation`);
+
+    // Step 2: Generate multi-speaker audio
+    const audioUrl = await generateMultiSpeakerAudio(conversation, article.id);
+
+    return audioUrl;
 }
