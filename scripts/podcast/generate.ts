@@ -118,19 +118,18 @@ JSONのみを出力してください。
 `;
 
     try {
-        const result = await model.generateContent(prompt);
+        const result = await model.generateContent({
+            contents: [{ role: 'user', parts: [{ text: prompt }] }],
+            generationConfig: {
+                responseMimeType: "application/json"
+            }
+        });
         const text = result.response.text();
         console.log('--- Gemini Raw Response Start ---');
         console.log(text);
         console.log('--- Gemini Raw Response End ---');
 
-        const jsonMatch = text.match(/\[[\s\S]*\]/);
-        if (!jsonMatch) {
-            console.error('Failed to extract JSON from response');
-            return [];
-        }
-
-        const conversation = JSON.parse(jsonMatch[0]) as ConversationTurn[];
+        const conversation = JSON.parse(text) as ConversationTurn[];
         console.log(`Parsed ${conversation.length} conversation turns.`);
         return conversation;
     } catch (error) {
