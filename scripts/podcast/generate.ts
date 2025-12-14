@@ -19,21 +19,21 @@ const VOICES = {
     guest: 'b34JylakFZPlGS0BnwyY',
 };
 
-// Voice settings for balanced audio with faster speaking rate
+// Voice settings optimized for natural Japanese intonation
 const VOICE_SETTINGS = {
     host: {
-        stability: 0.5,
-        similarity_boost: 0.95,  // Increased for louder output
-        style: 0.4,
+        stability: 0.40,
+        similarity_boost: 0.80,
+        style: 0.50,
         use_speaker_boost: true,
-        speed: 1.3,  // 1.3x speaking rate
+        speed: 1.2,
     },
     guest: {
-        stability: 0.6,
-        similarity_boost: 0.85,
-        style: 0.3,
+        stability: 0.50,
+        similarity_boost: 0.75,
+        style: 0.40,
         use_speaker_boost: true,
-        speed: 1.3,  // 1.3x speaking rate
+        speed: 1.2,
     },
 };
 
