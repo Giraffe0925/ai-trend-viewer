@@ -1,9 +1,8 @@
 /**
- * Gemini Multi-Speaker Podcast Generator
+ * ElevenLabs Multi-Speaker Podcast Generator
  * 
- * This script generates discussion-style podcast audio from articles using:
- * 1. Gemini LLM to generate a conversation script
- * 2. Gemini TTS Multi-Speaker to convert to audio
+ * Uses Gemini LLM to generate conversation scripts
+ * and ElevenLabs API for multi-speaker audio generation
  */
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -12,6 +11,13 @@ import fs from 'fs';
 import path from 'path';
 
 const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
+
+// ElevenLabs voice IDs for Japanese
+// Using multilingual voices that support Japanese
+const VOICES = {
+    host: 'pFZP5JQG7iQjIQuC4Bku', // Lily - female, warm
+    guest: 'TX3LPaxmHKxFdv7VOQHJ', // Liam - male, calm
+};
 
 interface ConversationTurn {
     speaker: 'ホスト' | 'ゲスト';
@@ -33,7 +39,7 @@ async function generateConversationScript(article: Article): Promise<Conversatio
 
     const title = article.titleJa || article.title;
     const overview = article.summaryJa || '';
-    const commentary = article.translationJa || '';
+    const commentary = (article.translationJa || '').slice(0, 1000);
 
     const prompt = `
 あなたはラジオ番組の脚本家です。以下の記事内容をもとに、2人のパーソナリティ（ホストとゲスト）が議論する形式の台本を作成してください。
@@ -44,15 +50,16 @@ ${title}
 ## 記事概要
 ${overview}
 
-## 論評
+## 論評（抜粋）
 ${commentary}
 
 ## 指示
 - ホストとゲストが交互に話す自然な会話形式で
-- 合計6-8ターンの短いやりとり（全体で60-90秒程度の長さ）
+- 合計6ターンの短いやりとり
 - ホストは聞き手として質問や相槌を入れる
 - ゲストは專門家として解説する
-- 最後は「ご視聴ありがとうございました」で締める
+- 各発言は30-60文字程度で簡潔に
+- 最後は「ありがとうございました」で締める
 - JSON形式で出力
 
 ## 出力形式
@@ -69,7 +76,6 @@ JSONのみを出力し、他の説明は不要です。
         const result = await model.generateContent(prompt);
         const text = result.response.text();
 
-        // Extract JSON from response
         const jsonMatch = text.match(/\[[\s\S]*\]/);
         if (!jsonMatch) {
             console.error('Failed to extract JSON from response');
@@ -85,111 +91,71 @@ JSONのみを出力し、他の説明は不要です。
 }
 
 /**
- * Generate multi-speaker audio using Gemini TTS
+ * Generate audio for a single speaker using ElevenLabs
  */
-async function generateMultiSpeakerAudio(
-    conversation: ConversationTurn[],
-    articleId: string
-): Promise<string | null> {
-    const apiKey = process.env.GEMINI_API_KEY || '';
-    if (!apiKey) {
-        console.warn('GEMINI_API_KEY not found');
-        return null;
-    }
-
-    // Ensure audio directory exists
-    if (!fs.existsSync(AUDIO_DIR)) {
-        fs.mkdirSync(AUDIO_DIR, { recursive: true });
-    }
-
-    // Build the conversation text with speaker labels
-    const conversationText = conversation
-        .map(turn => `${turn.speaker}: ${turn.text}`)
-        .join('\n\n');
-
-    console.log('Generating audio for conversation...');
-    console.log('Script preview:', conversationText.substring(0, 200) + '...');
-
+async function generateSpeakerAudio(
+    text: string,
+    voiceId: string,
+    apiKey: string
+): Promise<Buffer | null> {
     try {
-        // Use Gemini API for TTS (using the REST API directly)
         const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-tts:generateContent?key=${apiKey}`,
+            `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
             {
                 method: 'POST',
                 headers: {
+                    'Accept': 'audio/mpeg',
                     'Content-Type': 'application/json',
+                    'xi-api-key': apiKey,
                 },
                 body: JSON.stringify({
-                    contents: [{
-                        parts: [{
-                            text: conversationText
-                        }]
-                    }],
-                    generationConfig: {
-                        responseModalities: ['AUDIO'],
-                        speechConfig: {
-                            multiSpeakerVoiceConfig: {
-                                speakerVoiceConfigs: [
-                                    {
-                                        speaker: 'ホスト',
-                                        voiceConfig: {
-                                            prebuiltVoiceConfig: {
-                                                voiceName: 'Kore'  // Female Japanese voice
-                                            }
-                                        }
-                                    },
-                                    {
-                                        speaker: 'ゲスト',
-                                        voiceConfig: {
-                                            prebuiltVoiceConfig: {
-                                                voiceName: 'Sadaltager'  // Male Japanese voice
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    }
+                    text: text,
+                    model_id: 'eleven_multilingual_v2',
+                    voice_settings: {
+                        stability: 0.5,
+                        similarity_boost: 0.75,
+                    },
                 }),
             }
         );
 
         if (!response.ok) {
             const error = await response.text();
-            console.error('Gemini TTS API error:', error);
+            console.error('ElevenLabs API error:', error);
             return null;
         }
 
-        const data = await response.json();
-
-        // Extract audio data from response
-        const audioData = data?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-
-        if (!audioData) {
-            console.error('No audio data in response');
-            console.log('Response:', JSON.stringify(data, null, 2).substring(0, 500));
-            return null;
-        }
-
-        // Save as MP3 file
-        const filename = `podcast_${Buffer.from(articleId).toString('base64url')}.mp3`;
-        const filepath = path.join(AUDIO_DIR, filename);
-
-        fs.writeFileSync(filepath, Buffer.from(audioData, 'base64'));
-        console.log(`Podcast generated: ${filename}`);
-
-        return `/audio/${filename}`;
+        const arrayBuffer = await response.arrayBuffer();
+        return Buffer.from(arrayBuffer);
     } catch (error) {
-        console.error('Failed to generate audio:', error);
+        console.error('Failed to generate speaker audio:', error);
         return null;
     }
+}
+
+/**
+ * Concatenate audio buffers (simple concatenation for MP3)
+ */
+function concatenateAudioBuffers(buffers: Buffer[]): Buffer {
+    return Buffer.concat(buffers);
 }
 
 /**
  * Main function to generate podcast from article
  */
 export async function generatePodcastAudio(article: Article): Promise<string | null> {
+    const elevenLabsKey = process.env.ELEVENLABS_API_KEY || '';
+    if (!elevenLabsKey) {
+        console.warn('ELEVENLABS_API_KEY not found');
+        return null;
+    }
+
     console.log('Generating discussion-style podcast for:', article.titleJa || article.title);
+
+    // Ensure audio directory exists
+    if (!fs.existsSync(AUDIO_DIR)) {
+        fs.mkdirSync(AUDIO_DIR, { recursive: true });
+    }
 
     // Step 1: Generate conversation script
     const conversation = await generateConversationScript(article);
@@ -201,8 +167,41 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
 
     console.log(`Generated ${conversation.length} turns of conversation`);
 
-    // Step 2: Generate multi-speaker audio
-    const audioUrl = await generateMultiSpeakerAudio(conversation, article.id);
+    // Step 2: Generate audio for each turn
+    const audioBuffers: Buffer[] = [];
 
-    return audioUrl;
+    for (let i = 0; i < conversation.length; i++) {
+        const turn = conversation[i];
+        const voiceId = turn.speaker === 'ホスト' ? VOICES.host : VOICES.guest;
+
+        console.log(`  [${i + 1}/${conversation.length}] ${turn.speaker}: ${turn.text.slice(0, 20)}...`);
+
+        const audioBuffer = await generateSpeakerAudio(turn.text, voiceId, elevenLabsKey);
+
+        if (audioBuffer) {
+            audioBuffers.push(audioBuffer);
+        } else {
+            console.warn(`  Failed to generate audio for turn ${i + 1}`);
+        }
+
+        // Rate limiting
+        await new Promise(r => setTimeout(r, 500));
+    }
+
+    if (audioBuffers.length === 0) {
+        console.error('No audio generated');
+        return null;
+    }
+
+    // Step 3: Concatenate audio files
+    const combinedAudio = concatenateAudioBuffers(audioBuffers);
+
+    // Step 4: Save as MP3 file
+    const filename = `podcast_${Buffer.from(article.id).toString('base64url')}.mp3`;
+    const filepath = path.join(AUDIO_DIR, filename);
+
+    fs.writeFileSync(filepath, combinedAudio);
+    console.log(`Podcast generated: ${filename}`);
+
+    return `/audio/${filename}`;
 }

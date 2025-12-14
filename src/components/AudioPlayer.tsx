@@ -7,10 +7,13 @@ interface AudioPlayerProps {
     title: string;
 }
 
+const PLAYBACK_SPEEDS = [1, 1.25, 1.5, 1.75, 2, 2.5];
+
 export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [playbackSpeed, setPlaybackSpeed] = useState(1);
     const audioRef = useRef<HTMLAudioElement>(null);
 
     const togglePlay = () => {
@@ -41,6 +44,13 @@ export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
         if (audioRef.current) {
             audioRef.current.currentTime = time;
             setProgress(time);
+        }
+    };
+
+    const handleSpeedChange = (speed: number) => {
+        setPlaybackSpeed(speed);
+        if (audioRef.current) {
+            audioRef.current.playbackRate = speed;
         }
     };
 
@@ -131,6 +141,36 @@ export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
                             {formatTime(duration)}
                         </span>
                     </div>
+                </div>
+
+                {/* Speed Control */}
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '4px',
+                }}>
+                    <span style={{ fontSize: '10px', color: '#6b7280' }}>速度</span>
+                    <select
+                        value={playbackSpeed}
+                        onChange={(e) => handleSpeedChange(parseFloat(e.target.value))}
+                        style={{
+                            backgroundColor: '#374151',
+                            color: '#e5e7eb',
+                            border: '1px solid #4b5563',
+                            borderRadius: '8px',
+                            padding: '6px 8px',
+                            fontSize: '12px',
+                            cursor: 'pointer',
+                            outline: 'none',
+                        }}
+                    >
+                        {PLAYBACK_SPEEDS.map((speed) => (
+                            <option key={speed} value={speed}>
+                                {speed}x
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </div>
         </div>
