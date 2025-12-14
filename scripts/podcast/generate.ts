@@ -6,7 +6,7 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Article } from '../types';
-import { mixWithBGM } from '../utils/audio-mixer';
+import { mixWithBGM, adjustVolume } from '../utils/audio-mixer';
 import fs from 'fs';
 import path from 'path';
 
@@ -27,14 +27,16 @@ const VOICE_SETTINGS = {
         similarity_boost: 0.80,
         style: 0.50,
         use_speaker_boost: true,
-        speed: 1.2,
+        speed: 2.0,
+        volume: 1.2, // 20% volume boost
     },
     guest: {
         stability: 0.50,
         similarity_boost: 0.75,
         style: 0.40,
         use_speaker_boost: true,
-        speed: 1.2,
+        speed: 2.0,
+        volume: 1.0, // normal volume
     },
 };
 
@@ -79,9 +81,12 @@ ${commentary}
 
 ## 番組構成（50ターンで）
 
-### オープニング（約3ターン）
-- ホスト:「皆さん、こんにちは。ひびちどくの時間です。今日は〇〇についてお話しします」
-- 自己紹介は不要。すぐに本題へ
+### オープニング（約5ターン）
+1. ホスト:「みなさん、こんにちは！ひびちどくラジオの時間です」（必ずこの挨拶から始める）
+2. ホスト: 番組の簡単な紹介「このポッドキャストでは、世界中の面白いニュースや研究を、分かりやすくお届けしています」
+3. ホスト: 今回のトピック紹介「さて、今日は〇〇についてお話しします。〜という話題なんですが...」
+4. ゲストが興味を示す相槌で本題へ
+- 自己紹介は不要
 
 ### 本編パート1：概要（約12ターン）
 - この研究/ニュースの背景
@@ -234,12 +239,21 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
 
     for (let i = 0; i < conversation.length; i++) {
         const turn = conversation[i];
+        const settings = turn.speaker === 'ホスト' ? VOICE_SETTINGS.host : VOICE_SETTINGS.guest;
 
         console.log(`  [${i + 1}/${conversation.length}] ${turn.speaker}: ${turn.text.slice(0, 30)}...`);
 
-        const audioBuffer = await generateSpeakerAudio(turn.text, turn.speaker, elevenLabsKey);
+        let audioBuffer = await generateSpeakerAudio(turn.text, turn.speaker, elevenLabsKey);
 
         if (audioBuffer) {
+            // Apply volume adjustment if needed
+            if (settings.volume !== 1.0) {
+                try {
+                    audioBuffer = await adjustVolume(audioBuffer, settings.volume);
+                } catch (e) {
+                    console.warn(`  Volume adjustment failed, using original`);
+                }
+            }
             audioBuffers.push(audioBuffer);
         } else {
             console.warn(`  Failed to generate audio for turn ${i + 1}`);
