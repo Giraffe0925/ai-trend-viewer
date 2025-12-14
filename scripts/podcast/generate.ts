@@ -28,15 +28,15 @@ const VOICE_SETTINGS = {
         style: 0.50,
         use_speaker_boost: true,
         speed: 1.5,
-        volume: 1.5, // Volume 1.5
+        volume: 1.8, // Increased volume by 0.3 (1.5 -> 1.8)
     },
     guest: {
         stability: 0.50,
         similarity_boost: 0.75,
         style: 0.40,
         use_speaker_boost: true,
-        speed: 1.3, // Reduced speed by 0.2 (1.5 -> 1.3)
-        volume: 4.3, // Increased volume by 0.3 (4.0 -> 4.3)
+        speed: 1.3,
+        volume: 4.6, // Increased volume by 0.3 (4.3 -> 4.6)
     },
 };
 
