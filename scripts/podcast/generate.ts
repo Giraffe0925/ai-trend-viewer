@@ -16,8 +16,8 @@ const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
 const VOICES = {
     // Sakura Suzuki - young Japanese female, ideal for podcasts
     host: 'RBnMinrYKeccY3vaUxlZ',
-    // Kenzo - calm professional male Japanese voice
-    guest: 'b34JylakFZPlGS0BnwyY',
+    // Charlie - conversational male text-to-speech voice
+    guest: 'IKne3meq5aSn9XLyUdCD',
 };
 
 // Voice settings optimized for natural Japanese intonation
@@ -27,15 +27,15 @@ const VOICE_SETTINGS = {
         similarity_boost: 0.80,
         style: 0.50,
         use_speaker_boost: true,
-        speed: 2.0,
-        volume: 1.4, // Increased volume
+        speed: 2.5,
+        volume: 1.6, // Increased volume
     },
     guest: {
         stability: 0.50,
         similarity_boost: 0.75,
         style: 0.40,
         use_speaker_boost: true,
-        speed: 2.0,
+        speed: 2.5,
         volume: 1.0, // normal volume
     },
 };
