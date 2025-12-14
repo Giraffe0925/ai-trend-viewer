@@ -8,7 +8,7 @@ interface AudioPlayerProps {
 }
 
 const PLAYBACK_SPEEDS = [1, 1.25, 1.5, 1.75, 2, 2.5];
-const BGM_URL = '/audio/bgm-lofi.mp3'; // BGMファイルをpublic/audio/に配置
+const BGM_URL = '/audio/bgm.mp3'; // BGMファイルをpublic/audio/に配置
 
 export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
     const [isPlaying, setIsPlaying] = useState(false);

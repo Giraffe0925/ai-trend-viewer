@@ -1,10 +1,15 @@
 /**
  * Test Gemini Multi-Speaker Podcast Generation
  */
+import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import { generatePodcastAudio } from './podcast/generate';
 import { Article } from './types';
+
+// Load .env.local
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'posts.json');
 

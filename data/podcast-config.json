@@ -1,0 +1,12 @@
+{
+    "title": "ひびちどくラジオ",
+    "description": "世界中の面白いニュースや研究を、AIが分かりやすくお届けするポッドキャスト。最新のテクノロジー、科学、哲学、経済学など幅広いトピックを2人の対話形式でお届けします。",
+    "author": "日々知読",
+    "email": "satimakoto@gmail.com",
+    "language": "ja",
+    "category": "Technology",
+    "subcategory": "Tech News",
+    "explicit": false,
+    "image": "/images/podcast-cover.jpg",
+    "website": "https://hibichidoku.vercel.app"
+}

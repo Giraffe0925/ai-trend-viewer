@@ -1,0 +1,37 @@
+﻿   笆ｲ Next.js 16.0.10 (Turbopack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ 笨・Compiled successfully in 5.3s
+   Running TypeScript ...
+node.exe : Failed to compile.
+発生場所 行:1 文字:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program
+ Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Fail 
+   ed to compile.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+./scripts/resize-cover.ts:31:19
+Type error: Parameter 'err' implicitly has an 'any
+' type.
+
+[0m [90m 29 |[39m         console[33m.[39mlog
+([32m'Original image replaced.'[39m)[33m;[39m
+ [90m 30 |[39m     })
+[31m[1m>[22m[39m[90m 31 |[39m     [33m.[39
+mon([32m'error'[39m[33m,[39m (err) [33m=>[39
+m {
+ [90m    |[39m                   [31m[1m^[22m
+[39m
+ [90m 32 |[39m         console[33m.[39merror(
+[32m'Error resizing image:'[39m[33m,[39m err)[
+33m;[39m
+ [90m 33 |[39m         process[33m.[39mexit([
+35m1[39m)[33m;[39m
+ [90m 34 |[39m     })[0m
+Next.js build worker exited with code: 1 and signa
+l: null

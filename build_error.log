@@ -1,0 +1,37 @@
+﻿   笆ｲ Next.js 16.0.10 (Turbopack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ 笨・Compiled successfully in 5.8s
+   Running TypeScript ...
+node.exe : Failed to compile.
+発生場所 行:1 文字:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program
+ Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Fail 
+   ed to compile.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+./scripts/utils/audio-mixer.ts:66:27
+Type error: Parameter 'cmd' implicitly has an 'any
+' type.
+
+[0m [90m 64 |[39m             ])
+ [90m 65 |[39m             [33m.[39moutput(fin
+alOutputPath)
+[31m[1m>[22m[39m[90m 66 |[39m             [
+33m.[39mon([32m'start'[39m[33m,[39m (cmd) [3
+3m=>[39m {
+ [90m    |[39m                           [31m[
+1m^[22m[39m
+ [90m 67 |[39m                 console[33m.[39
+mlog([32m'  Starting ffmpeg...'[39m)[33m;[39m
+ [90m 68 |[39m             })
+ [90m 69 |[39m             [33m.[39mon([32m'p
+rogress'[39m[33m,[39m (progress) [33m=>[39m {
+[0m
+Next.js build worker exited with code: 1 and signa
+l: null

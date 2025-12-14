@@ -48,11 +48,14 @@ export async function mixWithBGM(
             .input(BGM_FILE)
             .inputOptions(['-stream_loop', '-1']) // Loop BGM indefinitely
             // Complex filter to mix audio
+            // Delay podcast audio by 1 second so BGM plays alone first
             .complexFilter([
+                // Delay the podcast audio by 1 second (1000ms) for BGM intro
+                `[0:a]adelay=1000|1000[voice]`,
                 // Adjust BGM volume
                 `[1:a]volume=${bgmVolume}[bgm]`,
-                // Mix podcast with BGM, using podcast length as reference
-                `[0:a][bgm]amix=inputs=2:duration=first:dropout_transition=2[out]`
+                // Mix delayed podcast with BGM, using podcast length + 1s as reference
+                `[voice][bgm]amix=inputs=2:duration=first:dropout_transition=2[out]`
             ])
             .outputOptions([
                 '-map', '[out]',
@@ -60,15 +63,15 @@ export async function mixWithBGM(
                 '-b:a', '192k'
             ])
             .output(finalOutputPath)
-            .on('start', (cmd) => {
+            .on('start', (cmd: string) => {
                 console.log('  Starting ffmpeg...');
             })
-            .on('progress', (progress) => {
+            .on('progress', (progress: { percent?: number }) => {
                 if (progress.percent) {
                     process.stdout.write(`\r  Progress: ${Math.round(progress.percent)}%`);
                 }
             })
-            .on('error', (err) => {
+            .on('error', (err: Error) => {
                 console.error('\n  FFmpeg error:', err.message);
                 reject(err);
             })
@@ -102,7 +105,7 @@ export async function addFades(
         console.log('Adding fade in/out...');
 
         // First, get the duration
-        ffmpeg.ffprobe(audioPath, (err, metadata) => {
+        ffmpeg.ffprobe(audioPath, (err: Error | null, metadata: { format: { duration?: number } }) => {
             if (err) {
                 reject(err);
                 return;
@@ -126,5 +129,47 @@ export async function addFades(
                 .on('error', reject)
                 .run();
         });
+    });
+}
+
+/**
+ * Adjust volume of an audio buffer using ffmpeg
+ * @param audioBuffer - Input audio buffer
+ * @param volume - Volume multiplier (1.0 = normal, 1.2 = 20% boost)
+ * @returns Adjusted audio buffer
+ */
+export async function adjustVolume(audioBuffer: Buffer, volume: number): Promise<Buffer> {
+    if (volume === 1.0) {
+        return audioBuffer; // No adjustment needed
+    }
+
+    const tempDir = path.join(process.cwd(), 'temp');
+    if (!fs.existsSync(tempDir)) {
+        fs.mkdirSync(tempDir, { recursive: true });
+    }
+
+    const inputPath = path.join(tempDir, `input_${Date.now()}.mp3`);
+    const outputPath = path.join(tempDir, `output_${Date.now()}.mp3`);
+
+    fs.writeFileSync(inputPath, audioBuffer);
+
+    return new Promise((resolve, reject) => {
+        ffmpeg(inputPath)
+            .audioFilters([`volume=${volume}`])
+            .output(outputPath)
+            .on('end', () => {
+                const adjustedBuffer = fs.readFileSync(outputPath);
+                // Cleanup temp files
+                fs.unlinkSync(inputPath);
+                fs.unlinkSync(outputPath);
+                resolve(adjustedBuffer);
+            })
+            .on('error', (err: Error) => {
+                // Cleanup on error
+                if (fs.existsSync(inputPath)) fs.unlinkSync(inputPath);
+                if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath);
+                reject(err);
+            })
+            .run();
     });
 }
