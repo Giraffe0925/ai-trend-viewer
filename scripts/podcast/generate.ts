@@ -36,7 +36,7 @@ const VOICE_SETTINGS = {
         style: 0.40,
         use_speaker_boost: true,
         speed: 1.5,
-        volume: 1.5, // Volume 1.5
+        volume: 2.0, // Increased volume to 2.0
     },
 };
 
