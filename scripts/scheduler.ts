@@ -124,7 +124,7 @@ async function main() {
         }
 
         // Generate podcast audio
-        if (process.env.GOOGLE_CLOUD_TTS_API_KEY) {
+        if (process.env.ELEVENLABS_API_KEY) {
             const { generatePodcastAudio } = await import('./podcast/generate');
             const audioUrl = await generatePodcastAudio(processed);
             if (audioUrl) {
