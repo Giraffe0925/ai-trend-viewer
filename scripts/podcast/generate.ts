@@ -36,7 +36,7 @@ const VOICE_SETTINGS = {
         style: 0.40,
         use_speaker_boost: true,
         speed: 1.5,
-        volume: 2.0, // Increased volume to 2.0
+        volume: 4.0, // Drastically increased volume to 4.0
     },
 };
 
@@ -167,10 +167,12 @@ async function generateSpeakerAudio(
                         stability: settings.stability,
                         similarity_boost: settings.similarity_boost,
                         style: settings.style,
-                        use_speaker_boost: settings.use_speaker_boost,
+                        use_speaker_boost: settings.use_speaker_boost
                     },
-                    // Speed parameter (0.25 to 4.0, default 1.0)
-                    speed: settings.speed || 1.0,
+                    // Force speed to 1.0 for API generation.
+                    // We handle speed adjustment using ffmpeg later to avoid double-speeding
+                    // and to ensure consistent results.
+                    // speed: settings.speed || 1.0, 
                 }),
             }
         );
