@@ -16,8 +16,8 @@ const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
 const VOICES = {
     // Sakura Suzuki - young Japanese female, ideal for podcasts
     host: 'RBnMinrYKeccY3vaUxlZ',
-    // Tatsuki (Takumi) - calm professional male Japanese voice
-    guest: 'b34JylakFZPlGS0BnwyY',
+    // Tatsuki - Voice Library ID
+    guest: 'AYFJOmHxRJdmf572TQ7R',
 };
 
 // Voice settings optimized for natural Japanese intonation
