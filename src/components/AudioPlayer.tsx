@@ -15,7 +15,7 @@ export default function AudioPlayer({ audioUrl, title }: AudioPlayerProps) {
     const [progress, setProgress] = useState(0);
     const [duration, setDuration] = useState(0);
     const [playbackSpeed, setPlaybackSpeed] = useState(1.5);
-    const [bgmEnabled, setBgmEnabled] = useState(false);
+    const [bgmEnabled, setBgmEnabled] = useState(true); // BGM always on by default
     const [bgmVolume, setBgmVolume] = useState(0.1); // BGM音量 10%
     const audioRef = useRef<HTMLAudioElement>(null);
     const bgmRef = useRef<HTMLAudioElement>(null);

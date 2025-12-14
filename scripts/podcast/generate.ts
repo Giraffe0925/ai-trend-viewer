@@ -19,19 +19,21 @@ const VOICES = {
     guest: 'b34JylakFZPlGS0BnwyY',
 };
 
-// Voice settings for balanced audio
+// Voice settings for balanced audio with faster speaking rate
 const VOICE_SETTINGS = {
     host: {
-        stability: 0.6,
-        similarity_boost: 0.8,
-        style: 0.3,
+        stability: 0.5,
+        similarity_boost: 0.95,  // Increased for louder output
+        style: 0.4,
         use_speaker_boost: true,
+        speed: 1.3,  // 1.3x speaking rate
     },
     guest: {
-        stability: 0.65,
+        stability: 0.6,
         similarity_boost: 0.85,
-        style: 0.25,
+        style: 0.3,
         use_speaker_boost: true,
+        speed: 1.3,  // 1.3x speaking rate
     },
 };
 
@@ -160,7 +162,14 @@ async function generateSpeakerAudio(
                 body: JSON.stringify({
                     text: text,
                     model_id: 'eleven_multilingual_v2',
-                    voice_settings: settings,
+                    voice_settings: {
+                        stability: settings.stability,
+                        similarity_boost: settings.similarity_boost,
+                        style: settings.style,
+                        use_speaker_boost: settings.use_speaker_boost,
+                    },
+                    // Speed parameter (0.25 to 4.0, default 1.0)
+                    speed: settings.speed || 1.0,
                 }),
             }
         );
