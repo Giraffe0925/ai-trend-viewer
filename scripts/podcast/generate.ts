@@ -5,7 +5,7 @@
  */
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { Article } from '../types';
+import { Article } from '../../src/types';
 import { mixWithBGM, adjustVolume } from '../utils/audio-mixer';
 import fs from 'fs';
 import path from 'path';

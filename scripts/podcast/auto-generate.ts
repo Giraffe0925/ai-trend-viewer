@@ -7,7 +7,7 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 import { generatePodcastAudio } from './generate';
-import { Article } from '../../types';
+import { Article } from '../../src/types';
 
 const POSTS_PATH = path.join(process.cwd(), 'data', 'posts.json');
 
