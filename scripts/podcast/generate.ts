@@ -16,8 +16,8 @@ const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
 const VOICES = {
     // Sakura Suzuki - young Japanese female, ideal for podcasts
     host: 'RBnMinrYKeccY3vaUxlZ',
-    // Charlie - conversational male text-to-speech voice
-    guest: 'IKne3meq5aSn9XLyUdCD',
+    // George - calm, professional male voice, good for Japanese
+    guest: 'JBFqnCBsd6RMkjVDRZzb',
 };
 
 // Voice settings optimized for natural Japanese intonation
