@@ -101,9 +101,50 @@ async function main() {
 
     console.log(`${newArticles.length} new articles to process.`);
 
-    const processedArticles: Article[] = [];
+    // ============================================
+    // Category Rotation Logic: Select 1 article from a different category
+    // ============================================
+    const ARTICLES_PER_RUN = 1;
+
+    // Get the last article's category to avoid repetition
+    const lastCategory = existingArticles.length > 0 ? existingArticles[0].category : null;
+    console.log(`Last category: ${lastCategory}`);
+
+    // Group new articles by category
+    const articlesByCategory: Record<string, Article[]> = {};
     for (const article of newArticles) {
-        console.log(`Processing: ${article.title}`);
+        const cat = article.category || 'Other';
+        if (!articlesByCategory[cat]) {
+            articlesByCategory[cat] = [];
+        }
+        articlesByCategory[cat].push(article);
+    }
+
+    // Get all categories except the last one (for rotation)
+    const availableCategories = Object.keys(articlesByCategory).filter(cat => cat !== lastCategory);
+
+    // If all new articles are same category as last, use that category anyway
+    const categoriesToUse = availableCategories.length > 0 ? availableCategories : Object.keys(articlesByCategory);
+
+    // Select articles to process (1 article from a different category)
+    const articlesToProcess: Article[] = [];
+    for (const category of categoriesToUse) {
+        if (articlesToProcess.length >= ARTICLES_PER_RUN) break;
+        const catArticles = articlesByCategory[category];
+        if (catArticles && catArticles.length > 0) {
+            articlesToProcess.push(catArticles[0]);
+        }
+    }
+
+    console.log(`Selected ${articlesToProcess.length} article(s) to process (category rotation).`);
+    if (articlesToProcess.length === 0) {
+        console.log('No new articles to process. Exiting.');
+        return;
+    }
+
+    const processedArticles: Article[] = [];
+    for (const article of articlesToProcess) {
+        console.log(`Processing: ${article.title} (Category: ${article.category})`);
         let processed = await processArticleWithLLM(article);
 
         // Fetch image from Pexels based on article tags
