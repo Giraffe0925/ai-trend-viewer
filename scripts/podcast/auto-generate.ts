@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv';
 // Load environment variables from .env.local
 dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
-import { generatePodcastAudio } from './generate';
+import { generatePodcastAudio } from './generate-gemini';
 import { Article } from '../../src/types';
 
 const POSTS_PATH = path.join(process.cwd(), 'data', 'posts.json');
