@@ -20,6 +20,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+          fetch-depth: 0
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -34,14 +36,18 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-          GOOGLE_CLOUD_TTS_API_KEY: ${{ secrets.GOOGLE_CLOUD_TTS_API_KEY }}
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: npm run update-content
         
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git fetch origin main
+          git add data/posts.json
+          [ -d public/audio ] && git add public/audio/ || true
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
           git add data/posts.json
           [ -d public/audio ] && git add public/audio/ || true
           git diff --staged --quiet || git commit -m "Auto-update content [$(date +'%Y-%m-%d %H:%M')]"
