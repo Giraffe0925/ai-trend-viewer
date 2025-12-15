@@ -8,8 +8,21 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Article } from '../../src/types';
 import fs from 'fs';
 import path from 'path';
+import ffmpeg from 'fluent-ffmpeg';
+import ffmpegPath from 'ffmpeg-static';
+
+// Set ffmpeg path
+if (ffmpegPath) {
+    ffmpeg.setFfmpegPath(ffmpegPath);
+}
 
 const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
+
+// Audio post-processing settings
+const AUDIO_SETTINGS = {
+    speed: 1.25,       // Host speed: 1.25x
+    volume: 1.2,       // Overall volume: +20%
+};
 
 interface ConversationTurn {
     speaker: 'ホスト' | 'ゲスト';
@@ -114,6 +127,42 @@ JSONのみを出力してください。
  */
 function formatConversationForTTS(conversation: ConversationTurn[]): string {
     return conversation.map(turn => `${turn.speaker}: ${turn.text}`).join('\n\n');
+}
+
+/**
+ * Post-process audio: adjust speed and volume using ffmpeg
+ */
+async function postProcessAudio(inputPath: string, speed: number, volume: number): Promise<string> {
+    const outputPath = inputPath.replace('.wav', '_processed.mp3');
+
+    console.log(`  Post-processing: speed=${speed}x, volume=${volume}x`);
+
+    return new Promise((resolve, reject) => {
+        ffmpeg(inputPath)
+            .audioFilters([
+                `atempo=${speed}`,
+                `volume=${volume}`
+            ])
+            .outputOptions([
+                '-c:a', 'libmp3lame',
+                '-b:a', '192k'
+            ])
+            .output(outputPath)
+            .on('end', () => {
+                // Delete original WAV file
+                fs.unlinkSync(inputPath);
+                // Rename processed file to have simpler name
+                const finalPath = inputPath.replace('.wav', '.mp3');
+                fs.renameSync(outputPath, finalPath);
+                console.log(`  Post-processing complete!`);
+                resolve(finalPath);
+            })
+            .on('error', (err: Error) => {
+                console.error('  Post-processing error:', err.message);
+                reject(err);
+            })
+            .run();
+    });
 }
 
 /**
@@ -238,16 +287,31 @@ export async function generatePodcastAudio(article: Article): Promise<string | n
         return null;
     }
 
-    // Step 3: Save as audio file
+    // Step 3: Save as WAV file (temporary)
     const timestamp = Date.now();
-    // Detect format from response or default to wav
-    const filename = `podcast_${Buffer.from(article.id).toString('base64url')}_${timestamp}.wav`;
-    const filepath = path.join(AUDIO_DIR, filename);
+    const tempFilename = `podcast_${Buffer.from(article.id).toString('base64url')}_${timestamp}.wav`;
+    const tempFilepath = path.join(AUDIO_DIR, tempFilename);
 
-    fs.writeFileSync(filepath, audioBuffer);
+    fs.writeFileSync(tempFilepath, audioBuffer);
+    console.log(`Saved temp WAV: ${tempFilename} (${(audioBuffer.length / 1024 / 1024).toFixed(2)} MB)`);
 
-    const fileSizeMB = (audioBuffer.length / 1024 / 1024).toFixed(2);
-    console.log(`Podcast saved: ${filename} (${fileSizeMB} MB)`);
+    // Step 4: Post-process audio (speed + volume)
+    console.log('Step 3: Post-processing audio (speed + volume)...');
+    try {
+        const finalPath = await postProcessAudio(
+            tempFilepath,
+            AUDIO_SETTINGS.speed,
+            AUDIO_SETTINGS.volume
+        );
 
-    return `/audio/${filename}`;
+        const filename = path.basename(finalPath);
+        const stats = fs.statSync(finalPath);
+        console.log(`Podcast saved: ${filename} (${(stats.size / 1024 / 1024).toFixed(2)} MB)`);
+
+        return `/audio/${filename}`;
+    } catch (error) {
+        console.error('Post-processing failed:', error);
+        // Fallback: return the WAV file if processing fails
+        return `/audio/${tempFilename}`;
+    }
 }
