@@ -164,14 +164,14 @@ async function main() {
             processed.visualImages = visualImages;
         }
 
-        // Generate podcast audio (TEMPORARILY DISABLED - ElevenLabs quota exceeded)
-        // if (process.env.ELEVENLABS_API_KEY) {
-        //     const { generatePodcastAudio } = await import('./podcast/generate');
-        //     const audioUrl = await generatePodcastAudio(processed);
-        //     if (audioUrl) {
-        //         processed.audioUrl = audioUrl;
-        //     }
-        // }
+        // Generate podcast audio using Gemini TTS
+        if (process.env.GEMINI_API_KEY) {
+            const { generatePodcastAudio } = await import('./podcast/generate-gemini');
+            const audioUrl = await generatePodcastAudio(processed);
+            if (audioUrl) {
+                processed.audioUrl = audioUrl;
+            }
+        }
 
         processedArticles.push(processed);
 

@@ -392,6 +392,30 @@
     "imageUrl": "https://images.pexels.com/photos/5745857/pexels-photo-5745857.jpeg?auto=compress&cs=tinysrgb&h=350"
   },
   {
+    "id": "http://arxiv.org/abs/2512.11798v1",
+    "title": "Particulate: Feed-Forward 3D Object Articulation",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.11798v1",
+    "summary": "We present Particulate, a feed-forward approach that, given a single static 3D mesh of an everyday object, directly infers all attributes of the underlying articulated structure, including its 3D parts, kinematic structure, and motion constraints. At its core is a transformer network, Part Articulation Transformer, which processes a point cloud of the input mesh using a flexible and scalable architecture to predict all the aforementioned attributes with native multi-joint support. We train the network end-to-end on a diverse collection of articulated 3D assets from public datasets. During inference, Particulate lifts the network's feed-forward prediction to the input mesh, yielding a fully articulated 3D model in seconds, much faster than prior approaches that require per-object optimization. Particulate can also accurately infer the articulated structure of AI-generated 3D assets, enabling full-fledged extraction of articulated 3D objects from a single (real or synthetic) image when combined with an off-the-shelf image-to-3D generator. We further introduce a new challenging benchmark for 3D articulation estimation curated from high-quality public 3D assets, and redesign the evaluation protocol to be more consistent with human preferences. Quantitative and qualitative results show that Particulate significantly outperforms state-of-the-art approaches.",
+    "publishedAt": "2025-12-12T18:59:51Z",
+    "author": "Ruining Li",
+    "category": "AI",
+    "originalContent": "We present Particulate, a feed-forward approach that, given a single static 3D mesh of an everyday object, directly infers all attributes of the underlying articulated structure, including its 3D parts, kinematic structure, and motion constraints. At its core is a transformer network, Part Articulation Transformer, which processes a point cloud of the input mesh using a flexible and scalable architecture to predict all the aforementioned attributes with native multi-joint support. We train the network end-to-end on a diverse collection of articulated 3D assets from public datasets. During inference, Particulate lifts the network's feed-forward prediction to the input mesh, yielding a fully articulated 3D model in seconds, much faster than prior approaches that require per-object optimization. Particulate can also accurately infer the articulated structure of AI-generated 3D assets, enabling full-fledged extraction of articulated 3D objects from a single (real or synthetic) image when combined with an off-the-shelf image-to-3D generator. We further introduce a new challenging benchmark for 3D articulation estimation curated from high-quality public 3D assets, and redesign the evaluation protocol to be more consistent with human preferences. Quantitative and qualitative results show that Particulate significantly outperforms state-of-the-art approaches.",
+    "titleJa": "Particulate: 3Dオブジェクトの構造推論とその哲学的考察",
+    "summaryJa": "本研究「Particulate」は、単一の3Dメッシュから、オブジェクトの関節構造（パーツ、運動構造、可動範囲）を直接推論する新しい手法を提案しています。TransformerネットワークであるPart Articulation Transformerを用いて点群データを処理し、関節構造を予測します。多様な3Dデータセットで学習を行い、高速な推論を実現しています。また、AI生成された3Dオブジェクトにも適用可能であり、画像から3Dモデルを生成する技術と組み合わせることで、画像からの関節構造抽出も可能にします。既存手法を大幅に上回る性能を示すベンチマークも導入しました。",
+    "translationJa": "1. 導入：この研究が問いかけていることへの第一印象\n\n「Particulate」という研究を前にして、まず感じるのは、我々が世界をどのように理解し、認識しているのかという根源的な問いである。目の前に存在する物体、例えば椅子やドア、あるいはもっと複雑な機械。それらを一目で「関節構造を持つもの」として認識できるのはなぜだろうか。この研究は、その暗黙の了解を、アルゴリズムという形で明示化しようと試みているように思える。単なる形状認識ではなく、構造そのものを理解させる試みは、人工知能が「世界を理解する」という領域に一歩踏み込んだことを意味するのではないだろうか。\n\n2. 概念の吟味：使われている言葉や概念の前提を問う\n\n「関節構造」とは一体何なのだろうか。それは単に物理的な接続点や可動範囲を指すだけではないだろう。そこには、機能、目的、そして可能性といった概念が内包されているのではないだろうか。ドアの蝶番は、ドアを開閉するという機能を実現するための関節構造であり、人間の肘は、物を掴む、投げる、支えるといった多様な可能性を秘めた関節構造である。Particulateが扱う「関節構造」は、これらの意味合いをどこまで捉えているのだろうか。そして、「理解する」という言葉もまた、曖昧さを孕んでいる。アルゴリズムが関節構造を「理解する」とは、一体何を意味するのだろうか。単にパターンを認識し、統計的な確率に基づいて予測するだけでは、「理解」とは言えないのではないだろうか。\n\n3. 仮説の提示：もし〜だとすれば、こうなるのではないか\n\nもしParticulateが、単なる形状認識を超えて、物体の機能や目的を理解できるようになったとしたら、それは一体何をもたらすだろうか。例えば、故障した機械の構造を解析し、自動的に修理方法を提案するシステムが実現するかもしれない。あるいは、新しい道具を設計する際に、人間のデザイナーが思いつかないような、斬新な関節構造を提案してくれるかもしれない。さらに、ロボットの制御において、より柔軟で人間らしい動きを実現できる可能性もある。それは、単なる効率化や自動化を超えて、人間の創造性を拡張するツールとなるかもしれない。\n\n4. 批判的考察：この研究の限界や見落とされている視点\n\nしかし、Particulateには限界もあるだろう。例えば、複雑な文化的背景を持つオブジェクト、例えば茶道具や能面といったものは、単なる形状や機能だけでは理解できない。そこには、歴史、伝統、そして美意識といった要素が深く関わっている。また、関節構造は、常に静的なものではなく、時間と共に変化する可能性もある。例えば、植物の茎や、動物の筋肉といったものは、成長や運動によってその構造が変化する。Particulateは、これらの動的な側面をどこまで捉えることができるのだろうか。さらに、アルゴリズムが「理解する」という行為は、倫理的な問題も孕んでいる。アルゴリズムが、人間の意図とは異なる解釈をしてしまった場合、どのような責任を負うべきなのだろうか。\n\n5. 別の視点：異なる角度からの考察\n\nParticulateを、哲学的な視点から見ると、それは「形而上学」の問題に繋がってくるのではないだろうか。我々が認識する物体は、単なる感覚的な刺激の集まりではなく、背後にある構造や本質によって形作られていると考えることができる。Particulateは、その構造や本質を、データから抽出しようと試みていると言える。しかし、形而上学的な探求は、常に不確実性と曖昧さを伴う。アルゴリズムが抽出した構造は、本当に物体の本質を捉えているのだろうか。あるいは、それは単なる近似に過ぎないのだろうか。そして、そもそも「本質」という概念自体が、人間の主観的な解釈によって左右されるものではないだろうか。\n\n6. 哲学的示唆：より深い知的問いへの展開\n\nParticulateの研究は、人工知能が人間の知性を模倣しようとする試みの一環と捉えることができる。しかし、人間の知性とは、単なる情報処理能力だけではない。そこには、感情、直感、そして創造性といった要素が複雑に絡み合っている。Particulateが、これらの要素をどこまで捉えることができるかは未知数である。しかし、人工知能が人間の知性に近づくにつれて、我々は自分自身の知性について、より深く考える必要に迫られるだろう。人間の知性とは何か、意識とは何か、そして、人間とは何か。Particulateの研究は、これらの根源的な問いを、改めて我々に突きつけているように思える。\n\n7. 結び：この知見が私たちの世界観にどう影響するか\n\nParticulateのような研究が進むことで、我々の世界観はどのように変化するだろうか。これまで、人間だけが持つと考えられていた知的な活動の一部が、アルゴリズムによって代替されることで、人間の存在意義が問われるようになるかもしれない。しかし、それは同時に、人間がより創造的で、感情豊かな活動に集中できる機会を与えてくれるかもしれない。Particulateは、単なる技術的な進歩ではなく、人間の未来を左右する可能性を秘めている。それは、希望と不安が入り混じった、複雑な感情を抱かせる存在なのである。",
+    "explanationJa": "3Dオブジェクトの関節構造をAIで解析する「Particulate」は、人工知能による世界理解の新たな可能性と、それに伴う哲学的な問いを投げかける。",
+    "tags": [
+      "3D Object",
+      "Articulation",
+      "Transformer Network",
+      "Artificial Intelligence",
+      "Philosophy"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2613/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMTc5OHYx_1765766469376.wav"
+  },
+  {
     "id": "https://marginalrevolution.com/?p=92027",
     "title": "Uh-oh",
     "source": "rss",
@@ -1128,28 +1152,5 @@
       "Philosophy"
     ],
     "imageUrl": "https://images.pexels.com/photos/8090149/pexels-photo-8090149.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "https://www.astralcodexten.com/p/hidden-open-thread-4115",
-    "title": "Hidden Open Thread 411.5",
-    "source": "rss",
-    "url": "https://www.astralcodexten.com/p/hidden-open-thread-4115",
-    "summary": "...",
-    "publishedAt": "Wed, 10 Dec 2025 20:38:40 GMT",
-    "author": "Scott Alexander",
-    "category": "AI",
-    "originalContent": "...",
-    "titleJa": "隠されたオープンスレッドの哲学",
-    "summaryJa": "申し訳ありませんが、論文のコンテンツが提供されていないため、概要を作成できません。論文の内容をご提供いただければ、300-400文字程度の客観的な要約を作成いたします。研究の背景、アプローチ、主な発見・結論を含めます。",
-    "translationJa": "論文の内容が不明であるため、論評を作成できません。しかし、もし「隠されたオープンスレッド」という概念を前提に論評を試みるならば、次のような考察が可能かもしれません。\n\nまず、「隠されたオープンスレッド」とは何か、その定義を吟味する必要がある。それは文字通り、表には見えない、しかし潜在的に様々な可能性に繋がる糸口のことだろうか。あるいは、社会、文化、あるいは個人の心理において、見過ごされがちな、しかし重要な意味を持つ相互作用や影響を指すのだろうか。言葉の曖昧さこそが、考察の出発点となる。\n\nもし、この「隠されたオープンスレッド」が、意識的に無視されている、あるいは無意識的に抑圧されている可能性だとすれば、どのような事態が想定されるだろうか。例えば、社会的な不正や偏見が、一見無関係に見える事象の連鎖によって強化されている、という仮説を立てることができるかもしれない。個人のレベルでは、過去のトラウマが、現在の行動や人間関係に隠れた影響を与えている、ということも考えられる。\n\nしかし、この概念には限界もある。「隠された」という性質上、それを特定し、検証することは極めて困難である。また、全てのオープンスレッドが重要であるとは限らない。些細な偶然や偶発的な出来事が、過剰に意味づけられる可能性も否定できない。重要なのは、批判的な視点を持つこと、そして単なる推測に留まらない、証拠に基づいた考察を心がけることだろう。\n\n別の視点として、この「隠されたオープンスレッド」を、複雑系における初期条件のわずかな違いと捉えることもできる。バタフライ効果のように、一見小さな変化が、予測不可能な大きな影響をもたらす可能性がある。この視点からは、未来を予測することの難しさ、そして常に変化し続ける状況に対応することの重要性が強調される。\n\n哲学的な示唆としては、「隠されたオープンスレッド」は、私たちの認識の限界、そして世界に対する理解の不完全さを浮き彫りにする。私たちは常に、見えているものだけでなく、見えていないもの、あるいは見ようとしないものにも意識を向ける必要がある。真実は、断片的な情報から組み立てられるパズルのようなものであり、そのピースは隠されていることが多い。\n\n結局、「隠されたオープンスレッド」という概念は、私たちの世界観をどのように変えるのだろうか。それは、謙虚さの重要性を教えてくれるかもしれない。私たちは、全てを知っているわけではない。常に学び、探求し、そして自分自身の無知を自覚することが、より良い理解への第一歩となるだろう。この概念は、不確実性を受け入れ、より深く考えるための招待状なのだ。",
-    "explanationJa": "見えない糸が世界を繋ぐ。隠された繋がりを探求し、より深く、より謙虚に世界を理解しよう。",
-    "tags": [
-      "隠されたつながり",
-      "不確実性",
-      "認識の限界",
-      "複雑系",
-      "哲学"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/31987446/pexels-photo-31987446.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
