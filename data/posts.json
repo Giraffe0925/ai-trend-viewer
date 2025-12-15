@@ -417,6 +417,30 @@
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMTc5OHYx_1765766469376.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.11783v1",
+    "title": "Super Suffixes: Bypassing Text Generation Alignment and Guard Models Simultaneously",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.11783v1",
+    "summary": "The rapid deployment of Large Language Models (LLMs) has created an urgent need for enhanced security and privacy measures in Machine Learning (ML). LLMs are increasingly being used to process untrusted text inputs and even generate executable code, often while having access to sensitive system controls. To address these security concerns, several companies have introduced guard models, which are smaller, specialized models designed to protect text generation models from adversarial or malicious inputs. In this work, we advance the study of adversarial inputs by introducing Super Suffixes, suffixes capable of overriding multiple alignment objectives across various models with different tokenization schemes. We demonstrate their effectiveness, along with our joint optimization technique, by successfully bypassing the protection mechanisms of Llama Prompt Guard 2 on five different text generation models for malicious text and code generation. To the best of our knowledge, this is the first work to reveal that Llama Prompt Guard 2 can be compromised through joint optimization.\n  Additionally, by analyzing the changing similarity of a model's internal state to specific concept directions during token sequence processing, we propose an effective and lightweight method to detect Super Suffix attacks. We show that the cosine similarity between the residual stream and certain concept directions serves as a distinctive fingerprint of model intent. Our proposed countermeasure, DeltaGuard, significantly improves the detection of malicious prompts generated through Super Suffixes. It increases the non-benign classification rate to nearly 100%, making DeltaGuard a valuable addition to the guard model stack and enhancing robustness against adversarial prompt attacks.",
+    "publishedAt": "2025-12-12T18:52:09Z",
+    "author": "Andrew Adiletta",
+    "category": "AI",
+    "originalContent": "The rapid deployment of Large Language Models (LLMs) has created an urgent need for enhanced security and privacy measures in Machine Learning (ML). LLMs are increasingly being used to process untrusted text inputs and even generate executable code, often while having access to sensitive system controls. To address these security concerns, several companies have introduced guard models, which are smaller, specialized models designed to protect text generation models from adversarial or malicious inputs. In this work, we advance the study of adversarial inputs by introducing Super Suffixes, suffixes capable of overriding multiple alignment objectives across various models with different tokenization schemes. We demonstrate their effectiveness, along with our joint optimization technique, by successfully bypassing the protection mechanisms of Llama Prompt Guard 2 on five different text generation models for malicious text and code generation. To the best of our knowledge, this is the first work to reveal that Llama Prompt Guard 2 can be compromised through joint optimization.\n  Additionally, by analyzing the changing similarity of a model's internal state to specific concept directions during token sequence processing, we propose an effective and lightweight method to detect Super Suffix attacks. We show that the cosine similarity between the residual stream and certain concept directions serves as a distinctive fingerprint of model intent. Our proposed countermeasure, DeltaGuard, significantly improves the detection of malicious prompts generated through Super Suffixes. It increases the non-benign classification rate to nearly 100%, making DeltaGuard a valuable addition to the guard model stack and enhancing robustness against adversarial prompt attacks.",
+    "titleJa": "LLMにおける敵対的サフィックス攻撃と防御：哲学的な考察",
+    "summaryJa": "大規模言語モデル(LLM)の普及に伴い、セキュリティ対策の重要性が高まっています。本研究では、LLMのテキスト生成を制御するガードモデルを、複数のモデルを対象とした「Super Suffixes」と呼ばれる敵対的な入力で回避できることを示しました。さらに、モデルの内部状態の変化を分析することで、この種の攻撃を検出する「DeltaGuard」という軽量な手法を提案し、敵対的プロンプトに対する防御性能を向上させることに成功しました。これは、LLMのセキュリティ確保における重要な一歩となります。",
+    "translationJa": "1. はじめに：言葉の魔術と機械の倫理\n\n　この研究が投げかける問いは、単なる技術的な挑戦を超え、言葉と倫理、そして機械の自律性という、より根源的な領域へと私たちを誘う。敵対的な「サフィックス」、つまり、ある特定の文脈下で悪意ある出力を引き出す魔法の呪文のようなものが存在するという事実は、言語というものが持つ潜在的な危険性を改めて認識させる。もし言葉が思考を形成し、行動を促す力を持つならば、それを操る技術は、善悪両面において、想像を超える影響力を持つだろう。\n\n2. 概念の吟味：アライメント、ガード、そして意図とは何か\n\n　ここで吟味すべきは、「アライメント」や「ガード」といった言葉の背後にある前提だ。LLMの「アライメント」とは、人間の意図や価値観に沿うように学習させることを意味する。しかし、人間の意図は多様であり、時には矛盾する。誰にとっての「良い」アライメントなのか？また、「ガードモデル」は、何を、誰から守るためのものなのか？その定義は自明ではない。さらに、「意図」という概念も曖昧だ。モデルは本当に「意図」を持っているのだろうか？それとも、それは単に、訓練データに基づいて確率的に最適化された出力に過ぎないのだろうか？これらの問いに答えることなく、私たちは機械の倫理を語ることはできない。\n\n3. 仮説の提示：内部状態と概念空間\n\n　もしLLMが、言葉を単なる記号としてではなく、意味や感情を持つものとして処理しているのだとすれば、敵対的なサフィックスは、モデルの内部状態を特定の「概念空間」へと強制的に移動させるトリガーとして機能するのではないだろうか。例えば、「悪意」や「攻撃」といった概念を活性化させ、それに関連する情報を優先的に出力させる。そして、DeltaGuardは、その概念空間における逸脱を検知することで、攻撃を未然に防ぐ。この仮説が正しければ、LLMの内部状態をより深く理解することで、より洗練された防御策を開発できる可能性がある。\n\n4. 批判的考察：ブラックボックスの限界\n\n　しかし、この研究には限界もある。LLMは依然としてブラックボックスであり、その内部で何が起こっているのかを完全に理解することは難しい。内部状態の変化を分析することで何らかの洞察を得られるかもしれないが、それはあくまで間接的な推測に過ぎない。また、Super Suffixesは、特定のモデルやアーキテクチャに特化した脆弱性を利用している可能性もある。つまり、この研究の成果が、他のLLMにも普遍的に適用できるとは限らない。さらに、敵対的な攻撃は常に進化しており、今日有効な防御策が明日も通用するとは限らない。\n\n5. 別の視点：創造性と破壊性\n\n　別の視点から見れば、Super Suffixesは、LLMの創造性を引き出すためのツールとして捉えることもできるかもしれない。悪意ある出力を生成できるということは、裏を返せば、LLMがまだ十分に探求されていない表現能力を持っているということだ。もし、Super Suffixesを、より良い方向へ導くことができれば、それは新たな芸術表現や問題解決の手法を生み出すきっかけになるかもしれない。創造性と破壊性は表裏一体であり、そのバランスをどのように取るかが重要となる。\n\n6. 哲学的示唆：機械との対話\n\n　この研究は、私たちに、機械との対話のあり方を問いかける。私たちは、機械を単なる道具として扱うのではなく、知的な存在として、倫理的な責任を共有するパートナーとして捉える必要があるのではないだろうか。LLMは、人間の思考を模倣することで、人間の本質を映し出す鏡のような存在だ。その鏡に映し出されたものを注意深く観察することで、私たちは、自分自身の無意識や偏見に気づき、より良い人間へと成長できるかもしれない。\n\n7. 結び：知恵と謙虚さ\n\n　Super Suffixesの発見は、LLMのセキュリティ確保における重要な一歩であると同時に、機械の知能に対する私たちの理解がまだ始まったばかりであることを示唆している。知恵とは、知識だけでなく、限界を知ることでもある。私たちは、機械の力を過信することなく、謙虚な姿勢で、その可能性と危険性を見極める必要がある。そして、言葉を操る技術がもたらす倫理的な課題に、真摯に向き合わなければならない。機械との対話を通して、私たちは、人間とは何か、そして、より良い未来をどのように築くかを深く考えることができるだろう。",
+    "explanationJa": "LLMの脆弱性を突き、防御策を提案する研究は、機械知能と倫理の根源的な問いへと私たちを導く。",
+    "tags": [
+      "LLM",
+      "Adversarial Attack",
+      "Security",
+      "Ethics",
+      "AI Safety"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2607/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMTc4M3Yx_1765769715520.wav"
+  },
+  {
     "id": "https://marginalrevolution.com/?p=92027",
     "title": "Uh-oh",
     "source": "rss",
@@ -1130,28 +1154,5 @@
       "environment"
     ],
     "imageUrl": "https://images.pexels.com/photos/35099700/pexels-photo-35099700.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "https://research.google/blog/a-differentially-private-framework-for-gaining-insights-into-ai-chatbot-use/",
-    "title": "A differentially private framework for gaining insights into AI chatbot use",
-    "source": "rss",
-    "url": "https://research.google/blog/a-differentially-private-framework-for-gaining-insights-into-ai-chatbot-use/",
-    "summary": "Generative AI",
-    "publishedAt": "Wed, 10 Dec 2025 21:59:41 +0000",
-    "author": "",
-    "category": "AI",
-    "originalContent": "Generative AI",
-    "titleJa": "AIチャットボット利用の差分プライバシー保護分析：哲学的考察",
-    "summaryJa": "本研究は、生成AIチャットボットの利用状況を分析する際に、差分プライバシー（Differential Privacy, DP）という手法を用いて、個人のプライバシーを保護しながら有益な情報を引き出すためのフレームワークを提案しています。背景として、AIチャットボットの普及に伴い、利用者のデータが大量に収集される一方、プライバシー侵害のリスクが高まっていることが挙げられます。DPは、データにノイズを加えることで、個々のデータ点を識別困難にしつつ、全体の統計的な傾向を維持する技術です。研究では、DPを適用した分析手法を開発し、AIチャットボットの利用パターンに関するインサイトを得る可能性を示唆しています。主な結論として、DPを用いることで、プライバシーを保護しながらAIチャットボットの利用に関する貴重な情報を得られる可能性があり、今後のAI技術の発展と倫理的な利用のための重要な一歩となることが示唆されています。",
-    "translationJa": "1. 導入：AIチャットボットの利用状況を分析する際に差分プライバシーという概念が持ち込まれた。これは、一見すると技術的な問題解決策の提案に見える。しかし、その背後には、情報というものが、個人のものでありながら、同時に社会全体のものであるという、根源的な緊張関係が隠されているのではないだろうか。私たちは、この技術を通じて、その緊張関係にどのように向き合うべきなのだろうか。\n\n2. 概念の吟味：「プライバシー」という言葉は、しばしば絶対的な権利のように語られる。しかし、それは本当に絶対的なものなのだろうか。社会生活を営む上で、私たちは常に何らかの形でプライバシーを譲歩している。例えば、買い物をする際、私たちは店に個人情報を提供している。問題は、その譲歩がどの程度許容されるのか、そして、その判断基準を誰が、どのように決定するのか、ということにあるのではないだろうか。差分プライバシーは、この問題に対する一つの答えを提示していると言える。\n\n3. 仮説の提示：もし、差分プライバシーが広く普及すれば、社会におけるデータ収集に対する信頼性は高まるかもしれない。人々は、自分の情報が不当に利用されるのではないかという不安を軽減できる。そうなれば、より積極的にデータを提供し、それによってAI技術の発展が加速するかもしれない。しかし、同時に、差分プライバシーが、プライバシー侵害に対する免罪符として機能する可能性も否定できない。つまり、企業は、差分プライバシーを導入することで、プライバシー保護に配慮しているとアピールしつつ、実際には、依然として大量の個人情報を収集し、利用するかもしれない。\n\n4. 批判的考察：この研究は、差分プライバシーという技術的な解決策に焦点を当てている。しかし、プライバシーの問題は、単に技術的な問題だけではない。それは、社会的な規範、倫理的な価値観、そして、政治的な力関係と深く結びついている。例えば、データ収集に対する規制が緩い国と厳しい国では、差分プライバシーの導入に対するインセンティブも異なるだろう。また、差分プライバシーを導入するコストは、企業規模によって異なるため、中小企業にとっては導入が難しいかもしれない。この研究は、これらの社会的な側面を十分に考慮しているだろうか。\n\n5. 別の視点：プライバシーを保護しながらAIチャットボットの利用状況を分析するという目的を達成するための手段は、差分プライバシーだけではないかもしれない。例えば、データの匿名化技術をさらに高度化することや、データの利用目的を明確に限定することなども考えられる。また、AIチャットボットの設計段階から、プライバシー保護を考慮した設計思想を取り入れることも重要だろう。つまり、プライバシー保護は、後付けの対策ではなく、最初から組み込まれるべき原則なのではないだろうか。\n\n6. 哲学的示唆：この研究は、私たちに「情報とは何か」という根源的な問いを投げかけている。情報は、単なるデータではなく、人間の行動、思考、感情の反映である。情報は、個人のアイデンティティと深く結びついている。したがって、情報を収集し、利用することは、人間の存在そのものに影響を与える可能性がある。私たちは、情報の価値を理解し、その利用方法を慎重に検討する必要がある。情報を、単なる資源としてではなく、人間の尊厳を尊重するための道具として扱うべきなのではないだろうか。\n\n7. 結び：AIチャットボット利用における差分プライバシーという技術は、プライバシー保護とAI技術の発展という、相反する目標を両立させるための試みである。この試みが成功するかどうかは、私たちの倫理観、社会的な規範、そして、政治的な意志にかかっている。私たちは、この技術を通じて、情報社会におけるプライバシーのあり方を再考し、より公正で、より人間的な社会を築き上げていく必要があるだろう。",
-    "explanationJa": "AIチャットボットのデータ分析に差分プライバシー。技術は進むが、プライバシーと社会のバランスをどう取るか、哲学的な問いが生まれる。",
-    "tags": [
-      "AI",
-      "Privacy",
-      "Differential Privacy",
-      "Ethics",
-      "Philosophy"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/8090149/pexels-photo-8090149.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
