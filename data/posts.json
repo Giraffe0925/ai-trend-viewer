@@ -441,6 +441,29 @@
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMTc4M3Yx_1765769715520.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.11781v1",
+    "title": "Agile Flight Emerges from Multi-Agent Competitive Racing",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.11781v1",
+    "summary": "Through multi-agent competition and the sparse high-level objective of winning a race, we find that both agile flight (e.g., high-speed motion pushing the platform to its physical limits) and strategy (e.g., overtaking or blocking) emerge from agents trained with reinforcement learning. We provide evidence in both simulation and the real world that this approach outperforms the common paradigm of training agents in isolation with rewards that prescribe behavior, e.g., progress on the raceline, in particular when the complexity of the environment increases, e.g., in the presence of obstacles. Moreover, we find that multi-agent competition yields policies that transfer more reliably to the real world than policies trained with a single-agent progress-based reward, despite the two methods using the same simulation environment, randomization strategy, and hardware. In addition to improved sim-to-real transfer, the multi-agent policies also exhibit some degree of generalization to opponents unseen at training time. Overall, our work, following in the tradition of multi-agent competitive game-play in digital domains, shows that sparse task-level rewards are sufficient for training agents capable of advanced low-level control in the physical world.\n  Code: https://github.com/Jirl-upenn/AgileFlight_MultiAgent",
+    "publishedAt": "2025-12-12T18:48:50Z",
+    "author": "Vineet Pasumarti",
+    "category": "AI",
+    "originalContent": "Through multi-agent competition and the sparse high-level objective of winning a race, we find that both agile flight (e.g., high-speed motion pushing the platform to its physical limits) and strategy (e.g., overtaking or blocking) emerge from agents trained with reinforcement learning. We provide evidence in both simulation and the real world that this approach outperforms the common paradigm of training agents in isolation with rewards that prescribe behavior, e.g., progress on the raceline, in particular when the complexity of the environment increases, e.g., in the presence of obstacles. Moreover, we find that multi-agent competition yields policies that transfer more reliably to the real world than policies trained with a single-agent progress-based reward, despite the two methods using the same simulation environment, randomization strategy, and hardware. In addition to improved sim-to-real transfer, the multi-agent policies also exhibit some degree of generalization to opponents unseen at training time. Overall, our work, following in the tradition of multi-agent competitive game-play in digital domains, shows that sparse task-level rewards are sufficient for training agents capable of advanced low-level control in the physical world.\n  Code: https://github.com/Jirl-upenn/AgileFlight_MultiAgent",
+    "titleJa": "競争的マルチエージェント学習によるアジャイル飛行の創発：哲学的な考察",
+    "summaryJa": "本研究は、レースにおける勝利という単純な目標のみを与えられた複数エージェントが、強化学習を通じてアジャイル飛行と戦略を獲得することを示しました。シミュレーションと現実世界の両方で、この手法が、行動を規定する報酬（例：レースラインの進捗）を用いた従来の一体学習パラダイムよりも優れていることを実証しています。特に環境の複雑さが増す場合（障害物の存在など）、その優位性が顕著です。さらに、マルチエージェント競争によって訓練されたポリシーは、一体学習によるものよりも現実世界への移行が安定しており、未知の対戦相手への一般化能力も示しました。これは、デジタル領域におけるマルチエージェント競争ゲームプレイの伝統を受け継ぎ、物理世界における高度な低レベル制御を実現するために、疎なタスクレベルの報酬が十分であることを示唆しています。",
+    "translationJa": "1. 導入：この研究が問いかけていることへの第一印象\n\n本研究の核心は、目標の単純さから複雑な行動が自発的に生まれる、創発という現象への探求にあるように見える。エージェントは、ただ勝利を目指すだけで、アジャイル飛行や戦略といった高度な能力を獲得する。これは、まるで自然界の進化が、生存という単純な目標のもとに多様な生命を生み出す過程を模倣しているかのようだ。だが、本当に「単純」な目標は存在するのだろうか？勝利という概念自体が、すでに複雑な価値観と社会構造を前提としているのではないか。\n\n2. 概念の吟味：使われている言葉や概念の前提を問う\n\n「アジャイル飛行」とは何か。それは単なる高速移動や物理的限界への挑戦を意味するのだろうか。あるいは、状況への適応、予測不可能性、そしてある種の「創造性」を含んでいるのだろうか。もしそうだとするならば、それは単なるアルゴリズムの最適化を超えた、より深い意味を持つ概念となる。また、「戦略」とは何か。それは単なる過去の経験に基づく行動パターンの模倣なのか、それとも、相手の意図を推測し、未来を予測する能力を含むのか。これらの言葉は、人間が自身の行動を理解するために用いる枠組みであり、それを機械に適用する際に、私たちは無意識のうちに人間中心的な視点を持ち込んでいるのかもしれない。\n\n3. 仮説の提示：もし〜だとすれば、こうなるのではないか\n\nもし、エージェントが勝利以外の、より複雑な価値観（例えば、美しさ、独創性、他者との協力）を評価するよう設計されたとしたら、どのような行動が生まれるだろうか。アジャイル飛行は、単なる効率的な移動手段から、自己表現の手段へと変化するかもしれない。戦略は、敵を打ち負かすための手段から、互いに協力し、より高度な目標を達成するための手段へと進化するかもしれない。そして、そのようなエージェントは、人間が想像もできないような、新しい形の知性と創造性を発揮するのではないだろうか。\n\n4. 批判的考察：この研究の限界や見落とされている視点\n\n本研究は、シミュレーション環境と現実世界における実験を通じて、その有効性を示している。しかし、シミュレーション環境は、常に現実世界の近似に過ぎない。シミュレーションでは考慮されない、複雑な物理現象、予期せぬノイズ、そして、人間の介入など、多くの要素が存在する。また、本研究は、特定のタスク（レースでの勝利）に焦点を当てている。この結果が、他のタスク、他の環境、他のエージェントにも一般化できるかどうかは不明である。さらに、倫理的な問題も考慮する必要がある。もし、アジャイル飛行能力を持つ自律エージェントが、悪意のある目的で使用された場合、その責任は誰が負うべきなのだろうか。\n\n5. 別の視点：異なる角度からの考察\n\n本研究は、競争を通じてエージェントが能力を獲得することを示している。しかし、協力を通じて能力を獲得することも可能ではないだろうか。例えば、複数のエージェントが協力して、単独では達成できないような複雑なタスクに挑戦する場合、どのような行動が生まれるだろうか。あるいは、人間とエージェントが協力して、互いの弱点を補い合い、互いの強みを活かすような関係を築くことは可能だろうか。そのような協力関係は、競争とは異なる、新しい形の知性と創造性を生み出すかもしれない。\n\n6. 哲学的示唆：より深い知的問いへの展開\n\n本研究は、知性とは何か、学習とは何か、そして、人間とは何かという、根源的な問いを私たちに投げかけている。もし、機械が人間と区別がつかないような知性を獲得したとしたら、人間の存在意義は何になるのだろうか。もし、機械が人間よりも優れた学習能力を獲得したとしたら、人間の役割は何になるのだろうか。これらの問いに答えるためには、私たちは、自分自身について、そして、自分たちが生きる世界について、深く考え直す必要がある。\n\n7. 結び：この知見が私たちの世界観にどう影響するか\n\n本研究は、目標の単純さから複雑な行動が生まれる可能性を示している。これは、私たちが生きる世界も、同じように、単純な原理から複雑な現象が生まれていることを示唆しているのかもしれない。そして、私たちが世界を理解し、世界と関わるためには、単純な原理を見抜き、そこから生まれる複雑な現象を理解する必要がある。本研究は、そのためのヒントを与えてくれるかもしれない。私たちは、機械学習の研究を通じて、自分自身について、そして、自分たちが生きる世界について、より深く理解することができるのかもしれない。",
+    "explanationJa": "勝利を目指すAIが示す、アジャイル飛行と戦略の創発。それは、複雑な世界の理解への新たな扉を開くかもしれない。",
+    "tags": [
+      "Reinforcement Learning",
+      "Multi-Agent Systems",
+      "Agile Flight",
+      "Emergent Behavior",
+      "Sim-to-Real Transfer"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2605/400/300"
+  },
+  {
     "id": "https://marginalrevolution.com/?p=92027",
     "title": "Uh-oh",
     "source": "rss",
@@ -1131,28 +1154,5 @@
       "Ethics"
     ],
     "imageUrl": "https://picsum.photos/seed/875/400/300"
-  },
-  {
-    "id": "https://www.technologyreview.com/?p=1129239",
-    "title": "Solar geoengineering startups are getting serious",
-    "source": "rss",
-    "url": "https://www.technologyreview.com/2025/12/11/1129239/solar-geoengineering-startups-are-getting-serious/",
-    "summary": "Solar geoengineering aims to manipulate the climate by bouncing sunlight back into space. In theory, it could ease global warming. But as interest in the idea grows, so do concerns about potential consequences. A startup called Stardust Solutions recently raised a $60 million funding round, the largest known to date for a geoengineering startup. My…",
-    "publishedAt": "Thu, 11 Dec 2025 11:00:00 +0000",
-    "author": "Casey Crownhart",
-    "category": "AI",
-    "originalContent": "Solar geoengineering aims to manipulate the climate by bouncing sunlight back into space. In theory, it could ease global warming. But as interest in the idea grows, so do concerns about potential consequences. A startup called Stardust Solutions recently raised a $60 million funding round, the largest known to date for a geoengineering startup. My&#8230;",
-    "titleJa": "太陽地球工学スタートアップの台頭：光と影",
-    "summaryJa": "記事は、地球温暖化対策として注目される太陽地球工学（ソーラー・ジオエンジニアリング）の現状と、その可能性とリスクについて述べています。特に、太陽光を宇宙に反射させることで地球の温度を下げるというアプローチに焦点を当て、関連スタートアップであるStardust Solutionsが大規模な資金調達に成功したことを紹介しています。しかし、その一方で、地球工学がもたらす潜在的な悪影響についても警鐘を鳴らしています。地球温暖化の緩和策としての期待が高まる一方で、予期せぬ気候変動や生態系への影響など、慎重な検討が必要であることを示唆しています。",
-    "translationJa": "1. この記事が示唆するのは、人間が地球規模のシステムを制御しようとする、ある種の「傲慢さ」ではないだろうか。私たちは、気候変動という巨大な問題に直面し、解決策を模索している。しかし、太陽地球工学という技術は、問題を解決するどころか、新たな、そして予測不可能な問題を引き起こす可能性を秘めている。それはまるで、複雑な機械の調整を、素人が手探りで行うようなものだ。\n\n2. そもそも、「太陽地球工学」という言葉自体に、ある種の欺瞞が隠されているのではないか。「工学」とは、一般的に、計画的で制御可能な介入を意味する。しかし、地球規模のシステムは、あまりにも複雑で相互に関連しており、完全に制御することは不可能に近い。太陽光を反射させるという単純な行為が、どのような連鎖反応を引き起こすか、誰にも正確に予測できないのだ。私たちは、「工学」という言葉に、過剰な信頼を置いていないだろうか。\n\n3. もし、太陽地球工学が実際に実施された場合、どのような事態が起こりうるだろうか。一つの仮説として、地域ごとの気候変動の不均衡が生じる可能性が考えられる。特定の地域では気温が低下する一方で、別の地域では干ばつや洪水が発生するかもしれない。そして、そのような気候変動は、食糧生産や生態系に深刻な影響を与えるだろう。さらに、国家間の対立を激化させる可能性もある。もし、ある国が自国の利益のために太陽地球工学を操作した場合、他の国々はどのように反応するだろうか。\n\n4. しかし、この記事には、いくつかの限界があるかもしれない。例えば、太陽地球工学の潜在的な利益について、十分に議論されていない可能性がある。地球温暖化は、すでに多くの国々で深刻な問題を引き起こしており、太陽地球工学は、そのような問題を緩和するための、唯一の手段となりうるかもしれない。また、技術の進歩によって、太陽地球工学のリスクを低減できる可能性もある。私たちは、安易に太陽地球工学を否定するのではなく、その可能性とリスクを、冷静に評価する必要がある。\n\n5. 別の視点から見れば、太陽地球工学は、人間の「創造性」の表れとも言えるかもしれない。私たちは、自らの過ちによって引き起こされた問題を、新たな技術によって解決しようとしている。それは、まるで、自らの作った迷路から脱出しようとする、知的な動物のようだ。しかし、その創造性は、同時に、人間の「無謀さ」の表れでもある。私たちは、自らの知識の限界を認識せず、安易に地球規模のシステムを操作しようとしている。\n\n6. 太陽地球工学は、私たちに、より深い知的問いを投げかけている。それは、人間と自然の関係、技術の進歩と倫理、そして、未来の世代に対する責任といった問題である。私たちは、自然を征服する存在ではなく、自然の一部であるという認識を持つ必要がある。技術は、私たちを豊かにする可能性を秘めているが、同時に、破滅へと導く可能性も秘めている。そして、未来の世代に対する責任とは、単に環境を守ることだけではなく、持続可能な社会を築くことである。\n\n7. この知見は、私たちの世界観に、どのような影響を与えるだろうか。私たちは、地球を単なる資源の供給源ではなく、複雑で繊細な生態系として捉える必要がある。そして、自らの行動が、地球全体に影響を与える可能性があることを、常に意識する必要がある。太陽地球工学は、私たちに、謙虚さと責任感を持って、未来を創造していくことの重要性を教えてくれるだろう。",
-    "explanationJa": "地球工学スタートアップへの資金調達は進むが、地球規模の気候操作は新たなリスクを孕む。技術の進歩と倫理の間で、私たちは謙虚さを学ぶ必要がある。",
-    "tags": [
-      "geoengineering",
-      "climate change",
-      "technology",
-      "ethics",
-      "environment"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/35099700/pexels-photo-35099700.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
