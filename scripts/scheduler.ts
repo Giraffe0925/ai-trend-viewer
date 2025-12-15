@@ -164,14 +164,14 @@ async function main() {
             processed.visualImages = visualImages;
         }
 
-        // Generate podcast audio
-        if (process.env.ELEVENLABS_API_KEY) {
-            const { generatePodcastAudio } = await import('./podcast/generate');
-            const audioUrl = await generatePodcastAudio(processed);
-            if (audioUrl) {
-                processed.audioUrl = audioUrl;
-            }
-        }
+        // Generate podcast audio (TEMPORARILY DISABLED - ElevenLabs quota exceeded)
+        // if (process.env.ELEVENLABS_API_KEY) {
+        //     const { generatePodcastAudio } = await import('./podcast/generate');
+        //     const audioUrl = await generatePodcastAudio(processed);
+        //     if (audioUrl) {
+        //         processed.audioUrl = audioUrl;
+        //     }
+        // }
 
         processedArticles.push(processed);
 
