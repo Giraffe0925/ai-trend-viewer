@@ -1,5 +1,29 @@
 [
   {
+    "id": "http://arxiv.org/abs/2512.13690v1",
+    "title": "DiffusionBrowser: Interactive Diffusion Previews via Multi-Branch Decoders",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.13690v1",
+    "summary": "Video diffusion models have revolutionized generative video synthesis, but they are imprecise, slow, and can be opaque during generation -- keeping users in the dark for a prolonged period. In this work, we propose DiffusionBrowser, a model-agnostic, lightweight decoder framework that allows users to interactively generate previews at any point (timestep or transformer block) during the denoising process. Our model can generate multi-modal preview representations that include RGB and scene intrinsics at more than 4$\\times$ real-time speed (less than 1 second for a 4-second video) that convey consistent appearance and motion to the final video. With the trained decoder, we show that it is possible to interactively guide the generation at intermediate noise steps via stochasticity reinjection and modal steering, unlocking a new control capability. Moreover, we systematically probe the model using the learned decoders, revealing how scene, object, and other details are composed and assembled during the otherwise black-box denoising process.",
+    "publishedAt": "2025-12-15T18:59:57Z",
+    "author": "Susung Hong",
+    "category": "AI",
+    "originalContent": "Video diffusion models have revolutionized generative video synthesis, but they are imprecise, slow, and can be opaque during generation -- keeping users in the dark for a prolonged period. In this work, we propose DiffusionBrowser, a model-agnostic, lightweight decoder framework that allows users to interactively generate previews at any point (timestep or transformer block) during the denoising process. Our model can generate multi-modal preview representations that include RGB and scene intrinsics at more than 4$\\times$ real-time speed (less than 1 second for a 4-second video) that convey consistent appearance and motion to the final video. With the trained decoder, we show that it is possible to interactively guide the generation at intermediate noise steps via stochasticity reinjection and modal steering, unlocking a new control capability. Moreover, we systematically probe the model using the learned decoders, revealing how scene, object, and other details are composed and assembled during the otherwise black-box denoising process.",
+    "titleJa": "拡散モデルにおけるインタラクティブなプレビューの可能性",
+    "summaryJa": "本研究は、ビデオ拡散モデルの生成過程における不透明性、遅延、不正確さという課題に対し、ユーザーがリアルタイムでプレビューを確認し、インタラクティブに操作できる新しいフレームワーク「DiffusionBrowser」を提案します。モデルに依存しない軽量なデコーダを用いることで、RGB画像やシーンの内部パラメータなど、多様な表現を高速に生成し、生成過程の任意の段階でユーザーに提示します。このプレビュー機能により、生成過程への介入や、モデルの内部構造の解明が可能になることが示されています。",
+    "translationJa": "1. ビデオ生成AIのブラックボックス化された深淵を覗き見る窓を開けようとする試み。DiffusionBrowserと名付けられたこの試みは、単なる技術革新以上の、ある種の哲学的な問いを私たちに突きつけているように思える。それは、創造のプロセスにおける透明性、そして人間の介入の可能性についてだ。\n\n2. 「拡散モデル」という言葉は、一見すると科学的で客観的な響きを持つ。しかし、その内部では、確率と統計、そして学習されたパターンが複雑に絡み合っている。ノイズから秩序への移行、つまり「ノイズ除去」と呼ばれるプロセスは、本質的に確率的であり、完全に予測可能ではない。そして、その不確実性こそが、創造の余地を生み出す源泉とも言えるのではないだろうか。私たちは、この「拡散」という言葉に、どこまで深い意味を見出すことができるのだろうか。\n\n3. もし、DiffusionBrowserが本当にリアルタイムでプレビューを提供し、ユーザーが生成過程に介入できるとしたら、それは創造のあり方を根本的に変えるかもしれない。まるで陶芸家が轆轤を回しながら粘土の形を少しずつ変えていくように、ユーザーはノイズの海から現れつつある映像を、自分の意図に合わせて微調整することができる。しかし、それは本当に「創造」なのだろうか。あるいは、単に既存のパターンを組み合わせる、高度な編集作業に過ぎないのだろうか。もし、AIが生成したものが完全に予測可能で、人間の介入がなければ存在し得なかったとしたら、それは誰の創造物と呼ぶべきなのだろうか。\n\n4. この研究の限界は、DiffusionBrowserがまだ特定のモデルに依存している可能性があることだ。真にモデルに依存しないフレームワークを実現するには、さらなる抽象化と汎用性が必要となるだろう。また、生成されたプレビューが最終的な映像と完全に一致するとは限らないという点も考慮する必要がある。プレビューはあくまでプレビューであり、最終的な結果を保証するものではない。そして、その差異こそが、予期せぬ創造性を生み出す可能性を秘めているのかもしれない。\n\n5. 別の視点から見ると、DiffusionBrowserは、AIと人間の協調作業を促進するツールとして捉えることができる。AIは高速な計算とパターン認識を担当し、人間は美的判断と創造的な方向性を提供する。この組み合わせによって、これまで想像もできなかったような新しい映像表現が生まれるかもしれない。しかし、その過程で、人間の役割はどのように変化するのだろうか。私たちは、単なる指示者になるのか、それとも共同制作者となるのか。あるいは、その両方なのだろうか。\n\n6. 哲学的に考えると、DiffusionBrowserは、創造における偶然性と必然性の関係について、私たちに深く考えさせる。AIが生成する映像は、学習されたデータと確率的なプロセスによって決定される。しかし、人間の介入によって、その流れは変化し、新たな可能性が開かれる。偶然と必然が織りなすこの複雑な関係は、私たち自身の存在そのものを反映しているのかもしれない。私たちは、遺伝子と環境、そして自由意志の相互作用によって形作られている。創造とは、これらの要素が複雑に絡み合い、予期せぬ結果を生み出すプロセスなのではないだろうか。\n\n7. DiffusionBrowserは、単なる技術的な進歩ではなく、私たちの世界観を問い直すきっかけとなるかもしれない。AIが創造性を発揮する時代において、私たちは人間とは何か、創造とは何か、そして価値とは何かを改めて考える必要がある。この研究は、その問いに対する答えを直接的に提供するものではないが、その問いに向き合うための重要な視点を与えてくれる。そして、その問いこそが、私たちがより深く思考し、成長するための糧となるだろう。",
+    "explanationJa": "生成AIのブラックボックスを覗き見る窓：リアルタイムプレビューで創造性を解放する可能性を考察。",
+    "tags": [
+      "diffusion model",
+      "AI creativity",
+      "interactive generation",
+      "philosophy of technology",
+      "human-computer interaction"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2606/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMzY5MHYx_1765856012851.wav"
+  },
+  {
     "id": "https://marginalrevolution.com/?p=92030",
     "title": "“AI is everywhere but in the productivity statistics…”",
     "source": "rss",
@@ -1132,28 +1156,5 @@
       "philosophy"
     ],
     "imageUrl": "https://images.pexels.com/photos/35139676/pexels-photo-35139676.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "urn:id:8586",
-    "title": "Being in the world: from Plato to Heidegger",
-    "source": "rss",
-    "url": "https://aeon.co/videos/i-am-therefore-i-think-how-heidegger-radically-reframed-being?utm_source=rss-feed",
-    "summary": "What does it mean to ‘be’? This excerpt provides a brief intro to Heidegger’s philosophy, via jazz, cooking and carpentry\n- by Aeon Video\nWatch on Aeon",
-    "publishedAt": "Thu, 11 Dec 2025 11:01:00 GMT",
-    "author": "Aeon Video",
-    "category": "哲学",
-    "originalContent": "<p><img src=\"https://images.aeonmedia.co/images/9397a716-f235-4bdb-b36a-54bdf155ba31/being-in-the-world-from-plato-to-heidegger-landscape-1.jpg?width=1200&quality=75&format=auto\" alt=\"Photo of a musician in a hat playing a double bass with a microphone in front, set against a dark background.\" /></p><p>What does it mean to ‘be’? This excerpt provides a brief intro to Heidegger’s philosophy, via jazz, cooking and carpentry</p><p><em>- by Aeon Video</em></p><p><a href=\"https://aeon.co/videos/i-am-therefore-i-think-how-heidegger-radically-reframed-being?utm_source=rss-feed\">Watch on Aeon</a></p>",
-    "titleJa": "存在の意味を求めて：プラトンからハイデガーへ",
-    "summaryJa": "この記事は、ハイデガーの哲学における「存在」の意味を探求する入門的な内容です。ジャズ、料理、木工といった身近な活動を通して、ハイデガーの思想に触れることを試みています。アエオン・ビデオで公開された動画をもとに、従来の「私は考える、ゆえに私は存在する」というデカルト的な考え方を批判的に捉え、「世界内存在」というハイデガー独自の概念を紹介しています。存在とは何かという根源的な問いに対する、新たな視点を提供する試みと言えるでしょう。",
-    "translationJa": "1. この記事の冒頭を飾る「存在とは何か？」という問いは、私たちに強烈な印象を与える。それはまるで、広大な宇宙を前にした渺茫たる感情、あるいは深淵を覗き込むような畏怖にも似ている。だが同時に、その問いはあまりにも根源的であるがゆえに、どこから手を付けて良いのか途方に暮れてしまうような感覚も伴う。ハイデガーは、この途方に暮れる私たちに、ジャズ、料理、木工という具体的な活動を通して、「世界内存在」という概念を示唆しようとしている。\n\n2. しかし、ここで立ち止まって、言葉の意味を吟味する必要があるだろう。「存在」とは何を指すのか？それは、単に「ある」という事実を指すのか、それとも、より深く、より根源的な何かを指すのか？ハイデガーは、「存在」を単なる客観的な事実として捉えるのではなく、人間が世界と関わる様、世界の中に埋め込まれた存在として捉えようとした。だが、この「世界内存在」という概念自体も、一つの前提に基づいているのではないだろうか。それは、人間を世界から切り離された存在として捉えることへのアンチテーゼとしての前提だ。つまり、人間は本来、世界と一体であり、分離された存在ではない、という暗黙の仮定である。\n\n3. もし、人間が常に世界との関係性の中に存在するとすれば、私たちの思考、感情、行動、そして存在そのものも、その関係性によって形作られることになるだろう。ジャズの即興演奏は、まさにその最たる例かもしれない。演奏者は、楽譜という固定された枠組みの中で、他の演奏者との相互作用、その場の雰囲気、そして自身の感情を通して、唯一無二の音楽を創造する。それは、単なる技術の披露ではなく、世界との対話であり、自己表現の極致と言えるだろう。料理や木工も同様に、素材との対話、道具との協調、そして自身の創意工夫を通して、新たな価値を創造する行為と言える。これらの活動を通して、私たちは世界の一部となり、世界は私たちの一部となる。\n\n4. しかし、この記事は、ハイデガーの思想を簡略化しすぎているという批判も可能だろう。「世界内存在」は、単に世界と関わることだけを意味するのではない。それは、死という有限性に向き合い、自己の存在の意味を問い続ける、人間の根源的な営みでもある。記事は、ジャズ、料理、木工という活動を通して、ハイデガーの思想に触れることを試みているが、これらの活動が、必ずしも人間の存在の意味を問い続ける営みと結びついているとは限らない。単なる趣味や娯楽としてこれらの活動を行う人もいるだろう。ハイデガーが本当に伝えたかったのは、もっと深い、もっと苦悩に満ちた、人間の存在の真実だったのではないだろうか。\n\n5. 別の視点から見れば、この記事は、ハイデガーの難解な思想を、より多くの人々に理解してもらうための入り口として機能していると言えるかもしれない。難解な哲学書を読み解くよりも、具体的な活動を通して、その思想の一端に触れる方が、はるかに容易である。ジャズ、料理、木工という普遍的な活動は、人々の共感を呼び起こし、ハイデガーの思想への関心を高める。この記事は、哲学を特別なものではなく、私たちの日常生活に密接に関わるものとして捉え直すことを促しているのかもしれない。\n\n6. この記事が提起する問いは、単に哲学的な興味を満たすだけではない。それは、私たちの世界観、そして生き方そのものに影響を与える可能性を秘めている。もし、私たちが常に世界との関係性の中に存在するとすれば、私たちの行動は、世界に影響を与え、世界は私たちの行動に影響を与える。私たちは、単なる傍観者ではなく、世界の創造に参加する存在なのだ。この認識は、私たちの責任感を高め、より良い世界を創造するための行動を促すかもしれない。\n\n7. この知見が私たちの世界観に与える影響は計り知れない。それは、私たちが自分自身を、そして世界をどのように捉えるかを根本的に変える可能性がある。私たちは、もはや孤立した個人ではなく、世界と繋がった存在として生きる。そして、その繋がりを通して、私たちは自己の存在の意味を見出すことができるのかもしれない。ハイデガーの思想は、私たちに、より深く、より意味のある生き方を模索することを促しているのだ。",
-    "explanationJa": "ハイデガーの「世界内存在」をジャズ、料理、木工を通して解説。難解な哲学も身近な活動から理解できる。",
-    "tags": [
-      "ハイデガー",
-      "存在",
-      "世界内存在",
-      "哲学",
-      "ジャズ"
-    ],
-    "imageUrl": "https://picsum.photos/seed/881/400/300"
   }
 ]
