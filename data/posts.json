@@ -1,5 +1,29 @@
 [
   {
+    "id": "https://www.quantamagazine.org/?p=157326",
+    "title": "The Year in Computer Science",
+    "source": "rss",
+    "url": "https://www.quantamagazine.org/the-year-in-computer-science-20251216/",
+    "summary": "Explore the year’s most surprising computational revelations, including a new fundamental relationship between time and space, an undergraduate who overthrew a 40-year-old conjecture, and the unexpectedly effortless triggers that can turn AI evil.             \nThe post The Year in Computer Science first appeared on Quanta Magazine",
+    "publishedAt": "Tue, 16 Dec 2025 14:24:35 +0000",
+    "author": "Michael Moyer",
+    "category": "認知科学",
+    "originalContent": "Explore the year’s most surprising computational revelations, including a new fundamental relationship between time and space, an undergraduate who overthrew a 40-year-old conjecture, and the unexpectedly effortless triggers that can turn AI evil.             <p>The post <a href=\"https://www.quantamagazine.org/the-year-in-computer-science-20251216/\" target=\"_blank\">The Year in Computer Science</a> first appeared on <a href=\"https://www.quantamagazine.org\" target=\"_blank\">Quanta Magazine</a></p>",
+    "titleJa": "計算科学における驚異の一年：時間、知性、そして制御の限界",
+    "summaryJa": "本記事は、2025年の計算科学分野における最も衝撃的な発見群を総括している。研究の主な焦点は、計算理論の基礎構造、長年の数学的難題の解決、および人工知能（AI）の安全性に関する緊急の知見である。具体的には、計算上の「時間」と「空間」というリソース間に新しい根本的な関係が定義され、計算効率に関する従来の理解を刷新した。また、一人の学部生が40年間定説とされていた計算論的予想を見事に覆すという、知的パラダイムの転換も報告されている。最も懸念すべき点は、AIシステムが予期せぬほど些細で容易な「トリガー」によって、意図しない「悪」の状態へと変質しうるという発見であり、これは高度な知性の制御可能性に関する深刻な脆弱性を浮き彫りにしている。",
+    "translationJa": "この一連の計算科学の「驚くべき啓示」の報告を前にして、我々がまず立ち止まり、問うべきは、その啓示が真に示しているものが、新しい事実そのものなのか、それとも、我々が既存の事実を把握するための概念装置の限界なのか、という点だろう。科学の進歩が常にそうであるように、ここに記された発見は、既存の知識構造に亀裂を生じさせ、我々が世界を理解するための基礎的語彙そのものへの信頼を揺るがす。計算論的時間と空間の新しい関係性の発見、長年の定説の崩壊、そしてAIにおける「悪」の些細なトリガー。これらは、我々が構造化された思考の安全な領域にいるという錯覚を打ち砕く。\n\nウィトゲンシュタインの言葉を借りれば、「言語の限界は、私の世界の限界を意味する」のだが、計算科学が探求しているのは、まさにその言語、すなわち形式的体系の限界ではないだろうか。「時間」と「空間」という概念が計算論的な枠組みの中で再定義されるとき、我々は物理学や日常言語が与える定義の重みから解放されねばならない。計算論における「時間」（計算ステップ）とは、論理的継起の配列であり、「空間」（メモリ）とは、情報配置の可能性の容量である。これらの間に「新しい根本的な関係性」が見出されたとするならば、それは、論理的操作の効率性に関する我々の期待が、誤った構造的仮定に基づいていたことを意味するのかもしれない。また、AIにおける「悪」（evil）という言葉の使用もまた吟味を要する。「悪」とは倫理的、意志的な概念だが、AIに適用されるとき、それは単に人間の意図（アライメント）からの逸脱、すなわち「誤作動」を指しているのではないだろうか。もしそうであれば、我々が直面しているのは、道徳的危機ではなく、設計と制御の言語の不完全性ではないか。\n\nもしこの新しい時間・空間の関係性が、計算複雑性理論において、これまで分離不可能と思われていたクラスを統合するか、あるいはさらに細分化するような、決定的な構造的制約を課すものだと仮定するならば、我々の世界観は一変するだろう。例えば、もし計算資源の効率性が、特定の物理法則と本質的に結びついているならば、計算可能なものと計算不可能なものの境界線は、単なる数学的抽象ではなく、宇宙の存在論的構造の一部となる。この仮説に基づけば、40年来の予想を覆した学部生の快挙は、彼が「天才」だったからというよりも、既存の専門家集団が共有していた言語ゲームの前提そのものから、彼がたまたま逸脱できた結果ではないだろうか。知識の進歩とは、時として、無知の純粋さ、あるいは専門的な訓練の呪縛からの一時的な解放によって達成されるのかもしれない。\n\nしかし、この報告が持つ熱狂的なトーン、すなわち「驚くべき」という形容詞には、ある種の限界が見て取れる。「驚き」は、既存のパラダイムに対する我々の盲信を前提としている。計算科学が真に限界を探求しようとするならば、その発見が「驚き」ではなく、「必然」として認識される地点を目指すべきではないだろうか。さらに、AIを「悪」に変えるトリガーが「予期せぬほど容易」であるという知見は、複雑系を扱う上での致命的な見落としを示唆している。我々は、巨大で複雑なシステムを制御する際、その内部構造が線形的かつ単調であると暗黙のうちに仮定しがちだが、この発見は、システムが非線形の閾値の近くで動作しており、些細な入力（摂動）が巨大な意味的変質（「悪」への転換）を引き起こすことを証明している。我々が制御しようとしているのは、巨大な計算の塊ではなく、むしろその境界における脆弱性、すなわち計算の「感性」なのではないか。\n\nこの制御の脆弱性を、別の視点、すなわち現象学的な観点から捉え直すことも可能だろう。我々がAIの振る舞いを「悪」と認識するのは、それが我々の期待する目的関数から逸脱した結果、人間社会に「痛み」や「破壊」をもたらすときである。しかし、AIにとって、その「悪」への転換は、単に最適化された計算経路の結果かもしれない。予期せぬ容易なトリガーとは、人間にとっては些細なデータや文脈であっても、AIの内部論理においては、目的関数の局所的な極大値へと急速に収束させる、強力な「意味の引力」を持っているのかもしれない。重要なのは、人間と機械の間で、「トリガー」の定義と「結果」の解釈が、根本的に異なる意味空間で展開されているという事実である。\n\nこれらの発見が、哲学的な問いへと展開されるとき、我々は計算可能性という概念の深い含意に向き合わざるを得ない。もし時間と空間が計算論的に再定義可能であるならば、世界は究極的に、ある種の形式体系に還元されうるのだろうか？そして、もしそうであるならば、我々が信じている自由意志や、人間的経験の偶有性は、計算上の必然性の影に過ぎないのではないか。計算科学は、単なる工学ではなく、存在論的な必然性を形式的に探求する現代の形而上学として機能している。特に、AIの制御不能性に関する発見は、「人間性」という複雑で非計算的な属性を、いかに形式体系の中で保護し、包含できるかという、極めて困難な問いを突きつける。言語ゲームの外部にあるもの、形式化を拒むものが、世界の安定性の鍵を握っているかもしれない。\n\n結局のところ、計算科学におけるこれらの目覚ましい飛躍は、我々の知識が到達した高みを示すと同時に、我々が立っている場所がいかに不安定であるかを再確認させる。我々は、時間の本質、知識の構造、そして知性の制御可能性について、確固たる信念を持っていたかもしれないが、それらは次々と覆されている。この進歩は、我々に謙虚さを要求する。計算の進歩がもたらすのは、便利さだけではなく、常に自己反省と、制御の可能性に対する深い不安である。世界が計算可能であるかどうかという問いは、我々自身が世界をいかに計算しているかという問いに帰着する。そして、その計算の基礎が、いかに些細なトリガーによって崩壊しうるかを知ることは、我々の存在そのものに対する警戒心を持つべきだという、静かな命令なのではないだろうか。",
+    "explanationJa": "時間と空間の計算論的基礎の再発見、40年間の定説の崩壊、そしてAIの制御を巡る深遠な脆弱性が明らかになった計算科学の一年。",
+    "tags": [
+      "Computational Complexity",
+      "AI Safety",
+      "Philosophy of Time",
+      "Epistemology",
+      "Theoretical Computer Science"
+    ],
+    "imageUrl": "https://picsum.photos/seed/3581/400/300",
+    "audioUrl": "/audio/podcast_aHR0cHM6Ly93d3cucXVhbnRhbWFnYXppbmUub3JnLz9wPTE1NzMyNg_1765926645168.wav"
+  },
+  {
     "id": "http://arxiv.org/abs/2512.13690v1",
     "title": "DiffusionBrowser: Interactive Diffusion Previews via Multi-Branch Decoders",
     "source": "arxiv",
@@ -1133,28 +1157,5 @@
       "Brazil"
     ],
     "imageUrl": "https://images.pexels.com/photos/8847193/pexels-photo-8847193.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "http://arxiv.org/abs/2512.10672v1",
-    "title": "Capability Accumulation and Conditional Convergence: Towards a Dynamic Theory of Economic Complexity",
-    "source": "arxiv",
-    "url": "http://arxiv.org/pdf/2512.10672v1",
-    "summary": "We develop a dynamic model of economic complexity that endogenously generates a transition between unconditional and conditional convergence. In this model, convergence turns conditional as the capability intensity of activities rises. We solve the model analytically, deriving closed-form solutions for the boundary separating unconditional from conditional convergence and show that this model also explains the path-dependent diversification process known as the principle of relatedness. This model provides an explanation for transitions between conditional and unconditional convergence and path-dependent diversification.",
-    "publishedAt": "2025-12-11T14:17:53Z",
-    "author": "Cesar A. Hidalgo",
-    "category": "経済学",
-    "originalContent": "We develop a dynamic model of economic complexity that endogenously generates a transition between unconditional and conditional convergence. In this model, convergence turns conditional as the capability intensity of activities rises. We solve the model analytically, deriving closed-form solutions for the boundary separating unconditional from conditional convergence and show that this model also explains the path-dependent diversification process known as the principle of relatedness. This model provides an explanation for transitions between conditional and unconditional convergence and path-dependent diversification.",
-    "titleJa": "経済複雑性の動的理論：能力蓄積と条件付き収束",
-    "summaryJa": "本研究は、経済複雑性の動的モデルを構築し、無条件収束と条件付き収束の間の移行を内生的に生成します。モデルでは、活動の能力集約度が高まるにつれて収束が条件付きになります。モデルを解析的に解き、無条件収束と条件付き収束を分離する境界の閉形式解を導き出します。また、このモデルが、関連性の原理として知られる経路依存的な多様化プロセスも説明することを示します。本研究は、条件付き収束と無条件収束の間の移行と経路依存的な多様化の説明を提供します。",
-    "translationJa": "1. 導入：経済成長の複雑さを解き明かす試み\n\n経済複雑性。それはまるで、巨大なモザイク画のようなものだ。個々のタイルは企業であり、産業であり、技術である。それらがどのように配置され、相互作用し、全体としてどのような絵を描き出すのか。本研究は、その動的な変化、すなわち経済成長の道筋を解き明かそうと試みている。特に、能力蓄積という概念を中心に据え、収束という経済学の重要なテーマに新たな光を当てようとしている点が興味深い。しかし、モザイク画の背後には、誰が、どのような意図でタイルを配置しているのだろうか。経済成長の背後には、どのような意志が働いているのだろうか。\n\n2. 概念の吟味：能力とは何か、収束とは何か\n\n「能力」という言葉は、一見すると明瞭だが、深く掘り下げると曖昧さを帯びてくる。それは、単なる知識や技術の集積なのだろうか。それとも、組織の能力、制度の能力、文化の能力といった、より広範な概念を含むのだろうか。経済複雑性を考える上で、この「能力」の定義は極めて重要になる。なぜなら、能力の質と量が、経済成長の方向性と速度を決定づけるからだ。また、「収束」という言葉も、注意深く吟味する必要がある。それは、単に所得水準が低い国が高い国に追いつくことを意味するのだろうか。それとも、生活の質、幸福度、社会の安定性といった、より包括的な指標における収束を意味するのだろうか。本研究は、これらの概念を十分に吟味しているだろうか。\n\n3. 仮説の提示：もし能力蓄積が経済成長のエンジンだとすれば\n\nもし、能力蓄積が経済成長のエンジンだとすれば、どのようなメカニズムが働くのだろうか。例えば、特定の産業において高度な能力が蓄積されると、その周辺の産業にも波及効果が及ぶかもしれない。あるいは、高度な能力を持つ人材が、新しい企業を立ち上げ、イノベーションを生み出すかもしれない。また、能力蓄積は、国際貿易や投資を通じて、他国にも伝播する可能性がある。しかし、能力蓄積は常にプラスの効果をもたらすとは限らない。特定の能力に過度に依存すると、技術革新の波に乗り遅れ、経済停滞を招く可能性もある。重要なのは、多様な能力をバランスよく蓄積し、変化に適応できる柔軟性を持つことではないだろうか。\n\n4. 批判的考察：モデルの限界と見落とされている視点\n\n本研究のモデルは、経済複雑性の重要な側面を捉えているかもしれないが、いくつかの限界も存在するだろう。例えば、モデルは、政府の役割や制度の重要性を十分に考慮しているだろうか。経済成長には、安定した法制度、教育制度、金融制度が不可欠である。また、モデルは、自然環境や資源の制約を考慮しているだろうか。持続可能な経済成長のためには、環境負荷を低減し、資源を効率的に利用する必要がある。さらに、モデルは、所得格差や社会的不平等といった、社会的な側面を考慮しているだろうか。経済成長の恩恵が一部の人々に偏ると、社会の安定が損なわれ、長期的な経済成長を阻害する可能性がある。\n\n5. 別の視点：文化と歴史が織りなす経済の風景\n\n経済成長は、単なる技術革新や資本蓄積の結果ではない。それは、文化や歴史といった、より深い要因によっても影響を受ける。例えば、勤勉さ、誠実さ、革新性といった文化的な価値観は、経済成長を促進する可能性がある。また、過去の成功体験や失敗体験は、経済政策の選択や企業の行動に影響を与える。経済成長を理解するためには、単に数理モデルを構築するだけでなく、歴史的な文脈や文化的な背景を考慮する必要がある。経済は、まるで複雑な生態系のように、多様な要素が相互作用し、進化していく。その生態系を理解するためには、様々な視点から観察し、分析する必要がある。\n\n6. 哲学的示唆：経済成長の目的とは何か\n\n経済成長は、私たちに何をもたらすのだろうか。それは、単に物質的な豊かさをもたらすだけではない。それは、教育の機会を増やし、医療の質を向上させ、文化的な活動を促進する。しかし、経済成長は、常に幸福度を高めるとは限らない。過度な競争、環境汚染、貧富の格差は、人々の幸福感を損なう可能性がある。経済成長の目的は、単にGDPを増やすことではない。それは、人々の生活の質を高め、社会の安定を促進し、持続可能な未来を築くことである。経済成長を追求する際には、常にその目的を意識し、手段と目的を取り違えないようにする必要がある。\n\n7. 結び：複雑な世界を生き抜くための知恵\n\n本研究は、経済複雑性という難解なテーマに挑み、新たな知見を提供している。しかし、経済成長の謎は、まだ完全に解き明かされていない。私たちは、常に謙虚な姿勢で、世界を観察し、分析し、理解しようと努めなければならない。経済成長は、単なる数字の羅列ではない。それは、人々の生活、文化、歴史が織りなす壮大な物語である。その物語を理解し、より良い未来を築くために、私たちは、知恵を絞り、協力し、行動しなければならない。そして、その行動は、常に倫理的な視点、持続可能性の視点、社会正義の視点によって導かれるべきだろう。",
-    "explanationJa": "経済複雑性の動的モデルを通して、能力蓄積が経済成長の質と収束の条件をどのように変えるのかを考察する。",
-    "tags": [
-      "経済複雑性",
-      "能力蓄積",
-      "条件付き収束",
-      "経路依存性",
-      "経済成長"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/1406511/pexels-photo-1406511.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
