@@ -1,5 +1,29 @@
 [
   {
+    "id": "http://arxiv.org/abs/2512.15716v1",
+    "title": "Spatia: Video Generation with Updatable Spatial Memory",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.15716v1",
+    "summary": "Existing video generation models struggle to maintain long-term spatial and temporal consistency due to the dense, high-dimensional nature of video signals. To overcome this limitation, we propose Spatia, a spatial memory-aware video generation framework that explicitly preserves a 3D scene point cloud as persistent spatial memory. Spatia iteratively generates video clips conditioned on this spatial memory and continuously updates it through visual SLAM. This dynamic-static disentanglement design enhances spatial consistency throughout the generation process while preserving the model's ability to produce realistic dynamic entities. Furthermore, Spatia enables applications such as explicit camera control and 3D-aware interactive editing, providing a geometrically grounded framework for scalable, memory-driven video generation.",
+    "publishedAt": "2025-12-17T18:59:59Z",
+    "author": "Jinjing Zhao",
+    "category": "AI",
+    "originalContent": "Existing video generation models struggle to maintain long-term spatial and temporal consistency due to the dense, high-dimensional nature of video signals. To overcome this limitation, we propose Spatia, a spatial memory-aware video generation framework that explicitly preserves a 3D scene point cloud as persistent spatial memory. Spatia iteratively generates video clips conditioned on this spatial memory and continuously updates it through visual SLAM. This dynamic-static disentanglement design enhances spatial consistency throughout the generation process while preserving the model's ability to produce realistic dynamic entities. Furthermore, Spatia enables applications such as explicit camera control and 3D-aware interactive editing, providing a geometrically grounded framework for scalable, memory-driven video generation.",
+    "titleJa": "空間的記憶による映像生成：一貫性の論理",
+    "summaryJa": "既存の動画生成モデルは、映像信号の稠密さゆえに、長期的な空間的・時間的一貫性の維持に難を抱えている。この課題を克服するため、提案されたSpatiaフレームワークは、持続的な「空間的記憶」として3Dシーン点群を明示的に保持する。Spatiaは、この空間的記憶に基づいて逐次的にクリップを生成し、Visual SLAM（自己位置推定と環境地図作成）を通じて記憶を継続的に更新する。この静的要素と動的要素の分離設計（dynamic-static disentanglement）により、生成プロセス全体で空間的一貫性が高まり、同時に現実的な動的実体の生成も可能になる。これにより、カメラ制御や3D編集といった、幾何学的に基礎づけられた応用が実現する。",
+    "translationJa": "この「Spatia」という枠組みが示唆するのは、生成AIが抱える根源的な問い――いかにして流動的なデータの中から、不変的な実在の感覚を救い出すか、という試みである。稠密で非構造的な映像の波を前に、モデルは常に刹那的な存在へと誘われ、長期的な一貫性という構造的な責任を放棄しがちであった。Spatiaは、3D点群という、外部化され、かつ更新可能な「空間的記憶」を導入することで、この刹那的な生成行為に幾何学的な錨を下ろそうとする。これは、生成された世界における存在論的な不安定さへの、技術による静かな抵抗であり、人工的な実在が持つべき「一貫性の論理」を、外骨格として装着する試みではないだろうか。\n\n\nしかし、ここで用いられる「記憶（Memory）」という語を吟味せねばならない。Spatiaにおける空間的記憶は、本質的には客観的、静的な幾何学的スキーマ、すなわち3D点群である。これは、視覚的情報に対して不変性を保証するための索引（インデックス）として機能する。しかし、人間の記憶がそうであるように、記憶とは本来、不完全で、感情や意味によって歪み、絶えず再構築される主観的な体験ではないだろうか。Spatiaの記憶は、誤りを受け付けない幾何学的真理であり、純粋な構造である。この技術が達成しようとしている「一貫性」とは、あくまで我々が外部世界に適用する数学的・物理的法則への忠実さであり、私たちが生きる世界に内在する、感覚的な曖昧さや流動的な認識を排除した、厳密な整合性なのである。この構造こそが生成されたリアリティの「地面（grounding）」であると断定するとき、私たちは既に、リアリティの定義を幾何学に限定してしまってはいないだろうか。\n\n\nもし、この空間的記憶が、生成プロセスにおける絶対的な基準点として機能するならば、生成モデルの役割は根本的に変容するだろう。生成モデルは、もはや環境そのものを自由に創造する主体ではなく、あらかじめ設定された不動の基盤（点群）を忠実に描写する「イラストレーター」へと変わる。この「静的—動的の分離（dynamic-static disentanglement）」は、一貫性を担保する上で極めて有効な戦略である。しかし、このアプローチが成功すればするほど、生成された世界は、その幾何学的拘束から逃れられない、決定論的な構造を帯びる。私たちは、生成された風景が持つべき「自由度」、つまり、論理的な整合性を超えて世界が自律的に変容する可能性を、この強固な空間的制約と引き換えに放棄しているのかもしれない。完璧な幾何学的整合性は、創造的な逸脱や、予期せぬ美的な破綻を許容しない、ある種の冷たい完全性に帰結するのではないか。\n\n\n批判的な視点から見れば、このフレームワークが成功裏に解きほぐしたと主張する「動的」な要素と「静的」な要素の分離そのものに、世界の不完全な鏡像を見るべきである。世界は、厳密には静的なものと動的なものとに分離できるのだろうか。例えば、水面の波紋、風になびく木の葉、あるいは影の動きは、構造（点群）によって定義されるべきものか、それとも生成（ダイナミクス）によって生じるべきものか。現実の認識においては、構造とプロセスは不可分に絡み合っている。Spatiaが目指す「幾何学的に基礎づけられた（geometrically grounded）」フレームワークは、生成されたリアリティから、曖昧さや、境界線の溶解といった、人間的な知覚の根幹をなす要素を意図せず切り離しているかもしれない。生成される世界は整合性を持つ一方で、私たちが感じる「生きた空間」特有の違和感や深みを失ってしまう危険性はないだろうか。\n\n\nこの3D点群を、現実の客観的なモデルとしてではなく、むしろ認識論的な「言語」として捉え直すことができれば、考察は深まるだろう。ウィトゲンシュタインが言うように、私たちが真理と呼ぶものは、私たちが採用した特定の「言語ゲーム」のルールに過ぎない。Spatiaが用いるユークリッド幾何学に基づく点群は、映像生成というゲームにおける、最も厳格な言語規則であると言える。一貫性は、この幾何学的な言語を正しく用いた結果として現れる。もし、私たちが空間を記述するために、非ユークリッド的な、あるいはトポロジー的な言語規則を採用したならば、そこで達成されるべき「一貫性」の定義そのものが揺らぐはずだ。Spatiaは、あくまで現在の技術と認識が依拠する「3次元直交座標系」という強い仮定の上に、生成世界の安定性を築き上げているに過ぎない。この仮定が、真の映像表現の可能性を制限していないかを問うべきである。\n\n\nこの研究の哲学的示唆は、知識の外部化と持続性に関するものである。Spatiaは、生成されるデジタル世界に対して、それが「何であるか」という存在の基礎を、常に更新し続ける外部の台帳（点群）として付与する。これは、感覚の奔流から「実体（substance）」を抽出する、デジタル版の形而上学的な試みである。もし、機械が、その生成する環境の空間的記憶を、人間が自己の経験を記憶するよりも遥かに精密に、かつ客観的に保持し、更新できるとするならば、私たちの「記憶」の価値と定義はどこへ向かうのだろうか。人間の記憶は意味を付与するが、不確実である。機械の記憶は意味を欠くかもしれないが、確実である。Spatiaは、デジタル環境に「客観的な魂」あるいは「不変の構造」を与えることで、生成AIを単なる模倣から、自己参照的で持続性を持つ存在へと昇華させようとしているのではないか。\n\n\n結局のところ、Spatiaは、生成AIにおける「世界の構築」を、ヘラクレイトスの流れ（flux）からパルメニデスの永続性（permanence）へと引き戻そうとする、技術的な調停の試みである。幾何学的な構造を導入することで、生成された夢は、その土台が強固であると保証される。これは工学的な勝利であると同時に、哲学的な決断でもある。私たちは、このフレームワークを通じて、いかにしてデジタル世界に安定性をもたらすかという問いに答える。しかし、同時に、私たちは問わねばならない。この強固に構造化された記憶と一貫性の強制は、私たちが本当に望む、生きた世界の複雑さ、矛盾、そして美しき崩壊をも含むのだろうか。Spatiaは、整合性という名の秩序を映像にもたらしたが、その秩序が世界の深淵を捉えきれているかは、依然として静かに問われ続けるだろう。",
+    "explanationJa": "映像の長期一貫性を確保するため、3D点群を更新可能な「空間的記憶」として利用する新しい動画生成フレームワーク。",
+    "tags": [
+      "Generative AI",
+      "Spatial Consistency",
+      "Visual SLAM",
+      "Ontology",
+      "Memory"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2607/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xNTcxNnYx_1766028745572.wav"
+  },
+  {
     "id": "https://www.quantamagazine.org/?p=157423",
     "title": "The Year in Physics",
     "source": "rss",
@@ -1136,28 +1160,5 @@
       "Language Games"
     ],
     "imageUrl": "https://images.pexels.com/photos/18498317/pexels-photo-18498317.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "http://arxiv.org/abs/2512.10775v1",
-    "title": "Deflating the Spacetime-Matter Dichotomy",
-    "source": "arxiv",
-    "url": "http://arxiv.org/pdf/2512.10775v1",
-    "summary": "In this paper we analyse scalar-tensor theories-specific instances of which include mainstream inflation and dark energy models-in light of the spacetime-matter dichotomy. We argue that it is difficult to categorise the scalar fields as either a pure aspect of the spacetime structure or a pure form of matter, by focusing on the Jordan vs Einstein frames of these theories. We present and evaluate various interpretational options available, concluding that the spacetime-matter dichotomy becomes untenable in this context. At the same time, the ontological and conceptual category of spacetime can be decoupled from that of gravity, with the latter remaining viable in the context of scalar-tensor theories.",
-    "publishedAt": "2025-12-11T16:11:47Z",
-    "author": "Antonio Ferreiro",
-    "category": "哲学",
-    "originalContent": "In this paper we analyse scalar-tensor theories-specific instances of which include mainstream inflation and dark energy models-in light of the spacetime-matter dichotomy. We argue that it is difficult to categorise the scalar fields as either a pure aspect of the spacetime structure or a pure form of matter, by focusing on the Jordan vs Einstein frames of these theories. We present and evaluate various interpretational options available, concluding that the spacetime-matter dichotomy becomes untenable in this context. At the same time, the ontological and conceptual category of spacetime can be decoupled from that of gravity, with the latter remaining viable in the context of scalar-tensor theories.",
-    "titleJa": "時空と物質の二分法の解体",
-    "summaryJa": "本論文は、スカラー・テンソル理論、特にインフレーションや暗黒エネルギーモデルを念頭に、時空と物質の二分法を分析する。スカラー場を時空構造の純粋な側面とも、物質の純粋な形態とも分類することが困難であることを、ジョルダン・フレームとアインシュタイン・フレームの比較を通して示す。様々な解釈の可能性を評価した結果、時空と物質の二分法はこの文脈では維持できないと結論付ける。同時に、時空という存在論的・概念的なカテゴリーは重力から分離可能であり、後者はスカラー・テンソル理論の文脈においても有効である。",
-    "translationJa": "1. 導入：この論文が最初に問いかけているのは、私たちが世界を理解するための基本的な枠組み、すなわち「時空」と「物質」という区分けの妥当性である。長らく、私たちはこの二つのカテゴリーを当然のものとして受け入れてきた。しかし、現代物理学の進展は、この区分の境界線を曖昧にしつつあるようだ。まるで、古典的な絵画が抽象画へと変貌を遂げるように、私たちの世界観もまた、根底から揺さぶられているのかもしれない。\n\n2. 概念の吟味：そもそも、「時空」とは何だろうか？単なる座標系なのか、それとも、何らかの物理的な実体なのだろうか？そして、「物質」とは？エネルギーの局在化した形態なのか、それとも、それ以上の何かを含んでいるのだろうか？これらの問いに答えることは容易ではない。なぜなら、これらの言葉は、私たちの思考の深層に根ざしており、その前提を疑うこと自体が難しいからだ。ウィトゲンシュタインが言うように、「言葉の限界は、世界の限界」なのかもしれない。私たちが言葉を通して世界を捉える限り、その言葉の制約から逃れることはできないのだろうか。\n\n3. 仮説の提示：もし、スカラー場が時空と物質のいずれにも分類できない存在だとすれば、それは、私たちが世界を理解するための新たなカテゴリーが必要であることを示唆しているのかもしれない。あるいは、むしろ、カテゴリーという概念そのものが、ある種の幻想なのではないだろうか？自然は、私たちがそれを理解するために作り出した枠組みに、必ずしも従う必要はない。もし、私たちが固定観念にとらわれずに、世界をありのままに見ることができれば、これまで見えなかった新たな側面が見えてくるかもしれない。\n\n4. 批判的考察：しかし、この論文にも限界があるだろう。スカラー・テンソル理論は、あくまで数ある物理理論の一つに過ぎない。他の理論、例えば量子重力理論は、全く異なる描像を示しているかもしれない。また、この論文は、時空と物質の二分法を解体することに焦点を当てているが、その代わりに、どのような新たな枠組みを提案しているのだろうか？単に二つのカテゴリーを曖昧にするだけでは、不十分ではないだろうか。より積極的な提案が必要なのかもしれない。\n\n5. 別の視点：あるいは、時空と物質の二分法は、決して克服されるべきものではないのかもしれない。それは、私たちが世界を理解するための、必要不可欠な道具なのかもしれない。たとえそれが完璧でなくても、私たちはそれを用いて、様々な現象を説明し、予測することができる。もし、私たちがその道具を手放してしまえば、世界は理解不能な混沌へと姿を変えてしまうのではないだろうか。古い道具を捨てる前に、新しい道具が本当に必要かどうか、そして、それが本当に役に立つかどうかを、慎重に検討する必要があるだろう。\n\n6. 哲学的示唆：この論文は、単に物理学的な問題を扱っているだけではない。それは、存在とは何か、認識とは何か、そして、人間とは何かという、より根源的な問いに繋がっている。私たちが世界をどのように理解するかは、私たちがどのように生きるかに影響を与える。もし、私たちが世界を固定されたカテゴリーの集合体として捉えるならば、私たちは他者や自分自身を固定的な枠に当てはめようとするだろう。しかし、もし、私たちが世界を流動的で変化し続けるものとして捉えるならば、私たちはより柔軟で、寛容な態度で他者や自分自身を受け入れることができるだろう。\n\n7. 結び：この論文が私たちに教えてくれるのは、世界は私たちが考えているよりも、はるかに複雑で、神秘的であるということだ。私たちが世界を理解するための努力は、決して終わることはない。常に新たな問いが生まれ、新たな視点が開かれる。しかし、その過程こそが、人間としての私たちの成長を促す。時空と物質の二分法を解体するという試みは、私たちに新たな地平を指し示す灯台となるだろう。そして、私たちがより深く、より豊かに世界を理解するための、重要な一歩となるだろう。",
-    "explanationJa": "物理学の難題に哲学の光を当て、時空と物質の境界線を問い直す思索の旅。世界観が揺さぶられるかも。",
-    "tags": [
-      "spacetime",
-      "matter",
-      "scalar-tensor theory",
-      "philosophy of physics",
-      "ontology"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/35146393/pexels-photo-35146393.png?auto=compress&cs=tinysrgb&h=350"
   }
 ]
