@@ -1,5 +1,29 @@
 [
   {
+    "id": "http://arxiv.org/abs/2512.16920v1",
+    "title": "EasyV2V: A High-quality Instruction-based Video Editing Framework",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.16920v1",
+    "summary": "While image editing has advanced rapidly, video editing remains less explored, facing challenges in consistency, control, and generalization. We study the design space of data, architecture, and control, and introduce \\emph{EasyV2V}, a simple and effective framework for instruction-based video editing. On the data side, we compose existing experts with fast inverses to build diverse video pairs, lift image edit pairs into videos via single-frame supervision and pseudo pairs with shared affine motion, mine dense-captioned clips for video pairs, and add transition supervision to teach how edits unfold. On the model side, we observe that pretrained text-to-video models possess editing capability, motivating a simplified design. Simple sequence concatenation for conditioning with light LoRA fine-tuning suffices to train a strong model. For control, we unify spatiotemporal control via a single mask mechanism and support optional reference images. Overall, EasyV2V works with flexible inputs, e.g., video+text, video+mask+text, video+mask+reference+text, and achieves state-of-the-art video editing results, surpassing concurrent and commercial systems. Project page: https://snap-research.github.io/easyv2v/",
+    "publishedAt": "2025-12-18T18:59:57Z",
+    "author": "Jinjie Mai",
+    "category": "AI",
+    "originalContent": "While image editing has advanced rapidly, video editing remains less explored, facing challenges in consistency, control, and generalization. We study the design space of data, architecture, and control, and introduce \\emph{EasyV2V}, a simple and effective framework for instruction-based video editing. On the data side, we compose existing experts with fast inverses to build diverse video pairs, lift image edit pairs into videos via single-frame supervision and pseudo pairs with shared affine motion, mine dense-captioned clips for video pairs, and add transition supervision to teach how edits unfold. On the model side, we observe that pretrained text-to-video models possess editing capability, motivating a simplified design. Simple sequence concatenation for conditioning with light LoRA fine-tuning suffices to train a strong model. For control, we unify spatiotemporal control via a single mask mechanism and support optional reference images. Overall, EasyV2V works with flexible inputs, e.g., video+text, video+mask+text, video+mask+reference+text, and achieves state-of-the-art video editing results, surpassing concurrent and commercial systems. Project page: https://snap-research.github.io/easyv2v/",
+    "titleJa": "映像編集の民主化：EasyV2Vの哲学的考察",
+    "summaryJa": "本研究は、指示に基づいた高品質な映像編集フレームワークEasyV2Vを提案しています。映像編集は画像編集に比べ遅れており、一貫性、制御性、汎化性能が課題です。データ、アーキテクチャ、制御の設計空間を検討し、既存の専門家と高速な逆関数を組み合わせ多様な映像ペアを構築、単一フレームの教師あり学習やアフィン運動の共有による疑似ペアの生成、密なキャプション付きクリップのマイニング、トランジションの教師あり学習などを行います。モデル面では、事前学習済みのテキスト-映像モデルが編集能力を持つことを利用し、シーケンス連結と軽量なLoRAファインチューニングで強力なモデルを訓練します。時空間制御は単一のマスク機構で統一し、参照画像を任意でサポートします。EasyV2Vは、ビデオ+テキスト、ビデオ+マスク+テキスト、ビデオ+マスク+参照+テキストなどの柔軟な入力を処理し、最先端の映像編集結果を実現します。",
+    "translationJa": "1. この論文を初めて読んだとき、私は映像編集という行為の本質について考えずにはいられなかった。私たちは、まるで神のように、映像という現実を自在に操ろうとしている。しかし、それは本当に私たちに許された行為なのだろうか？ テクノロジーは進歩するが、倫理的な問いは常に私たちにつきまとう。EasyV2Vは、その問いをより鮮明に浮かび上がらせる。\n\n2. 「指示に基づいた」という言葉は、映像編集の民主化を象徴しているかもしれない。これまで専門家だけが扱えた複雑な作業を、テキストによる指示だけで実現できるとしたら、それは知識と権力の再分配を意味する。しかし、その「指示」とは何か？ それは私たちの欲望であり、願望であり、あるいは単なる気まぐれかもしれない。言葉は常に曖昧さを孕んでおり、その曖昧さが映像にどのような影響を与えるのか、深く考える必要がある。\n\n3. もしEasyV2Vが真に「高品質」な映像編集を実現できるとしたら、私たちは映像という媒体に対する認識を根本的に変える必要があるかもしれない。これまで映像は、現実の記録として、あるいは虚構の物語を伝える手段として理解されてきた。しかし、EasyV2Vは、映像を「変形可能な粘土」のように、自由自在に操ることができることを示唆している。そうなると、映像の真実性とは一体何なのだろうか？\n\n4. この研究の限界は、やはり「現実」との乖離にあるのではないだろうか。EasyV2Vは、あくまで指示に基づいて映像を編集するツールであり、現実世界で実際に起こった出来事を正確に再現することはできない。映像編集は、しばしば歴史の改竄や誤情報の拡散に利用される。EasyV2Vも、その危険性を孕んでいることを忘れてはならない。\n\n5. 別の視点から見ると、EasyV2Vは創造性の解放をもたらす可能性を秘めている。これまで映像制作の知識や技術を持たなかった人々が、自由に映像を編集し、表現できるようになったら、どのような新しい芸術が生まれるのだろうか？ 映像編集は、単なる技術的な作業ではなく、新たな表現手段として、私たちに無限の可能性を与えてくれるのかもしれない。\n\n6. 哲学的な視点から考えると、EasyV2Vは「自己」と「世界」の関係を問い直すきっかけとなる。私たちは映像を通じて世界を認識し、映像を通じて自己を表現する。EasyV2Vは、その両方の境界線を曖昧にする。映像編集は、私たち自身のアイデンティティを再構築する行為なのかもしれない。\n\n7. EasyV2Vの登場は、私たちの世界観に大きな影響を与えるだろう。映像は、ますます加工され、編集されたものになり、現実との区別がつきにくくなる。私たちは、映像を鵜呑みにするのではなく、常に批判的な視点を持つ必要がある。映像編集技術の進歩は、私たちに知的な謙虚さを要求しているのだ。",
+    "explanationJa": "指示だけで映像を編集するEasyV2Vは、映像の真実性、創造性の解放、そして自己と世界の境界線という根源的な問いを投げかける。",
+    "tags": [
+      "video editing",
+      "AI",
+      "deep learning",
+      "instruction following",
+      "philosophy"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2605/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xNjkyMHYx_1766115156858.wav"
+  },
+  {
     "id": "https://www.quantamagazine.org/?p=157474",
     "title": "The Year in Mathematics",
     "source": "rss",
@@ -1138,28 +1162,5 @@
       "知性"
     ],
     "imageUrl": "https://images.pexels.com/photos/28176070/pexels-photo-28176070.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "http://arxiv.org/abs/2512.10821v1",
-    "title": "Agile Deliberation: Concept Deliberation for Subjective Visual Classification",
-    "source": "arxiv",
-    "url": "http://arxiv.org/pdf/2512.10821v1",
-    "summary": "From content moderation to content curation, applications requiring vision classifiers for visual concepts are rapidly expanding. Existing human-in-the-loop approaches typically assume users begin with a clear, stable concept understanding to be able to provide high-quality supervision. In reality, users often start with a vague idea and must iteratively refine it through \"concept deliberation\", a practice we uncovered through structured interviews with content moderation experts. We operationalize the common strategies in deliberation used by real content moderators into a human-in-the-loop framework called \"Agile Deliberation\" that explicitly supports evolving and subjective concepts. The system supports users in defining the concept for themselves by exposing them to borderline cases. The system does this with two deliberation stages: (1) concept scoping, which decomposes the initial concept into a structured hierarchy of sub-concepts, and (2) concept iteration, which surfaces semantically borderline examples for user reflection and feedback to iteratively align an image classifier with the user's evolving intent. Since concept deliberation is inherently subjective and interactive, we painstakingly evaluate the framework through 18 user sessions, each 1.5h long, rather than standard benchmarking datasets. We find that Agile Deliberation achieves 7.5% higher F1 scores than automated decomposition baselines and more than 3% higher than manual deliberation, while participants reported clearer conceptual understanding and lower cognitive effort.",
-    "publishedAt": "2025-12-11T17:13:09Z",
-    "author": "Leijie Wang",
-    "category": "認知科学",
-    "originalContent": "From content moderation to content curation, applications requiring vision classifiers for visual concepts are rapidly expanding. Existing human-in-the-loop approaches typically assume users begin with a clear, stable concept understanding to be able to provide high-quality supervision. In reality, users often start with a vague idea and must iteratively refine it through \"concept deliberation\", a practice we uncovered through structured interviews with content moderation experts. We operationalize the common strategies in deliberation used by real content moderators into a human-in-the-loop framework called \"Agile Deliberation\" that explicitly supports evolving and subjective concepts. The system supports users in defining the concept for themselves by exposing them to borderline cases. The system does this with two deliberation stages: (1) concept scoping, which decomposes the initial concept into a structured hierarchy of sub-concepts, and (2) concept iteration, which surfaces semantically borderline examples for user reflection and feedback to iteratively align an image classifier with the user's evolving intent. Since concept deliberation is inherently subjective and interactive, we painstakingly evaluate the framework through 18 user sessions, each 1.5h long, rather than standard benchmarking datasets. We find that Agile Deliberation achieves 7.5% higher F1 scores than automated decomposition baselines and more than 3% higher than manual deliberation, while participants reported clearer conceptual understanding and lower cognitive effort.",
-    "titleJa": "アジャイルな熟慮：主観的視覚分類のための概念的熟慮",
-    "summaryJa": "本研究は、コンテンツモデレーション等における視覚分類器の需要拡大を背景に、ユーザーが明確な概念理解を持たないまま曖昧なアイデアから始めることが多いという課題に着目。コンテンツモデレーターへのインタビューを通じて発見された「概念的熟慮」を支援する「アジャイルな熟慮」フレームワークを提案する。これは、概念を階層的に分解する概念スコープと、境界事例を通じてユーザーの意図と分類器を整合させる概念イテレーションの2段階で構成される。18のユーザーセッションによる評価の結果、自動分解や手動熟慮よりも高いF1スコアを達成し、参加者の概念理解を深め、認知負荷を軽減することが示された。",
-    "translationJa": "1. はじめに\n\nこの論文が提示するのは、単なる画像分類技術の改善ではない。それは、私たちがいかに曖昧な概念を捉え、他者と共有し、機械に理解させようと試みるかという、根源的な問いへの挑戦である。コンテンツモデレーションという、一見すると技術的な問題を通して、私たちは言葉とイメージ、主観と客観の複雑な絡み合いを垣間見ることになる。このアジャイルな熟慮という手法は、まるで哲学的な対話のようだ。私たちは、曖昧な概念という迷路を、言葉という糸を手繰りながら進んでいく。\n\n2. 概念の吟味\n\n「概念」とは何か？　そして、「熟慮」とは？　私たちは、言葉をいとも簡単に使い、理解したつもりになっているが、その足元はいつも揺らいでいる。例えば、「暴力」という概念を考えてみよう。ある行為は、ある状況では暴力とみなされるかもしれないが、別の状況ではそうではないかもしれない。自己防衛、スポーツ、あるいは芸術表現。境界線は曖昧で、解釈は主観に委ねられる。この論文が扱う「主観的な視覚分類」は、まさにこの曖昧さ、この揺らぎを正面から受け止めようとしている。しかし、主観的なものを分類するという試みは、それ自体が矛盾を孕んでいるのではないだろうか？\n\n3. 仮説の提示\n\nもし、私たちの概念が、社会的な相互作用を通して形成されるものだとすれば、アジャイルな熟慮は、単に分類器を訓練する手段以上の意味を持つかもしれない。それは、参加者たちが互いの視点を共有し、議論し、概念を共同で構築していくプロセスそのものなのではないだろうか。境界事例を提示することで、システムは、参加者たちに自らの前提を問い直し、異なる解釈を受け入れることを促す。その結果、得られるのは、単に高い精度の分類器ではなく、より深い概念理解、そして他者とのより豊かなコミュニケーションであるかもしれない。\n\n4. 批判的考察\n\nこの研究は、ユーザーセッションを通じて評価されているが、その参加者は限られた範囲の人々である。彼らのバックグラウンド、経験、そして価値観は、結果に影響を与えている可能性がある。また、コンテンツモデレーションという特殊な文脈に焦点を当てているため、他の分野への一般化には慎重を期すべきだろう。さらに、アジャイルな熟慮は、時間と労力を要する手法である。大規模なデータセットを扱う場合や、迅速な対応が求められる状況では、実用性に限界があるかもしれない。システムの認知負荷軽減効果も、より詳細な分析が必要だろう。参加者は、単にシステムに誘導されているだけではないだろうか？　彼らは、自らの言葉で概念を再定義しているのだろうか？\n\n5. 別の視点\n\nアジャイルな熟慮を、芸術的創造のプロセスと比較してみよう。アーティストは、しばしば曖昧なイメージや感情から出発し、試行錯誤を繰り返しながら作品を完成させていく。その過程で、素材、技法、そして自身の内面との対話が生まれる。アジャイルな熟慮は、この創造的なプロセスを模倣していると言えるかもしれない。システムは、アーティストにとってのキャンバスであり、筆であり、そして批評家でもある。しかし、芸術と科学の間には、本質的な違いが存在する。芸術は、解釈の多様性を許容するが、科学は、客観的な真理を追求する。アジャイルな熟慮は、この二つの領域の境界線上で、揺れ動いているのではないだろうか？\n\n6. 哲学的示唆\n\nこの研究は、人工知能の倫理に関する重要な問題を提起している。機械学習アルゴリズムは、私たち人間の価値観を反映する。しかし、その価値観は、常に明確で一貫しているとは限らない。アジャイルな熟慮は、この曖昧さ、この不確実性を機械に組み込もうとする試みである。しかし、機械が人間の価値観を理解し、尊重することができるのだろうか？　あるいは、機械は、単に私たちの偏見を増幅するだけなのだろうか？　これらの問いは、私たち自身が何を大切にしているのか、そして、未来の社会をどのように構築したいのかという、根源的な問いにつながっている。\n\n7. 結び\n\nアジャイルな熟慮は、単なる技術的なツールではない。それは、私たち自身の思考を映し出す鏡である。このシステムを使うことで、私たちは、自らの概念の曖昧さ、他者との認識のずれ、そして、言葉の限界に気づかされる。そして、その気づきこそが、より深い理解、より豊かなコミュニケーション、そしてより人間的な社会への第一歩となるだろう。この研究は、私たちに、知識とは何か、理解とは何か、そして、人間であるとは何かという、永遠の問いを投げかけている。",
-    "explanationJa": "曖昧な概念をAIに理解させる「アジャイルな熟慮」は、技術を超え、思考の深淵を覗き込む哲学的な旅への招待状。",
-    "tags": [
-      "Agile Deliberation",
-      "Concept Deliberation",
-      "Human-in-the-Loop",
-      "Subjective Visual Classification",
-      "Content Moderation"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/8901360/pexels-photo-8901360.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
