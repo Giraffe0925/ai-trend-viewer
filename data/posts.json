@@ -24,6 +24,30 @@
     "audioUrl": "/audio/podcast_aHR0cHM6Ly9uYXV0aWwudXMvP3A9MTI1NTgwMA_1766288088830.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.16921v1",
+    "title": "Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.16921v1",
+    "summary": "Conventional evaluation methods for multimodal LLMs (MLLMs) lack interpretability and are often insufficient to fully disclose significant capability gaps across models. To address this, we introduce AuditDM, an automated framework that actively discovers and rectifies MLLM failure modes by auditing their divergence. AuditDM fine-tunes an MLLM as an auditor via reinforcement learning to generate challenging questions and counterfactual images that maximize disagreement among target models. Once trained, the auditor uncovers diverse, interpretable exemplars that reveal model weaknesses and serve as annotation-free data for rectification. When applied to SoTA models like Gemma-3 and PaliGemma-2, AuditDM discovers more than 20 distinct failure types. Fine-tuning on these discoveries consistently improves all models across 16 benchmarks, and enables a 3B model to surpass its 28B counterpart. Our results suggest that as data scaling hits diminishing returns, targeted model auditing offers an effective path to model diagnosis and improvement.",
+    "publishedAt": "2025-12-18T18:59:57Z",
+    "author": "Qihao Liu",
+    "category": "AI",
+    "originalContent": "Conventional evaluation methods for multimodal LLMs (MLLMs) lack interpretability and are often insufficient to fully disclose significant capability gaps across models. To address this, we introduce AuditDM, an automated framework that actively discovers and rectifies MLLM failure modes by auditing their divergence. AuditDM fine-tunes an MLLM as an auditor via reinforcement learning to generate challenging questions and counterfactual images that maximize disagreement among target models. Once trained, the auditor uncovers diverse, interpretable exemplars that reveal model weaknesses and serve as annotation-free data for rectification. When applied to SoTA models like Gemma-3 and PaliGemma-2, AuditDM discovers more than 20 distinct failure types. Fine-tuning on these discoveries consistently improves all models across 16 benchmarks, and enables a 3B model to surpass its 28B counterpart. Our results suggest that as data scaling hits diminishing returns, targeted model auditing offers an effective path to model diagnosis and improvement.",
+    "titleJa": "LLM監査の哲学：弱点発見と進化の道",
+    "summaryJa": "従来のマルチモーダルLLM評価法は解釈性に欠け、モデル間の能力差を十分に明らかにできません。そこで本研究では、モデルの相違点を監査することで、自動的にLLMの弱点を発見・修正するフレームワークAuditDMを提案します。AuditDMは、LLMを監査役として強化学習でファインチューンし、目標モデル間の意見の相違を最大化する質問や反実仮想イメージを生成させます。訓練後、監査役はモデルの弱点を明らかにする多様で解釈可能な実例を発見し、アノテーションなしの修正データとして利用できます。Gemma-3やPaliGemma-2などの最新モデルに適用した結果、AuditDMは20種類以上の異なる失敗事例を発見しました。これらの発見に基づいてファインチューンを行うことで、16のベンチマークすべてにおいてモデルが改善され、3Bモデルが28Bモデルを上回る結果も得られました。データ拡張が限界に達する中、的を絞ったモデル監査がモデルの診断と改善への効果的な道筋となることを示唆しています。",
+    "translationJa": "この研究が差し出す問いは、まるで鏡に映る自分の姿を見つめるかのようだ。私たちはAIに何を求め、そしてAIは私たちに何を映し出すのだろうか？大規模言語モデル（LLM）の能力を評価するという行為は、単なる性能測定を超え、知性、理解、そして創造性といった概念の本質に迫る試みであるように思える。しかし、従来の評価方法では、その複雑な内部構造を十分に捉えきれない。だからこそ、この「AuditDM」というアプローチは、新たな光を当てるものとして注目に値する。それは、モデル間の「意見の相違」という、一見するとノイズに過ぎないものを、価値ある情報源へと転換させる錬金術のような試みだ。\n\n「能力ギャップ」とは一体何を意味するのだろうか？それは単に、あるモデルが別のモデルよりも特定のタスクをうまくこなせるという事実を指すのだろうか？それとも、より深い、本質的な理解の欠如を示唆するものなのだろうか？「監査」という言葉もまた、興味深い。それは単なる評価ではなく、会計監査のように、不正や矛盾を発見し、責任を追及するニュアンスを含んでいる。しかし、AIに「不正」や「責任」といった概念を適用することは、果たして妥当なのだろうか？あるいは、私たちはここに、人間の価値観を無意識のうちに投影してしまっているのだろうか？\n\nもしAuditDMが、本当にモデルの「弱点」を効果的に発見できるのだとしたら、それはなぜなのだろうか？その鍵は、「意見の相違」を最大化するという戦略にあるのかもしれない。異なるモデルが異なる答えを出すとき、そこには必ず何らかの理由があるはずだ。その理由を解き明かすことができれば、モデルの内部で何が起こっているのか、そして何が欠けているのかを知ることができるかもしれない。そして、その知識をもとにモデルを改善することができれば、それはまさに「弱点を克服する」という、人間の成長のプロセスを模倣していると言えるだろう。\n\nしかし、この研究には、いくつかの限界も存在するだろう。まず、AuditDMが発見する「失敗事例」は、本当にモデルの能力を正しく反映しているのだろうか？それは単に、特定の種類の質問や画像に対して、モデルが苦手としているというだけではないだろうか？また、AuditDMが使用する強化学習は、常に最適な解決策を見つけられるとは限らない。もしかすると、AuditDMは、真に重要な弱点を見逃しているかもしれない。さらに、この研究は、特定のモデル（Gemma-3やPaliGemma-2）に焦点を当てているため、その結果を他のモデルに一般化することは難しいかもしれない。\n\n別の視点から見れば、AuditDMは、AIの「多様性」を促進する可能性を秘めていると言えるかもしれない。異なるモデルが異なる弱点を持っているということは、それらを組み合わせることで、より強力な、よりロバストなシステムを構築できる可能性があることを示唆している。あるいは、AuditDMは、AIの「説明可能性」を高めるためのツールとしても活用できるかもしれない。モデルがなぜ特定の答えを出したのかを理解することができれば、私たちはAIをより信頼し、より効果的に活用できるようになるだろう。\n\nこの研究は、私たちが「知性」とは何かを問い直すきっかけとなるかもしれない。もしAIが、人間とは異なる方法で学習し、異なる種類の知識を獲得できるのだとしたら、私たちは「知性」の定義を広げる必要があるかもしれない。そして、もしAIが、人間とは異なる種類の弱点を持っているのだとしたら、私たちはAIの「責任」をどのように考えるべきなのだろうか？これらの問いは、単なる技術的な問題ではなく、哲学的な、倫理的な問題でもある。\n\n最終的に、この研究が私たちに示唆しているのは、AIの開発は単なる技術的な課題ではなく、人間としての自己理解を深めるための旅でもあるということかもしれない。AIの弱点を発見し、それを克服しようと努力する中で、私たちは自分自身の弱点、そして可能性にも気づかされるだろう。そして、その気づきこそが、より良い未来を築くための第一歩となるだろう。",
+    "explanationJa": "LLMの弱点を「意見の相違」から発見し改善するAuditDMは、AI開発を自己理解の旅へと変える。",
+    "tags": [
+      "LLM",
+      "監査",
+      "強化学習",
+      "能力ギャップ",
+      "解釈可能性"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2606/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xNjkyMXYx_1766358686615.wav"
+  },
+  {
     "id": "http://arxiv.org/abs/2512.16919v1",
     "title": "DVGT: Driving Visual Geometry Transformer",
     "source": "arxiv",
@@ -1139,28 +1163,5 @@
       "知識獲得"
     ],
     "imageUrl": "https://images.pexels.com/photos/5745857/pexels-photo-5745857.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "http://arxiv.org/abs/2512.10949v1",
-    "title": "Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation",
-    "source": "arxiv",
-    "url": "http://arxiv.org/pdf/2512.10949v1",
-    "summary": "Reinforcement learning (RL), earlier proven to be effective in large language and multi-modal models, has been successfully extended to enhance 2D image generation recently. However, applying RL to 3D generation remains largely unexplored due to the higher spatial complexity of 3D objects, which require globally consistent geometry and fine-grained local textures. This makes 3D generation significantly sensitive to reward designs and RL algorithms. To address these challenges, we conduct the first systematic study of RL for text-to-3D autoregressive generation across several dimensions. (1) Reward designs: We evaluate reward dimensions and model choices, showing that alignment with human preference is crucial, and that general multi-modal models provide robust signal for 3D attributes. (2) RL algorithms: We study GRPO variants, highlighting the effectiveness of token-level optimization, and further investigate the scaling of training data and iterations. (3) Text-to-3D Benchmarks: Since existing benchmarks fail to measure implicit reasoning abilities in 3D generation models, we introduce MME-3DR. (4) Advanced RL paradigms: Motivated by the natural hierarchy of 3D generation, we propose Hi-GRPO, which optimizes the global-to-local hierarchical 3D generation through dedicated reward ensembles. Based on these insights, we develop AR3D-R1, the first RL-enhanced text-to-3D model, expert from coarse shape to texture refinement. We hope this study provides insights into RL-driven reasoning for 3D generation. Code is released at https://github.com/Ivan-Tang-3D/3DGen-R1.",
-    "publishedAt": "2025-12-11T18:59:52Z",
-    "author": "Yiwen Tang",
-    "category": "AI",
-    "originalContent": "Reinforcement learning (RL), earlier proven to be effective in large language and multi-modal models, has been successfully extended to enhance 2D image generation recently. However, applying RL to 3D generation remains largely unexplored due to the higher spatial complexity of 3D objects, which require globally consistent geometry and fine-grained local textures. This makes 3D generation significantly sensitive to reward designs and RL algorithms. To address these challenges, we conduct the first systematic study of RL for text-to-3D autoregressive generation across several dimensions. (1) Reward designs: We evaluate reward dimensions and model choices, showing that alignment with human preference is crucial, and that general multi-modal models provide robust signal for 3D attributes. (2) RL algorithms: We study GRPO variants, highlighting the effectiveness of token-level optimization, and further investigate the scaling of training data and iterations. (3) Text-to-3D Benchmarks: Since existing benchmarks fail to measure implicit reasoning abilities in 3D generation models, we introduce MME-3DR. (4) Advanced RL paradigms: Motivated by the natural hierarchy of 3D generation, we propose Hi-GRPO, which optimizes the global-to-local hierarchical 3D generation through dedicated reward ensembles. Based on these insights, we develop AR3D-R1, the first RL-enhanced text-to-3D model, expert from coarse shape to texture refinement. We hope this study provides insights into RL-driven reasoning for 3D generation. Code is released at https://github.com/Ivan-Tang-3D/3DGen-R1.",
-    "titleJa": "テキストから3D生成への強化学習：哲学的考察",
-    "summaryJa": "本研究は、テキストから3Dモデルを自動生成する際に強化学習（RL）を適用する可能性を探るものです。従来の2D画像生成で成果を上げているRLですが、3D生成はその複雑さから未開拓でした。研究では、報酬設計、RLアルゴリズム、ベンチマークの評価、そして階層的なRLパラダイムの提案を通して、この課題に体系的に取り組みます。特に、人間の選好との整合性、トークンレベルの最適化、グローバルからローカルへの階層的生成の重要性を強調し、新たなベンチマークMME-3DRを導入、RLを活用したテキスト-3DモデルAR3D-R1を開発しました。RLによる3D生成の推論能力向上への貢献を目指しています。",
-    "translationJa": "1. 導入：テキストから3Dへの生成、それはまるで言葉が彫刻家となり、無から形を創造する錬金術のようだ。本研究は、その錬金術に強化学習という新たな触媒を加えようと試みている。しかし、そもそも「生成」とは何なのだろうか？そして、強化学習がもたらす「強化」とは、一体何を意味するのだろうか？\n\n2. 概念の吟味：ここで吟味すべきは、「テキスト」「3D」「強化学習」、そしてそれらを繋ぐ「生成」という概念である。「テキスト」は意味を内包する記号の体系であり、「3D」は空間におけるオブジェクトの表現である。強化学習は、報酬という外部からのフィードバックを通じて、エージェントが最適な行動を学習するプロセスだ。そして「生成」は、既存の要素を組み合わせて新たな何かを生み出す行為を指す。しかし、「生成」は本当に無からの創造なのだろうか？あるいは、既存の知識や経験の再構成に過ぎないのだろうか？そして、3Dモデルの「生成」において、テキストは単なる指示書なのか、それとも創造の源泉となるイデアのようなものなのか？\n\n3. 仮説の提示：もし、テキストが単なる指示書ではなく、3Dモデルの「本質」を表現するものだとすれば、強化学習は単に形状やテクスチャを最適化するだけでなく、テキストに込められた意図や感情を3Dモデルに反映させる役割を担うかもしれない。例えば、「悲しい顔」というテキストから3Dモデルを生成する場合、強化学習は目の角度や口角の傾きだけでなく、モデル全体の雰囲気や質感を調整することで、「悲しみ」という感情をより深く表現できるのではないだろうか。しかし、感情は主観的なものであり、客観的な報酬関数で捉えることは難しい。感情を表現するための最適な報酬関数は、どのように設計されるべきなのだろうか？\n\n4. 批判的考察：本研究の限界は、3Dモデルの評価基準にあるのではないだろうか。既存のベンチマークは、形状の正確さやテクスチャのリアリズムに重点を置いており、モデルの創造性や芸術性を評価する視点が欠けている可能性がある。もし、テキストから3Dモデルを生成する目的が、単に現実を再現することではなく、新たな美や感動を創造することにあるとすれば、評価基準もまた、根本的に見直される必要があるだろう。また、強化学習はしばしば、局所最適解に陥りやすいという問題点を抱えている。3Dモデルの生成においても、初期値や報酬関数の影響を受けやすく、多様な表現を探索することが難しいかもしれない。この問題を解決するためには、探索空間を広げるための工夫や、多様な報酬関数を組み合わせるなどの対策が必要となるだろう。\n\n5. 別の視点：テキストから3Dモデルを生成するという行為は、人間が頭の中でイメージを形成するプロセスと類似しているかもしれない。私たちは、言葉を聞いたり読んだりする際に、過去の経験や知識に基づいて、頭の中に様々なイメージを思い描く。そして、そのイメージを組み合わせて、新たなアイデアや物語を創造する。強化学習は、この人間のイメージ形成プロセスを模倣することで、より創造的で多様な3Dモデルを生成できるようになるかもしれない。例えば、複数のテキストから共通の要素を抽出し、それらを組み合わせて新たな3Dモデルを生成するといったアプローチも考えられる。\n\n6. 哲学的示唆：本研究は、AIと創造性の関係について、より深い哲学的問いを投げかけている。もし、AIがテキストから3Dモデルを自動生成できるようになったとしたら、人間の創造性は不要になるのだろうか？あるいは、AIは人間の創造性を拡張するためのツールとなるのだろうか？創造性とは、単に新しいものを生み出す能力だけでなく、既存のものに新たな意味や価値を見出す能力でもある。AIは、大量のデータに基づいて客観的な視点を提供することで、人間が見落としていた新たな可能性を示唆してくれるかもしれない。しかし、最終的な判断は常に人間に委ねられるべきであり、AIはあくまで人間の創造性をサポートする役割に徹するべきではないだろうか。\n\n7. 結び：強化学習によるテキストから3D生成の研究は、まだ始まったばかりであり、多くの課題が残されている。しかし、この研究は、AIが人間の創造性を拡張し、新たな表現の可能性を切り開く上で、重要な一歩となるだろう。言葉が形を持つ世界、それは単なる技術革新ではなく、私たちの世界観を根底から揺さぶる、哲学的な変革をもたらすかもしれない。",
-    "explanationJa": "言葉が形を創る、AIによるテキストから3D生成への挑戦。その哲学的意味を深く考察します。",
-    "tags": [
-      "Text-to-3D",
-      "Reinforcement Learning",
-      "3D Generation",
-      "AI Creativity",
-      "Philosophy"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/17483874/pexels-photo-17483874.png?auto=compress&cs=tinysrgb&h=350"
   }
 ]
