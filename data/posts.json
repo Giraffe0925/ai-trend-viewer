@@ -1,5 +1,29 @@
 [
   {
+    "id": "http://arxiv.org/abs/2512.19691v1",
+    "title": "Scalably Enhancing the Clinical Validity of a Task Benchmark with Physician Oversight",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.19691v1",
+    "summary": "Automating the calculation of clinical risk scores offers a significant opportunity to reduce physician administrative burden and enhance patient care. The current standard for evaluating this capability is MedCalc-Bench, a large-scale dataset constructed using LLM-based feature extraction and rule-based aggregation. However, treating such model-generated benchmarks as static oracles risks enshrining historical model errors as evaluation gold standards, a problem dangerously amplified when these datasets serve as reward signals for Reinforcement Learning (RL). In this work, we propose viewing benchmarks for complex tasks such as clinical score computation as ''in-progress living documents'' that should be periodically re-evaluated as the processes for creating them improve. We introduce a systematic, physician-in-the-loop pipeline that leverages advanced agentic verifiers to audit and relabel MedCalc-Bench, utilizing automated triage to reserve scarce clinician attention for the most contentious instances. Our audit reveals that a notable fraction of original labels diverge from medical ground truth due to extraction errors, calculator logic mismatches, and clinical ambiguity. To study whether this label noise meaningfully impacts downstream RL training, we fine-tune a Qwen3-8B model via Group Relative Policy Optimization (GRPO) and demonstrate that training on corrected labels yields an 8.7% absolute improvement in accuracy over the original baseline -- validating that label noise materially affects model evaluation. These findings underscore that in safety-critical domains, rigorous benchmark maintenance is a prerequisite for genuine model alignment.",
+    "publishedAt": "2025-12-22T18:59:34Z",
+    "author": "Junze Ye",
+    "category": "AI",
+    "originalContent": "Automating the calculation of clinical risk scores offers a significant opportunity to reduce physician administrative burden and enhance patient care. The current standard for evaluating this capability is MedCalc-Bench, a large-scale dataset constructed using LLM-based feature extraction and rule-based aggregation. However, treating such model-generated benchmarks as static oracles risks enshrining historical model errors as evaluation gold standards, a problem dangerously amplified when these datasets serve as reward signals for Reinforcement Learning (RL). In this work, we propose viewing benchmarks for complex tasks such as clinical score computation as ''in-progress living documents'' that should be periodically re-evaluated as the processes for creating them improve. We introduce a systematic, physician-in-the-loop pipeline that leverages advanced agentic verifiers to audit and relabel MedCalc-Bench, utilizing automated triage to reserve scarce clinician attention for the most contentious instances. Our audit reveals that a notable fraction of original labels diverge from medical ground truth due to extraction errors, calculator logic mismatches, and clinical ambiguity. To study whether this label noise meaningfully impacts downstream RL training, we fine-tune a Qwen3-8B model via Group Relative Policy Optimization (GRPO) and demonstrate that training on corrected labels yields an 8.7% absolute improvement in accuracy over the original baseline -- validating that label noise materially affects model evaluation. These findings underscore that in safety-critical domains, rigorous benchmark maintenance is a prerequisite for genuine model alignment.",
+    "titleJa": "臨床タスクベンチマークの妥当性向上における医師の役割",
+    "summaryJa": "本研究は、臨床リスクスコアの自動計算におけるモデル評価の信頼性向上を目指す。既存のMedCalc-BenchはLLMで構築されたが、その静的な性質が問題視される。そこで医師が関与する監査パイプラインを導入し、データセットのラベルを修正。修正後のデータセットでモデルを再学習した結果、精度が向上し、ラベルノイズがモデル評価に影響を与えることが示された。この研究は、安全性が重要な領域におけるベンチマークの継続的なメンテナンスの重要性を強調する。",
+    "translationJa": "1. この論文が取り組む問題は、AIが医療現場に浸透するにつれて、ますます重要性を増すだろう。AIモデルの性能評価に用いられるベンチマークが、静的な「神託」として扱われることの危険性、そして、その背後にある「真実」をどのようにして維持・更新していくべきか、という問いである。\n\n2. ここで吟味すべきは、「真実」とは何か、ということだ。MedCalc-Benchが目指す「臨床的真実」は、医学的知識、臨床経験、そして、その集約としてのリスクスコア計算ロジックによって構成される。しかし、これらの要素は常に変化し、解釈の余地を残す。リスクスコア自体が、必ずしも絶対的な真実を反映しているわけではない。それは、あくまで現時点での医学的知見と合意に基づいた近似に過ぎない。論文が指摘する「抽出エラー」「計算ロジックの不一致」「臨床的曖昧さ」は、まさに、この「真実」の不安定さ、複雑さを反映している。\n\n3. もし、LLMが学習データに含まれるバイアスを増幅し、誤った「真実」を学習してしまうとしたら、その影響は計り知れない。例えば、特定の民族や社会経済的背景を持つ患者に対して、不当に高いリスクスコアを算出してしまうかもしれない。あるいは、古い医学的知識に基づいて、最新の治療法を考慮しない判断を下してしまうかもしれない。このようなバイアスは、患者の予後を悪化させるだけでなく、医療における不平等を拡大する可能性もある。\n\n4. この研究の限界は、医師による監査が、どの程度客観的で再現性があるか、という点にある。医師の判断もまた、個人的な経験、専門分野、そして、所属する医療機関の慣習によって左右される可能性がある。理想的には、複数の医師による独立した評価を行い、その合意形成プロセスを透明化する必要があるだろう。また、監査対象を「最も議論の余地があるインスタンス」に絞り込むことは、効率的ではあるが、それ以外のインスタンスに潜在するエラーを見落とすリスクも孕んでいる。\n\n5. 別の視点として、患者自身がリスクスコアの妥当性を評価に参加する、というアプローチも考えられる。患者は、自身の病歴、生活習慣、そして、体調の変化に関する貴重な情報を持っている。患者からのフィードバックを収集し、LLMの学習データに反映させることで、よりパーソナライズされた、文脈に即したリスク評価が可能になるかもしれない。もちろん、患者からの情報には、誤りや主観性が含まれる可能性があるため、慎重な検証が必要となるだろう。\n\n6. この研究が示唆する哲学的問いは、AIが「専門家」の役割を担う時代において、知識の権威とは何か、ということである。従来、医師は、医学的知識と臨床経験に基づき、診断や治療方針を決定する権威者であった。しかし、LLMが膨大な量の医学論文や臨床データを学習し、医師よりも正確なリスクスコアを算出できるようになったとしたら、医師の役割はどのように変化するのだろうか。医師は、もはや知識の提供者ではなく、AIの判断を解釈し、患者とのコミュニケーションを円滑にする役割を担うようになるかもしれない。\n\n7. この知見は、私たちがAIに対する過度な信頼を戒め、常に批判的な視点を持つことの重要性を示唆している。AIは、あくまでツールであり、人間の判断を代替するものではない。AIの判断が、倫理的、社会的に許容できるものであるかどうかを判断するのは、常に人間であるべきだ。そして、AIの開発者は、AIの潜在的なリスクを理解し、その責任を自覚しなければならない。真に「アラインメント」されたモデルとは、単に精度が高いだけでなく、人間の価値観と調和し、社会全体の幸福に貢献するものではないだろうか。",
+    "explanationJa": "AI医療ベンチマークは生きた文書。医師による継続的な監査で精度向上し、真のモデルアラインメントを目指せ。",
+    "tags": [
+      "AI",
+      "医療",
+      "ベンチマーク",
+      "医師",
+      "アラインメント"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2613/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xOTY5MXYx_1766460841112.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1255800",
     "title": "Which Country Is Most Narcissistic?",
     "source": "rss",
@@ -1142,28 +1166,5 @@
       "technology policy"
     ],
     "imageUrl": "https://images.pexels.com/photos/18510427/pexels-photo-18510427.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "http://arxiv.org/abs/2512.10957v1",
-    "title": "SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model",
-    "source": "arxiv",
-    "url": "http://arxiv.org/pdf/2512.10957v1",
-    "summary": "We propose a decoupled 3D scene generation framework called SceneMaker in this work. Due to the lack of sufficient open-set de-occlusion and pose estimation priors, existing methods struggle to simultaneously produce high-quality geometry and accurate poses under severe occlusion and open-set settings. To address these issues, we first decouple the de-occlusion model from 3D object generation, and enhance it by leveraging image datasets and collected de-occlusion datasets for much more diverse open-set occlusion patterns. Then, we propose a unified pose estimation model that integrates global and local mechanisms for both self-attention and cross-attention to improve accuracy. Besides, we construct an open-set 3D scene dataset to further extend the generalization of the pose estimation model. Comprehensive experiments demonstrate the superiority of our decoupled framework on both indoor and open-set scenes. Our codes and datasets is released at https://idea-research.github.io/SceneMaker/.",
-    "publishedAt": "2025-12-11T18:59:56Z",
-    "author": "Yukai Shi",
-    "category": "AI",
-    "originalContent": "We propose a decoupled 3D scene generation framework called SceneMaker in this work. Due to the lack of sufficient open-set de-occlusion and pose estimation priors, existing methods struggle to simultaneously produce high-quality geometry and accurate poses under severe occlusion and open-set settings. To address these issues, we first decouple the de-occlusion model from 3D object generation, and enhance it by leveraging image datasets and collected de-occlusion datasets for much more diverse open-set occlusion patterns. Then, we propose a unified pose estimation model that integrates global and local mechanisms for both self-attention and cross-attention to improve accuracy. Besides, we construct an open-set 3D scene dataset to further extend the generalization of the pose estimation model. Comprehensive experiments demonstrate the superiority of our decoupled framework on both indoor and open-set scenes. Our codes and datasets is released at https://idea-research.github.io/SceneMaker/.",
-    "titleJa": "SceneMaker：3Dシーン生成における隠蔽除去と姿勢推定の哲学",
-    "summaryJa": "本研究「SceneMaker」は、3Dシーン生成における既存手法が抱える、隠蔽された物体の復元と正確な姿勢推定の困難さを克服するため、デカップリングされた新しいフレームワークを提案します。具体的には、まず隠蔽除去モデルを3Dオブジェクト生成から分離し、画像データセットや収集された隠蔽除去データセットを活用することで、多様な隠蔽パターンへの対応力を強化します。次に、グローバルおよびローカルなメカニズムを統合した統一的な姿勢推定モデルを開発し、精度を向上させます。さらに、姿勢推定モデルの汎化性能を高めるためのオープンセット3Dシーンデータセットを構築しました。実験結果は、本フレームワークが屋内およびオープンセット環境において優れた性能を示すことを明らかにしています。",
-    "translationJa": "1. この研究が提示する「SceneMaker」というフレームワークは、私たちに何を問いかけているのだろうか。それは単に、より高度な3Dシーン生成技術の可能性を示すだけではないだろう。むしろ、私たちが現実をどのように認識し、理解しているのか、その根源的なメカニズムに光を当てようとしているのではないだろうか。隠蔽されたものを復元し、オブジェクトの姿勢を正確に推定するという行為は、まさに私たちが日々行っている知的活動の縮図であると言えるかもしれない。\n\n2. 「隠蔽除去」や「姿勢推定」といった言葉は、一見すると技術的な専門用語のように聞こえる。しかし、これらの概念は、私たちが世界を理解する上で不可欠な要素を反映している。私たちは常に、見えないものを推測し、物事の関係性を把握しようと努めている。例えば、部屋の中で一部が隠れている椅子を見たとき、私たちはその形状や材質、そして空間における位置を無意識のうちに推定している。この推定が正確であれば、私たちは椅子を問題なく使用することができる。しかし、もし推定が誤っていれば、私たちはつまずいたり、転倒したりするかもしれない。このように、「隠蔽除去」や「姿勢推定」は、私たちの日常生活において常に意識されることなく機能している重要な能力なのである。\n\n3. もし、この「SceneMaker」の技術が完璧に近くなったとすれば、私たちの世界認識はどのように変化するだろうか。例えば、考古学の分野において、わずかな痕跡から失われた文明の姿を完全に復元することが可能になるかもしれない。あるいは、医療の分野において、患者の体内を透視し、病巣の位置や状態を正確に把握することができるようになるかもしれない。さらに、自動運転技術の分野においては、周囲の状況を完全に把握し、安全かつスムーズな走行を実現することができるようになるかもしれない。これらの可能性は、単なる技術的な進歩にとどまらず、私たちの社会や文化、そして人間の存在そのものに深い影響を与えるかもしれない。\n\n4. しかし、この研究には、いくつかの限界や見落とされている視点も存在するかもしれない。例えば、このフレームワークは、学習データに大きく依存している可能性がある。もし、学習データに偏りや誤りが含まれていれば、生成される3Dシーンもまた偏りや誤りを含んでいる可能性がある。また、このフレームワークは、物理的な法則や制約を完全に考慮しているとは限らない。例えば、重力や摩擦といった要素が無視されている場合、生成されるシーンは現実離れしたものになる可能性がある。さらに、このフレームワークは、主観的な感情や美的感覚といった、人間特有の要素を考慮しているとは言えない。これらの要素が無視されている場合、生成されるシーンは、どこか無機質で冷たい印象を与えるかもしれない。\n\n5. 別の視点から見れば、この研究は、私たちに「現実とは何か」という根源的な問いを突きつけているのかもしれない。私たちは、自分の目で見たもの、自分の手で触れたものを現実だと信じている。しかし、もし、私たちの認識が常に不完全であり、常に何らかの形で歪められているとしたら、私たちは本当に現実を理解していると言えるのだろうか。この「SceneMaker」の技術は、私たちが現実だと信じているものが、単なる情報処理の結果に過ぎない可能性を示唆している。そして、その情報処理の過程は、常にエラーやノイズにさらされているのかもしれない。\n\n6. この研究は、哲学的な示唆にも富んでいる。例えば、プラトンのイデア論との関連性を指摘することができる。プラトンは、私たちが知覚する世界は、イデアと呼ばれる完璧な形の影に過ぎないと主張した。この「SceneMaker」の技術は、まさにそのイデアを復元しようとする試みであると言えるかもしれない。しかし、もし、私たちが復元したイデアが、単なるアルゴリズムによって生成されたものであり、真のイデアとは異なるとしたら、私たちは何を信じれば良いのだろうか。この問いは、認識論における永遠の課題であり、私たちに深い思索を促す。\n\n7. この知見は、私たちの世界観にどのような影響を与えるだろうか。おそらく、私たちはこれまで以上に、自分の認識を疑い、自分の知識を問い直す必要があるだろう。私たちは、テクノロジーによって拡張された認識能力を持つ一方で、テクノロジーによって歪められた認識を持つ可能性も意識しなければならない。そして、テクノロジーがもたらす可能性とリスクを冷静に見極め、より良い未来を創造するために、倫理的な観点から常に議論を続ける必要があるだろう。私たちが追求すべきは、単なる技術的な進歩ではなく、人間性の向上と、より深い理解に基づく共存の道なのではないだろうか。",
-    "explanationJa": "3Dシーン生成技術「SceneMaker」は、現実認識の根源的な問いを投げかけ、私たちが信じる「現実」の再考を促す。",
-    "tags": [
-      "3D Scene Generation",
-      "De-occlusion",
-      "Pose Estimation",
-      "Artificial Intelligence",
-      "Philosophy of Perception"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/8347500/pexels-photo-8347500.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
