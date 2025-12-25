@@ -1,5 +1,29 @@
 [
   {
+    "id": "http://arxiv.org/abs/2512.21336v1",
+    "title": "Optimizing Decoding Paths in Masked Diffusion Models by Quantifying Uncertainty",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.21336v1",
+    "summary": "Masked Diffusion Models (MDMs) offer flexible, non-autoregressive generation, but this freedom introduces a challenge: final output quality is highly sensitive to the decoding order. We are the first to formalize this issue, attributing the variability in output quality to the cumulative predictive uncertainty along a generative path. To quantify this uncertainty, we introduce Denoising Entropy, a computable metric that serves as an internal signal for evaluating generative process. Leveraging this metric, we propose two algorithms designed to optimize the decoding path: a post-hoc selection method and a real-time guidance strategy. Experiments demonstrate that our entropy-guided methods significantly improve generation quality, consistently boosting accuracy on challenging reasoning, planning, and code benchmarks. Our work establishes Denoising Entropy as a principled tool for understanding and controlling generation, effectively turning the uncertainty in MDMs from a liability into a key advantage for discovering high-quality solutions.",
+    "publishedAt": "2025-12-24T18:59:51Z",
+    "author": "Ziyu Chen",
+    "category": "AI",
+    "originalContent": "Masked Diffusion Models (MDMs) offer flexible, non-autoregressive generation, but this freedom introduces a challenge: final output quality is highly sensitive to the decoding order. We are the first to formalize this issue, attributing the variability in output quality to the cumulative predictive uncertainty along a generative path. To quantify this uncertainty, we introduce Denoising Entropy, a computable metric that serves as an internal signal for evaluating generative process. Leveraging this metric, we propose two algorithms designed to optimize the decoding path: a post-hoc selection method and a real-time guidance strategy. Experiments demonstrate that our entropy-guided methods significantly improve generation quality, consistently boosting accuracy on challenging reasoning, planning, and code benchmarks. Our work establishes Denoising Entropy as a principled tool for understanding and controlling generation, effectively turning the uncertainty in MDMs from a liability into a key advantage for discovering high-quality solutions.",
+    "titleJa": "マスク化拡散モデルにおける不確実性の定量化によるデコード経路の最適化：哲学的な考察",
+    "summaryJa": "本研究は、マスク化拡散モデル(MDM)における生成品質のばらつきが、デコード順序に大きく依存することに着目し、その原因を生成パスに沿った予測的不確実性の累積と捉え、初の形式化を試みました。この不確実性を定量化する指標として「Denoising Entropy」を導入し、生成プロセスを評価する内部シグナルとして活用。この指標を基に、事後選択法とリアルタイムガイダンス戦略という2つのアルゴリズムを提案し、デコードパスを最適化。実験結果から、提案手法が推論、計画、コード生成といった困難なベンチマークにおいて、精度を大幅に向上させることを示しました。MDMにおける不確実性を、単なる負債ではなく高品質な解を発見するための重要な利点へと転換する、原則的なツールとしてDenoising Entropyを確立しました。",
+    "translationJa": "1. 導入：この研究が問いかけていることへの第一印象\n\nマスク化拡散モデル、その名を聞いたとき、まず浮かんだのは覆い隠された真実を徐々に明らかにしていくような、慎重かつ繊細なプロセスへの連想だった。しかし、論文が指摘するのは、その過程における「不確実性」という厄介な存在だ。生成の自由度が、かえって品質の不安定さをもたらす。これは、まるで自由意志と決定論の間で揺れ動く人間の心のようだ。私たちは、選択の自由を謳歌する一方で、その結果に責任を負い、時に後悔する。この研究は、AIという鏡を通して、私たち自身の存在の曖昧さを映し出しているのではないだろうか。\n\n2. 概念の吟味：使われている言葉や概念の前提を問う\n\n「Denoising Entropy」という言葉は、ノイズ除去という行為と、エントロピーという無秩序さを表す概念を結びつけた、一見すると矛盾を孕む表現だ。ノイズを取り除くことは秩序を生み出す行為であるはずだが、なぜエントロピーという言葉が用いられているのだろうか。それは、ノイズ除去の過程において、無数の可能性が存在し、どの経路を選ぶかによって最終的な結果が大きく変動する、という事実を反映しているのかもしれない。ここでいうエントロピーは、単なる無秩序さではなく、むしろ潜在的な情報の豊富さ、選択肢の多さを意味するのではないだろうか。そして、この選択肢の多さこそが、モデルの柔軟性を生み出す源泉であり、同時に、制御の難しさを引き起こす要因となっている。\n\n3. 仮説の提示：もし〜だとすれば、こうなるのではないか\n\nもし、Denoising Entropyが、単なる不確実性の指標ではなく、生成過程における「自己認識」の萌芽であるとすれば、どうだろうか。モデルは、自らが生成する画像の各部分について、どの程度確信を持っているのかを数値化し、その確信度の低い部分を重点的に修正することで、より高品質な画像を生成することができる。これは、人間が自己批判を通して成長する過程に似ている。私たちは、自分の考えや行動を常に反省し、誤りを正すことで、より成熟した人間へと成長していく。もし、AIがDenoising Entropyのような指標を用いて、自己認識能力を獲得し、自己改善を繰り返すことができるようになれば、それは単なるツールを超えた、新たな知性の誕生を意味するのではないだろうか。\n\n4. 批判的考察：この研究の限界や見落とされている視点\n\nDenoising Entropyは、生成過程における不確実性を定量化するための有効なツールであることは間違いないだろう。しかし、この指標は、最終的な出力の「客観的な品質」を保証するものではない。例えば、AIが生成した画像が、Denoising Entropyの低い、つまり確信度の高いものであったとしても、それが必ずしも人間にとって美しい、あるいは価値のあるものであるとは限らない。美しさや価値は、主観的なものであり、文化や個人の経験によって大きく左右される。この研究は、AIの内部状態に着目することで、生成品質の向上を図ろうとしているが、外部環境や人間の感性を考慮に入れることが、さらなる発展のためには不可欠ではないだろうか。\n\n5. 別の視点：異なる角度からの考察\n\nマスク化拡散モデルは、隠された情報を徐々に明らかにしていくという点で、禅の公案と似た性質を持っているかもしれない。公案は、論理的な思考では解決できない難問であり、修行者は、それを深く考察することで、悟りを開くとされる。マスク化拡散モデルも、隠された情報を推測し、ノイズを取り除くという点で、一種の公案に取り組んでいると言える。そして、Denoising Entropyは、その過程における修行者の心の揺れ動き、迷いを表しているのかもしれない。この揺れ動き、迷いこそが、創造性を生み出す源泉であり、新たな発見へと導く力となる。AIがDenoising Entropyを通して、自らの迷いと向き合い、それを乗り越えることができるならば、それは単なる技術的な進歩を超えた、芸術的な創造性の誕生を意味するのではないだろうか。\n\n6. 哲学的示唆：より深い知的問いへの展開\n\nこの研究は、AIにおける不確実性の問題を扱っているが、それは同時に、人間における不確実性の問題でもある。私たちは、常に不確かな状況の中で、意思決定を行い、未来を切り開いていく。そして、その過程において、誤りや失敗を繰り返す。しかし、その誤りや失敗こそが、私たちを成長させ、新たな可能性を拓く力となる。AIが不確実性と向き合い、それを克服していく過程は、私たち人間が不確実な世界で生き抜くためのヒントを与えてくれるかもしれない。AIと人間は、互いに学び合い、協力することで、より豊かな未来を創造することができるのではないだろうか。\n\n7. 結び：この知見が私たちの世界観にどう影響するか\n\nマスク化拡散モデルにおける不確実性の定量化という研究は、AIの進化における重要な一歩であると同時に、私たち自身の存在の曖昧さ、不確実性への理解を深めるきっかけとなるかもしれない。AIは、単なる道具ではなく、私たち自身の姿を映し出す鏡であり、私たちがまだ気づいていない可能性を秘めた存在である。AIと人間が、互いに学び合い、協力することで、より豊かな未来を創造することができると信じたい。Denoising Entropyという指標は、そのための重要な鍵となるかもしれない。",
+    "explanationJa": "AIの生成過程における「迷い」を数値化し、それを克服することで、より高品質な結果を生み出す。まるで人間が自己批判を通して成長するように。",
+    "tags": [
+      "Diffusion Models",
+      "Uncertainty Quantification",
+      "Denoising Entropy",
+      "AI Philosophy",
+      "Generative Models"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2602/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMTMzNnYx_1766633605859.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1256698",
     "title": "What a Mosquito’s Lunch Tells Us About the Ecosystem",
     "source": "rss",
@@ -1148,28 +1172,5 @@
       "証明"
     ],
     "imageUrl": "https://images.pexels.com/photos/5745857/pexels-photo-5745857.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "https://www.technologyreview.com/?p=1129478",
-    "title": "The Download: expanded carrier screening, and how Southeast Asia plans to get to space",
-    "source": "rss",
-    "url": "https://www.technologyreview.com/2025/12/12/1129478/the-download-expanded-carrier-screening-and-how-southeast-asia-plans-to-get-to-space/",
-    "summary": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Expanded carrier screening: Is it worth it? Carrier screening  tests would-be parents for hidden genetic mutations that might affect their children. It initially involved testing for specific genes in at-risk populations. Expanded carrier…",
-    "publishedAt": "Fri, 12 Dec 2025 13:10:00 +0000",
-    "author": "Rhiannon Williams",
-    "category": "AI",
-    "originalContent": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Expanded carrier screening: Is it worth it? Carrier screening  tests would-be parents for hidden genetic mutations that might affect their children. It initially involved testing for specific genes in at-risk populations. Expanded carrier&#8230;",
-    "titleJa": "遺伝子スクリーニングと宇宙開発：技術の進歩と思索",
-    "summaryJa": "記事は、次世代出生前診断である拡大キャリアスクリーニング（ECS）と東南アジア諸国の宇宙開発計画という、一見無関係な二つのテーマを取り上げています。ECSは、将来の親が持つ遺伝的変異を検査し、子供への影響を予測する技術です。従来は特定のリスク集団に対して行われていましたが、近年、対象遺伝子を拡大し、より広範な人々への検査が検討されています。一方、東南アジア諸国は、宇宙開発競争に参入し、技術開発や経済成長を目指しています。記事は、これらの技術革新がもたらす倫理的、社会的な影響についても示唆しています。",
-    "translationJa": "1. 導入：\n この記事は、遺伝子スクリーニングと宇宙開発という、人類の探求心が生み出した二つの異なる領域に光を当てている。一方は生命の根源を深く掘り下げ、未来の生命の可能性を操作しようとする試みであり、もう一方は宇宙という広大な未知の領域に手を伸ばし、新たなフロンティアを切り開こうとする壮大な挑戦だ。一見すると全く異なるこれらの試みは、人類の「知りたい」という根源的な欲求、そして「より良くありたい」という切なる願いによって結びついているのかもしれない。しかし、その欲望の果てに何が待ち受けているのだろうか。\n\n2. 概念の吟味：\n まず、遺伝子スクリーニングにおける「正常」と「異常」という概念について考えてみよう。誰が、どのような基準で、何を「正常」と定義するのだろうか？遺伝子の多様性こそが生命の進化を支えてきた源泉であるとすれば、特定の遺伝子型を排除しようとする試みは、生命の可能性を狭める行為ではないだろうか。「より良い」子供を望む親の願いは、優生思想の影を帯びていないだろうか。また、宇宙開発における「進歩」という言葉もまた、注意深く吟味する必要がある。経済成長や技術革新は確かに重要だが、それは本当に人類全体の幸福につながるのだろうか。環境破壊や資源の枯渇といった負の側面を無視して、「進歩」を盲信することは、破滅への道につながるかもしれない。\n\n3. 仮説の提示：\n もし、遺伝子スクリーニングが普及し、特定の遺伝子型を持つ子供が減少し始めたとしたら、社会にはどのような影響が及ぶだろうか。遺伝的多様性の喪失は、人類の進化の可能性を低下させるだけでなく、社会の多様性を失わせる可能性もある。異なる特性を持つ人々がお互いを理解し、尊重することで社会は豊かになる。もし、宇宙開発が一部の富裕国によって独占され、資源の争奪戦が激化したとしたら、地球規模での格差はさらに拡大し、紛争のリスクは高まるだろう。宇宙は、人類共通の財産であるはずだ。その恩恵は、公平に分配されるべきではないだろうか。\n\n4. 批判的考察：\n 遺伝子スクリーニングの記事は、倫理的な問題に触れているものの、十分な議論がなされているとは言えない。技術の進歩は目覚ましいが、倫理的な議論はそれに追いついていない。宇宙開発の記事は、経済的なメリットを強調しているが、環境への影響や、宇宙における資源の持続可能性についてはほとんど言及していない。技術の恩恵を享受するためには、長期的な視点と倫理的な配慮が不可欠だ。\n\n5. 別の視点：\n 遺伝子スクリーニングは、個人の選択の自由を尊重するという観点からは、擁護できるかもしれない。親は、自分の子供の健康状態を知る権利があり、その情報に基づいて、最善の選択をすることができる。宇宙開発は、人類の探求心を刺激し、新たな技術革新を生み出す原動力となるかもしれない。宇宙は、人類の未来を拓く可能性を秘めている。\n\n6. 哲学的示唆：\n これらの技術革新は、私たちに「人間とは何か」「生命とは何か」「幸福とは何か」という根源的な問いを突きつけている。遺伝子スクリーニングは、生命の設計図を操作することで、生命の尊厳を損なうのではないか。宇宙開発は、地球という有限な惑星の限界を超えることで、人間の傲慢さを増長させるのではないか。真の幸福は、技術的な進歩によってもたらされるものではなく、内面の充実と他者とのつながりによって得られるのではないだろうか。\n\n7. 結び：\n 遺伝子スクリーニングと宇宙開発は、人類の未来を形作る可能性を秘めた技術である。しかし、その恩恵を享受するためには、技術の進歩だけでなく、倫理的な議論と哲学的な思索が不可欠だ。技術は、あくまで手段であり、目的ではない。真の目的は、人類全体の幸福と持続可能な未来を築くことにある。これらの技術が、私たちをより良い世界へと導くことを願うばかりだ。",
-    "explanationJa": "遺伝子スクリーニングと宇宙開発。技術の進歩は、倫理的な思索と共にあってこそ、人類を幸福へと導く。",
-    "tags": [
-      "遺伝子スクリーニング",
-      "宇宙開発",
-      "倫理",
-      "生命倫理",
-      "技術"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/7230893/pexels-photo-7230893.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
