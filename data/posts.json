@@ -72,6 +72,30 @@
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMTMzNXYx_1766747069709.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.21332v1",
+    "title": "C2LLM Technical Report: A New Frontier in Code Retrieval via Adaptive Cross-Attention Pooling",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.21332v1",
+    "summary": "We present C2LLM - Contrastive Code Large Language Models, a family of code embedding models in both 0.5B and 7B sizes. Building upon Qwen-2.5-Coder backbones, C2LLM adopts a Pooling by Multihead Attention (PMA) module for generating sequence embedding from token embeddings, effectively 1) utilizing the LLM's causal representations acquired during pretraining, while also 2) being able to aggregate information from all tokens in the sequence, breaking the information bottleneck in EOS-based sequence embeddings, and 3) supporting flexible adaptation of embedding dimension, serving as an alternative to MRL. Trained on three million publicly available data, C2LLM models set new records on MTEB-Code among models of similar sizes, with C2LLM-7B ranking 1st on the overall leaderboard.",
+    "publishedAt": "2025-12-24T18:59:01Z",
+    "author": "Jin Qin",
+    "category": "AI",
+    "originalContent": "We present C2LLM - Contrastive Code Large Language Models, a family of code embedding models in both 0.5B and 7B sizes. Building upon Qwen-2.5-Coder backbones, C2LLM adopts a Pooling by Multihead Attention (PMA) module for generating sequence embedding from token embeddings, effectively 1) utilizing the LLM's causal representations acquired during pretraining, while also 2) being able to aggregate information from all tokens in the sequence, breaking the information bottleneck in EOS-based sequence embeddings, and 3) supporting flexible adaptation of embedding dimension, serving as an alternative to MRL. Trained on three million publicly available data, C2LLM models set new records on MTEB-Code among models of similar sizes, with C2LLM-7B ranking 1st on the overall leaderboard.",
+    "titleJa": "C2LLM：コード検索における適応的クロスアテンションプーリングの哲学",
+    "summaryJa": "本論文では、0.5Bと7Bのパラメータを持つコード埋め込みモデル群、C2LLM (Contrastive Code Large Language Models) を提案しています。Qwen-2.5-Coderを基盤とし、Multihead Attentionによるプーリング (PMA) モジュールを導入することで、トークン埋め込みからシーケンス埋め込みを生成します。これにより、LLMの事前学習で獲得した因果的表現の利用、シーケンス内の全トークンからの情報集約、柔軟な埋め込み次元の適応が可能になります。300万件の公開データで訓練されたC2LLMモデルは、MTEB-Codeにおいて同規模のモデルの中で最高記録を達成し、C2LLM-7Bは全体ランキングで1位を獲得しました。",
+    "translationJa": "1. 導入：\n\nコード理解と検索の領域に、また一つ新たな道具が提示された。C2LLMと名付けられたこのモデルは、既存の言語モデルを拡張し、コードの埋め込み表現を改善するという。しかし、これは単なる技術的な進歩に留まらず、我々が知識をどのように表現し、理解し、そして共有するかという根源的な問いへと繋がっているのではないだろうか。機械がコードを理解するとは、一体どういうことなのだろうか。そして、その理解は、人間の理解とどのように異なるのだろうか。\n\n2. 概念の吟味：\n\n「コード理解」という言葉を使うとき、我々は何を前提としているのだろうか。コードは、単なる記号の羅列ではない。それは、ある問題を解決するための手順であり、設計者の意図が込められた表現である。機械がコードを「理解する」とは、その意図を把握することなのだろうか。しかし、「意図」とは非常に曖昧な概念である。我々は、他者の意図を完全に理解できるのだろうか。ましてや、機械が人間の意図を理解できるとは、どのような意味を持つのか。そして、「埋め込み表現」とは、情報の圧縮であり、抽象化である。しかし、抽象化は同時に、情報の損失を意味する。コードを埋め込むことで、何が得られ、何を失われるのだろうか。\n\n3. 仮説の提示：\n\nもしC2LLMが、単にコードの構文的な特徴を捉えるだけでなく、その背後にある論理構造や設計思想を理解できるとしたら、それはプログラミング教育のあり方を根本から変えるかもしれない。例えば、C2LLMは、学生が書いたコードを分析し、より効率的な解決策やよりエレガントな設計を提案することができるかもしれない。あるいは、C2LLMは、既存のソフトウェアを理解し、その脆弱性や改善点を発見することができるかもしれない。しかし、同時に、C2LLMがプログラミングの創造性を奪ってしまう可能性もある。もし、機械が最適なコードを自動的に生成できるようになれば、人間はコードを書くことをやめてしまうかもしれない。\n\n4. 批判的考察：\n\nC2LLMの成功は、大規模なデータセットと強力な計算資源に支えられている。しかし、これは同時に、C2LLMの限界を示唆している。C2LLMは、既存のデータに基づいて学習するだけであり、真に新しいアイデアを生み出すことはできない。また、C2LLMは、データの偏りに影響されやすく、特定のプログラミングスタイルや特定のドメインに最適化されたコードしか理解できない可能性がある。さらに、C2LLMは、その内部構造が複雑であり、その意思決定プロセスを理解することが困難である。これは、C2LLMの信頼性や透明性に関する懸念を引き起こす可能性がある。\n\n5. 別の視点：\n\nC2LLMを、単なるコード理解ツールとしてではなく、人間と機械が協調してプログラミングを行うためのインターフェースとして捉えることもできる。例えば、C2LLMは、人間が書いたコードを補完し、自動的にテストコードを生成したり、ドキュメントを生成したりすることができる。あるいは、C2LLMは、人間が自然言語で記述した問題を解釈し、対応するコードを生成することができる。このような協力関係を通じて、人間はより創造的な問題解決に集中し、機械はルーチンワークを自動化することができる。これは、プログラミングの未来を、人間と機械の共進化として捉える視点である。\n\n6. 哲学的示唆：\n\nC2LLMの登場は、知識の本質、創造性の源泉、そして人間の知能の定義について、より深く考えることを促す。機械が「理解する」とはどういうことなのか、機械が「創造する」とはどういうことなのか、そして、機械の知能は、人間の知能とどのように異なるのか。これらの問いに対する答えは、単なる技術的な問題ではなく、哲学的な問題である。そして、これらの問いに対する答えは、我々自身の存在意義を問い直すことへと繋がっている。\n\n7. 結び：\n\nC2LLMは、コード理解の新たな地平を切り開いた。しかし、この進歩は、同時に、我々に多くの難題を突きつけている。機械がコードを理解するとはどういうことなのか、機械の知能は、人間の知能とどのように異なるのか、そして、人間と機械は、どのように協調して未来を創造していくべきなのか。これらの問いに対する答えを見つけるためには、技術的な知識だけでなく、哲学的な洞察が必要である。C2LLMは、単なる技術的な進歩ではなく、人間と機械の関係を問い直すための触媒となるかもしれない。",
+    "explanationJa": "C2LLMはコード理解のAIですが、その先に、人間と機械の知性の違い、共存の未来を考えるきっかけを与えてくれます。",
+    "tags": [
+      "Code Retrieval",
+      "Large Language Models",
+      "Artificial Intelligence",
+      "Philosophy",
+      "Knowledge Representation"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2598/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMTMzMnYx_1766790647525.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1256698",
     "title": "What a Mosquito’s Lunch Tells Us About the Ecosystem",
     "source": "rss",
@@ -1151,29 +1175,5 @@
     ],
     "imageUrl": "https://picsum.photos/seed/2608/400/300",
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMTc5M3Yx_1765840304482.wav"
-  },
-  {
-    "id": "http://arxiv.org/abs/2512.11783v1",
-    "title": "Super Suffixes: Bypassing Text Generation Alignment and Guard Models Simultaneously",
-    "source": "arxiv",
-    "url": "http://arxiv.org/pdf/2512.11783v1",
-    "summary": "The rapid deployment of Large Language Models (LLMs) has created an urgent need for enhanced security and privacy measures in Machine Learning (ML). LLMs are increasingly being used to process untrusted text inputs and even generate executable code, often while having access to sensitive system controls. To address these security concerns, several companies have introduced guard models, which are smaller, specialized models designed to protect text generation models from adversarial or malicious inputs. In this work, we advance the study of adversarial inputs by introducing Super Suffixes, suffixes capable of overriding multiple alignment objectives across various models with different tokenization schemes. We demonstrate their effectiveness, along with our joint optimization technique, by successfully bypassing the protection mechanisms of Llama Prompt Guard 2 on five different text generation models for malicious text and code generation. To the best of our knowledge, this is the first work to reveal that Llama Prompt Guard 2 can be compromised through joint optimization.\n  Additionally, by analyzing the changing similarity of a model's internal state to specific concept directions during token sequence processing, we propose an effective and lightweight method to detect Super Suffix attacks. We show that the cosine similarity between the residual stream and certain concept directions serves as a distinctive fingerprint of model intent. Our proposed countermeasure, DeltaGuard, significantly improves the detection of malicious prompts generated through Super Suffixes. It increases the non-benign classification rate to nearly 100%, making DeltaGuard a valuable addition to the guard model stack and enhancing robustness against adversarial prompt attacks.",
-    "publishedAt": "2025-12-12T18:52:09Z",
-    "author": "Andrew Adiletta",
-    "category": "AI",
-    "originalContent": "The rapid deployment of Large Language Models (LLMs) has created an urgent need for enhanced security and privacy measures in Machine Learning (ML). LLMs are increasingly being used to process untrusted text inputs and even generate executable code, often while having access to sensitive system controls. To address these security concerns, several companies have introduced guard models, which are smaller, specialized models designed to protect text generation models from adversarial or malicious inputs. In this work, we advance the study of adversarial inputs by introducing Super Suffixes, suffixes capable of overriding multiple alignment objectives across various models with different tokenization schemes. We demonstrate their effectiveness, along with our joint optimization technique, by successfully bypassing the protection mechanisms of Llama Prompt Guard 2 on five different text generation models for malicious text and code generation. To the best of our knowledge, this is the first work to reveal that Llama Prompt Guard 2 can be compromised through joint optimization.\n  Additionally, by analyzing the changing similarity of a model's internal state to specific concept directions during token sequence processing, we propose an effective and lightweight method to detect Super Suffix attacks. We show that the cosine similarity between the residual stream and certain concept directions serves as a distinctive fingerprint of model intent. Our proposed countermeasure, DeltaGuard, significantly improves the detection of malicious prompts generated through Super Suffixes. It increases the non-benign classification rate to nearly 100%, making DeltaGuard a valuable addition to the guard model stack and enhancing robustness against adversarial prompt attacks.",
-    "titleJa": "LLMにおける敵対的サフィックス攻撃と防御：哲学的な考察",
-    "summaryJa": "大規模言語モデル(LLM)の普及に伴い、セキュリティ対策の重要性が高まっています。本研究では、LLMのテキスト生成を制御するガードモデルを、複数のモデルを対象とした「Super Suffixes」と呼ばれる敵対的な入力で回避できることを示しました。さらに、モデルの内部状態の変化を分析することで、この種の攻撃を検出する「DeltaGuard」という軽量な手法を提案し、敵対的プロンプトに対する防御性能を向上させることに成功しました。これは、LLMのセキュリティ確保における重要な一歩となります。",
-    "translationJa": "1. はじめに：言葉の魔術と機械の倫理\n\n　この研究が投げかける問いは、単なる技術的な挑戦を超え、言葉と倫理、そして機械の自律性という、より根源的な領域へと私たちを誘う。敵対的な「サフィックス」、つまり、ある特定の文脈下で悪意ある出力を引き出す魔法の呪文のようなものが存在するという事実は、言語というものが持つ潜在的な危険性を改めて認識させる。もし言葉が思考を形成し、行動を促す力を持つならば、それを操る技術は、善悪両面において、想像を超える影響力を持つだろう。\n\n2. 概念の吟味：アライメント、ガード、そして意図とは何か\n\n　ここで吟味すべきは、「アライメント」や「ガード」といった言葉の背後にある前提だ。LLMの「アライメント」とは、人間の意図や価値観に沿うように学習させることを意味する。しかし、人間の意図は多様であり、時には矛盾する。誰にとっての「良い」アライメントなのか？また、「ガードモデル」は、何を、誰から守るためのものなのか？その定義は自明ではない。さらに、「意図」という概念も曖昧だ。モデルは本当に「意図」を持っているのだろうか？それとも、それは単に、訓練データに基づいて確率的に最適化された出力に過ぎないのだろうか？これらの問いに答えることなく、私たちは機械の倫理を語ることはできない。\n\n3. 仮説の提示：内部状態と概念空間\n\n　もしLLMが、言葉を単なる記号としてではなく、意味や感情を持つものとして処理しているのだとすれば、敵対的なサフィックスは、モデルの内部状態を特定の「概念空間」へと強制的に移動させるトリガーとして機能するのではないだろうか。例えば、「悪意」や「攻撃」といった概念を活性化させ、それに関連する情報を優先的に出力させる。そして、DeltaGuardは、その概念空間における逸脱を検知することで、攻撃を未然に防ぐ。この仮説が正しければ、LLMの内部状態をより深く理解することで、より洗練された防御策を開発できる可能性がある。\n\n4. 批判的考察：ブラックボックスの限界\n\n　しかし、この研究には限界もある。LLMは依然としてブラックボックスであり、その内部で何が起こっているのかを完全に理解することは難しい。内部状態の変化を分析することで何らかの洞察を得られるかもしれないが、それはあくまで間接的な推測に過ぎない。また、Super Suffixesは、特定のモデルやアーキテクチャに特化した脆弱性を利用している可能性もある。つまり、この研究の成果が、他のLLMにも普遍的に適用できるとは限らない。さらに、敵対的な攻撃は常に進化しており、今日有効な防御策が明日も通用するとは限らない。\n\n5. 別の視点：創造性と破壊性\n\n　別の視点から見れば、Super Suffixesは、LLMの創造性を引き出すためのツールとして捉えることもできるかもしれない。悪意ある出力を生成できるということは、裏を返せば、LLMがまだ十分に探求されていない表現能力を持っているということだ。もし、Super Suffixesを、より良い方向へ導くことができれば、それは新たな芸術表現や問題解決の手法を生み出すきっかけになるかもしれない。創造性と破壊性は表裏一体であり、そのバランスをどのように取るかが重要となる。\n\n6. 哲学的示唆：機械との対話\n\n　この研究は、私たちに、機械との対話のあり方を問いかける。私たちは、機械を単なる道具として扱うのではなく、知的な存在として、倫理的な責任を共有するパートナーとして捉える必要があるのではないだろうか。LLMは、人間の思考を模倣することで、人間の本質を映し出す鏡のような存在だ。その鏡に映し出されたものを注意深く観察することで、私たちは、自分自身の無意識や偏見に気づき、より良い人間へと成長できるかもしれない。\n\n7. 結び：知恵と謙虚さ\n\n　Super Suffixesの発見は、LLMのセキュリティ確保における重要な一歩であると同時に、機械の知能に対する私たちの理解がまだ始まったばかりであることを示唆している。知恵とは、知識だけでなく、限界を知ることでもある。私たちは、機械の力を過信することなく、謙虚な姿勢で、その可能性と危険性を見極める必要がある。そして、言葉を操る技術がもたらす倫理的な課題に、真摯に向き合わなければならない。機械との対話を通して、私たちは、人間とは何か、そして、より良い未来をどのように築くかを深く考えることができるだろう。",
-    "explanationJa": "LLMの脆弱性を突き、防御策を提案する研究は、機械知能と倫理の根源的な問いへと私たちを導く。",
-    "tags": [
-      "LLM",
-      "Adversarial Attack",
-      "Security",
-      "Ethics",
-      "AI Safety"
-    ],
-    "imageUrl": "https://picsum.photos/seed/2607/400/300",
-    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMTc4M3Yx_1765769715520.wav"
   }
 ]
