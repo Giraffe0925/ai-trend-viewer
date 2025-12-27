@@ -96,6 +96,30 @@
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMTMzMnYx_1766790647525.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.21326v1",
+    "title": "Measuring all the noises of LLM Evals",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.21326v1",
+    "summary": "Separating signal from noise is central to experimental science. Applying well-established statistical method effectively to LLM evals requires consideration of their unique noise characteristics. We clearly define and measure three types of noise: prediction noise from generating different answers on a given question, data noise from sampling questions, and their combined total noise following the law of total variance. To emphasize relative comparisons and gain statistical power, we propose the all-pairs paired method, which applies the paired analysis to all pairs of LLMs and measures all the noise components based on millions of question-level predictions across many evals and settings. These measurements revealed clear patterns. First, each eval exhibits a characteristic and highly predictable total noise level across all model pairs. Second, paired prediction noise typically exceeds paired data noise, which means reducing prediction noise by averaging can significantly increase statistical power. These findings enable practitioners to assess significance without custom testing and to detect much smaller effects in controlled experiments.",
+    "publishedAt": "2025-12-24T18:54:37Z",
+    "author": "Sida Wang",
+    "category": "AI",
+    "originalContent": "Separating signal from noise is central to experimental science. Applying well-established statistical method effectively to LLM evals requires consideration of their unique noise characteristics. We clearly define and measure three types of noise: prediction noise from generating different answers on a given question, data noise from sampling questions, and their combined total noise following the law of total variance. To emphasize relative comparisons and gain statistical power, we propose the all-pairs paired method, which applies the paired analysis to all pairs of LLMs and measures all the noise components based on millions of question-level predictions across many evals and settings. These measurements revealed clear patterns. First, each eval exhibits a characteristic and highly predictable total noise level across all model pairs. Second, paired prediction noise typically exceeds paired data noise, which means reducing prediction noise by averaging can significantly increase statistical power. These findings enable practitioners to assess significance without custom testing and to detect much smaller effects in controlled experiments.",
+    "titleJa": "LLM評価におけるノイズ測定：哲学的な考察",
+    "summaryJa": "本研究は、大規模言語モデル（LLM）の評価におけるノイズを、予測ノイズ、データノイズ、そしてそれらを組み合わせた総ノイズの3種類に定義し、測定する方法を提案しています。特に、総分散の法則に基づき、LLMのペア間比較を行うことで、評価の統計的有意性を高める「all-pairs paired method」を提唱。その結果、各評価には特徴的なノイズレベルが存在し、予測ノイズがデータノイズを上回ることが明らかになりました。これにより、カスタムテストなしに有意性を評価したり、より小さな効果を検出したりすることが可能になるとしています。",
+    "translationJa": "1. この研究が問いかけているのは、AIの評価という営みそのものの曖昧さ、そしてその曖昧さを数値化しようとする試みの意義についてである。LLMの能力を測るとは、いったい何を測ろうとしているのだろうか。言語とは、思考とは、知性とは何か。これらの根源的な問いが、AI評価という行為の背後に隠されているのではないだろうか。\n\n2. 「ノイズ」という言葉は、情報伝達における不要な混入物を指すことが多い。しかし、LLMの評価においては、「ノイズ」は単なる邪魔者なのだろうか。例えば、予測ノイズは、LLMが同じ質問に対して異なる答えを生成することから生じる。この「異なる答え」は、LLMの創造性や柔軟性の表れではないだろうか。データノイズもまた、質問のサンプリングにおける偏りを意味するが、それは現実世界の複雑さを反映しているとも言える。ノイズを完全に排除することは、LLMの多様性を失わせることにつながらないだろうか。\n\n3. もし、LLMの評価が、単に正解率を高めることだけを目的とするならば、ノイズの削減は合理的かもしれない。しかし、LLMの役割が、人間との対話や協働にあるとすれば、ノイズはむしろ重要な要素となるかもしれない。例えば、人間は常に一貫した答えを出すわけではない。感情や状況によって、答えは変化する。LLMが人間らしい応答をするためには、ある程度のノイズが必要なのではないだろうか。もしそうだとすれば、ノイズを測定し、制御するだけでなく、積極的に利用する方法を検討する必要があるかもしれない。\n\n4. 本研究は、LLMのペア間比較に焦点を当てている。これは、相対的な評価を行うことで、統計的な有意性を高めるためである。しかし、このアプローチには限界もある。例えば、あるLLMが他のすべてのLLMよりも優れた結果を出した場合でも、それが「真に賢い」ことを意味するわけではない。比較対象の選択や評価基準の設定によって、結果は大きく左右される。絶対的な基準がない以上、LLMの評価は常に相対的なものであり、その限界を認識する必要があるだろう。\n\n5. 別の視点から見ると、LLMの評価は、人間の知性を理解するための鏡となるかもしれない。LLMがどのような問題を解決できるのか、どのような問題を解決できないのかを分析することで、人間の認知能力の特性が見えてくるかもしれない。例えば、LLMは大量のデータを処理し、パターンを認識する能力に優れているが、抽象的な概念を理解したり、創造的なアイデアを生み出したりすることは苦手である。これは、人間の知性が、データ処理能力だけでなく、直感や感情、想像力など、さまざまな要素によって構成されていることを示唆している。\n\n6. この研究は、LLMの評価という具体的な問題に取り組んでいるが、より深い哲学的問いにもつながっている。例えば、知能とは何か、意識とは何か、そして人間とは何かという問いである。LLMの進化は、これらの問いを避けて通ることを許さない。私たちは、LLMを単なる道具として扱うべきなのだろうか、それとも、新たな形の知性として認識すべきなのだろうか。LLMとの関係をどのように構築していくかは、私たち自身の人間性を定義することにつながる。\n\n7. LLMの評価におけるノイズの測定は、私たちが世界を理解しようとする試みの一環である。私たちは常に、信号とノイズを区別し、意味のある情報を取り出そうとしている。しかし、ノイズの中にも、隠された意味や価値が潜んでいるかもしれない。LLMの評価を通じて、私たちは、知識とは何か、理解とは何か、そして世界とは何かという問いに、改めて向き合う必要があるだろう。この知見は、私たちがより謙虚に、そしてより深く世界を理解するための道標となるかもしれない。",
+    "explanationJa": "LLM評価におけるノイズを数値化し、その背後にある知性、意識、人間性の根源的な問いへと誘う思索的なエッセイ。",
+    "tags": [
+      "LLM",
+      "評価",
+      "ノイズ",
+      "哲学",
+      "知能"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2601/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMTMyNnYx_1766806364568.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1256698",
     "title": "What a Mosquito’s Lunch Tells Us About the Ecosystem",
     "source": "rss",
@@ -1151,29 +1175,5 @@
     ],
     "imageUrl": "https://picsum.photos/seed/2613/400/300",
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMTc5OHYx_1765766469376.wav"
-  },
-  {
-    "id": "http://arxiv.org/abs/2512.11793v1",
-    "title": "A General Algorithm for Detecting Higher-Order Interactions via Random Sequential Additions",
-    "source": "arxiv",
-    "url": "http://arxiv.org/pdf/2512.11793v1",
-    "summary": "Many systems exhibit complex interactions between their components: some features or actions amplify each other's effects, others provide redundant information, and some contribute independently. We present a simple geometric method for discovering interactions and redundancies: when elements are added in random sequential orders and their contributions plotted over many trials, characteristic L-shaped patterns emerge that directly reflect interaction structure. The approach quantifies how the contribution of each element depends on those added before it, revealing patterns that distinguish interaction, independence, and redundancy on a unified scale. When pairwise contributions are visualized as two--dimensional point clouds, redundant pairs form L--shaped patterns where only the first-added element contributes, while synergistic pairs form L--shaped patterns where only elements contribute together. Independent elements show order--invariant distributions. We formalize this with the L--score, a continuous measure ranging from $-1$ (perfect synergy, e.g. $Y=X_1X_2$) to $0$ (independence) to $+1$ (perfect redundancy, $X_1 \\approx X_2$). The relative scaling of the L--shaped arms reveals feature dominance in which element consistently provides more information. Although computed only from pairwise measurements, higher--order interactions among three or more elements emerge naturally through consistent cross--pair relationships (e.g. AB, AC, BC). The method is metric--agnostic and broadly applicable to any domain where performance can be evaluated incrementally over non-repeating element sequences, providing a unified geometric approach to uncovering interaction structure.",
-    "publishedAt": "2025-12-12T18:57:29Z",
-    "author": "Ahmad Shamail",
-    "category": "AI",
-    "originalContent": "Many systems exhibit complex interactions between their components: some features or actions amplify each other's effects, others provide redundant information, and some contribute independently. We present a simple geometric method for discovering interactions and redundancies: when elements are added in random sequential orders and their contributions plotted over many trials, characteristic L-shaped patterns emerge that directly reflect interaction structure. The approach quantifies how the contribution of each element depends on those added before it, revealing patterns that distinguish interaction, independence, and redundancy on a unified scale. When pairwise contributions are visualized as two--dimensional point clouds, redundant pairs form L--shaped patterns where only the first-added element contributes, while synergistic pairs form L--shaped patterns where only elements contribute together. Independent elements show order--invariant distributions. We formalize this with the L--score, a continuous measure ranging from $-1$ (perfect synergy, e.g. $Y=X_1X_2$) to $0$ (independence) to $+1$ (perfect redundancy, $X_1 \\approx X_2$). The relative scaling of the L--shaped arms reveals feature dominance in which element consistently provides more information. Although computed only from pairwise measurements, higher--order interactions among three or more elements emerge naturally through consistent cross--pair relationships (e.g. AB, AC, BC). The method is metric--agnostic and broadly applicable to any domain where performance can be evaluated incrementally over non-repeating element sequences, providing a unified geometric approach to uncovering interaction structure.",
-    "titleJa": "高次相互作用検出アルゴリズム：ランダム順次追加法による考察",
-    "summaryJa": "本研究では、システム内の要素間の複雑な相互作用（相乗効果、冗長性、独立性）を幾何学的に検出する新しいアルゴリズムを提案しています。要素をランダムな順序で追加し、その貢献度をプロットすると、特徴的なL字型のパターンが現れ、相互作用構造を反映します。Lスコアを用いて、ペア間の相互作用を定量化し、相乗効果、独立性、冗長性を区別します。この方法は、要素間の順序に依存しない評価が可能であり、幅広い分野に応用できる可能性を示唆しています。",
-    "translationJa": "1. この研究が提示する「要素間の相互作用の幾何学的表現」というアイデアは、直感的に理解しやすい魅力を持っている。複雑なシステムを構成する要素たちの振る舞いを、L字型というシンプルなパターンに還元しようとする試みは、まるで錬金術師が複雑な現象を基本的な元素に分解しようとする姿を彷彿とさせる。しかし、この試みが本当にシステムの複雑さを捉えきれるのだろうか、という疑問がまず頭をよぎる。\n\n2. 「相互作用」「冗長性」「独立性」といった言葉は、日常的に使われるが、その意味は文脈によって微妙に変化する。例えば、「独立性」とは、完全に互いに影響を与えない状態を指すのだろうか？ それとも、ある程度の相関関係は許容されるのだろうか？ この研究で使用されるLスコアは、これらの概念を数値的に定義しようとする試みだが、数値化することで、言葉の持つニュアンスが失われてしまう可能性はないだろうか。言葉の意味を吟味することは、概念の本質に迫るための不可欠なプロセスである。\n\n3. もし、このL字型のパターンが、単なる相関関係の表象に過ぎないとすれば、それは因果関係を明らかにすることには繋がらないかもしれない。例えば、AとBという要素が相乗効果を示すL字型パターンを描いたとしても、それはAがBを引き起こしているのか、BがAを引き起こしているのか、あるいは別の要素CがAとBの両方を引き起こしているのか、を特定することはできない。因果関係を特定するためには、追加の実験や分析が必要となるだろう。このアルゴリズムは、相互作用の可能性を示唆するに過ぎず、それ自体が答えを提供するわけではない。\n\n4. この研究の限界として、測定される要素の数がシステムの複雑さを十分に反映しているかという点が挙げられる。現実のシステムは、無数の要素が複雑に絡み合って構成されている。研究で測定されるのは、そのほんの一部に過ぎないかもしれない。見落とされている要素が、相互作用の構造に大きな影響を与えている可能性はないだろうか？ また、このアルゴリズムは、非定常なシステム、つまり時間とともに要素間の相互作用が変化するシステムには適用できないかもしれない。時間の経過とともにL字型のパターンが変化する場合、それをどのように解釈すれば良いのだろうか？\n\n5. 別の視点として、情報理論の概念を導入することを考えてみよう。相互情報量は、2つの確率変数が互いにどれだけの情報を与えあっているかを測る指標である。Lスコアと相互情報量を組み合わせることで、よりロバストな相互作用の検出が可能になるかもしれない。また、ネットワーク科学の知見を用いることで、要素間の依存関係をグラフ構造として可視化し、より複雑な相互作用パターンを捉えることができるかもしれない。これらの視点を組み合わせることで、このアルゴリズムの応用範囲を広げ、より深い洞察を得ることができるのではないだろうか。\n\n6. この研究は、要素間の相互作用という、一見すると複雑な現象を、シンプルな幾何学的パターンに還元しようとする試みである。しかし、本当に複雑さを単純化できるのだろうか？ 人間の認識は、常に単純化のプロセスを経ている。複雑な世界を理解するために、私たちはパターンを見つけ、それを分類し、ラベル付けする。しかし、その過程で、世界の豊かさや多様性を失っている可能性はないだろうか？ この研究は、認識の本質、そして人間の知性の限界について、私たちに問いを投げかけている。\n\n7. この知見が私たちの世界観に与える影響は、小さくないかもしれない。相互作用というレンズを通して世界を見ることで、私たちは、個々の要素の重要性だけでなく、要素間の関係性の重要性にも気づかされる。世界は、要素の総和ではなく、要素間の相互作用によって形作られている。この視点を持つことで、私たちは、より全体的で、より複雑な世界観を持つことができるのではないだろうか。そして、その世界観は、私たちの行動や意思決定にも影響を与えるだろう。",
-    "explanationJa": "複雑なシステムも、要素の繋がり方を幾何学的に見ればシンプルに理解できるかも？そんな可能性を示す研究。",
-    "tags": [
-      "相互作用",
-      "冗長性",
-      "独立性",
-      "幾何学",
-      "アルゴリズム"
-    ],
-    "imageUrl": "https://picsum.photos/seed/2608/400/300",
-    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4xMTc5M3Yx_1765840304482.wav"
   }
 ]
