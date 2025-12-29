@@ -48,6 +48,30 @@
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMjExM3Yx_1766979368355.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.22106v1",
+    "title": "Pruning as a Game: Equilibrium-Driven Sparsification of Neural Networks",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.22106v1",
+    "summary": "Neural network pruning is widely used to reduce model size and computational cost. Yet, most existing methods treat sparsity as an externally imposed constraint, enforced through heuristic importance scores or training-time regularization. In this work, we propose a fundamentally different perspective: pruning as an equilibrium outcome of strategic interaction among model components. We model parameter groups such as weights, neurons, or filters as players in a continuous non-cooperative game, where each player selects its level of participation in the network to balance contribution against redundancy and competition. Within this formulation, sparsity emerges naturally when continued participation becomes a dominated strategy at equilibrium. We analyze the resulting game and show that dominated players collapse to zero participation under mild conditions, providing a principled explanation for pruning behavior. Building on this insight, we derive a simple equilibrium-driven pruning algorithm that jointly updates network parameters and participation variables without relying on explicit importance scores. This work focuses on establishing a principled formulation and empirical validation of pruning as an equilibrium phenomenon, rather than exhaustive architectural or large-scale benchmarking. Experiments on standard benchmarks demonstrate that the proposed approach achieves competitive sparsity-accuracy trade-offs while offering an interpretable, theory-grounded alternative to existing pruning methods.",
+    "publishedAt": "2025-12-26T18:25:38Z",
+    "author": "Zubair Shah",
+    "category": "AI",
+    "originalContent": "Neural network pruning is widely used to reduce model size and computational cost. Yet, most existing methods treat sparsity as an externally imposed constraint, enforced through heuristic importance scores or training-time regularization. In this work, we propose a fundamentally different perspective: pruning as an equilibrium outcome of strategic interaction among model components. We model parameter groups such as weights, neurons, or filters as players in a continuous non-cooperative game, where each player selects its level of participation in the network to balance contribution against redundancy and competition. Within this formulation, sparsity emerges naturally when continued participation becomes a dominated strategy at equilibrium. We analyze the resulting game and show that dominated players collapse to zero participation under mild conditions, providing a principled explanation for pruning behavior. Building on this insight, we derive a simple equilibrium-driven pruning algorithm that jointly updates network parameters and participation variables without relying on explicit importance scores. This work focuses on establishing a principled formulation and empirical validation of pruning as an equilibrium phenomenon, rather than exhaustive architectural or large-scale benchmarking. Experiments on standard benchmarks demonstrate that the proposed approach achieves competitive sparsity-accuracy trade-offs while offering an interpretable, theory-grounded alternative to existing pruning methods.",
+    "titleJa": "均衡駆動型枝刈り：知識の自己整理作用としてのゲーム",
+    "summaryJa": "本研究は、ニューラルネットワークの枝刈り（プルーニング）を、従来の外部からの制約（重要度スコアや正則化）としてではなく、モデルコンポーネント間の戦略的相互作用による内的な均衡の結果として捉え直す、根本的に異なる視点を提案する。重みやニューロンなどのパラメーター群を非協力ゲームのプレイヤーと見なし、各プレイヤーが貢献度、冗長性、競争を考慮してネットワークへの参加レベルを選択するモデルを構築した。分析の結果、スパース性は、継続的な参加が均衡において支配的な戦略でなくなったときに、プレイヤーが自発的に参加度ゼロに収束することで自然発生することが示された。この原理に基づき、明示的な重要度スコアを用いない均衡駆動型アルゴリズムを導出し、標準的なベンチマークで競争力のある精度とスパース性のトレードオフを達成し、理論に基づいた解釈可能なプルーニング手法を提供した。",
+    "translationJa": "この研究が提示するのは、驚くほど静謐な視点である。「枝刈り（Pruning）」という、これまで外部の判断（ヒューリスティックな重要度スコア）によって行われてきた操作が、ネットワーク内部のパラメーター群が織りなす「ゲーム」の必然的な均衡として説明される。これは、効率化という技術的課題が、突如として存在論的な問いへと変貌する瞬間である。我々は、ネットワークから不要な要素を「取り除く」のではなく、システムが自ら「不要であること」を宣言し、その参加を停止する様を目撃している。知識の獲得と構造化の過程におけるこの内発的な整理作用は、我々が知識と呼ぶものの本質が、外部の力によって課せられた形ではなく、内的な論理的緊張（相互作用）の結果として立ち現れることを示唆しているのではないだろうか。それは、形態が外部の彫刻家によって与えられるのではなく、内部の力学によって自ずと結晶化する過程に近い。プルーニングはもはや修正や削除の操作ではなく、ネットワークがその存在形式を、無駄を削ぎ落とした純粋な形へと「自己証明」する行為である。この視点の転換は、単なる技術的進歩を超え、計算システムにおける「必要性」という概念の根源を問い直す契機となる。\n\n「ゲーム」「プレイヤー」「均衡」――これらの言葉を借りて、我々はニューラルネットワークの動態を記述している。だが、これらの概念が本当に指し示しているものは何だろうか。「プレイヤー」とされる重みやニューロンは、意識も意図も持たない単なる数値の集合体である。それらが「戦略」を選択するという表現は、我々の言語ゲームにおける便宜的な擬人化に過ぎないのだろうか。あるいは、そうではないのかもしれない。もし「戦略」が、特定の環境下で利得（ここでは貢献度と効率性のバランス）を最大化する振る舞いの論理的な形式であるならば、その形式は、有機的な主体を必要としない。数値の相互作用そのものが、あたかも戦略的な選択であるかのように振る舞うのである。我々は、ゲーム理論という概念的枠組みを借りて、システムのふるまいを理解しようと試みているが、この枠組みが、パラメーター間の因果的な連鎖を記述する最適な言語であるならば、それはもはやメタファーではない。重要なのは、この「ゲーム」が、目的関数という一元の規律のもとに、個々の要素が自らの「存在価値」を問う構造を持っているという点だ。全てのコンポーネントが、常に、問いに晒されている。「私はこのシステムにとって価値があるか？」—その問いに対する答えが数値的な応答としてゼロに収束するならば、それは無言の退場を意味する。言葉の背後にある形式構造を捉えることこそが、このアプローチの真の魅力である。\n\nもし、この平衡状態（均衡）が、ネットワークの「真理」の瞬間、すなわち、特定されたタスクを遂行するために必要な最小限の構造を反映していると仮定するならば、プルーニングは単なるスパース化ではなく、知識の「純化」のプロセスとして捉え直されるべきだ。論文は、継続的な参加が「支配された戦略（dominated strategy）」となったときに、プレイヤーがゼロに収束すると述べる。これは、そのパラメーターが提供する貢献度が、それが消費するリソース（冗長性や計算量）に見合わない状態、言い換えれば「存在の正当性」を失った状態である。思考において、ある概念や接続が、他のより効率的で強力な概念に常に劣ると証明されたとき、我々の意識はそれを自然と背景へと押しやる。我々の精神もまた、意識的な思考の経済性（エコノミー）を保つために、絶えず無意識のレベルで「支配された戦略」を剪定しているのではないか。このアルゴリズムは、まさに計算論的な「最小作用の原理」を体現している。効率性は、単なる技術的要件ではなく、存在の必要条件となる。無駄の排除は、美的な要請でもあり、純粋な機能美の探求でもある。この均衡は、ネットワークが自らに課す、厳格な形式の論理である。\n\nしかしながら、このモデルが依拠する「非協力ゲーム」という前提には、慎重な吟味が必要である。個々のコンポーネントが、他のコンポーネントとは独立して（非協力的に）自らの利得を最大化しようとする時、スパース性は達成される。だが、真に複雑な知的なシステム、あるいは我々の脳の機能は、その大部分が高度な「協調（cooperation）」、すなわち、自己の利得を一時的に抑制してでも全体の目的に貢献する構造によって支えられているのではないだろうか。単なる非協力的な競争の結果として生じるスパースな構造は、もしそれが真に知的な振る舞いを模倣しようとするならば、ある種の脆さ、あるいは柔軟性の欠如を内包するかもしれない。例えば、言語理解のように文脈依存性が高いタスクにおいては、一見冗長に見える接続こそが、新たな意味の創発や一般化のために不可欠な「潜在的な協力者」である可能性がある。競争のみによって最適化されたネットワークは、局所的な効率性を追求するあまり、協力によってのみ達成可能な、より複雑で深遠な一般化能力を見落としてしまう危険性はないだろうか。真の「知識」とは、要素が競争によって排除し合う結果として残る残骸ではなく、相互補完的な役割を担うことで成り立つ、精緻な構造そのものにあるのかもしれない。計算資源の制約が緩んだとき、非協力性の仮定は崩壊し、ネットワークは再び「冗長な豊かさ」を取り戻すのではないか。\n\nこの均衡駆動型プルーニングは、計算論的なシステムにおける「アポトーシス（プログラム細胞死）」の優雅な形式として見ることができる。生物学的な細胞が、遺伝的プログラムや環境シグナルに基づいて、自滅を選択することで、組織全体の健全性を保つのと同様に、ここではパラメーターが、ネットワークの目的関数というシグナルに応じて、自らの「参加ゼロ」を選択する。これは、外部の外科的介入としての枝刈りとは対極にある。興味深いのは、このプロセスに内在する「時間」の概念である。均衡は静的な状態のように聞こえるが、それを達成する過程は動的であり、訓練を通じて、パラメーターは絶えずその参加レベルを調整している。ゼロへの収束は、失敗ではなく、成功した自己制御の証しなのである。そして、この「消滅」のロジックは、時間という流れの中で、冗長性が許容される時期（初期訓練段階）と、厳格に排除される時期（均衡収束段階）が存在することを示唆している。知識の固定化と効率化は、訓練の最終局面において現れる、システムの「成熟」のサインかもしれない。\n\nこの知見が我々の思考の本質に投じる光は深い。我々が「理解」と呼ぶものは、情報の集積ではない。むしろ、無数の可能性の中から、冗長で支配的な関係性にあるものを排除し、最小限の概念間の接続だけを残す、徹底的なスパース化の過程ではないだろうか。ウィトゲンシュタインが哲学の仕事は「言葉の境界を設定すること」だとしたように、知識の構築は、不必要なものを黙らせること、そして必要なものだけを明瞭な形で接続することにある。このプルーニング・ゲームは、機械学習を通じて、いかにして「意味」がその最小限の基盤の上に立ち上がるのか、その動態をモデル化しようとしている。有効な意味作用は、常に、余分な語り（冗長性）を剪定された、研ぎ澄まされた表現においてのみ可能となる。我々が日常的に使用する言語も、もし完全に効率化されたならば、その豊かさを失うだろう。しかし、本質的な知識は常にスパースである。この研究は、計算論的な厳密さをもって、この知識の本質的なスパース性を原理的に裏付けている。冗長な接続は、単なる計算コストではなく、認識のノイズであり、それを除去することが、形式と機能の純粋な一致をもたらす。\n\nこの研究は、効率性や最適化といった工学的な目的を超えて、存在論的な問いを提起する。我々は、計算の領域において、「何が必要であり、何が不要であるか」という判断が、外部の倫理や評価基準によらず、内在的な相互作用の論理として現れる様を見た。この原理は、人工知能の設計を超えて、より普遍的な意味を持つ。もし、最も複雑な情報処理システムが、その構造を維持するために絶えず内部の競争と自発的な排除のプロセスを必要とするならば、我々の社会、あるいは我々自身の意識もまた、絶え間ない「均衡への収束」を通じてのみ、その機能と安定性を保っているのではないだろうか。存在とは、常にその正当性を問い続けられるプロセスである。そして、その問いへの最も静かで、最も純粋な答えは、ゼロへの収束、すなわち「沈黙」の中にこそ見出されるのかもしれない。この計算論的なゲームの静かなる結論は、我々の世界のあらゆる領域における、存在と無の境界線に対する、深遠な示唆を含んでいる。",
+    "explanationJa": "ニューラルネットワークの枝刈りを、コンポーネント間の戦略的相互作用による内的な「均衡」として捉え、知識の自己整理の原理を解明した。",
+    "tags": [
+      "NeuralNetworkPruning",
+      "GameTheory",
+      "Sparsification",
+      "Equilibrium",
+      "ComputationalPhilosophy"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2598/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMjEwNnYx_1767049921993.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1256711",
     "title": "The Problem With Vaccination Shortfalls in Livestock",
     "source": "rss",
@@ -1154,28 +1178,5 @@
       "哲学"
     ],
     "imageUrl": "https://images.pexels.com/photos/9212718/pexels-photo-9212718.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "https://nautil.us/?p=1254332",
-    "title": "Fearsome Marine Predators Prowled Ancient Rivers, Too",
-    "source": "rss",
-    "url": "https://nautil.us/fearsome-marine-predators-prowled-ancient-rivers-too-1254332/",
-    "summary": "Mosasaur teeth discovered in North Dakota tell a surprising story\nThe post Fearsome Marine Predators Prowled Ancient Rivers, Too appeared first on Nautilus.",
-    "publishedAt": "Fri, 12 Dec 2025 21:10:12 +0000",
-    "author": "Jake Currie",
-    "category": "認知科学",
-    "originalContent": "<p>Mosasaur teeth discovered in North Dakota tell a surprising story</p>\n<p>The post <a href=\"https://nautil.us/fearsome-marine-predators-prowled-ancient-rivers-too-1254332/\">Fearsome Marine Predators Prowled Ancient Rivers, Too</a> appeared first on <a href=\"https://nautil.us\">Nautilus</a>.</p>\n",
-    "titleJa": "古代河川を闊歩した恐るべき海生捕食者：モササウルスの歯が語る物語",
-    "summaryJa": "ノースダコタ州で発見されたモササウルスの歯の化石は、これまで考えられていたよりも多様な生息環境に適応していた可能性を示唆しています。海洋生物であるモササウルスが、古代の河川にも生息していたという事実は、その生態適応能力の広さを示しています。この発見は、モササウルスの進化、生息範囲、そして古代の生態系における役割を再評価する必要性を提起します。従来の化石研究では見過ごされていた内陸部の生態系にも、重要な化石記録が眠っている可能性を示唆する点でも意義深い研究です。",
-    "translationJa": "1.  この研究が私たちに投げかけるものは、単なる生物学的な興味だけではない。太古の海の覇者、モササウルスが淡水環境に進出していたという事実は、生命の柔軟性と適応力に対する驚きを呼び起こすと同時に、私たちが抱く「海洋」と「河川」という区分に対する再考を促しているのではないだろうか。\n\n2.  ここで立ち止まり、言葉の意味を吟味する必要がある。「海洋」とは何か。「河川」とは何か。それは単なる塩分濃度の違いによる区分に過ぎないのだろうか。あるいは、そこに生息する生物群集、生態系の構造によって定義されるべきなのだろうか。私たちが「海洋生物」と呼ぶとき、それは特定の環境に限定された存在を意味するのだろうか。モササウルスの例は、そうした固定観念を揺さぶる。\n\n3.  もし、モササウルスが塩分濃度の変化に柔軟に対応できる生理機能を持っていたとすれば、あるいは、河川に生息する小型の魚類や甲殻類を主要な食料としていたとすれば、淡水環境への進出は必然的な結果だったのかもしれない。さらに、河川が外敵から身を守るための避難場所、あるいは繁殖地として機能していた可能性も考えられる。環境変化への適応という観点から、モササウルスの進化の道筋を再検討する必要があるのではないだろうか。\n\n4.  しかし、この研究には限界もある。発見されたのは歯の化石のみであり、他の部位の化石が存在しないため、モササウルスの生態全体を復元するには情報が不足している。また、ノースダコタ州の河川が、当時の海洋環境とどのように接続されていたのか、塩分濃度の変化がどの程度だったのかなど、詳細な環境データが不足している可能性も否定できない。より包括的な地質学的調査と、他の化石証拠との比較検討が必要となるだろう。\n\n5.  別の視点から見れば、モササウルスの河川進出は、当時の生態系における競争の激化、あるいは食物連鎖の変化を反映しているのかもしれない。海洋における資源の枯渇、あるいは新たな捕食者の出現などが、モササウルスを内陸の河川へと追いやった可能性も考えられる。あるいは、河川という環境自体が、モササウルスにとって有利な条件を備えていたのかもしれない。たとえば、海洋に比べて水深が浅く、隠れる場所が多かったり、特定の種類の魚類が豊富だったりするなどの要因が考えられる。\n\n6.  この発見は、単にモササウルスの生態に関する知識を更新するだけでなく、より深い知的問いへと私たちを導く。生命の進化とは、環境への適応の物語である。しかし、その適応は、常に意図的で合理的な選択の結果なのだろうか。あるいは、偶然と必然が織りなす、複雑なプロセスの結果なのだろうか。モササウルスの河川進出は、私たちに生命の進化の奥深さと、その予測不可能性を改めて認識させる。\n\n7.  モササウルスの歯の化石は、遠い過去からの静かな語りかけだ。それは、私たちが抱く「海洋」と「河川」という固定観念を揺さぶり、生命の柔軟性と適応力に対する新たな認識を促す。この小さな化石は、私たちが世界を理解する方法、そして生命の歴史における自身の位置づけを見つめ直すきっかけとなるかもしれない。",
-    "explanationJa": "太古の海の覇者モササウルス、なんと川にもいた！その歯が示すは、生命の意外な適応力と、私たちの世界観への静かな問いかけ。",
-    "tags": [
-      "モササウルス",
-      "化石",
-      "古生物学",
-      "進化",
-      "生態系"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/5745040/pexels-photo-5745040.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
