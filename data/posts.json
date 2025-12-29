@@ -1,5 +1,29 @@
 [
   {
+    "id": "http://arxiv.org/abs/2512.22113v1",
+    "title": "Agentic Structured Graph Traversal for Root Cause Analysis of Code-related Incidents in Cloud Applications",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.22113v1",
+    "summary": "Cloud incidents pose major operational challenges in production, with unresolved production cloud incidents cost on average over $2M per hour. Prior research identifies code- and configuration-related issues as the predominant category of root causes in cloud incidents. This paper introduces PRAXIS, an orchestrator that manages and deploys an agentic workflow for diagnosing code- and configuration-caused cloud incidents. PRAXIS employs an LLM-driven structured traversal over two types of graph: (1) a service dependency graph (SDG) that captures microservice-level dependencies; and (2) a hammock-block program dependence graph (PDG) that captures code-level dependencies for each microservice. Together, these graphs encode microservice- and code-level dependencies and the LLM acts as a traversal policy over these graphs, moving between services and code dependencies to localize and explain failures. Compared to state-of-the-art ReAct baselines, PRAXIS improves RCA accuracy by up to 3.1x while reducing token consumption by 3.8x. PRAXIS is demonstrated on a set of 30 comprehensive real-world incidents that is being compiled into an RCA benchmark.",
+    "publishedAt": "2025-12-26T18:56:18Z",
+    "author": "Shengkun Cui",
+    "category": "AI",
+    "originalContent": "Cloud incidents pose major operational challenges in production, with unresolved production cloud incidents cost on average over $2M per hour. Prior research identifies code- and configuration-related issues as the predominant category of root causes in cloud incidents. This paper introduces PRAXIS, an orchestrator that manages and deploys an agentic workflow for diagnosing code- and configuration-caused cloud incidents. PRAXIS employs an LLM-driven structured traversal over two types of graph: (1) a service dependency graph (SDG) that captures microservice-level dependencies; and (2) a hammock-block program dependence graph (PDG) that captures code-level dependencies for each microservice. Together, these graphs encode microservice- and code-level dependencies and the LLM acts as a traversal policy over these graphs, moving between services and code dependencies to localize and explain failures. Compared to state-of-the-art ReAct baselines, PRAXIS improves RCA accuracy by up to 3.1x while reducing token consumption by 3.8x. PRAXIS is demonstrated on a set of 30 comprehensive real-world incidents that is being compiled into an RCA benchmark.",
+    "titleJa": "クラウド障害の根本原因特定におけるエージェント指向グラフ探索：哲学的考察",
+    "summaryJa": "クラウドアプリケーションにおけるコード関連の障害は、運用上の大きな課題であり、解決されない場合、1時間あたり平均200万ドル以上の損失をもたらします。研究によると、クラウド障害の根本原因の大部分は、コードと構成に関連する問題です。本論文では、PRAXISというオーケストレーターを提案します。PRAXISは、コードと構成が原因のクラウド障害を診断するために、LLM駆動の構造化されたグラフ探索を用いたエージェント指向のワークフローを管理・展開します。この探索は、マイクロサービス間の依存関係を捉えるサービス依存グラフ(SDG)と、各マイクロサービスのコードレベルの依存関係を捉えるハンモックブロックプログラム依存グラフ(PDG)の2種類のグラフ上で行われます。LLMは、これらのグラフ上を移動するポリシーとして機能し、サービス間およびコード依存関係間を移動して、障害を特定し、説明します。PRAXISは、既存のReActベースラインと比較して、RCAの精度を最大3.1倍向上させると同時に、トークン消費量を3.8倍削減します。PRAXISは、RCAベンチマークとしてコンパイルされている30件の包括的な実世界のインシデントで実証されています。",
+    "translationJa": "この研究は、クラウド環境における障害の根本原因を、LLM(大規模言語モデル)を用いたエージェント指向のグラフ探索によって特定しようとする試みである。しかし、そもそも「根本原因」とは何か、という問いが、この研究の根底に潜んでいるように思われる。\n\n「根本原因」という言葉は、一見すると自明なように見える。しかし、それは多くの場合、事後的な視点から、複雑な連鎖の中から恣意的に選ばれた一点に過ぎないのではないか。原因と結果の区別は、人間が世界を理解するために作り出した便宜的な区分であり、絶対的なものではない。例えば、あるコードのバグが障害を引き起こしたとする。しかし、そのバグは、設計上の制約、開発者のスキル不足、あるいはもっと根源的には、経済的効率を追求する企業の構造といった、より大きなシステムの中で生じたものかもしれない。どこまで遡れば「根本」にたどり着けるのだろうか。あるいは、そもそも「根本」など存在しないのかもしれない。\n\nもし、LLMが単に既存のグラフ構造を効率的に探索するだけの存在であるならば、それは人間が行う従来のデバッグ作業の延長に過ぎない。しかし、LLMが、人間が見過ごしていた新たな依存関係や、因果関係のパターンを発見できるならば、それは単なる効率化を超えた、新たな知見の獲得につながるかもしれない。その場合、LLMは単なるツールではなく、新たな認識論的アクターとして、私たちの思考を拡張する存在となるだろう。\n\nこの研究の限界は、提示された30件のインシデントが、本当に「現実世界」を代表しているのか、という点にあるかもしれない。クラウド環境は常に変化しており、過去のインシデントから学習したパターンが、未来のインシデントにも通用するとは限らない。さらに、LLMは、学習データに偏りがある場合、その偏りを増幅する可能性がある。過去のインシデントデータに偏りがある場合、PRAXISもまた、同様の偏りを持つ可能性があり、新たな種類の障害を見落とす危険性がある。\n\n別の視点から見れば、この研究は、技術的な問題解決の枠組みを超えて、組織における責任の所在を問い直す可能性を秘めている。障害の「根本原因」を特定することは、往々にして誰かを責めることにつながる。しかし、本当に重要なのは、個人を責めるのではなく、システム全体を改善することではないだろうか。LLMが、単に「犯人探し」の道具として使われるのではなく、組織学習を促進するためのツールとして活用されるならば、その価値はさらに高まるだろう。\n\nこの研究は、人工知能が人間の思考を拡張し、問題解決を支援する可能性を示唆している。しかし、同時に、人工知能がもたらす倫理的な課題、責任の所在、そして認識論的な限界についても、深く考えさせられる。私たちは、技術の進歩に目を奪われることなく、常に批判的な視点を持って、その影響を評価し続ける必要があるだろう。\n\n最終的に、この知見が私たちの世界観にどう影響するか。それは、私たちが技術をどのように捉え、どのように活用するかにかかっている。技術は、単なる道具ではなく、私たちの認識を形成し、社会を変革する力を持つ。私たちは、その力を意識し、責任を持って、未来を創造していく必要があるだろう。",
+    "explanationJa": "クラウド障害の原因特定にLLMを活用する研究。技術革新の陰で、根本原因とは何か、責任の所在はどこにあるのか、という哲学的な問いが浮かび上がる。",
+    "tags": [
+      "LLM",
+      "クラウド障害",
+      "根本原因分析",
+      "サービス依存グラフ",
+      "エージェント指向"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2596/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMjExM3Yx_1766979368355.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1256711",
     "title": "The Problem With Vaccination Shortfalls in Livestock",
     "source": "rss",
@@ -1152,28 +1176,5 @@
       "半導体"
     ],
     "imageUrl": "https://images.pexels.com/photos/34027172/pexels-photo-34027172.jpeg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    "id": "https://nautil.us/?p=1254308",
-    "title": "This Hole Punch-Sized Patch Could Help Save Frogs",
-    "source": "rss",
-    "url": "https://nautil.us/this-hole-punch-sized-patch-could-help-save-frogs-1254308/",
-    "summary": "A new, non-invasive method to track amphibian hormones may reveal how the creatures weather rising threats in the wild\nThe post This Hole Punch-Sized Patch Could Help Save Frogs appeared first on Nautilus.",
-    "publishedAt": "Fri, 12 Dec 2025 19:04:06 +0000",
-    "author": "Molly Glick",
-    "category": "認知科学",
-    "originalContent": "<p>A new, non-invasive method to track amphibian hormones may reveal how the creatures weather rising threats in the wild</p>\n<p>The post <a href=\"https://nautil.us/this-hole-punch-sized-patch-could-help-save-frogs-1254308/\">This Hole Punch-Sized Patch Could Help Save Frogs</a> appeared first on <a href=\"https://nautil.us\">Nautilus</a>.</p>\n",
-    "titleJa": "この穴あけパンチ大のパッチが、カエルを救うかもしれない",
-    "summaryJa": "気候変動などの脅威に晒される両生類の保全が急務となる中、研究者たちは新たな非侵襲的調査手法を開発した。これは、穴あけパンチほどの大きさのパッチをカエルの皮膚に貼り、野生環境下で生物に負担をかけずにホルモンレベルを追跡するものである。この手法により、両生類が環境ストレスにどのように耐え、生理的に応答しているかを明らかにできる可能性がある。本研究の成果は、絶滅の危機にある種を救うための具体的な保全戦略の立案に貢献すると期待されている。",
-    "translationJa": "ひとつの記事が、我々の前にささやかなイメージを差し出す。穴あけパンチほどの大きさの、小さなパッチ。それがカエルの湿った皮膚に貼られ、その生命を救う助けになるという。なんと慎ましく、そしてなんと野心的な試みだろうか。我々は、この小さな円形の道具を通じて、カエルという他者の内なる世界を、その化学的なささやきを聴き取ろうとしている。このパッチは、我々の知識が他者の生に触れるための、新たな指先となるのだろうか。それとも、我々の理解がいかに表層的であるかを突きつける、冷たい鏡となるのだろうか。この小さな円盤を前にして、我々の思考は、知ること、そして救うことの意味をめぐる、静かな迷路へと誘われる。\n\nそもそも、我々がこのパッチで「ホルモンを追跡する」とき、我々は何を「知る」ことになるのだろうか。ストレスホルモンであるコルチゾールの濃度が上昇した、という数値を得る。そして我々はそれを「カエルがストレスを感じている」と翻訳する。しかし、この翻訳は正当なのだろうか。我々が「ストレス」という言葉で指し示す内的な経験の質感——焦燥、不安、圧迫感——と、カエルの体内で生じている化学的変化は、同じ地平にあると言えるのか。我々の言語は、我々の生活形式の内に根ざしている。カエルの生活形式は、我々のそれとは根本的に異なる。だとすれば、我々が測定しているのは、カエルの「経験」そのものではなく、我々の測定器具と概念の枠組みが切り取った、その影に過ぎないのではないか。我々は、カエルの世界を覗いているのではなく、我々の設けた小さな鍵穴から、我々自身の問いの反響を聴いているだけなのかもしれない。\n\nだが、仮にこう考えてみることはできないだろうか。このホルモンの変動パターンが、それ自体、我々の知らない文法で綴られた、ある種の「テクスト」であると。我々には直接理解できない、化学物質の濃淡によって書かれた物語であると。もしそうだとすれば、このパッチは、異種間のコミュニケーションを試みる、ひとつの翻訳装置の原型となりうるのかもしれない。我々が読み解こうとしているのは、カエルの感情や思考といった、人間的な尺度のものではないだろう。それはもっと根源的な、生そのものの律動であり、環境からの問いかけに対する、身体という名の言語による応答の記録かもしれない。我々は、この化学的なテクストを解読することで、言語を持たぬものの「世界との関わり方」の様式を、その断片だけでも垣間見ることができるのではないか。それは、共感というよりはむしろ、異質な知性への畏敬に近い感情を我々に呼び起こすだろう。\n\nしかし、この探求の裏側には、ある種の危うさが常に付き纏うことを、我々は忘れてはならない。「知る」という行為は、しばしば「管理する」という欲望と分かちがたく結びついているからだ。我々はカエルの生理状態をデータ化し、グラフにし、予測モデルを立てる。そうして、カエルという不可解な存在を、我々の知性が把握可能な、管理可能な対象へと変えていく。我々が「カエルを救う」と言うとき、それはカエルを我々の管理下に置き、我々が定義する「良好な状態」を維持しようとする試みではないのか。そこに、カエル自身の意志、あるいは意志と呼ぶべきものがあるとしたら、それはどこにあるのだろう。善意に満ちたこの科学的介入は、対象の自律性を奪い、我々の知識の網の中に捕獲しようとする、洗練された暴力の一形態である可能性を、完全に否定することはできるだろうか。\n\nここで、視点を静かに反転させてみよう。我々がパッチを貼り、データを収集しているそのとき、カエルにとっては何が起きているのか。彼、あるいは彼女の世界において、この出来事はどのように経験されているのだろうか。おそらく、そこには我々の研究意図も、保全という高尚な目的も存在しない。ただ、皮膚の上に、これまでなかった異物感があり、それはやがて背景へと溶け込んでいくか、あるいは微かな違和感として残り続けるだけだろう。我々の世界とカエルの世界は、決して完全に交わることはない。このパッチは、その二つの世界の間に渡された、あまりにも細く、脆い橋のようなものだ。我々はこの橋の上から向こう岸を眺め、その様子を推測するが、向こう岸からこちらを眺める視線はない。この根源的な非対称性を自覚すること。他者を完全に理解することは不可能であるという事実を、出発点として受け入れること。それこそが、他者と関わる上での、知的誠実さの証ではないだろうか。\n\nこの小さなパッチは、結局のところ、カエルの内面を明らかにする以上に、我々の知の限界を明らかにする装置として機能するのかもしれない。我々が得るデータが精緻になればなるほど、そのデータの向こう側にある、決して数値化できない生の豊かさ、その計り知れなさが、より一層際立ってくる。知の光が強まるほど、その周囲に広がる未知の闇の輪郭もまた、濃くなるのだ。我々はカエルを救おうとすることで、実は、自分たちの無知と向き合うことを強いられている。カエルという他者を通して、我々自身の認識の限界を思い知らされている。だとすれば、この研究の真の価値は、保全生物学への貢献に留まらない。それは、我々が世界といかに向き合うべきかという、より大きな哲学的な問いを、我々自身に突きつけているのだ。\n\nこの穴あけパンチサイズのパッチは、我々の認識の皮膚に、小さな穴を開ける。そこから覗き見えるのは、カエルの生命の断片であると同時に、我々自身の知的好奇心の姿であり、その傲慢さであり、そしてその孤独な誠実さでもある。カエルを救うという行為は、回り道を経て、我々が何者であるかを問う旅となる。我々は語りうるものを測定し、分析するだろう。しかし、その先に広がる語りえぬものの広大な領域を前にしたとき、我々が最終的に学ぶべきは、知ることの限界と、沈黙することの価値なのかもしれない。この小さなパッチは、その静かな教訓を、我々にそっと示しているように思われるのだ。",
-    "explanationJa": "カエルの皮膚に貼る小さなパッチ。それは生物を救う技術であると同時に、他者を「知る」ことの深遠さと限界を私たちに問いかける哲学的装置でもある。",
-    "tags": [
-      "保全生物学",
-      "科学哲学",
-      "ウィトゲンシュタイン",
-      "両生類",
-      "非侵襲的測定"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/5745857/pexels-photo-5745857.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
