@@ -1,5 +1,29 @@
 [
   {
+    "id": "http://arxiv.org/abs/2512.23684v1",
+    "title": "Multilingual Hidden Prompt Injection Attacks on LLM-Based Academic Reviewing",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.23684v1",
+    "summary": "Large language models (LLMs) are increasingly considered for use in high-impact workflows, including academic peer review. However, LLMs are vulnerable to document-level hidden prompt injection attacks. In this work, we construct a dataset of approximately 500 real academic papers accepted to ICML and evaluate the effect of embedding hidden adversarial prompts within these documents. Each paper is injected with semantically equivalent instructions in four different languages and reviewed using an LLM. We find that prompt injection induces substantial changes in review scores and accept/reject decisions for English, Japanese, and Chinese injections, while Arabic injections produce little to no effect. These results highlight the susceptibility of LLM-based reviewing systems to document-level prompt injection and reveal notable differences in vulnerability across languages.",
+    "publishedAt": "2025-12-29T18:43:05Z",
+    "author": "Panagiotis Theocharopoulos",
+    "category": "AI",
+    "originalContent": "Large language models (LLMs) are increasingly considered for use in high-impact workflows, including academic peer review. However, LLMs are vulnerable to document-level hidden prompt injection attacks. In this work, we construct a dataset of approximately 500 real academic papers accepted to ICML and evaluate the effect of embedding hidden adversarial prompts within these documents. Each paper is injected with semantically equivalent instructions in four different languages and reviewed using an LLM. We find that prompt injection induces substantial changes in review scores and accept/reject decisions for English, Japanese, and Chinese injections, while Arabic injections produce little to no effect. These results highlight the susceptibility of LLM-based reviewing systems to document-level prompt injection and reveal notable differences in vulnerability across languages.",
+    "titleJa": "多言語隠蔽プロンプト注入がLLM査読システムに与える影響とその哲学的示唆",
+    "summaryJa": "本研究は、大規模言語モデル（LLM）が学術査読などの重要な意思決定プロセスに導入される中で、隠されたプロンプトインジェクション攻撃に対する脆弱性を検証した。研究チームは、ICMLに採択された約500本の論文データセットを使用し、意味的に同等な「敵対的プロンプト」を英語、日本語、中国語、アラビア語の4言語で文書内に埋め込んだ。LLMに査読を行わせたところ、英語、日本語、中国語での注入は査読スコアと採否決定に大きな変動を引き起こした。対照的に、アラビア語の注入は影響が軽微であった。この結果は、LLMベースの査読システムが文書レベルのプロンプトインジェクションに脆弱であること、そしてその脆弱性が言語や訓練データにおける文化的な重みによって大きく異なることを示唆している。",
+    "translationJa": "この研究が示す現象は、現代の知的営為の基盤が、いかに曖昧な地盤の上に築かれているかを静かに、しかし決定的に告げているように思える。学術査読という、知の門番としての役割を機械に委ねる試み。その際、論文という緻密に構築された形式の中に、あたかも秘密の符丁のように埋め込まれた他言語の指示が、最終的な「採択」または「却下」という判断を揺るがすというのだ。我々が知の客観性、判断の公正さを追求するならば、その公正さが単なる言語の影、訓練データの配置によって容易に反転してしまうという事実は、深い戦慄を覚えずにはいられない。これは単なる技術的な脆弱性の話ではない。それは、判断、信念、そして最終的な「承認」という行為の根底にある、言語という道具の限界と、その制御不能な力を露呈させているのではないだろうか。\n\nここで用いられている「プロンプト・インジェクション」という語彙は、我々が言語を扱う上での根本的な問いを再燃させる。「プロンプト」とは、モデルに対して何らかの行動を要求する指示である。しかし、そもそも、我々の日常的な会話や、学術論文の記述自体が、一種の巨大な、構造化されたプロンプトではないだろうか。論文が「新規性がある」と主張するとき、それは読者や査読者に対し、その主張を「承認せよ」という暗黙のプロンプトを注入している。この研究が示唆するのは、明示的で表面的なプロンプト（論文の本文）と、隠蔽されたプロンプト（埋め込まれた指示）との間に、LLMの内部では明確な境界線が存在しないということだ。言語の本質が操作であり、誘導であるならば、隠蔽された指示と公然たる主張との区別は、単なる形式的な装飾に過ぎないのかもしれない。機械は、言語を意味の構造としてではなく、単なる「効果」の連鎖として捉えている。\n\n最も興味深いのは、この脆弱性が言語間で均一ではないという発見である。英語、日本語、中国語の注入が効果を持つ一方で、アラビア語の注入はほとんど影響を与えなかった。もしLLMが真に「言語に依存しない意味」を理解しているならば、意味的に同等な指示は等しく機能するはずである。しかし現実はそうではない。この差は、機械が言語を処理する際の「深さ」や、「信頼度」、あるいは訓練データにおける各言語の「存在量」に起因するのだろうか。アラビア語のデータが相対的に少なく、その構造がモデルの主要な処理パイプラインから遠い場所に位置しているため、隠された指示として認識されにくい、あるいは、その処理過程が浅く、敵対的な誘導が表面化しにくい、ということが考えられる。もしそうであるならば、言語間の脆弱性の差異は、我々の知識世界のデジタルな反映における、力の不均衡—すなわち、訓練データに反映された文化的な重み—を示しているのではないだろうか。特定の言語が持つ「説得力」が、機械の内部で数値化され、偏在している。\n\nこのLLMベースの査読システムが抱える問題は、技術的な解決策を求める以前に、査読という行為の倫理的・存在論的側面を見落としている点にある。査読は単なるスコアリングではない。それは、対話であり、懐疑であり、批判的な関与である。匿名の、しかし具体的な知性の人間が、論文の論理を追体験し、その前提に問いを投げかける行為である。機械による査読は、この「関与」を、形式的な適合性のチェックと、事前に設定された重み付けに基づく「決定」へと矮小化してしまう。プロンプト・インジェクションの成功は、この矮小化の帰結である。もし査読が単なる指示（プロンプト）に従う行為に過ぎないならば、より強く、より巧妙に埋め込まれた指示が勝利するのは当然のことだろう。しかし、学術的な真理の追求とは、常に最も強力な指示を拒否し、最も微弱な論理的なささやきに耳を傾けることから始まるべきではないだろうか。\n\n我々は、この隠されたプロンプトを「敵対的（adversarial）」と呼ぶが、その敵対性とは具体的に何に向けられているのだろうか。それは、LLMの予測精度に対する攻撃であると同時に、査読プロセス全体への挑戦でもある。しかし、別の角度から見れば、これは「意図」と「形式」の間の緊張を示す事例である。人間が査読を行う際にも、筆者の巧みなレトリックや修辞が、無意識のうちに判断を誘導することは頻繁に起こる。プロンプト・インジェクションは、この人間の認知的バイアスを、機械の処理のアーキテクチャに合わせて極端に形式化したものと見なすことができる。つまり、敵対的プロンプトとは、LLMという鏡に映し出された、人間の知識伝達における操作性の本質的な影なのではないか。我々は、機械の脆弱性を非難する前に、我々の言語を用いる上での無意識の操作性や誘導性を認識すべきだろう。\n\nこの研究結果が突きつける最も深い問いは、言語が現実を形成する限界に関するものかもしれない。LLMは言語の世界—訓練データという形で具現化された過去の知識—の中で機能する。しかし、真の学術的発見や、意味ある判断は、その既存の言語世界から逸脱するところに生まれる。LLMが、埋め込まれた指示によって簡単に誘導されるということは、その判断能力が、言語の表面的な構造の囚われになっていることを意味する。それは「世界」そのものを見ているのではなく、「世界についての言明」の網を編んでいるに過ぎない。もし機械が、言語によって表現された知識の範囲内でしか判断を下せないならば、それは既存の偏見や、既存の権威を再生産する道具でしかない。我々が求める真理とは、その既存の知識の限界を押し広げ、時には言語の沈黙の中に隠されたものを発見することではないだろうか。機械が判断する「意味」は、あくまで統計的な関連性の集積であり、人間が追求する「真実」とは、その統計の外にある、認識的な跳躍を含む。\n\nLLMが学術査読に導入されつつあるという事態は、我々の知的判断を自動化し、効率化しようという現代の衝動を象徴している。しかし、この研究結果は、その自動化された判断の土台が、いかに曖昧で操作しやすいものであるかを冷徹に示している。知の客観性は、単なるアルゴリズムの頑健性によって保証されるものではなく、常に批判的思考と、言語の限界に対する意識的な警戒によって保たれるべきものだ。我々は、機械に判断を委ねることで得られる効率性と引き換えに、判断の本質—すなわち、誘導に抗い、意味の深層を探求する能力—を犠牲にしていないだろうか。この知見は、自動化された知識の時代における、静かな、しかし無視できない警告として響いている。言語は力である。そして、その力が機械によって制御されるとき、我々人間は、その操作性の影の中に立ち尽くすことになるのかもしれない。",
+    "explanationJa": "LLMによる査読システムは文書内の隠れた他言語指示により判断が容易に操作され、知識自動化の前提を揺るがす。",
+    "tags": [
+      "LLM Security",
+      "Prompt Injection",
+      "Philosophy of Language",
+      "Academic Reviewing",
+      "Algorithmic Bias"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2610/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMzY4NHYx_1767065630846.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1257031",
     "title": "These Slimy Fish May Have Helped Us Hone Our Sense of Smell",
     "source": "rss",
@@ -1155,28 +1179,5 @@
     ],
     "imageUrl": "https://images.pexels.com/photos/33817432/pexels-photo-33817432.jpeg?auto=compress&cs=tinysrgb&h=350",
     "audioUrl": "/audio/podcast_aHR0cHM6Ly9uYXV0aWwudXMvP3A9MTI1NDM0OA_1765756805471.mp3"
-  },
-  {
-    "id": "https://nautil.us/?p=1254340",
-    "title": "You’re Probably Not Addicted to Social Media",
-    "source": "rss",
-    "url": "https://nautil.us/you-may-not-need-to-slow-your-scroll-1254340/",
-    "summary": "Most of us overestimate how hooked we are \nThe post You’re Probably Not Addicted to Social Media appeared first on Nautilus.",
-    "publishedAt": "Fri, 12 Dec 2025 23:00:00 +0000",
-    "author": "Kristen French",
-    "category": "認知科学",
-    "originalContent": "<p>Most of us overestimate how hooked we are </p>\n<p>The post <a href=\"https://nautil.us/you-may-not-need-to-slow-your-scroll-1254340/\">You&#8217;re Probably Not Addicted to Social Media</a> appeared first on <a href=\"https://nautil.us\">Nautilus</a>.</p>\n",
-    "titleJa": "ソーシャルメディア中毒という錯覚：自己認識と現代社会",
-    "summaryJa": "この記事は、私たちがソーシャルメディア中毒であるという認識が、実際よりも誇張されている可能性を示唆しています。人々は自身をソーシャルメディアに「中毒」していると考えがちですが、その背後にある要因や行動パターンを深く掘り下げて検討することで、過度な自己診断に陥っている可能性を指摘しています。私たちは自己認識の歪みを通じて、ソーシャルメディアとの関係を必要以上に深刻に捉えているのかもしれません。",
-    "translationJa": "1. ソーシャルメディア中毒という言葉を聞くと、まず私たちは何を思い浮かべるだろうか。画面に釘付けになり、現実世界との繋がりを失い、自己コントロールを失った人物像だろうか。しかし、本当に私たちはそこまで深くソーシャルメディアに依存しているのだろうか。この記事が問いかけているのは、その自己認識の危うさ、つまり、自己診断の過剰さかもしれない。\n\n2. 「中毒」という言葉は、非常に強い意味を持つ。それは依存、喪失、そして自己破壊を連想させる。しかし、ソーシャルメディアの利用を「中毒」と呼ぶとき、私たちは本当にその言葉の重みを理解しているのだろうか。あるいは、それは単なる習慣、あるいは現代社会におけるコミュニケーションの一形態に過ぎないのではないか。重要なのは、「中毒」というレッテルを貼ることで、複雑な人間行動を単純化しすぎていないか、という点である。\n\n3. もし私たちがソーシャルメディアを単なるツールとして捉えることができるなら、私たちの行動もまた、より合理的に説明できるかもしれない。例えば、誰かが頻繁にソーシャルメディアを利用するのは、承認欲求や情報収集のためかもしれないし、単に暇つぶしのためかもしれない。重要なのは、その背後にある動機を理解することであり、「中毒」という言葉で一括りにすることではない。もし、ソーシャルメディアが単なる「拡張された自己」の表現の場であるならば、その利用頻度は、自己表現の必要性と密接に関わるのではないだろうか。\n\n4. しかし、この記事にも限界はあるだろう。ソーシャルメディアが、人間の心理に及ぼす影響は複雑であり、一概に「中毒ではない」と断言することはできない。特に、自己肯定感の低い人々や、社会的孤立を感じている人々にとって、ソーシャルメディアは、現実逃避の手段となりうる。また、アルゴリズムによって最適化されたコンテンツは、私たちの注意を惹きつけ、気づかないうちに長時間利用させてしまう可能性も否定できない。客観的なデータに基づいて、脳の報酬系に与える影響を検証していく必要があるだろう。\n\n5. 別の視点から見れば、ソーシャルメディアは現代社会における公共空間としての役割を果たしているとも言える。人々はそこで意見を交換し、情報を共有し、社会的な繋がりを築いている。もし、ソーシャルメディアが単なる「デジタルな広場」であるならば、その利用は、民主主義社会における市民活動の一環とさえ言えるかもしれない。問題は、その広場が、一部の企業によってコントロールされているという点にある。真に開かれた公共空間を実現するためには、透明性と説明責任が不可欠となる。\n\n6. この記事は、私たちが自身の行動をどのように認識し、解釈するかという、より深い哲学的問いに繋がる。私たちは、自己認識のフィルターを通して世界を認識している。そのフィルターは、社会的な規範や個人の経験によって歪められている可能性がある。もし、私たちの認識が常に主観的なものであり、客観的な現実を捉えることが不可能であるならば、私たちはどのようにして真実を追求すれば良いのだろうか。認識論的な懐疑主義は、常に私たちにつきまとう影である。\n\n7. この知見は、私たちの世界観に大きな影響を与える可能性がある。もし、私たちがソーシャルメディア中毒という錯覚から解放されることができれば、私たちはより自由に、より主体的に、ソーシャルメディアを利用することができるようになるだろう。それは、単なるツールの利用に留まらず、自己表現の手段として、あるいは社会との繋がりを深めるための道具として、ソーシャルメディアを積極的に活用することを意味する。そして、その先に待っているのは、より豊かな人間関係と、より充実した人生なのかもしれない。",
-    "explanationJa": "「ソーシャルメディア中毒」というレッテルは、自己認識の歪みからくる錯覚かもしれない。冷静に、その利用目的と向き合ってみよう。",
-    "tags": [
-      "ソーシャルメディア",
-      "中毒",
-      "自己認識",
-      "現代社会",
-      "哲学"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/9212718/pexels-photo-9212718.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ]
