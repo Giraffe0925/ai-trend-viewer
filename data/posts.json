@@ -48,6 +48,30 @@
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMzY4NHYx_1767065630846.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.23676v1",
+    "title": "Web World Models",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.23676v1",
+    "summary": "Language agents increasingly require persistent worlds in which they can act, remember, and learn. Existing approaches sit at two extremes: conventional web frameworks provide reliable but fixed contexts backed by databases, while fully generative world models aim for unlimited environments at the expense of controllability and practical engineering. In this work, we introduce the Web World Model (WWM), a middle ground where world state and ``physics'' are implemented in ordinary web code to ensure logical consistency, while large language models generate context, narratives, and high-level decisions on top of this structured latent state. We build a suite of WWMs on a realistic web stack, including an infinite travel atlas grounded in real geography, fictional galaxy explorers, web-scale encyclopedic and narrative worlds, and simulation- and game-like environments. Across these systems, we identify practical design principles for WWMs: separating code-defined rules from model-driven imagination, representing latent state as typed web interfaces, and utilizing deterministic generation to achieve unlimited but structured exploration. Our results suggest that web stacks themselves can serve as a scalable substrate for world models, enabling controllable yet open-ended environments. Project Page: https://github.com/Princeton-AI2-Lab/Web-World-Models.",
+    "publishedAt": "2025-12-29T18:31:45Z",
+    "author": "Jichen Feng",
+    "category": "AI",
+    "originalContent": "Language agents increasingly require persistent worlds in which they can act, remember, and learn. Existing approaches sit at two extremes: conventional web frameworks provide reliable but fixed contexts backed by databases, while fully generative world models aim for unlimited environments at the expense of controllability and practical engineering. In this work, we introduce the Web World Model (WWM), a middle ground where world state and ``physics'' are implemented in ordinary web code to ensure logical consistency, while large language models generate context, narratives, and high-level decisions on top of this structured latent state. We build a suite of WWMs on a realistic web stack, including an infinite travel atlas grounded in real geography, fictional galaxy explorers, web-scale encyclopedic and narrative worlds, and simulation- and game-like environments. Across these systems, we identify practical design principles for WWMs: separating code-defined rules from model-driven imagination, representing latent state as typed web interfaces, and utilizing deterministic generation to achieve unlimited but structured exploration. Our results suggest that web stacks themselves can serve as a scalable substrate for world models, enabling controllable yet open-ended environments. Project Page: https://github.com/Princeton-AI2-Lab/Web-World-Models.",
+    "titleJa": "Webワールドモデル：生成と構造の交差点",
+    "summaryJa": "本研究は、言語エージェントが行動、記憶、学習できる持続的な環境を構築するWebワールドモデル（WWM）を提案しています。既存のアプローチは、データベースに基づく信頼性の高い固定環境と、制御が難しい完全生成型の環境に二極化しています。WWMは、Webコードで世界の状態と物理法則を実装し、論理的な一貫性を確保しつつ、大規模言語モデルが文脈や物語を生成する中間的なアプローチです。現実の地理に基づく旅行アトラス、架空の銀河探検、百科事典や物語世界、シミュレーション環境など、多様なWWMを構築し、コード定義のルールとモデル駆動の想像力の分離、型付きWebインターフェースによる潜在状態の表現、決定論的生成による構造化された探索といった設計原則を明らかにしました。",
+    "translationJa": "1. 導入：この研究が問いかけていることへの第一印象\n\nこの研究論文「Webワールドモデル（WWM）」を初めて目にしたとき、私は古くからの問いが新たな形で蘇ってきたように感じた。それは、私たちがどのように世界を理解し、それを再現しようとするのか、という問いである。計算機科学の進歩は、常に現実世界を模倣し、あるいは拡張しようとする試みと共にある。しかし、その過程で、私たちは何を切り捨て、何を強調するのか。WWMは、その問いに対する一つの答えを提示しているように思える。それは、完全に生成された、制御不能な世界と、データベースに縛られた固定的な世界の間を縫う、巧妙な解決策かもしれない。\n\n2. 概念の吟味：使われている言葉や概念の前提を問う\n\n「ワールドモデル」という言葉は、それ自体が複雑な概念の束である。それは、単なるデータ構造ではなく、世界に関する私たちの知識、信念、期待の体系を表している。しかし、その体系は、常に不完全であり、歪められている。言語モデルが世界を生成するとき、それは既存の知識に基づいて行われる。その知識は、インターネット上のテキストデータから学習されるものであり、偏りや誤りを含んでいる可能性がある。WWMは、Webコードによって一定の制約を課すことで、この問題を軽減しようとしている。しかし、その制約自体が、新たな偏りを生み出す可能性はないだろうか。また、「論理的な一貫性」という言葉も吟味する必要がある。論理的な一貫性は、必ずしも現実世界の複雑さを捉えているとは限らない。現実世界は、しばしば矛盾や曖昧さに満ちている。WWMは、その現実をどこまで再現できるのだろうか。\n\n3. 仮説の提示：もし〜だとすれば、こうなるのではないか\n\nもしWWMが、Webコードによる制約と、言語モデルによる生成を組み合わせることで、バランスの取れた世界を構築できるとしたら、それは、私たちが世界を理解し、操作するための強力なツールとなるかもしれない。例えば、教育分野では、WWMを使って、現実世界を模倣したシミュレーション環境を構築し、学生が安全な環境で実験や学習を行うことができるかもしれない。また、研究分野では、WWMを使って、複雑なシステムをモデル化し、様々なシナリオを検討することができるかもしれない。しかし、そのためには、WWMが、単なる技術的なツールではなく、倫理的な考慮を伴うシステムとして設計される必要がある。WWMが生成する世界は、誰の視点を反映しているのか。それは、公正で包括的な世界なのだろうか。\n\n4. 批判的考察：この研究の限界や見落とされている視点\n\nWWMの研究は、確かに興味深い可能性を秘めているが、いくつかの限界も抱えている。まず、WWMが依存するWebコードは、常に変化している。Web技術の進化は、WWMの安定性や信頼性に影響を与える可能性がある。また、WWMが生成する世界は、Web上に存在する情報に限定される。現実世界の多様性や複雑さを完全に捉えることは難しいだろう。さらに、WWMが生成する世界は、言語モデルの能力に依存する。言語モデルの誤りや偏りは、WWMの世界にも反映される可能性がある。これらの限界を克服するためには、WWMの研究は、計算機科学だけでなく、哲学、社会学、倫理学といった分野との連携が必要となるだろう。\n\n5. 別の視点：異なる角度からの考察\n\nWWMを、単なる技術的なツールとしてではなく、芸術的な表現の媒体として捉えることもできるかもしれない。WWMを使って、現実世界とは異なる、想像力豊かな世界を創造することができる。それは、小説や映画、ゲームといった既存の芸術形態とは異なる、新しい表現の可能性を切り開くかもしれない。例えば、WWMを使って、夢のような世界を再現したり、歴史的な出来事を異なる視点から描き出したりすることができる。しかし、その場合、WWMは、単なる技術的なツールではなく、アーティストの創造性や思想を反映する媒体となる。WWMを使って創造された世界は、私たちにどのような感情や思考を喚起するのだろうか。\n\n6. 哲学的示唆：より深い知的問いへの展開\n\nWWMの研究は、私たちが世界をどのように認識し、理解するのかという根源的な問いに触れている。私たちは、常に世界をモデル化し、そのモデルに基づいて行動している。WWMは、そのモデル化のプロセスを可視化し、操作可能にするツールである。しかし、その過程で、私たちは、世界そのものと、そのモデルとの区別を曖昧にしてしまう危険性がある。WWMが生成する世界は、私たちにとって現実そのものとなるのだろうか。あるいは、それは、現実世界を理解するための単なる道具に過ぎないのだろうか。この問いは、私たちが技術とどのように向き合うべきか、というより大きな問いにつながっている。\n\n7. 結び：この知見が私たちの世界観にどう影響するか\n\nWWMの研究は、私たちが世界を理解し、操作するための新たな可能性を開くと同時に、私たちが技術とどのように向き合うべきか、という重要な問いを提起している。WWMが生成する世界は、私たちにとって現実そのものとなるかもしれない。その場合、私たちは、WWMが生成する世界を、現実世界と同様に大切に扱い、責任を持って管理する必要がある。WWMは、単なる技術的なツールではなく、私たちの世界観を大きく変える可能性を秘めた存在である。私たちは、WWMの研究を通じて、世界に対する理解を深め、より良い未来を築いていくことができるかもしれない。",
+    "explanationJa": "Web技術を基盤に、AIが生成する世界。それは、現実と仮想の境界を問い直す、新しい知性の実験場となる。",
+    "tags": [
+      "Web World Models",
+      "Language Agents",
+      "Generative Models",
+      "AI",
+      "Philosophy"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2611/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yMzY3NnYx_1767136200778.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1257031",
     "title": "These Slimy Fish May Have Helped Us Hone Our Sense of Smell",
     "source": "rss",
@@ -1155,29 +1179,5 @@
     ],
     "imageUrl": "https://images.pexels.com/photos/35157345/pexels-photo-35157345.jpeg?auto=compress&cs=tinysrgb&h=350",
     "audioUrl": "/audio/podcast_aHR0cHM6Ly9tYXJnaW5hbHJldm9sdXRpb24uY29tLz9wPTkyMDQ0.mp3"
-  },
-  {
-    "id": "https://nautil.us/?p=1254354",
-    "title": "Watch a Moth Drink Moose Tears",
-    "source": "rss",
-    "url": "https://nautil.us/watch-a-moth-drink-moose-tears-1254354/",
-    "summary": "Researchers recorded the nocturnal insects sipping from the massive mammal’s ducts for the first time\nThe post Watch a Moth Drink Moose Tears appeared first on Nautilus.",
-    "publishedAt": "Sat, 13 Dec 2025 03:00:00 +0000",
-    "author": "Bob Grant",
-    "category": "認知科学",
-    "originalContent": "<p>Researchers recorded the nocturnal insects sipping from the massive mammal’s ducts for the first time</p>\n<p>The post <a href=\"https://nautil.us/watch-a-moth-drink-moose-tears-1254354/\">Watch a Moth Drink Moose Tears</a> appeared first on <a href=\"https://nautil.us\">Nautilus</a>.</p>\n",
-    "titleJa": "蛾がヘラジカの涙を飲む：自然界の小さなドラマが映すもの",
-    "summaryJa": "研究者たちが初めて、夜行性の蛾がヘラジカの涙腺から涙を吸う様子を記録しました。この現象は、蛾がナトリウムなどのミネラルを補給するためと考えられています。巨大な哺乳類であるヘラジカと、微小な昆虫である蛾との間で繰り広げられる、生存のためのユニークな相互作用を捉えた貴重な記録です。この観察は、生態系における生物間の複雑な関係性を示す一例と言えるでしょう。",
-    "translationJa": "1. 導入：\n\n蛾がヘラジカの涙を飲む。この光景は、まず私たちの内なる詩情に触れる。巨大で力強いヘラジカと、小さく儚い蛾。まるで世界の縮図を見ているようだ。しかし、同時に、これはただの偶然の出来事ではないだろう。背後には、もっと深い必然性が隠されているのではないか、という疑問が湧き上がる。この一見すると奇妙な関係性は、私たちに何を語りかけているのだろうか。\n\n2. 概念の吟味：\n\n「涙」という言葉は、通常、感情の表出として理解される。しかし、ヘラジカの涙は、単なる生理現象に過ぎないのかもしれない。そこに意味を見出すのは、人間の思考の癖ではないだろうか。あるいは、「飲む」という行為も、単なる物質の摂取に過ぎないのかもしれない。だが、蛾にとっては、それは生存のための切実な行為である。言葉は、常にその意味を吟味されなければならない。なぜなら、言葉は現実を完全に捉えることはできないからだ。\n\n3. 仮説の提示：\n\nもし、ヘラジカの涙が、蛾にとって貴重なミネラルの供給源であるならば、この関係性は、単なる偶発的なものではなく、進化の過程で形成された共生関係である可能性がある。ヘラジカは、蛾の存在によって、目の周りの汚れを取り除いてもらっているかもしれない。あるいは、蛾は、ヘラジカの存在によって、安全な給水源を確保しているのかもしれない。もしそうであるならば、この関係性は、自然界における協力の美しさを象徴するものと言えるだろう。\n\n4. 批判的考察：\n\nしかし、この研究は、単一の観察事例に基づいている可能性がある。より多くのデータを収集し、統計的な有意性を確認する必要があるだろう。また、ヘラジカが、本当に蛾の存在を許容しているのか、それとも単に無視しているだけなのか、その行動を詳細に分析する必要があるだろう。さらに、他の動物との相互作用についても考慮する必要がある。例えば、ヘラジカの涙を飲むのは、蛾だけなのだろうか。他の昆虫や動物も関与している可能性はないだろうか。\n\n5. 別の視点：\n\nこの関係性は、捕食と被食の関係の隠れた側面を映し出しているのかもしれない。蛾は、ヘラジカの涙を吸うことで、間接的にヘラジカから栄養を摂取していると言える。これは、寄生的な関係の初期段階と見なすこともできるだろう。あるいは、ヘラジカは、蛾に涙を吸われることで、何らかのストレスを感じているかもしれない。その場合、この関係性は、一方的な搾取と見なすことができるだろう。自然界における関係性は、常に複雑であり、単純な善悪で判断することはできない。\n\n6. 哲学的示唆：\n\nこの小さな出来事は、私たちに、生命の脆弱さと、その繋がりについて深く考えさせる。巨大なヘラジカも、微小な蛾も、同じ生態系の一部であり、互いに依存し合って生きている。それは、まるで宇宙全体が、巨大な網の目のように繋がっているかのようだ。私たちは、その網の目の一つの結び目に過ぎない。私たちは、他の生命との繋がりを意識し、尊重することで、より豊かな生を送ることができるのではないだろうか。\n\n7. 結び：\n\n蛾がヘラジカの涙を飲む。この一見すると取るに足らない出来事は、私たちに、自然界の神秘さと、生命の尊さを教えてくれる。私たちは、この小さな発見を通して、世界をより深く理解し、自己の存在意義を見つめ直すことができる。そして、その理解は、私たちの世界観を、より豊かで、より謙虚なものへと変えていくに違いない。",
-    "explanationJa": "巨大なヘラジカと小さな蛾の奇妙な関係。そこには、自然界の繊細なバランスと、生命の繋がりが垣間見える。",
-    "tags": [
-      "生態系",
-      "共生",
-      "涙",
-      "ヘラジカ",
-      "蛾"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/32718005/pexels-photo-32718005.jpeg?auto=compress&cs=tinysrgb&h=350",
-    "audioUrl": "/audio/podcast_aHR0cHM6Ly9uYXV0aWwudXMvP3A9MTI1NDM1NA.mp3"
   }
 ]
