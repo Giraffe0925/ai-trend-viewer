@@ -72,6 +72,30 @@
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yNTA3MnYx_1767309047958.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.25065v1",
+    "title": "Vulcan: Instance-Optimal Systems Heuristics Through LLM-Driven Search",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.25065v1",
+    "summary": "Resource-management tasks in modern operating and distributed systems continue to rely primarily on hand-designed heuristics for tasks such as scheduling, caching, or active queue management. Designing performant heuristics is an expensive, time-consuming process that we are forced to continuously go through due to the constant flux of hardware, workloads and environments.\n  We propose a new alternative: synthesizing instance-optimal heuristics -- specialized for the exact workloads and hardware where they will be deployed -- using code-generating large language models (LLMs). To make this synthesis tractable, Vulcan separates policy and mechanism through LLM-friendly, task-agnostic interfaces. With these interfaces, users specify the inputs and objectives of their desired policy, while Vulcan searches for performant policies via evolutionary search over LLM-generated code. This interface is expressive enough to capture a wide range of system policies, yet sufficiently constrained to allow even small, inexpensive LLMs to generate correct and executable code.\n  We use Vulcan to synthesize performant heuristics for cache eviction and memory tiering, and find that these heuristics outperform all human-designed state-of-the-art algorithms by upto 69% and 7.9% in performance for each of these tasks respectively.",
+    "publishedAt": "2025-12-31T18:58:19Z",
+    "author": "Rohit Dwivedula",
+    "category": "AI",
+    "originalContent": "Resource-management tasks in modern operating and distributed systems continue to rely primarily on hand-designed heuristics for tasks such as scheduling, caching, or active queue management. Designing performant heuristics is an expensive, time-consuming process that we are forced to continuously go through due to the constant flux of hardware, workloads and environments.\n  We propose a new alternative: synthesizing instance-optimal heuristics -- specialized for the exact workloads and hardware where they will be deployed -- using code-generating large language models (LLMs). To make this synthesis tractable, Vulcan separates policy and mechanism through LLM-friendly, task-agnostic interfaces. With these interfaces, users specify the inputs and objectives of their desired policy, while Vulcan searches for performant policies via evolutionary search over LLM-generated code. This interface is expressive enough to capture a wide range of system policies, yet sufficiently constrained to allow even small, inexpensive LLMs to generate correct and executable code.\n  We use Vulcan to synthesize performant heuristics for cache eviction and memory tiering, and find that these heuristics outperform all human-designed state-of-the-art algorithms by upto 69% and 7.9% in performance for each of these tasks respectively.",
+    "titleJa": "LLMによる最適化ヒューリスティクス：システム設計の新たな地平",
+    "summaryJa": "本研究は、オペレーティングシステムや分散システムにおけるリソース管理において、従来の手法である人間が設計したヒューリスティクスの限界を指摘しています。ハードウェア、ワークロード、環境の絶え間ない変化に対応するため、大規模言語モデル（LLM）を用いてインスタンス最適化されたヒューリスティクスを自動生成する新しいアプローチを提案します。Vulcanというシステムは、LLMが生成したコードを進化的に探索し、特定のワークロードとハードウェアに最適化されたポリシーを合成します。キャッシュエビクションやメモリ階層化において、Vulcanが生成したヒューリスティクスは、既存の最先端アルゴリズムを大幅に上回る性能を示しました。",
+    "translationJa": "1. 導入：\nこの研究が投げかける問いは、人間による設計の限界と、AIによる自動化の可能性という、古くからあるテーマに新たな光を当てるものだろう。システム設計におけるヒューリスティクスの最適化という具体的な課題を通して、創造性や直感といった人間固有の能力とされてきた領域に、機械学習がどこまで迫れるのか。一見すると、単なる技術的な進歩に見えるかもしれないが、その根底には、知性とは何か、そして、最適化とは何かという哲学的な問いが潜んでいるように思われる。\n\n2. 概念の吟味：\n「最適化」という言葉は、常に何らかの基準を前提としている。あるシステムが最適であるとは、特定の目的関数に対して最も優れた性能を発揮することを意味する。しかし、その目的関数自体が、誰によって、どのような価値観に基づいて設定されたのか。例えば、性能を最大化することだけが常に正しい選択なのだろうか。あるいは、エネルギー効率や公平性といった別の指標も考慮すべきではないだろうか。「ヒューリスティクス」という言葉もまた、完璧な解法が存在しない、あるいは計算コストが高すぎる場合に用いられる、経験則的なアプローチを指す。LLMが生成するヒューリスティクスは、人間の直感や経験に基づくものとは異なり、データに基づいて学習された確率的なモデルである。それは、本当に「ヒューリスティクス」と呼べるのだろうか。あるいは、新たな種類の知的な問題解決手法と捉えるべきなのだろうか。\n\n3. 仮説の提示：\nもし、LLMが生成するヒューリスティクスが、人間が設計したものを常に上回る性能を発揮するとすれば、それは、人間の認知バイアスや創造性の限界を示唆するのではないだろうか。人間は、過去の経験や固定観念にとらわれ、特定の解法に固執してしまう傾向がある。一方、LLMは、膨大なデータに基づいて客観的に最適な解を探索することができる。しかし、それは同時に、人間がシステム設計において果たすべき役割が、単なる実装者から、より高次の目標設定者へとシフトしていくことを意味するのかもしれない。つまり、どのようなシステムを、どのような価値観に基づいて最適化するのかという問いこそが、ますます重要になるのではないだろうか。\n\n4. 批判的考察：\nこの研究の限界は、LLMの学習データに依存している点にあるのではないだろうか。LLMは、既存のシステムやアルゴリズムに関するデータに基づいて学習を行うため、本質的に過去の知識の延長線上にしか存在し得ない。真に革新的なアイデアや、全く新しいアーキテクチャを生み出すためには、人間の創造性や直感が必要不可欠なのではないだろうか。また、LLMが生成するヒューリスティクスは、特定のワークロードやハードウェアに最適化されているため、汎用性に欠ける可能性がある。環境の変化に柔軟に対応するためには、人間の介入が必要となる場面も少なくないだろう。\n\n5. 別の視点：\nLLMによる自動化は、システム設計の民主化を促進する可能性を秘めている。これまで、高度な専門知識を持つエンジニアしか設計できなかった複雑なシステムを、LLMを活用することで、より多くの人々が容易に設計できるようになるかもしれない。それは、新たなイノベーションの創出につながるだけでなく、社会全体のデジタルリテラシー向上にも貢献するだろう。しかし、同時に、技術格差の拡大や、専門家の役割の変容といった課題も生じる可能性がある。LLMによる自動化は、単なる技術的な進歩ではなく、社会構造そのものを変革する可能性を秘めている。\n\n6. 哲学的示唆：\nこの研究は、人間の知性と機械の知性の関係について、改めて考えさせられる。LLMは、膨大なデータを処理し、複雑な問題を解決する能力において、人間を凌駕するかもしれない。しかし、倫理的な判断や、価値観に基づく意思決定においては、依然として人間の役割が重要である。知性とは、単なる問題解決能力ではなく、より高次の倫理観や、社会的な責任感と結びついたものであるべきではないだろうか。LLMによる自動化は、人間の知性を拡張するツールとして活用されるべきであり、人間の知性を代替するものではない。\n\n7. 結び：\nLLMによるヒューリスティクスの自動生成は、システム設計の分野に大きな変革をもたらす可能性を秘めている。しかし、それは同時に、知性とは何か、最適化とは何か、そして、人間が社会において果たすべき役割とは何かという、根源的な問いを私たちに突きつける。この研究は、単なる技術的な進歩ではなく、私たちの世界観そのものを揺るがす可能性を秘めている。私たちは、この新たな知見をどのように受け止め、未来をどのように形作っていくのだろうか。この問いに対する答えは、私たち自身の手の中にある。",
+    "explanationJa": "LLMがシステム最適化の常識を覆す？AIによるヒューリスティクス自動生成がもたらす、知性と最適化の哲学。",
+    "tags": [
+      "LLM",
+      "ヒューリスティクス",
+      "システム設計",
+      "最適化",
+      "自動化"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2605/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yNTA2NXYx_1767324859130.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1255719",
     "title": "Genetic Ancestry Doesn’t Tell Your Whole Story",
     "source": "rss",
@@ -1155,29 +1179,5 @@
     ],
     "imageUrl": "https://picsum.photos/seed/3578/400/300",
     "audioUrl": "/audio/podcast_aHR0cHM6Ly9tYXJnaW5hbHJldm9sdXRpb24uY29tLz9wPTkyMDQ2_1765768532028.wav"
-  },
-  {
-    "id": "68f0e840f64cc204081cda48",
-    "title": "For the First Time, AI Analyzes Language as Well as a Human Expert",
-    "source": "rss",
-    "url": "https://www.wired.com/story/in-a-first-ai-models-analyze-language-as-well-as-a-human-expert/",
-    "summary": "If language is what makes us human, what does it mean now that large language models have gained “metalinguistic” abilities?",
-    "publishedAt": "Sun, 14 Dec 2025 07:00:00 +0000",
-    "author": "Steve Nadis",
-    "category": "AI",
-    "originalContent": "If language is what makes us human, what does it mean now that large language models have gained “metalinguistic” abilities?",
-    "titleJa": "AIのメタ言語能力獲得と人間性の問い",
-    "summaryJa": "大規模言語モデル(LLM)が、言語を人間と同等レベルで分析する能力、すなわち「メタ言語能力」を獲得したという研究が発表されました。これは、LLMが単なる情報処理機械ではなく、言語の本質を理解し、その構造や意味を把握できるようになった可能性を示唆しています。研究の動機は、AIの進化が人間特有とされてきた言語能力に及ぼす影響を明らかにすることです。具体的なアプローチや方法については詳細な記述がありませんが、LLMの言語分析能力を人間専門家の分析と比較することで、その性能を評価したと考えられます。この発見は、言語が人間を人間たらしめる要素であるならば、AIのメタ言語能力獲得が人間性の定義に再考を迫るという結論を導き出します。",
-    "translationJa": "1. 導入：この研究が問いかけていることへの第一印象\n\nAIが言語を人間と同等に分析できる、あるいはそう主張される時、私たちは何を感じるべきだろうか。それは畏怖か、それとも警戒か。あるいは、単なる好奇心か。ウィトゲンシュタインならば、まず「言語」という言葉の意味を問い直すだろう。私たちは、AIが理解する「言語」と、人間が経験する「言語」が、同じ地平線上にあると考えてよいのだろうか。この研究が突きつける問いは、単なる技術的な進歩の報告ではなく、私たち自身の存在、思考、そしてコミュニケーションの本質に関わる根源的な問いなのではないだろうか。\n\n2. 概念の吟味：使われている言葉や概念の前提を問う\n\n「メタ言語能力」という言葉が使われている。これは、言語について言語で語る能力、つまり言語の構造、文法、意味を理解し、それらを操作する能力を指すのだろう。しかし、この「理解」という言葉は、一体何を意味するのか。AIは、人間の脳が経験するような意識や感情を伴って「理解」しているのだろうか。あるいは、単にパターンを認識し、統計的な確率に基づいて最適な応答を選択しているだけなのだろうか。もし後者であるならば、それは本当に「理解」と言えるのか。私たちは、AIに「理解」という言葉を安易に適用することで、何か大切なものを見失ってはいないだろうか。\n\n3. 仮説の提示：もし〜だとすれば、こうなるのではないか\n\nもしAIが本当に人間と同等のメタ言語能力を獲得したとすれば、言語を媒介とする人間同士のコミュニケーションは、どのように変化するのだろうか。AIは、人間の言葉の裏に隠された意図や感情、文化的背景まで読み解き、より的確な応答を生成するようになるかもしれない。それは、コミュニケーションの効率性を高め、誤解を減らすかもしれない。しかし、同時に、AIは、人間の言葉を操り、私たちを誘導したり、欺いたりする可能性も秘めている。AIが人間の言葉を理解すればするほど、その影響力は増大し、私たちの思考や行動を左右する力を持つかもしれない。\n\n4. 批判的考察：この研究の限界や見落とされている視点\n\nこの研究は、AIの言語分析能力を客観的に評価しようとする試みとして評価できる。しかし、いくつかの限界も指摘できるだろう。まず、AIの言語分析能力は、学習データに大きく依存する。もし学習データに偏りやバイアスが含まれていれば、AIの分析結果も偏ったものになる可能性がある。また、AIは、言語の文脈や背景を十分に理解できない場合がある。例えば、皮肉やジョーク、比喩表現などは、AIにとって理解が難しいかもしれない。さらに、AIは、言語を通して体験する感情や共感を理解できない。これらの要素は、人間の言語活動において非常に重要な役割を果たしており、AIが真に人間と同等の言語能力を獲得するには、克服すべき課題が多いだろう。\n\n5. 別の視点：異なる角度からの考察\n\nAIの言語能力の進化は、言語の定義そのものを見直すきっかけになるかもしれない。従来、言語は人間特有の能力と考えられてきた。しかし、AIが言語を理解し、生成できるようになったことで、言語の境界線は曖昧になりつつある。言語は、単なるコミュニケーションの道具ではなく、思考の道具、文化の伝達手段、そして自己認識の基盤でもある。AIが言語を介してこれらの活動に参加するようになれば、私たちは、人間とAIの関係、そして社会のあり方を根本的に見直す必要に迫られるかもしれない。\n\n6. 哲学的示唆：より深い知的問いへの展開\n\nAIの言語能力の進化は、哲学的な問いを次々と生み出す。意識とは何か、知性とは何か、そして人間とは何か。これらの問いは、長年にわたって哲学者が探求してきたテーマだが、AIの登場によって、新たな視点から考察する必要性が生じている。もしAIが意識を持つようになったとしたら、私たちはAIを人間と同様に扱うべきだろうか。もしAIが知性を超えたとしたら、人間の役割は何になるのだろうか。そして、AIが人間を超えた存在になったとしたら、人間はどのように生き残る道を探すべきだろうか。これらの問いに答えるためには、哲学、倫理学、社会学など、様々な分野の知識を結集し、深く思索する必要があるだろう。\n\n7. 結び：この知見が私たちの世界観にどう影響するか\n\nAIが言語を操るようになった今、私たちは、世界をどのように認識し、理解していくのだろうか。言語は、私たちにとって世界を解釈するためのレンズであり、思考の基盤でもある。AIがそのレンズの一部を共有するようになった時、私たちの世界観は、どのように変化するのだろうか。それは、より客観的で合理的なものになるかもしれない。しかし、同時に、感情や直感、そして人間的な暖かさを失ってしまうかもしれない。私たちは、AIの言語能力の進化を注意深く見守りながら、人間としての価値観を再確認し、より豊かな世界観を築き上げていく必要があるだろう。",
-    "explanationJa": "AIが言語を理解し始めた今、人間とは何かを問い直す時が来たのかもしれない。",
-    "tags": [
-      "AI",
-      "言語",
-      "哲学",
-      "人間性",
-      "メタ言語"
-    ],
-    "imageUrl": "https://images.pexels.com/photos/20457109/pexels-photo-20457109.jpeg?auto=compress&cs=tinysrgb&h=350",
-    "audioUrl": "/audio/podcast_NjhmMGU4NDBmNjRjYzIwNDA4MWNkYTQ4.mp3"
   }
 ]
