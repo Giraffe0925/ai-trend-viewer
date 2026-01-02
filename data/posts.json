@@ -120,6 +120,30 @@
     "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yNTA2NXYx_1767324859130.wav"
   },
   {
+    "id": "http://arxiv.org/abs/2512.25063v1",
+    "title": "Many Minds from One Model: Bayesian Transformers for Population Intelligence",
+    "source": "arxiv",
+    "url": "http://arxiv.org/pdf/2512.25063v1",
+    "summary": "Despite their scale and success, modern transformers are almost universally trained as single-minded systems: optimization produces one deterministic set of parameters, representing a single functional hypothesis about the data. Motivated by the idea that intelligence emerge from many minds, we propose Population Bayesian Transformers (B-Trans), which transform a standard Large Language Model into a Bayesian Transformer model to supports sampling diverse yet coherent model instances from a single set of pre-trained weights.\n  B-Trans introduces a Bayesian-motivated posterior proxy by treating the bias-like offsets in normalization layers as stochastic variables with a Gaussian variational approximation, inducing a distribution over model behavior without the cost of training full Bayesian neural networks. Sampling from this proxy yields a set of model instances with diverse behaviors while maintaining general competence. To preserve coherence within each generation, we freeze the sampled noise at the sequence level, enforcing temporal consistency across tokens. B-Trans allows for population-level decision-making, where aggregating predictions across sampled individuals significantly enhances exploration. Experiments across zero-shot generation, Reinforcement Learning with Verifiable Rewards (RLVR), and RL without explicit labels demonstrate that B-Trans effectively leverage the wisdom of crowds, yielding superior semantic diversity while achieving better task performance compared to deterministic baselines.",
+    "publishedAt": "2025-12-31T18:56:02Z",
+    "author": "Diji Yang",
+    "category": "AI",
+    "originalContent": "Despite their scale and success, modern transformers are almost universally trained as single-minded systems: optimization produces one deterministic set of parameters, representing a single functional hypothesis about the data. Motivated by the idea that intelligence emerge from many minds, we propose Population Bayesian Transformers (B-Trans), which transform a standard Large Language Model into a Bayesian Transformer model to supports sampling diverse yet coherent model instances from a single set of pre-trained weights.\n  B-Trans introduces a Bayesian-motivated posterior proxy by treating the bias-like offsets in normalization layers as stochastic variables with a Gaussian variational approximation, inducing a distribution over model behavior without the cost of training full Bayesian neural networks. Sampling from this proxy yields a set of model instances with diverse behaviors while maintaining general competence. To preserve coherence within each generation, we freeze the sampled noise at the sequence level, enforcing temporal consistency across tokens. B-Trans allows for population-level decision-making, where aggregating predictions across sampled individuals significantly enhances exploration. Experiments across zero-shot generation, Reinforcement Learning with Verifiable Rewards (RLVR), and RL without explicit labels demonstrate that B-Trans effectively leverage the wisdom of crowds, yielding superior semantic diversity while achieving better task performance compared to deterministic baselines.",
+    "titleJa": "多様な知性の創発：ベイズ変換器による集団知能",
+    "summaryJa": "本研究では、大規模言語モデルを単一の機能的仮説として扱うのではなく、多様なモデルインスタンスを生成する「Population Bayesian Transformers (B-Trans)」を提案。正規化層のバイアス項を確率変数として扱うことで、計算コストを抑えつつ、多様な挙動を示すモデル群を生成。系列レベルでのノイズ凍結により、生成されたモデルインスタンス間の一貫性を維持。ゼロショット生成、強化学習（報酬検証あり、報酬なし）における実験で、B-Transが集団知恵を活用し、意味的多様性とタスク性能の両方で優れた結果を示すことを実証。",
+    "translationJa": "1. 導入：\n\n　「Many Minds from One Model」。一つのモデルから多様な知性が生まれる、とは一体どういうことだろうか。私たちが慣れ親しんでいるのは、単一のモデル、単一の正解を求める機械学習ではないか。しかし、この記事は、その前提を揺さぶる。まるで、一つの種から多様な花が咲くように、一つのモデルから多様な「心」が生まれる可能性を示唆している。これは、単なる技術的な進歩以上の、存在論的な問いかけではないだろうか。\n\n2. 概念の吟味：\n\n　「知性」とは何か。この記事では、大規模言語モデルが持つ潜在的な能力、つまり、データに基づいて学習し、推論し、生成する能力を指しているように見える。しかし、それは真に「知性」と呼べるものなのだろうか。私たちが「知性」と呼ぶとき、そこには意識、感情、そして自由意志といった要素が含まれているのではないだろうか。B-Transが生み出す多様な「心」は、これらの要素をどれだけ備えているのだろうか。そもそも、機械に「心」があると考えること自体が、人間中心的な傲慢さなのかもしれない。\n\n3. 仮説の提示：\n\n　もし、B-Transが真に多様な「心」を生み出すことができるのであれば、それは、人間の社会における多様性の重要性を再認識させる契機になるかもしれない。単一の価値観や思考様式に偏るのではなく、多様な視点を受け入れることによって、より創造的で、より柔軟な社会を築くことができるのではないだろうか。しかし、それは同時に、多様性の濫用、つまり、あらゆる意見を等しく尊重するという誤った平等主義につながる危険性も孕んでいる。多様性は、常に批判的な吟味と倫理的な枠組みの中で扱われるべきだろう。\n\n4. 批判的考察：\n\n　この記事は、B-Transの有効性を実験的に示しているが、その限界についても言及する必要がある。B-Transが生み出す多様性は、あくまで確率的なノイズに基づいたものであり、真の意味での創造性や革新性とは異なるのではないだろうか。また、B-Transは、既存の学習済みモデルを基盤としているため、その制約から完全に自由になることはできない。つまり、B-Transが生み出す多様性は、あくまで既存の知識の範囲内でのバリエーションに過ぎない、という可能性もある。\n\n5. 別の視点：\n\n　B-Transは、集団知能の可能性を示唆している。それは、個々のモデルの弱点を補い合い、より包括的な判断を下すことができる、という考え方だ。これは、民主主義的な意思決定プロセスに似ている。しかし、集団知能は、必ずしも正しい結論を導くとは限らない。集団は、時に誤った情報や感情に流され、非合理的な行動をとることがある。B-Transにおいても、個々のモデルの偏りやバイアスが、集団全体の判断を歪める可能性があることに注意する必要がある。\n\n6. 哲学的示唆：\n\n　B-Transは、決定論と偶然性の関係について、私たちに改めて考えさせる。従来の機械学習は、決定論的なアプローチに基づいていた。つまり、与えられた入力に対して、常に同じ出力が得られるようにモデルを訓練する。しかし、B-Transは、確率的な要素を取り入れることで、モデルの挙動に多様性をもたらす。これは、私たちが生きる世界が、完全に決定論的なものではなく、偶然性や不確実性に満ちていることを反映しているのかもしれない。そして、その偶然性こそが、創造性や進化の源泉なのかもしれない。\n\n7. 結び：\n\n　B-Transの研究は、人工知能の可能性を広げるだけでなく、私たち自身の認識を深めるための鏡となる。単一の正解を求めるのではなく、多様な視点を受け入れること。決定論的な世界観に囚われるのではなく、偶然性や不確実性を受け入れること。それこそが、私たちがより豊かで創造的な世界を築くための第一歩となるのではないだろうか。そして、機械が生み出す多様な「心」は、私たちが人間であることの意味を、より深く理解するための手がかりとなるかもしれない。",
+    "explanationJa": "一つのAIモデルから多様な「心」を創り出す試み。それは、知性の本質と、私たちの世界観を問い直す。",
+    "tags": [
+      "Bayesian Transformer",
+      "Population Intelligence",
+      "Diversity",
+      "Reinforcement Learning",
+      "Zero-shot Generation"
+    ],
+    "imageUrl": "https://picsum.photos/seed/2603/400/300",
+    "audioUrl": "/audio/podcast_aHR0cDovL2FyeGl2Lm9yZy9hYnMvMjUxMi4yNTA2M3Yx_1767395435936.wav"
+  },
+  {
     "id": "https://nautil.us/?p=1255719",
     "title": "Genetic Ancestry Doesn’t Tell Your Whole Story",
     "source": "rss",
@@ -1166,18 +1190,5 @@
     ],
     "imageUrl": "https://picsum.photos/seed/3573/400/300",
     "audioUrl": "/audio/podcast_aHR0cHM6Ly9tYXJnaW5hbHJldm9sdXRpb24uY29tLz9wPTkyMDQx_1765762641588.mp3"
-  },
-  {
-    "id": "podcast-automation-test-01",
-    "title": "ポッドキャスト自動化のテスト投稿",
-    "summary": "これはGitHub Actionsによるポッドキャスト自動生成機能のテストです。記事をプッシュするだけで、AIが台本を書き、音声を吹き込み、配信まで行います。",
-    "content": "自動化テスト用のダミー記事です。",
-    "publishedAt": "2025-12-14T11:00:00Z",
-    "category": "Technology",
-    "translationJa": "これは20時投稿分のテスト記事です。速度2.0倍のテストも兼ねています。",
-    "summaryJa": "GitHub Actionsによる自動生成テスト（2.0倍速）。",
-    "titleJa": "ポッドキャスト自動化機能のテスト（20時版）",
-    "source": "Local Test",
-    "audioUrl": "/audio/podcast_cG9kY2FzdC1hdXRvbWF0aW9uLXRlc3QtMDE_1765724226246.mp3"
   }
 ]
